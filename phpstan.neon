@@ -5,6 +5,10 @@ parameters:
 
     paths:
         - app/
+        - database/factories
+        - database/seeders
+        - routes/
         - src/
+        - tests/
 
     level: max

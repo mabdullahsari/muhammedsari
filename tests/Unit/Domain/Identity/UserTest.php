@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 final class UserTest extends TestCase
 {
     /** @test */
-    public function it_can_retrieve_the_full_name_of_a_user()
+    public function it_can_retrieve_the_full_name_of_a_user(): void
     {
         $user = new User([
            'first_name' => 'Muhammed',
