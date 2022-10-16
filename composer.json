@@ -22,7 +22,8 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "Domain\\": "src/"
         }
     },
     "autoload-dev": {
@@ -31,6 +32,7 @@
         }
     },
     "scripts": {
+        "format": "@php ./vendor/bin/pint",
         "larastan": "@php ./vendor/bin/phpstan analyse --memory-limit=2G",
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
