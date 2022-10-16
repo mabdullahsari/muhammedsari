@@ -185,6 +185,7 @@ return [
         /*
          * Application Service Providers...
          */
+        App\Filament\FilamentServiceProvider::class,
         App\Web\Providers\WebServiceProvider::class,
 
     ],

@@ -5,6 +5,7 @@
     "license": "MIT",
     "require": {
         "php": "~8.1",
+        "filament/filament": "^2.0",
         "guzzlehttp/guzzle": "^7.5",
         "laravel/framework": "^9.35.1",
         "laravel/tinker": "^2.7.2"
@@ -38,6 +39,9 @@
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
         ],
+        "post-update-cmd": [
+            "@php artisan filament:upgrade"
+        ],
         "test": "@php artisan test",
         "verify": [
             "@larastan",
@@ -46,7 +50,26 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [
+                "akaunting/laravel-money",
+                "blade-ui-kit/blade-heroicons",
+                "blade-ui-kit/blade-icons",
+                "filament/filament",
+                "filament/forms",
+                "filament/notifications",
+                "filament/support",
+                "filament/tables",
+                "intervention/image",
+                "laravel/tinker",
+                "livewire/livewire",
+                "laravel/telescope",
+                "nesbot/carbon",
+                "nunomaduro/termwind",
+                "opcodesio/log-viewer",
+                "ryangjchandler/blade-capture-directive",
+                "shuvroroy/filament-spatie-laravel-health",
+                "spatie/laravel-health"
+            ]
         }
     },
     "config": {
