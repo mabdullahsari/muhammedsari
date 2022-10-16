@@ -182,6 +182,11 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        /**
+         * Core Service Providers...
+         */
+        Domain\Core\CoreServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
