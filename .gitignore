@@ -4,9 +4,11 @@
 /public/storage
 /storage/*.key
 /vendor
+.deptrac.cache
 .env
 .env.backup
 .phpunit.result.cache
+deptrac.png
 Homestead.json
 Homestead.yaml
 auth.json

@@ -1,0 +1,45 @@
+parameters:
+  paths:
+    - ./app
+    - ./src
+  layers:
+    - name: Console
+      collectors:
+        - type: className
+          regex: App\\Console\\.*
+    - name: Filament
+      collectors:
+        - type: className
+          regex: App\\Filament\\.*
+    - name: Foundation
+      collectors:
+        - type: className
+          regex: App\\Foundation\\.*
+    - name: Web
+      collectors:
+        - type: className
+          regex: App\\Web\\.*
+    - name: Domain
+      collectors:
+        - type: className
+          regex: Domain\\.*
+    - name: Laravel
+      collectors:
+        - type: className
+          regex: (Laravel|Illuminate)\\.*
+  ruleset:
+    Console:
+      - Domain
+      - Laravel
+    Domain:
+      - Laravel
+    Foundation:
+      - Laravel
+    Filament:
+      - Domain
+      - Foundation
+      - Laravel
+    Web:
+      - Domain
+      - Foundation
+      - Laravel

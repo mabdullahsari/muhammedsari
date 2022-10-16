@@ -17,6 +17,7 @@
         "nunomaduro/collision": "^6.3.1",
         "nunomaduro/larastan": "^2.2.4",
         "phpunit/phpunit": "^9.5.25",
+        "qossmic/deptrac-shim": "^0.23.0",
         "spatie/laravel-ignition": "^1.5.2"
     },
     "autoload": {
@@ -33,6 +34,7 @@
         }
     },
     "scripts": {
+        "deptrac": "@php ./vendor/bin/deptrac",
         "format": "@php ./vendor/bin/pint",
         "larastan": "@php ./vendor/bin/phpstan analyse --memory-limit=2G",
         "post-autoload-dump": [
@@ -44,6 +46,7 @@
         ],
         "test": "@php artisan test",
         "verify": [
+            "@deptrac",
             "@larastan",
             "@test"
         ]
