@@ -190,6 +190,7 @@ return [
         /*
          * Application Service Providers...
          */
+        App\Console\ConsoleServiceProvider::class,
         App\Filament\FilamentServiceProvider::class,
         App\Web\WebServiceProvider::class,
 
