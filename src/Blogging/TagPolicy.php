@@ -2,16 +2,16 @@
 
 namespace Domain\Blogging;
 
-use Domain\Identity\User;
+use Illuminate\Contracts\Auth\Authenticatable;
 
 final class TagPolicy
 {
-    public function delete(User $user, Tag $model): bool
+    public function delete(Authenticatable $user, Tag $model): bool
     {
         return $model->posts()->doesntExist();
     }
 
-    public function deleteAny(User $user): bool
+    public function deleteAny(Authenticatable $user): bool
     {
         return false;
     }
