@@ -13,6 +13,6 @@ final class BloggingServiceProvider extends AggregateServiceProvider
 
     public function boot(): void
     {
-        Relation::morphMap(['post' => Post::class]);
+        Relation::enforceMorphMap(['post' => Post::class]);
     }
 }

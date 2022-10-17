@@ -13,6 +13,6 @@ final class IdentityServiceProvider extends AggregateServiceProvider
 
     public function boot(): void
     {
-        Relation::morphMap(['user' => User::class]);
+        Relation::enforceMorphMap(['user' => User::class]);
     }
 }
