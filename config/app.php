@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://muhammedsari.test'),
+    'url' => env('APP_URL', 'https://muhammedsari.me'),
 
     'asset_url' => env('ASSET_URL'),
 
@@ -182,10 +182,16 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-        /**
-         * Core Service Providers...
+        /*
+         * Package Service Providers...
          */
-        Domain\Core\CoreServiceProvider::class,
+        Carbon\Laravel\ServiceProvider::class,
+
+        /**
+         * Domain Service Providers...
+         */
+        Domain\Blogging\BloggingServiceProvider::class,
+        Domain\Identity\IdentityServiceProvider::class,
 
         /*
          * Application Service Providers...
