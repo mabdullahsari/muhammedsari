@@ -8,6 +8,8 @@ final class CoreServiceProvider extends AggregateServiceProvider
 {
     protected $providers = [
         \Carbon\Laravel\ServiceProvider::class,
+
+        \Domain\Blogging\BloggingServiceProvider::class,
         \Domain\Identity\IdentityServiceProvider::class,
     ];
 }

@@ -16,5 +16,6 @@ final class FilamentServiceProvider extends AggregateServiceProvider
         \Filament\Tables\TablesServiceProvider::class,
         \Livewire\LivewireServiceProvider::class,
         \RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider::class,
+        \Spatie\FilamentMarkdownEditor\MarkdownEditorServiceProvider::class,
     ];
 }

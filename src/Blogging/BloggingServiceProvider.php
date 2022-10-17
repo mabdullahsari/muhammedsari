@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Identity;
+namespace Domain\Blogging;
 
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\AggregateServiceProvider;
 
-final class IdentityServiceProvider extends AggregateServiceProvider
+final class BloggingServiceProvider extends AggregateServiceProvider
 {
     protected $providers = [
         AuthServiceProvider::class,
@@ -13,6 +13,6 @@ final class IdentityServiceProvider extends AggregateServiceProvider
 
     public function boot(): void
     {
-        Relation::morphMap(['user' => User::class]);
+        Relation::morphMap(['post' => Post::class]);
     }
 }
