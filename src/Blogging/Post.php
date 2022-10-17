@@ -2,8 +2,10 @@
 
 namespace Domain\Blogging;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Carbon;
 
 /**
@@ -13,6 +15,7 @@ use Illuminate\Support\Carbon;
  * @property string               $slug
  * @property PostState            $state
  * @property string|null          $summary
+ * @property Collection<int, Tag> $tags
  * @property string               $title
  */
 final class Post extends Model
@@ -36,5 +39,10 @@ final class Post extends Model
     public function author(): BelongsTo
     {
         return $this->belongsTo(Author::class, 'user_id');
+    }
+
+    public function tags(): BelongsToMany
+    {
+        return $this->belongsToMany(Tag::class);
     }
 }

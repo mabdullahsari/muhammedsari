@@ -7,6 +7,7 @@ use App\Filament\Resources\PostResource\Pages\EditPost;
 use App\Filament\Resources\PostResource\Pages\ListPosts;
 use Domain\Blogging\Post;
 use Domain\Blogging\PostState;
+use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -43,6 +44,9 @@ final class PostResource extends Resource
                 TextInput::make('summary')
                     ->columnSpan(2)
                     ->nullable(),
+                CheckboxList::make('tags')
+                    ->required()
+                    ->relationship('tags', 'name'),
         ]);
     }
 
