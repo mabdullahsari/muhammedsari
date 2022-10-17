@@ -11,7 +11,10 @@
         "guzzlehttp/guzzle": "^7.5",
         "laravel/framework": "^9.35.1",
         "laravel/tinker": "^2.7.2",
-        "spatie/filament-markdown-editor": "^1.0"
+        "shuvroroy/filament-spatie-laravel-health": "^1.5",
+        "spatie/filament-markdown-editor": "^1.0",
+        "spatie/laravel-health": "^1.15",
+        "spatie/security-advisories-health-check": "^1.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.20",
@@ -68,10 +71,8 @@
                 "intervention/image",
                 "laravel/tinker",
                 "livewire/livewire",
-                "laravel/telescope",
                 "nesbot/carbon",
                 "nunomaduro/termwind",
-                "opcodesio/log-viewer",
                 "ryangjchandler/blade-capture-directive",
                 "shuvroroy/filament-spatie-laravel-health",
                 "spatie/filament-markdown-editor",

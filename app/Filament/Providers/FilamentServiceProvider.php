@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Filament;
+namespace App\Filament\Providers;
 
 use Illuminate\Support\AggregateServiceProvider;
 
@@ -16,6 +16,7 @@ final class FilamentServiceProvider extends AggregateServiceProvider
         \Filament\Tables\TablesServiceProvider::class,
         \Livewire\LivewireServiceProvider::class,
         \RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider::class,
+        \ShuvroRoy\FilamentSpatieLaravelHealth\FilamentSpatieLaravelHealthServiceProvider::class,
         \Spatie\FilamentMarkdownEditor\MarkdownEditorServiceProvider::class,
     ];
 }

@@ -196,9 +196,10 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Console\ConsoleServiceProvider::class,
-        App\Filament\FilamentServiceProvider::class,
-        App\Web\WebServiceProvider::class,
+        App\Console\Providers\ConsoleServiceProvider::class,
+        App\Foundation\Providers\FoundationServiceProvider::class,
+        App\Filament\Providers\FilamentServiceProvider::class,
+        App\Web\Providers\WebServiceProvider::class,
 
     ],
 

@@ -9,7 +9,8 @@ final class Kernel extends ConsoleKernel
 {
     protected function schedule(Schedule $schedule)
     {
-        //
+        $schedule->command('health:check')->everyThirtyMinutes();
+        $schedule->command('health:schedule-check-heartbeat')->everyMinute();
     }
 
     protected function commands()
