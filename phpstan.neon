@@ -2,7 +2,6 @@ includes:
     - ./vendor/nunomaduro/larastan/extension.neon
 
 parameters:
-
     paths:
         - app/
         - database/factories
@@ -12,3 +11,7 @@ parameters:
         - tests/
 
     level: max
+
+    checkMissingIterableValueType: false
+
+    checkGenericClassInNonGenericObjectType: false

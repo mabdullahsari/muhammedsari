@@ -7,7 +7,6 @@ use Illuminate\Support\AggregateServiceProvider;
 
 final class WebServiceProvider extends AggregateServiceProvider
 {
-    /** @var array<int, class-string> */
     protected $providers = [
         RouteServiceProvider::class,
     ];

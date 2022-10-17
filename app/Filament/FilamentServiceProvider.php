@@ -6,7 +6,6 @@ use Illuminate\Support\AggregateServiceProvider;
 
 final class FilamentServiceProvider extends AggregateServiceProvider
 {
-    /** @var array<int, class-string> */
     protected $providers = [
         \BladeUI\Icons\BladeIconsServiceProvider::class,
         \BladeUI\Heroicons\BladeHeroiconsServiceProvider::class,
