@@ -4,8 +4,7 @@ includes:
 parameters:
     paths:
         - app/
-        - database/factories
-        - database/seeders
+        - database/
         - routes/
         - src/
         - tests/
