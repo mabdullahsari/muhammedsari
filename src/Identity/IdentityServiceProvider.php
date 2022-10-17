@@ -3,10 +3,14 @@
 namespace Domain\Identity;
 
 use Illuminate\Database\Eloquent\Relations\Relation;
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\AggregateServiceProvider;
 
-final class IdentityServiceProvider extends ServiceProvider
+final class IdentityServiceProvider extends AggregateServiceProvider
 {
+    protected $providers = [
+        \Domain\Identity\AuthServiceProvider::class,
+    ];
+
     public function boot(): void
     {
         Relation::morphMap(['user' => User::class]);

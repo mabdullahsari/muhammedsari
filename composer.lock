@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c9bac41bade0fdc4cbb79c2daa861eef",
+    "content-hash": "2338be877dad5d1160bdf1da308c3bcd",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -459,6 +459,60 @@
                 "source": "https://github.com/dflydev/dflydev-dot-access-data/tree/v3.0.1"
             },
             "time": "2021-08-13T13:06:58+00:00"
+        },
+        {
+            "name": "dive-be/eloquent-utils",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dive-be/eloquent-utils.git",
+                "reference": "32bd46ef9f7274128617d625cbac5dfafcc54159"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dive-be/eloquent-utils/zipball/32bd46ef9f7274128617d625cbac5dfafcc54159",
+                "reference": "32bd46ef9f7274128617d625cbac5dfafcc54159",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^9.0",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dive\\Eloquent\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Muhammed Sari",
+                    "email": "muhammed@dive.be",
+                    "homepage": "https://dive.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Declarative Eloquent utilities for an improved DX",
+            "homepage": "https://github.com/dive-be/eloquent-utils",
+            "keywords": [
+                "declarative",
+                "dive",
+                "eloquent",
+                "support",
+                "utilities"
+            ],
+            "support": {
+                "issues": "https://github.com/dive-be/eloquent-utils/issues",
+                "source": "https://github.com/dive-be/eloquent-utils/tree/0.1.1"
+            },
+            "time": "2022-05-24T08:36:05+00:00"
         },
         {
             "name": "doctrine/inflector",

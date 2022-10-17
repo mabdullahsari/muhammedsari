@@ -5,6 +5,7 @@
     "license": "MIT",
     "require": {
         "php": "~8.1",
+        "dive-be/eloquent-utils": "^0.1.1",
         "filament/filament": "^2.0",
         "guzzlehttp/guzzle": "^7.5",
         "laravel/framework": "^9.35.1",
