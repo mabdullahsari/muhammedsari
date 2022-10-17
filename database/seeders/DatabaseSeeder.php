@@ -10,7 +10,7 @@ final class DatabaseSeeder extends Seeder
     public function run(ConnectionInterface $db): void
     {
         $db->table('users')->insert([
-            /* 'id' => 1, */
+            'id' => 1,
             'email' => 'hello@muhammedsari.me',
             'first_name' => 'Muhammed',
             'last_name' => 'Sari',

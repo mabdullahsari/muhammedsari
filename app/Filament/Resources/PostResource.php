@@ -7,7 +7,6 @@ use App\Filament\Resources\PostResource\Pages\EditPost;
 use App\Filament\Resources\PostResource\Pages\ListPosts;
 use Domain\Blogging\Post;
 use Domain\Blogging\PostState;
-use Filament\Forms\Components\Card;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -31,7 +30,6 @@ final class PostResource extends Resource
     public static function form(Form $form): Form
     {
         return $form->schema([
-            Card::make([
                 TextInput::make('title')
                     ->reactive()
                     ->required()
@@ -42,17 +40,18 @@ final class PostResource extends Resource
                 MarkdownEditor::make('content')
                     ->columnSpan(2)
                     ->nullable(),
-                MarkdownEditor::make('summary')
+                TextInput::make('summary')
                     ->columnSpan(2)
                     ->nullable(),
-            ])->columns(),
         ]);
     }
 
     public static function table(Table $table): Table
     {
         return $table->columns([
+            TextColumn::make('author.full_name'),
             TextColumn::make('title')->searchable(),
+            TextColumn::make('slug'),
             BadgeColumn::make('state')->colors([
                 'primary' => static fn ($state) => PostState::Draft->equals($state),
                 'success' => static fn ($state) => PostState::Published->equals($state),
