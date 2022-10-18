@@ -21,8 +21,8 @@ use Illuminate\Support\Carbon;
 final class Post extends Model
 {
     protected $attributes = [
+        'author_id' => Author::MUHAMMED,
         'state' => PostState::Draft,
-        'user_id' => Author::MUHAMMED,
     ];
 
     protected $casts = ['state' => PostState::class];
@@ -38,7 +38,7 @@ final class Post extends Model
 
     public function author(): BelongsTo
     {
-        return $this->belongsTo(Author::class, 'user_id');
+        return $this->belongsTo(Author::class);
     }
 
     public function tags(): BelongsToMany
