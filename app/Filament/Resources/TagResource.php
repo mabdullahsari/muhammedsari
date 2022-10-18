@@ -27,12 +27,11 @@ final class TagResource extends Resource
     {
         return $form->schema([
             TextInput::make('name')
-                ->disabled(static fn ($record) => $record->exists)
                 ->reactive()
                 ->required()
-                ->afterStateUpdated(static fn ($set, $state) => $set('slug', Str::slug($state))),
+                ->afterStateUpdated(fn ($record, $set, $state) => ! $record && $set('slug', Str::slug($state))),
             TextInput::make('slug')
-                ->disabled(static fn ($record) => $record->exists)
+                ->disabled(static fn ($record) => $record instanceof Tag)
                 ->required()
                 ->unique(ignorable: static fn ($record) => $record),
         ]);

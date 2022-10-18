@@ -10,16 +10,23 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 /**
  * @property string                $name
  * @property Collection<int, Post> $posts
- * @property string                $slug
+ * @property Slug                  $slug
  */
 final class Tag extends Model
 {
     use DisablesTimestamps;
+
+    protected $casts = ['slug' => Slug::class];
 
     protected $fillable = ['name', 'slug'];
 
     public function posts(): BelongsToMany
     {
         return $this->belongsToMany(Post::class);
+    }
+
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
     }
 }

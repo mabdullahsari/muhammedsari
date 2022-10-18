@@ -7,6 +7,7 @@
         "php": "~8.1",
         "dive-be/eloquent-utils": "^0.1.1",
         "dive-be/php-enum-utils": "^1.1",
+        "dive-be/php-utils": "^0.1.0",
         "filament/filament": "^2.16.34",
         "guzzlehttp/guzzle": "^7.5",
         "laravel/framework": "^9.36.1",
@@ -24,7 +25,8 @@
         "nunomaduro/larastan": "^2.2.5",
         "phpunit/phpunit": "^9.5.25",
         "qossmic/deptrac-shim": "^0.23.0",
-        "spatie/laravel-ignition": "^1.5.2"
+        "spatie/laravel-ignition": "^1.5.2",
+        "spatie/laravel-ray": "^1.31"
     },
     "autoload": {
         "psr-4": {

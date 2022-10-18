@@ -12,7 +12,7 @@ use Illuminate\Support\Carbon;
  * @property Author               $author
  * @property string|null          $body
  * @property Carbon|null          $published_at
- * @property string               $slug
+ * @property Slug                 $slug
  * @property PostState            $state
  * @property string|null          $summary
  * @property Collection<int, Tag> $tags
@@ -25,7 +25,10 @@ final class Post extends Model
         'state' => PostState::Draft,
     ];
 
-    protected $casts = ['state' => PostState::class];
+    protected $casts = [
+        'slug' => Slug::class,
+        'state' => PostState::class,
+    ];
 
     protected $dates = ['published_at'];
 
@@ -44,5 +47,10 @@ final class Post extends Model
     public function tags(): BelongsToMany
     {
         return $this->belongsToMany(Tag::class);
+    }
+
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
     }
 }

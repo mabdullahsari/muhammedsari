@@ -7,6 +7,7 @@ use App\Filament\Resources\PostResource\Pages\EditPost;
 use App\Filament\Resources\PostResource\Pages\ListPosts;
 use Domain\Blogging\Post;
 use Domain\Blogging\PostState;
+use Domain\Blogging\Slug;
 use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
@@ -34,8 +35,10 @@ final class PostResource extends Resource
                 TextInput::make('title')
                     ->reactive()
                     ->required()
-                    ->afterStateUpdated(static fn ($set, $state) => $set('slug', Str::slug($state))),
+                    ->afterStateUpdated(fn ($record, $set, $state) => ! $record && $set('slug', Str::slug($state))),
                 TextInput::make('slug')
+                    ->disabled(static fn ($record) => $record instanceof Post)
+                    ->rule(Slug::rule())
                     ->required()
                     ->unique(ignorable: static fn ($record) => $record),
                 MarkdownEditor::make('body')
