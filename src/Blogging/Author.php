@@ -17,7 +17,7 @@ final class Author extends Model
     use Unguarded;
     use Unwritable;
 
-    final public const MUHAMMED = 1;
+    const MUHAMMED = 1;
 
     protected $table = 'users';
 
