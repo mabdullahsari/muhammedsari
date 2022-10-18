@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dcd1fdc81d4fd29ac0c670ff25a2981a",
+    "content-hash": "ee31f1221789dfc4693b47e13bf0458f",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -2071,16 +2071,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v9.36.1",
+            "version": "v9.36.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "584f7bbde1bc24c69c84afe44f16b4ec294f92ef"
+                "reference": "0bcd350eec1974c9f912f129368587ef7e43722b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/584f7bbde1bc24c69c84afe44f16b4ec294f92ef",
-                "reference": "584f7bbde1bc24c69c84afe44f16b4ec294f92ef",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/0bcd350eec1974c9f912f129368587ef7e43722b",
+                "reference": "0bcd350eec1974c9f912f129368587ef7e43722b",
                 "shasum": ""
             },
             "require": {
@@ -2253,7 +2253,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-10-18T16:04:13+00:00"
+            "time": "2022-10-18T18:46:20+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -4571,6 +4571,98 @@
                 }
             ],
             "time": "2022-07-05T09:31:00+00:00"
+        },
+        {
+            "name": "spatie/laravel-feed",
+            "version": "4.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-feed.git",
+                "reference": "8cf053e3ac7ed10363ded43c0c61c54d756b43cf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-feed/zipball/8cf053e3ac7ed10363ded43c0c61c54d756b43cf",
+                "reference": "8cf053e3ac7ed10363ded43c0c61c54d756b43cf",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^8.0|^9.0",
+                "illuminate/http": "^8.0|^9.0",
+                "illuminate/support": "^8.0|^9.0",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.9"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.23|^7.0",
+                "phpunit/phpunit": "^9.5",
+                "spatie/phpunit-snapshot-assertions": "^4.2.7",
+                "spatie/test-time": "^1.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Feed\\FeedServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Feed\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jolita Grazyte",
+                    "email": "jolita@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Patrick Organ",
+                    "homepage": "https://github.com/patinthehat",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Generate rss feeds",
+            "homepage": "https://github.com/spatie/laravel-feed",
+            "keywords": [
+                "laravel",
+                "laravel-feed",
+                "rss",
+                "spatie"
+            ],
+            "support": {
+                "source": "https://github.com/spatie/laravel-feed/tree/4.1.4"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-05-27T08:51:00+00:00"
         },
         {
             "name": "spatie/laravel-health",

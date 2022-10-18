@@ -10,10 +10,11 @@
         "dive-be/php-utils": "^0.1.0",
         "filament/filament": "^2.16.34",
         "guzzlehttp/guzzle": "^7.5",
-        "laravel/framework": "^9.36.1",
+        "laravel/framework": "^9.36.2",
         "laravel/tinker": "^2.7.2",
         "shuvroroy/filament-spatie-laravel-health": "^1.6",
         "spatie/filament-markdown-editor": "^1.0",
+        "spatie/laravel-feed": "^4.1.4",
         "spatie/laravel-health": "^1.15.1",
         "spatie/security-advisories-health-check": "^1.0"
     },
@@ -78,6 +79,7 @@
                 "ryangjchandler/blade-capture-directive",
                 "shuvroroy/filament-spatie-laravel-health",
                 "spatie/filament-markdown-editor",
+                "spatie/laravel-feed",
                 "spatie/laravel-health"
             ]
         }
