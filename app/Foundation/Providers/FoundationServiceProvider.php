@@ -8,7 +8,6 @@ final class FoundationServiceProvider extends AggregateServiceProvider
 {
     protected $providers = [
         \Illuminate\Foundation\Support\Providers\RouteServiceProvider::class,
-        \Spatie\Health\HealthServiceProvider::class,
 
         HealthServiceProvider::class,
     ];

@@ -2,7 +2,7 @@
 
 namespace App\Foundation\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\AggregateServiceProvider;
 use Spatie\Health\Checks\Checks\CacheCheck;
 use Spatie\Health\Checks\Checks\DatabaseCheck;
 use Spatie\Health\Checks\Checks\DebugModeCheck;
@@ -12,9 +12,20 @@ use Spatie\Health\Checks\Checks\UsedDiskSpaceCheck;
 use Spatie\Health\Health;
 use Spatie\SecurityAdvisoriesHealthCheck\SecurityAdvisoriesCheck;
 
-final class HealthServiceProvider extends ServiceProvider
+final class HealthServiceProvider extends AggregateServiceProvider
 {
-    public function boot(Health $health): void
+    protected $providers = [
+        \Spatie\Health\HealthServiceProvider::class,
+    ];
+
+    public function register(): void
+    {
+        parent::register();
+
+        $this->app->afterResolving('health', $this->registerChecks(...));
+    }
+
+    private function registerChecks(Health $health): void
     {
         $health->checks([
             CacheCheck::new(),

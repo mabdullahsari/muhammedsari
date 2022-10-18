@@ -9,11 +9,11 @@
         "dive-be/php-enum-utils": "^1.1",
         "filament/filament": "^2.16.34",
         "guzzlehttp/guzzle": "^7.5",
-        "laravel/framework": "^9.35.1",
+        "laravel/framework": "^9.36.1",
         "laravel/tinker": "^2.7.2",
-        "shuvroroy/filament-spatie-laravel-health": "^1.5",
+        "shuvroroy/filament-spatie-laravel-health": "^1.6",
         "spatie/filament-markdown-editor": "^1.0",
-        "spatie/laravel-health": "^1.15",
+        "spatie/laravel-health": "^1.15.1",
         "spatie/security-advisories-health-check": "^1.0"
     },
     "require-dev": {
@@ -21,7 +21,7 @@
         "laravel/pint": "^1.2",
         "mockery/mockery": "^1.5.1",
         "nunomaduro/collision": "^6.3.1",
-        "nunomaduro/larastan": "^2.2.4",
+        "nunomaduro/larastan": "^2.2.5",
         "phpunit/phpunit": "^9.5.25",
         "qossmic/deptrac-shim": "^0.23.0",
         "spatie/laravel-ignition": "^1.5.2"
