@@ -12,7 +12,7 @@ final class Slug implements Castable, JsonSerializable, Stringable
 {
     use Makeable;
 
-    const PATTERN = '[a-z0-9]+(?:-[a-z0-9]+)*';
+    public const PATTERN = '[a-z0-9]+(?:-[a-z0-9]+)*';
 
     private readonly string $value;
 

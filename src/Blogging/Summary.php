@@ -12,7 +12,7 @@ final class Summary implements Castable, JsonSerializable, Stringable
 {
     use Makeable;
 
-    const MAX_LENGTH = 100;
+    public const MAX_LENGTH = 100;
 
     private readonly string $value;
 
