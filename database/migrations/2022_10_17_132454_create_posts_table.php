@@ -12,8 +12,8 @@ return new class () extends Migration {
             $table->foreignId('author_id')->constrained('users')->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('slug')->unique();
             $table->string('title');
+            $table->text('body')->nullable();
             $table->string('summary')->nullable();
-            $table->text('content')->nullable();
             $table->string('state', 9)->default('draft'); // draft, published
             $table->timestamp('published_at')->nullable();
             $table->timestamps();

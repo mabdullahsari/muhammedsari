@@ -38,7 +38,7 @@ final class PostResource extends Resource
                 TextInput::make('slug')
                     ->required()
                     ->unique(ignorable: static fn ($record) => $record),
-                MarkdownEditor::make('content')
+                MarkdownEditor::make('body')
                     ->columnSpan(2)
                     ->nullable(),
                 TextInput::make('summary')

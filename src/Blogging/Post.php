@@ -10,7 +10,7 @@ use Illuminate\Support\Carbon;
 
 /**
  * @property Author               $author
- * @property string|null          $content
+ * @property string|null          $body
  * @property Carbon|null          $published_at
  * @property string               $slug
  * @property PostState            $state
@@ -29,7 +29,7 @@ final class Post extends Model
 
     protected $dates = ['published_at'];
 
-    protected $fillable = ['content', 'slug', 'summary', 'title'];
+    protected $fillable = ['body', 'slug', 'summary', 'title'];
 
     public function isDraft(): bool
     {
