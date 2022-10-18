@@ -14,7 +14,7 @@ use Illuminate\Support\Carbon;
  * @property Carbon|null          $published_at
  * @property Slug                 $slug
  * @property PostState            $state
- * @property string|null          $summary
+ * @property Summary|null         $summary
  * @property Collection<int, Tag> $tags
  * @property string               $title
  */
@@ -28,6 +28,7 @@ final class Post extends Model
     protected $casts = [
         'slug' => Slug::class,
         'state' => PostState::class,
+        'summary' => Summary::class,
     ];
 
     protected $dates = ['published_at'];
