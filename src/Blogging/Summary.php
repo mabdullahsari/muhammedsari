@@ -35,6 +35,11 @@ final class Summary implements Castable, JsonSerializable, Stringable
         return SummaryRule::make();
     }
 
+    public function isEmpty(): bool
+    {
+        return empty($this->value);
+    }
+
     public function jsonSerialize(): string
     {
         return $this->value;
