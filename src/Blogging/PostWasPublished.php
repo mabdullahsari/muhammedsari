@@ -14,6 +14,6 @@ final class PostWasPublished
 
     public function id(): int
     {
-        return $this->model->getKey();
+        return $this->model->id;
     }
 }

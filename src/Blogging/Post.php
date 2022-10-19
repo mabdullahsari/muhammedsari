@@ -11,6 +11,7 @@ use Illuminate\Support\Carbon;
 /**
  * @property Author               $author
  * @property string               $body
+ * @property int                  $id
  * @property Carbon|null          $published_at
  * @property Slug                 $slug
  * @property PostState            $state
