@@ -33,6 +33,10 @@ final class Post extends Model
 
     protected $dates = ['published_at'];
 
+    protected $dispatchesEvents = [
+        'deleted' => PostWasDeleted::class,
+    ];
+
     protected $fillable = ['body', 'slug', 'summary', 'title'];
 
     public function isDraft(): bool
