@@ -10,7 +10,7 @@ use Illuminate\Support\Carbon;
 
 /**
  * @property Author               $author
- * @property string               $body
+ * @property Body                 $body
  * @property int                  $id
  * @property Carbon|null          $published_at
  * @property Slug                 $slug
@@ -27,6 +27,7 @@ final class Post extends Model
     ];
 
     protected $casts = [
+        'body' => Body::class,
         'slug' => Slug::class,
         'state' => PostState::class,
         'summary' => Summary::class,
@@ -52,7 +53,7 @@ final class Post extends Model
             throw CouldNotPublish::becauseAlreadyPublished();
         } elseif ($this->summary->isEmpty()) {
             throw CouldNotPublish::becauseSummaryIsMissing();
-        } elseif (empty($this->body)) {
+        } elseif ($this->body->isEmpty()) {
             throw CouldNotPublish::becauseBodyIsMissing();
         }
 
