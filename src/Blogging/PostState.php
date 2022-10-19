@@ -8,6 +8,7 @@ use Dive\Enum\Comparable;
 
 /**
  * @method bool isDraft()
+ * @method bool isPublished()
  */
 enum PostState: string
 {

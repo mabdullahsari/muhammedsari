@@ -10,11 +10,11 @@ use Illuminate\Support\Carbon;
 
 /**
  * @property Author               $author
- * @property string|null          $body
+ * @property string               $body
  * @property Carbon|null          $published_at
  * @property Slug                 $slug
  * @property PostState            $state
- * @property Summary|null         $summary
+ * @property Summary              $summary
  * @property Collection<int, Tag> $tags
  * @property string               $title
  */
@@ -38,6 +38,25 @@ final class Post extends Model
     public function isDraft(): bool
     {
         return $this->state->isDraft();
+    }
+
+    /** @throws CouldNotPublish */
+    public function publish(): void
+    {
+        if ($this->state->isPublished()) {
+            throw CouldNotPublish::becauseAlreadyPublished();
+        } elseif ($this->summary->isEmpty()) {
+            throw CouldNotPublish::becauseSummaryIsMissing();
+        } elseif (empty($this->body)) {
+            throw CouldNotPublish::becauseBodyIsMissing();
+        }
+
+        $this->forceFill([
+            'published_at' => $this->freshTimestampString(),
+            'state' => PostState::Published,
+        ])->save();
+
+        self::$dispatcher->dispatch(PostWasPublished::make($this));
     }
 
     public function author(): BelongsTo
