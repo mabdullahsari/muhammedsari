@@ -1,6 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Identity;
+namespace Domain\Identity\Access;
+
+use Domain\Identity\User;
 
 final class UserPolicy
 {

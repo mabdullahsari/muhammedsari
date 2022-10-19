@@ -1,24 +1,18 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Blogging;
+namespace Domain\Blogging\ValueObjects;
 
 use Dive\Utils\Makeable;
-use Illuminate\Contracts\Database\Eloquent\Castable;
 use JsonSerializable;
 use Stringable;
 
-final class Body implements Castable, JsonSerializable, Stringable
+final class Body implements JsonSerializable, Stringable
 {
     use Makeable;
 
     private function __construct(
         private readonly string $value,
     ) {}
-
-    public static function castUsing(array $arguments): string
-    {
-        return AsBody::class;
-    }
 
     public function isEmpty(): bool
     {

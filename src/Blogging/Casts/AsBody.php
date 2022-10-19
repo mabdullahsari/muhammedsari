@@ -1,15 +1,16 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Blogging;
+namespace Domain\Blogging\Casts;
 
+use Domain\Blogging\ValueObjects\Body;
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 use InvalidArgumentException;
 
-final class AsSummary implements CastsAttributes
+final class AsBody implements CastsAttributes
 {
-    public function get($model, string $key, $value, array $attributes): Summary
+    public function get($model, string $key, $value, array $attributes): Body
     {
-        if ($value instanceof Summary) {
+        if ($value instanceof Body) {
             return $value;
         }
 
@@ -18,10 +19,10 @@ final class AsSummary implements CastsAttributes
         }
 
         if (is_string($value)) {
-            return Summary::make($value);
+            return Body::make($value);
         }
 
-        throw new InvalidArgumentException("The given value cannot be cast to an instance of Summary.");
+        throw new InvalidArgumentException("The given value cannot be cast to an instance of Body.");
     }
 
     public function set($model, string $key, $value, array $attributes): string

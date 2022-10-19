@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Blogging;
+namespace Domain\Blogging\ValueObjects;
 
 use Dive\Enum\Arrayable;
 use Dive\Enum\Assertable;

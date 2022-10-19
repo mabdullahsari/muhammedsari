@@ -1,14 +1,13 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Blogging;
+namespace Domain\Blogging\ValueObjects;
 
 use Dive\Utils\Makeable;
-use Illuminate\Contracts\Database\Eloquent\Castable;
 use JsonSerializable;
 use Stringable;
 use UnexpectedValueException;
 
-final class Summary implements Castable, JsonSerializable, Stringable
+final class Summary implements JsonSerializable, Stringable
 {
     use Makeable;
 
@@ -23,16 +22,6 @@ final class Summary implements Castable, JsonSerializable, Stringable
         }
 
         $this->value = $value;
-    }
-
-    public static function castUsing(array $arguments): string
-    {
-        return AsSummary::class;
-    }
-
-    public static function rule(): SummaryRule
-    {
-        return SummaryRule::make();
     }
 
     public function isEmpty(): bool

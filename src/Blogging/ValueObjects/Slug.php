@@ -1,38 +1,28 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Blogging;
+namespace Domain\Blogging\ValueObjects;
 
 use Dive\Utils\Makeable;
-use Illuminate\Contracts\Database\Eloquent\Castable;
 use JsonSerializable;
 use Stringable;
 use UnexpectedValueException;
 
-final class Slug implements Castable, JsonSerializable, Stringable
+final class Slug implements JsonSerializable, Stringable
 {
     use Makeable;
 
     public const PATTERN = '[a-z0-9]+(?:-[a-z0-9]+)*';
+    public const REGEX = '/^' . self::PATTERN . '$/';
 
     private readonly string $value;
 
     private function __construct(string $value)
     {
-        if (! preg_match('/^' . self::PATTERN . '$/', $value)) {
+        if (! preg_match(self::REGEX, $value)) {
             throw new UnexpectedValueException("'{$value}' is not a valid slug.");
         }
 
         $this->value = $value;
-    }
-
-    public static function castUsing(array $arguments): string
-    {
-        return AsSlug::class;
-    }
-
-    public static function rule(): SlugRule
-    {
-        return SlugRule::make();
     }
 
     public function jsonSerialize(): string

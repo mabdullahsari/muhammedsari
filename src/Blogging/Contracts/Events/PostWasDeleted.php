@@ -1,6 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Blogging;
+namespace Domain\Blogging\Contracts\Events;
+
+use Domain\Blogging\Post;
 
 final class PostWasDeleted
 {

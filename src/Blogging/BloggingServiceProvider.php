@@ -2,6 +2,8 @@
 
 namespace Domain\Blogging;
 
+use Domain\Blogging\Access\PostPolicy;
+use Domain\Blogging\Access\TagPolicy;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;

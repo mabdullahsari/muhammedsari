@@ -6,9 +6,9 @@ use App\Filament\Resources\PostResource\Pages\CreatePost;
 use App\Filament\Resources\PostResource\Pages\EditPost;
 use App\Filament\Resources\PostResource\Pages\ListPosts;
 use Domain\Blogging\Post;
-use Domain\Blogging\PostState;
-use Domain\Blogging\Slug;
-use Domain\Blogging\Summary;
+use Domain\Blogging\ValueObjects\PostState;
+use Domain\Blogging\ValueObjects\Slug;
+use Domain\Blogging\ValueObjects\Summary;
 use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
@@ -39,7 +39,7 @@ final class PostResource extends Resource
                     ->afterStateUpdated(fn ($record, $set, $state) => ! $record && $set('slug', Str::slug($state))),
                 TextInput::make('slug')
                     ->disabled(static fn ($record) => $record instanceof Post)
-                    ->rule(Slug::rule())
+                    ->regex(Slug::REGEX)
                     ->required()
                     ->unique(ignorable: static fn ($record) => $record),
                 MarkdownEditor::make('body')
@@ -48,7 +48,6 @@ final class PostResource extends Resource
                 TextInput::make('summary')
                     ->columnSpan(2)
                     ->nullable()
-                    ->rule(Summary::rule())
                     ->maxLength(Summary::MAX_LENGTH),
                 CheckboxList::make('tags')
                     ->required()

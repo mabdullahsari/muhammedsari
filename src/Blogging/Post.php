@@ -2,6 +2,16 @@
 
 namespace Domain\Blogging;
 
+use Domain\Blogging\Casts\AsBody;
+use Domain\Blogging\Casts\AsSlug;
+use Domain\Blogging\Casts\AsSummary;
+use Domain\Blogging\Contracts\Events\PostWasDeleted;
+use Domain\Blogging\Contracts\Events\PostWasPublished;
+use Domain\Blogging\Exceptions\CouldNotPublish;
+use Domain\Blogging\ValueObjects\Body;
+use Domain\Blogging\ValueObjects\PostState;
+use Domain\Blogging\ValueObjects\Slug;
+use Domain\Blogging\ValueObjects\Summary;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -27,10 +37,10 @@ final class Post extends Model
     ];
 
     protected $casts = [
-        'body' => Body::class,
-        'slug' => Slug::class,
+        'body' => AsBody::class,
+        'slug' => AsSlug::class,
         'state' => PostState::class,
-        'summary' => Summary::class,
+        'summary' => AsSummary::class,
     ];
 
     protected $dates = ['published_at'];
