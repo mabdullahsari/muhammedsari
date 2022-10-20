@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Resources\PostResource\Actions\PublishPostAction;
 use App\Filament\Resources\PostResource\Pages\CreatePost;
 use App\Filament\Resources\PostResource\Pages\EditPost;
 use App\Filament\Resources\PostResource\Pages\ListPosts;
@@ -14,6 +15,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
+use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Columns\BadgeColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
@@ -65,6 +67,9 @@ final class PostResource extends Resource
                 'primary' => static fn ($state) => PostState::Draft->equals($state),
                 'success' => static fn ($state) => PostState::Published->equals($state),
             ]),
+        ])->prependActions([
+            DeleteAction::make(),
+            PublishPostAction::make(),
         ])->filters([
             SelectFilter::make('state')->options(array_flip(PostState::toArray())),
         ]);

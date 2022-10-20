@@ -6,7 +6,6 @@ use Domain\Blogging\Casts\AsBody;
 use Domain\Blogging\Casts\AsSlug;
 use Domain\Blogging\Casts\AsSummary;
 use Domain\Blogging\Contracts\Events\PostWasDeleted;
-use Domain\Blogging\Contracts\Events\PostWasPublished;
 use Domain\Blogging\Exceptions\CouldNotPublish;
 use Domain\Blogging\ValueObjects\Body;
 use Domain\Blogging\ValueObjects\PostState;
@@ -76,8 +75,6 @@ final class Post extends Model
             'published_at' => $this->freshTimestampString(),
             'state' => PostState::Published,
         ])->save();
-
-        self::$dispatcher->dispatch(PostWasPublished::make($this));
     }
 
     public function author(): BelongsTo

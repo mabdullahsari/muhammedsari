@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\PostResource\Pages;
 
 use App\Filament\Resources\PostResource;
-use Filament\Pages\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
 final class EditPost extends EditRecord
@@ -12,6 +11,6 @@ final class EditPost extends EditRecord
 
     protected function getActions(): array
     {
-        return [DeleteAction::make()];
+        return [];
     }
 }

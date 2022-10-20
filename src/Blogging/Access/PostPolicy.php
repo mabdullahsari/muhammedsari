@@ -11,4 +11,14 @@ final class PostPolicy
     {
         return $model->isDraft();
     }
+
+    public function deleteAny(Authenticatable $user): bool
+    {
+        return false;
+    }
+
+    public function publish(Authenticatable $user, Post $model): bool
+    {
+        return $model->isDraft();
+    }
 }
