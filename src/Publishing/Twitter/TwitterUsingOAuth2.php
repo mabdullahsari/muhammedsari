@@ -8,15 +8,13 @@ final class TwitterUsingOAuth2 implements Twitter
 {
     private readonly TwitterOAuth $connection;
 
-    public function __construct(array $config)
-    {
-        $this->connection = new TwitterOAuth(
-            $config['consumer_key'],
-            $config['consumer_secret'],
-            $config['access_token'],
-            $config['access_token_secret'],
-        );
-
+    public function __construct(
+        string $consumerKey,
+        string $consumerSecret,
+        string $accessToken,
+        string $accessTokenSecret,
+    ) {
+        $this->connection = new TwitterOAuth($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
         $this->connection->setApiVersion('2');
     }
 

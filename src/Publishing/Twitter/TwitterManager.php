@@ -25,13 +25,18 @@ final class TwitterManager extends Manager implements Twitter
 
     protected function createOauth2Driver(): TwitterUsingOAuth2
     {
-        $config = $this->config->get('services.twitter');
+        $config = $this->config->get('services.twitter.oauth2');
 
         if (! is_array($config)) {
             throw new InvalidArgumentException('Invalid Twitter configuration.');
         }
 
-        return new TwitterUsingOAuth2($config);
+        return new TwitterUsingOAuth2(
+            $config['consumer_key'],
+            $config['consumer_secret'],
+            $config['access_token'],
+            $config['access_token_secret'],
+        );
     }
 
     public function send(Tweet $tweet): void
