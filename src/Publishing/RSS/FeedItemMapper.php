@@ -16,15 +16,15 @@ final class FeedItemMapper
         private readonly UrlGenerator $url,
     ) {}
 
-    public function __invoke(stdClass $raw): FeedItem
+    public function __invoke(stdClass $post): FeedItem
     {
         return FeedItem::create()
-            ->authorEmail($raw->email)
-            ->authorName("{$raw->first_name} {$raw->last_name}")
-            ->id($url = $this->url->generate($raw->slug))
+            ->authorEmail($post->email)
+            ->authorName("{$post->first_name} {$post->last_name}")
+            ->id($url = $this->url->generate($post->slug))
             ->link($url)
-            ->summary($raw->summary)
-            ->title($raw->title)
-            ->updated(Carbon::createFromFormat('Y-m-d H:i:s', $raw->updated_at)); // @phpstan-ignore-line
+            ->summary($post->summary)
+            ->title($post->title)
+            ->updated(Carbon::createFromFormat('Y-m-d H:i:s', $post->updated_at)); // @phpstan-ignore-line
     }
 }
