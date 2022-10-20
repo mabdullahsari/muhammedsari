@@ -8,8 +8,6 @@ final class TwitterUsingOAuth2 implements Twitter
 {
     private readonly TwitterOAuth $connection;
 
-    private const PATH = 'tweets';
-
     public function __construct(array $config)
     {
         $this->connection = new TwitterOAuth(
@@ -24,6 +22,6 @@ final class TwitterUsingOAuth2 implements Twitter
 
     public function send(Tweet $tweet): void
     {
-        $this->connection->post(self::PATH, $tweet->toArray(), true);
+        $this->connection->post('tweets', $tweet->toArray(), true);
     }
 }

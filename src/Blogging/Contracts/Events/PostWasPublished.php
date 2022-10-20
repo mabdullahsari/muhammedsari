@@ -13,8 +13,13 @@ final class PostWasPublished
         private readonly Post $model,
     ) {}
 
-    public function id(): int
+    public function slug(): string
     {
-        return $this->model->id;
+        return (string) $this->model->slug;
+    }
+
+    public function title(): string
+    {
+        return $this->model->title;
     }
 }
