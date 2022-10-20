@@ -10,6 +10,7 @@ final class DatabaseFeedRepository implements FeedRepository
 {
     public function __construct(
         private readonly ConnectionInterface $db,
+        private readonly FeedItemMapper $mapper,
     ) {}
 
     /** @return Collection<int, FeedItem> */
@@ -19,8 +20,7 @@ final class DatabaseFeedRepository implements FeedRepository
             ->table('posts')
             ->where('state', 'published')
             ->join('users', 'users.id', '=', 'author_id')
-            ->select(['email', 'first_name', 'last_name', 'slug', 'summary', 'title', 'updated_at'])
-            ->get()
-            ->transform(FeedItemMapper::make()); // @phpstan-ignore-line
+            ->get(['email', 'first_name', 'last_name', 'slug', 'summary', 'title', 'updated_at'])
+            ->transform($this->mapper); // @phpstan-ignore-line
     }
 }

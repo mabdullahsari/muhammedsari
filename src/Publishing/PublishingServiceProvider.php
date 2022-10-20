@@ -16,10 +16,16 @@ final class PublishingServiceProvider extends ServiceProvider
     public array $singletons = [
         FeedRepository::class => DatabaseFeedRepository::class,
         Twitter::class => TwitterManager::class,
+        UrlGenerator::class => PostUrlGenerator::class,
     ];
 
     public function boot(Dispatcher $events): void
     {
         $events->listen(PostWasPublished::class, SendTweetAboutNewPost::class);
+    }
+
+    public function register(): void
+    {
+        $this->app->when(PostUrlGenerator::class)->needs('$hostAndScheme')->giveConfig('app.url');
     }
 }
