@@ -10,6 +10,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
+use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Columns\TextColumn;
 use Illuminate\Support\Str;
 
@@ -45,6 +46,8 @@ final class TagResource extends Resource
             TextColumn::make('posts_count')
                 ->label('# Posts')
                 ->counts('posts')
+        ])->prependActions([
+            DeleteAction::make(),
         ]);
     }
 
