@@ -56,10 +56,15 @@ final class Post extends Model
         return $this->state->isDraft();
     }
 
+    public function isPublished(): bool
+    {
+        return $this->state->isPublished();
+    }
+
     /** @throws CouldNotPublish */
     public function publish(): void
     {
-        if ($this->state->isPublished()) {
+        if ($this->isPublished()) {
             throw CouldNotPublish::becauseAlreadyPublished();
         } elseif ($this->summary->isEmpty()) {
             throw CouldNotPublish::becauseSummaryIsMissing();

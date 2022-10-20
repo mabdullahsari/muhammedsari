@@ -36,9 +36,9 @@ final class PostResource extends Resource
                 TextInput::make('title')
                     ->reactive()
                     ->required()
-                    ->afterStateUpdated(fn ($record, $set, $state) => ! $record && $set('slug', Str::slug($state))),
+                    ->afterStateUpdated(fn ($record, $set, $state) => $record?->isDraft() && $set('slug', Str::slug($state))),
                 TextInput::make('slug')
-                    ->disabled(static fn ($record) => $record instanceof Post)
+                    ->disabled(static fn ($record) => $record?->isPublished())
                     ->regex(Slug::REGEX)
                     ->required()
                     ->unique(ignorable: static fn ($record) => $record),
