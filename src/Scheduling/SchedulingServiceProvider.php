@@ -19,6 +19,7 @@ final class SchedulingServiceProvider extends ServiceProvider
 
     public function register(): void
     {
+        $this->app->when(NativeClock::class)->needs('$timezone')->giveConfig('app.timezone');
         $this->app->resolving(Gate::class, $this->registerPolicies(...));
     }
 
