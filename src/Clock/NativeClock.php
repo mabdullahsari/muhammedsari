@@ -3,6 +3,7 @@
 namespace Domain\Clock;
 
 use Carbon\CarbonImmutable;
+use Domain\Clock\Contracts\Clock;
 
 final class NativeClock implements Clock
 {

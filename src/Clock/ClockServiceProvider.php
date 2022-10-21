@@ -2,6 +2,7 @@
 
 namespace Domain\Clock;
 
+use Domain\Clock\Contracts\Clock;
 use Illuminate\Support\ServiceProvider;
 
 final class ClockServiceProvider extends ServiceProvider
