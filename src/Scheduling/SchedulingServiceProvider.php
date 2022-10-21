@@ -13,6 +13,8 @@ final class SchedulingServiceProvider extends ServiceProvider
 {
     public array $singletons = [
         Clock::class => NativeClock::class,
+        EntryRepository::class => DatabaseEntryRepository::class,
+        Scheduler::class => Scheduler::class,
     ];
 
     public function register(): void

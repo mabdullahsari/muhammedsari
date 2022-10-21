@@ -2,26 +2,26 @@
 
 namespace Domain\Scheduling\Clock;
 
-use DateTimeImmutable;
+use Carbon\CarbonImmutable;
 use InvalidArgumentException;
 
 final class FakeClock implements Clock
 {
-    private DateTimeImmutable $time;
+    private CarbonImmutable $time;
 
     public function __construct(string $datetime)
     {
         $this->travelTo($datetime);
     }
 
-    public function now(): DateTimeImmutable
+    public function now(): CarbonImmutable
     {
         return $this->time;
     }
 
     public function travelTo(string $datetime, string $format = 'Y-m-d H:i'): void
     {
-        $time = DateTimeImmutable::createFromFormat($format, $datetime);
+        $time = CarbonImmutable::createFromFormat($format, $datetime);
 
         if ($time === false) {
             throw new InvalidArgumentException("{$datetime}|{$format} is not a valid point in time.");

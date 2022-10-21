@@ -2,9 +2,9 @@
 
 namespace Domain\Scheduling\Clock;
 
-use DateTimeImmutable;
+use Carbon\CarbonImmutable;
 
 interface Clock
 {
-    public function now(): DateTimeImmutable;
+    public function now(): CarbonImmutable;
 }

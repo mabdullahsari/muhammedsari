@@ -14,3 +14,6 @@ parameters:
     checkMissingIterableValueType: false
 
     checkGenericClassInNonGenericObjectType: false
+
+    ignoreErrors:
+        - '#Domain\\Scheduling\\Entry#'

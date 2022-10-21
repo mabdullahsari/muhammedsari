@@ -2,13 +2,13 @@
 
 namespace Domain\Scheduling\Clock;
 
-use DateTimeImmutable;
+use Carbon\CarbonImmutable;
 use DateTimeZone;
 
 final class NativeClock implements Clock
 {
-    public function now(): DateTimeImmutable
+    public function now(): CarbonImmutable
     {
-        return new DateTimeImmutable(timezone: new DateTimeZone('UTC'));
+        return new CarbonImmutable('now', new DateTimeZone('UTC'));
     }
 }
