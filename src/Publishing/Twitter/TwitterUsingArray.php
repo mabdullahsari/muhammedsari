@@ -2,6 +2,9 @@
 
 namespace Domain\Publishing\Twitter;
 
+use Domain\Publishing\Twitter\Contracts\Tweet;
+use Domain\Publishing\Twitter\Contracts\Twitter;
+
 final class TwitterUsingArray implements Twitter
 {
     private array $outbox = [];

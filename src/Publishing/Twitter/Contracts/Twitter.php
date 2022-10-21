@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Publishing\Twitter;
+namespace Domain\Publishing\Twitter\Contracts;
 
 interface Twitter
 {

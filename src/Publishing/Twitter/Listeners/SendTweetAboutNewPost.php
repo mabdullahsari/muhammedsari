@@ -1,8 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Publishing\Twitter;
+namespace Domain\Publishing\Twitter\Listeners;
 
 use Domain\Blogging\Contracts\Events\PostWasPublished;
+use Domain\Publishing\Twitter\Contracts\Tweet;
+use Domain\Publishing\Twitter\Contracts\Twitter;
 use Domain\Publishing\UrlGenerator;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Str;

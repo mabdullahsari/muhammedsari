@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Publishing\Twitter;
+namespace Domain\Publishing\Twitter\Contracts;
 
 use Dive\Utils\Makeable;
 use Illuminate\Contracts\Support\Arrayable;
@@ -14,7 +14,7 @@ final class Tweet implements Arrayable
 
     private readonly string $message;
 
-    public function __construct(string $message)
+    private function __construct(string $message)
     {
         if (empty($message)) {
             throw new UnexpectedValueException('A tweet cannot be empty.');

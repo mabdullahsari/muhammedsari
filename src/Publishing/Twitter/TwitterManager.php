@@ -2,6 +2,8 @@
 
 namespace Domain\Publishing\Twitter;
 
+use Domain\Publishing\Twitter\Contracts\Tweet;
+use Domain\Publishing\Twitter\Contracts\Twitter;
 use Illuminate\Support\Manager;
 use InvalidArgumentException;
 

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-use Domain\Publishing\RSS\FeedRepository;
+use Domain\Publishing\RSS\Contracts\FeedRepository;
 
 return [
     'feeds' => [
