@@ -1,0 +1,10 @@
+<?php declare(strict_types=1);
+
+namespace Domain\Scheduling;
+
+use DateTimeImmutable;
+
+interface Clock
+{
+    public function now(): DateTimeImmutable;
+}

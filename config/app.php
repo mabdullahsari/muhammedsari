@@ -193,6 +193,7 @@ return [
         Domain\Blogging\BloggingServiceProvider::class,
         Domain\Identity\IdentityServiceProvider::class,
         Domain\Publishing\PublishingServiceProvider::class,
+        Domain\Scheduling\SchedulingServiceProvider::class,
 
         /*
          * Application Service Providers...
