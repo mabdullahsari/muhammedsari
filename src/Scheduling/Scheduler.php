@@ -3,7 +3,7 @@
 namespace Domain\Scheduling;
 
 use Domain\Blogging\Contracts\Commands\PublishPost;
-use Domain\Scheduling\Clock\Clock;
+use Domain\Clock\Clock;
 use Illuminate\Contracts\Bus\Dispatcher;
 
 final class Scheduler

@@ -191,6 +191,7 @@ return [
          * Domain Service Providers...
          */
         Domain\Blogging\BloggingServiceProvider::class,
+        Domain\Clock\ClockServiceProvider::class,
         Domain\Identity\IdentityServiceProvider::class,
         Domain\Publishing\PublishingServiceProvider::class,
         Domain\Scheduling\SchedulingServiceProvider::class,
