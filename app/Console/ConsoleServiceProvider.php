@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Console\Providers;
+namespace App\Console;
 
 use Illuminate\Support\AggregateServiceProvider;
 
