@@ -12,8 +12,6 @@ final class ListPosts extends ListRecords
 
     protected function getActions(): array
     {
-        return [
-            CreateAction::make(),
-        ];
+        return [CreateAction::make()];
     }
 }

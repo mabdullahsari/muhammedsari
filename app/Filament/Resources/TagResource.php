@@ -22,6 +22,8 @@ final class TagResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-tag';
 
+    protected static ?int $navigationSort = 2;
+
     protected static ?string $slug = 'tags';
 
     public static function form(Form $form): Form

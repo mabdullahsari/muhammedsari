@@ -16,6 +16,8 @@ final class UserResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-users';
 
+    protected static ?int $navigationSort = 4;
+
     protected static ?string $slug = 'users';
 
     public static function table(Table $table): Table
