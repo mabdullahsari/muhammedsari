@@ -2,11 +2,14 @@
 
 namespace Domain\Scheduling;
 
+use Domain\Blogging\Contracts\Events\PostWasDeleted;
 use Domain\Scheduling\Access\EntryPolicy;
 use Domain\Scheduling\Clock\Clock;
 use Domain\Scheduling\Clock\NativeClock;
+use Domain\Scheduling\Listeners\RemoveScheduledEntry;
 use Domain\Scheduling\Models\Entry;
 use Illuminate\Contracts\Auth\Access\Gate;
+use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Support\ServiceProvider;
 
 final class SchedulingServiceProvider extends ServiceProvider
@@ -16,6 +19,11 @@ final class SchedulingServiceProvider extends ServiceProvider
         EntryRepository::class => DatabaseEntryRepository::class,
         Scheduler::class => Scheduler::class,
     ];
+
+    public function boot(Dispatcher $events): void
+    {
+        $events->listen(PostWasDeleted::class, RemoveScheduledEntry::class);
+    }
 
     public function register(): void
     {
