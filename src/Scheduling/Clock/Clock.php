@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Scheduling;
+namespace Domain\Scheduling\Clock;
 
 use DateTimeImmutable;
 

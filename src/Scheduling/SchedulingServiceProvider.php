@@ -2,6 +2,8 @@
 
 namespace Domain\Scheduling;
 
+use Domain\Scheduling\Clock\Clock;
+use Domain\Scheduling\Clock\NativeClock;
 use Illuminate\Support\ServiceProvider;
 
 final class SchedulingServiceProvider extends ServiceProvider
