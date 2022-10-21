@@ -12,24 +12,13 @@ use Illuminate\Support\ServiceProvider;
 
 final class BloggingServiceProvider extends ServiceProvider
 {
-    private array $morphMap = [
-        'author' => Author::class,
-        'post' => Post::class,
-        'tag' => Tag::class,
-    ];
-
-    private array $policyMap = [
-        Post::class => PostPolicy::class,
-        Tag::class => TagPolicy::class,
-    ];
-
-    private array $subscriptionMap = [
-        PublishPost::class => PublishPostHandler::class,
-    ];
-
     public function boot(): void
     {
-        Relation::enforceMorphMap($this->morphMap);
+        Relation::enforceMorphMap([
+            'author' => Author::class,
+            'post' => Post::class,
+            'tag' => Tag::class,
+        ]);
     }
 
     public function register(): void
@@ -40,13 +29,14 @@ final class BloggingServiceProvider extends ServiceProvider
 
     private function registerSubscribers(Dispatcher $bus): void
     {
-        $bus->map($this->subscriptionMap);
+        $bus->map([
+            PublishPost::class => PublishPostHandler::class,
+        ]);
     }
 
     private function registerPolicies(Gate $access): void
     {
-        foreach ($this->policyMap as $model => $policy) {
-            $access->policy($model, $policy);
-        }
+        $access->policy(Post::class, PostPolicy::class);
+        $access->policy(Tag::class, TagPolicy::class);
     }
 }

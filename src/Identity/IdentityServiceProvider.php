@@ -9,10 +9,6 @@ use Illuminate\Support\ServiceProvider;
 
 final class IdentityServiceProvider extends ServiceProvider
 {
-    private array $policyMap = [
-        User::class => UserPolicy::class,
-    ];
-
     public function boot(): void
     {
         Relation::enforceMorphMap(['user' => User::class]);
@@ -25,8 +21,6 @@ final class IdentityServiceProvider extends ServiceProvider
 
     private function registerPolicies(Gate $access): void
     {
-        foreach ($this->policyMap as $model => $policy) {
-            $access->policy($model, $policy);
-        }
+        $access->policy(User::class, UserPolicy::class);
     }
 }
