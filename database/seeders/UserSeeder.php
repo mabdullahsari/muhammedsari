@@ -15,6 +15,8 @@ final class UserSeeder extends Seeder
             'first_name' => 'Muhammed',
             'last_name' => 'Sari',
             'password' => '$2y$10$TyAyNugEKR8Fh9dokkPhTusxPu1g7kCiw6A4PLlv6jeYBA15jHDLO',
+            'timezone' => 'Europe/Brussels',
+            'username' => 'mabdullahsari',
         ]);
     }
 }

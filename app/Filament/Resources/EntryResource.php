@@ -4,7 +4,9 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\EntryResource\Pages\CreateEntry;
 use App\Filament\Resources\EntryResource\Pages\ListEntries;
+use Domain\Identity\Models\User;
 use Domain\Scheduling\Models\Entry;
+use Filament\Facades\Filament;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
 use Filament\Resources\Form;
@@ -28,21 +30,30 @@ final class EntryResource extends Resource
 
     public static function form(Form $form): Form
     {
+        /** @var User $user */
+        $user = Filament::auth()->user();
+
         return $form->schema([
             Select::make('post_id')->relationship('post', 'title', static function (Builder $query) {
                 $query->where('state', 'draft')->whereDoesntHave('entry');
             })->required(),
             DateTimePicker::make('publish_at')
-                ->rule('after:tomorrow')
+                ->timezone($user->timezone)
+                ->rule('after:today')
                 ->required(),
         ]);
     }
 
     public static function table(Table $table): Table
     {
+        /** @var User $user */
+        $user = Filament::auth()->user();
+
         return $table->columns([
             TextColumn::make('post.title'),
-            TextColumn::make('publish_at')->dateTime()->label('Publish At'),
+            TextColumn::make('publish_at')
+                ->dateTime(timezone: $user->timezone)
+                ->label('Publish At'),
         ])->prependActions([
             DeleteAction::make()->modalHeading('Delete scheduled entry')
         ]);

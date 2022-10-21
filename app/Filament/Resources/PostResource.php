@@ -37,31 +37,33 @@ final class PostResource extends Resource
     public static function form(Form $form): Form
     {
         return $form->schema([
-                TextInput::make('title')
-                    ->reactive()
-                    ->required()
-                    ->afterStateUpdated(fn ($record, $set, $state) => ! $record?->isPublished() && $set('slug', Str::slug($state))),
-                TextInput::make('slug')
-                    ->disabled(static fn ($record) => $record?->isPublished())
-                    ->regex(Slug::REGEX)
-                    ->required()
-                    ->unique(ignorable: static fn ($record) => $record),
-                MarkdownEditor::make('body')
-                    ->columnSpan(2)
-                    ->nullable(),
-                TextInput::make('summary')
-                    ->columnSpan(2)
-                    ->nullable()
-                    ->maxLength(Summary::MAX_LENGTH),
-                CheckboxList::make('tags')
-                    ->required()
-                    ->relationship('tags', 'name'),
+            TextInput::make('title')
+                ->reactive()
+                ->required()
+                ->afterStateUpdated(fn ($record, $set, $state) => ! $record?->isPublished() && $set('slug', Str::slug($state))),
+            TextInput::make('slug')
+                ->disabled(static fn ($record) => $record?->isPublished())
+                ->regex(Slug::REGEX)
+                ->required()
+                ->unique(ignorable: static fn ($record) => $record),
+            MarkdownEditor::make('body')
+                ->columnSpan(2)
+                ->nullable(),
+            TextInput::make('summary')
+                ->columnSpan(2)
+                ->nullable()
+                ->maxLength(Summary::MAX_LENGTH),
+            CheckboxList::make('tags')
+                ->required()
+                ->relationship('tags', 'name'),
         ]);
     }
 
     public static function table(Table $table): Table
     {
         return $table->columns([
+
+
             TextColumn::make('author.full_name'),
             TextColumn::make('title')->searchable(),
             TextColumn::make('slug'),
