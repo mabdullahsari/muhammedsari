@@ -1,10 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Blogging;
+namespace Domain\Blogging\Handlers;
 
 use Domain\Blogging\Contracts\Commands\PublishPost;
 use Domain\Blogging\Contracts\Events\PostWasPublished;
 use Domain\Blogging\Exceptions\CouldNotFindPost;
+use Domain\Blogging\Models\Post;
 use Illuminate\Contracts\Events\Dispatcher;
 
 final class PublishPostHandler

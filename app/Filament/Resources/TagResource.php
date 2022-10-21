@@ -5,7 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\TagResource\Pages\CreateTag;
 use App\Filament\Resources\TagResource\Pages\EditTag;
 use App\Filament\Resources\TagResource\Pages\ListTags;
-use Domain\Blogging\Tag;
+use Domain\Blogging\Models\Tag;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;

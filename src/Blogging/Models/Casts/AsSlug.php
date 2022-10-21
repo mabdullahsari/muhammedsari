@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Blogging\Casts;
+namespace Domain\Blogging\Models\Casts;
 
 use Domain\Blogging\ValueObjects\Slug;
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;

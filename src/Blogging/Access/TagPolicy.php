@@ -2,7 +2,7 @@
 
 namespace Domain\Blogging\Access;
 
-use Domain\Blogging\Tag;
+use Domain\Blogging\Models\Tag;
 use Illuminate\Contracts\Auth\Authenticatable;
 
 final class TagPolicy

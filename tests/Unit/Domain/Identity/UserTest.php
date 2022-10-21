@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\Domain\Identity;
 
-use Domain\Identity\User;
+use Domain\Identity\Models\User;
 use PHPUnit\Framework\TestCase;
 
 final class UserTest extends TestCase

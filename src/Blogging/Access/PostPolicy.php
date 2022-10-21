@@ -2,7 +2,7 @@
 
 namespace Domain\Blogging\Access;
 
-use Domain\Blogging\Post;
+use Domain\Blogging\Models\Post;
 use Illuminate\Contracts\Auth\Authenticatable;
 
 final class PostPolicy

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Blogging;
+namespace Domain\Blogging\Models;
 
 use Dive\Eloquent\Unguarded;
 use Dive\Eloquent\Unwritable;

@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Blogging;
+namespace Domain\Blogging\Models;
 
-use Domain\Blogging\Casts\AsBody;
-use Domain\Blogging\Casts\AsSlug;
-use Domain\Blogging\Casts\AsSummary;
 use Domain\Blogging\Contracts\Events\PostWasDeleted;
 use Domain\Blogging\Exceptions\CouldNotPublish;
+use Domain\Blogging\Models\Casts\AsBody;
+use Domain\Blogging\Models\Casts\AsSlug;
+use Domain\Blogging\Models\Casts\AsSummary;
 use Domain\Blogging\ValueObjects\Body;
 use Domain\Blogging\ValueObjects\PostState;
 use Domain\Blogging\ValueObjects\Slug;

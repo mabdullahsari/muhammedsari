@@ -3,7 +3,7 @@
 namespace Domain\Blogging\Contracts\Events;
 
 use Dive\Utils\Makeable;
-use Domain\Blogging\Post;
+use Domain\Blogging\Models\Post;
 
 final class PostWasPublished
 {

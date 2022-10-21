@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\Domain\Blogging;
 
-use Domain\Blogging\Author;
+use Domain\Blogging\Models\Author;
 use PHPUnit\Framework\TestCase;
 
 final class AuthorTest extends TestCase

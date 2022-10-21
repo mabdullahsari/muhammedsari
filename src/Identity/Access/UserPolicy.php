@@ -2,7 +2,7 @@
 
 namespace Domain\Identity\Access;
 
-use Domain\Identity\User;
+use Domain\Identity\Models\User;
 
 final class UserPolicy
 {

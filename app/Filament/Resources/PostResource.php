@@ -6,7 +6,7 @@ use App\Filament\Resources\PostResource\Actions\PublishPostAction;
 use App\Filament\Resources\PostResource\Pages\CreatePost;
 use App\Filament\Resources\PostResource\Pages\EditPost;
 use App\Filament\Resources\PostResource\Pages\ListPosts;
-use Domain\Blogging\Post;
+use Domain\Blogging\Models\Post;
 use Domain\Blogging\ValueObjects\PostState;
 use Domain\Blogging\ValueObjects\Slug;
 use Domain\Blogging\ValueObjects\Summary;

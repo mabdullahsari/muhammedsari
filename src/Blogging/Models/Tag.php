@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Blogging;
+namespace Domain\Blogging\Models;
 
 use Dive\Eloquent\DisablesTimestamps;
-use Domain\Blogging\Casts\AsSlug;
+use Domain\Blogging\Models\Casts\AsSlug;
 use Domain\Blogging\ValueObjects\Slug;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;

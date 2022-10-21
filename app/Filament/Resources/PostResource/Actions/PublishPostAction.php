@@ -4,7 +4,7 @@ namespace App\Filament\Resources\PostResource\Actions;
 
 use Domain\Blogging\Contracts\Commands\PublishPost;
 use Domain\Blogging\Exceptions\CouldNotPublish;
-use Domain\Blogging\Post;
+use Domain\Blogging\Models\Post;
 use Filament\Tables\Actions\Action;
 use Illuminate\Support\Facades\Bus;
 
