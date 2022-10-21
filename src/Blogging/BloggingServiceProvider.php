@@ -12,10 +12,6 @@ use Illuminate\Support\ServiceProvider;
 
 final class BloggingServiceProvider extends ServiceProvider
 {
-    private array $commandMap = [
-        PublishPost::class => PublishPostHandler::class,
-    ];
-
     private array $morphMap = [
         'author' => Author::class,
         'post' => Post::class,
@@ -27,6 +23,10 @@ final class BloggingServiceProvider extends ServiceProvider
         Tag::class => TagPolicy::class,
     ];
 
+    private array $subscriptionMap = [
+        PublishPost::class => PublishPostHandler::class,
+    ];
+
     public function boot(): void
     {
         Relation::enforceMorphMap($this->morphMap);
@@ -34,13 +34,13 @@ final class BloggingServiceProvider extends ServiceProvider
 
     public function register(): void
     {
-        $this->app->resolving(Dispatcher::class, $this->registerCommandHandlers(...));
+        $this->app->resolving(Dispatcher::class, $this->registerSubscribers(...));
         $this->app->resolving(Gate::class, $this->registerPolicies(...));
     }
 
-    private function registerCommandHandlers(Dispatcher $commandBus): void
+    private function registerSubscribers(Dispatcher $bus): void
     {
-        $commandBus->map($this->commandMap);
+        $bus->map($this->subscriptionMap);
     }
 
     private function registerPolicies(Gate $access): void
