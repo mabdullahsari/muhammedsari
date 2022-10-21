@@ -9,6 +9,7 @@ final class WebServiceProvider extends AggregateServiceProvider
 {
     protected $providers = [
         \Spatie\Feed\FeedServiceProvider::class,
+        \Spatie\LaravelMarkdown\MarkdownServiceProvider::class,
 
         RouteServiceProvider::class,
     ];
