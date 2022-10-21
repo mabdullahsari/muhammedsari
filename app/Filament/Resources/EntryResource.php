@@ -33,7 +33,7 @@ final class EntryResource extends Resource
                 $query->where('state', 'draft')->whereDoesntHave('entry');
             })->required(),
             DateTimePicker::make('publish_at')
-                ->rule('after:today')
+                ->rule('after:tomorrow')
                 ->required(),
         ]);
     }
