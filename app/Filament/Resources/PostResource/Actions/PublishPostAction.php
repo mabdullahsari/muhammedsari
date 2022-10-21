@@ -21,7 +21,7 @@ final class PublishPostAction extends Action
 
         $this->action(function (Post $record) {
             try {
-                Bus::dispatch(PublishPost::make($record->id));
+                Bus::dispatchSync(PublishPost::make($record->id));
 
                 $this->success();
             } catch (CouldNotPublish $ex) {

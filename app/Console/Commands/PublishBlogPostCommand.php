@@ -22,7 +22,7 @@ final class PublishBlogPostCommand extends Command
         );
 
         try {
-            Bus::dispatch(PublishPost::make($id));
+            Bus::dispatchSync(PublishPost::make($id));
 
             $this->line("🚀 Blogpost{{$id}} published!");
 

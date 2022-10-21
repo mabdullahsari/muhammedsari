@@ -3,8 +3,9 @@
 namespace Domain\Blogging\Contracts\Commands;
 
 use Dive\Utils\Makeable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
-final class PublishPost
+final class PublishPost implements ShouldQueue
 {
     use Makeable;
 
