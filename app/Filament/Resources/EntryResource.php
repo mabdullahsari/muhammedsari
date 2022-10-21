@@ -29,9 +29,9 @@ final class EntryResource extends Resource
     public static function form(Form $form): Form
     {
         return $form->schema([
-            Select::make('post_id')
-                ->relationship('post', 'title', static fn (Builder $query) => $query->where('state', 'draft'))
-                ->required(),
+            Select::make('post_id')->relationship('post', 'title', static function (Builder $query) {
+                $query->where('state', 'draft')->whereDoesntHave('entry');
+            })->required(),
             DateTimePicker::make('publish_at')
                 ->rule('after:today')
                 ->required(),
@@ -42,9 +42,9 @@ final class EntryResource extends Resource
     {
         return $table->columns([
             TextColumn::make('post.title'),
-            TextColumn::make('publish_at')->dateTime('d/m \o\m H\ui')->label('Publish At'),
+            TextColumn::make('publish_at')->dateTime()->label('Publish At'),
         ])->prependActions([
-            DeleteAction::make(),
+            DeleteAction::make()->modalHeading('Delete scheduled entry')
         ]);
     }
 
