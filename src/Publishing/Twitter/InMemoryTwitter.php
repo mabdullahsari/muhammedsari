@@ -4,7 +4,7 @@ namespace Domain\Publishing\Twitter;
 
 use Domain\Publishing\Twitter\Contracts\Twitter;
 
-final class TwitterUsingArray implements Twitter
+final class InMemoryTwitter implements Twitter
 {
     private array $outbox = [];
 
@@ -16,7 +16,5 @@ final class TwitterUsingArray implements Twitter
     public function send(Tweet $tweet): void
     {
         $this->outbox[] = $tweet;
-
-        ray($tweet);
     }
 }

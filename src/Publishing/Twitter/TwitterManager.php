@@ -19,12 +19,12 @@ final class TwitterManager extends Manager implements Twitter
         return $driver;
     }
 
-    protected function createArrayDriver(): TwitterUsingArray
+    protected function createArrayDriver(): InMemoryTwitter
     {
-        return new TwitterUsingArray();
+        return new InMemoryTwitter();
     }
 
-    protected function createOauth2Driver(): TwitterUsingOAuth2
+    protected function createOauth2Driver(): TwitterOAuth2
     {
         $config = $this->config->get('services.twitter.oauth2');
 
@@ -32,7 +32,7 @@ final class TwitterManager extends Manager implements Twitter
             throw new InvalidArgumentException('Invalid Twitter configuration.');
         }
 
-        return new TwitterUsingOAuth2(
+        return new TwitterOAuth2(
             $config['consumer_key'],
             $config['consumer_secret'],
             $config['access_token'],

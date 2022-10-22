@@ -5,7 +5,7 @@ namespace Domain\Publishing\Twitter;
 use Abraham\TwitterOAuth\TwitterOAuth;
 use Domain\Publishing\Twitter\Contracts\Twitter;
 
-final class TwitterUsingOAuth2 implements Twitter
+final class TwitterOAuth2 implements Twitter
 {
     private readonly TwitterOAuth $connection;
 
