@@ -12,13 +12,14 @@ final class DatabaseEntryRepository implements EntryRepository
 {
     public function __construct(
         private readonly ConnectionInterface $db,
+        private readonly EntryMapper $mapper,
     ) {}
 
     public function findById(int $id): Entry
     {
         $record = $this->newQuery()->findOr($id, static fn () => throw CouldNotFindEntry::withPostId($id));
 
-        return Entry::fromDatabase($record);
+        return $this->mapper->map($record);
     }
 
     public function findByPost(int $id): Entry
@@ -29,7 +30,7 @@ final class DatabaseEntryRepository implements EntryRepository
             throw CouldNotFindEntry::withPostId($id);
         }
 
-        return Entry::fromDatabase($record);
+        return $this->mapper->map($record);
     }
 
     public function getBefore(CarbonImmutable $datetime): Collection
@@ -38,7 +39,7 @@ final class DatabaseEntryRepository implements EntryRepository
             ->newQuery()
             ->where('publish_at', '<', $datetime)
             ->get()
-            ->transform(Entry::fromDatabase(...));
+            ->transform($this->mapper);
     }
 
     public function remove(Entry $entry): void
