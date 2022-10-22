@@ -17,16 +17,15 @@ final class CrontabDrivenScheduler implements Scheduler
 
     public function tick(): void
     {
-        $this
-            ->entries
+        $this->entries
             ->getBefore($this->clock->now())
             ->each($this->process(...));
     }
 
     private function process(Entry $entry): void
     {
-        $this->entries->remove($entry);
-
-        $this->commands->dispatch(PublishPost::make($entry->postId));
+        $this->commands->dispatch(
+            PublishPost::make($entry->postId)
+        );
     }
 }

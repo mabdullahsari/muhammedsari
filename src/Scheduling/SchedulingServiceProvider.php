@@ -3,6 +3,7 @@
 namespace Domain\Scheduling;
 
 use Domain\Contracts\Blogging\Events\PostWasDeleted;
+use Domain\Contracts\Blogging\Events\PostWasPublished;
 use Domain\Contracts\Scheduling\Scheduler;
 use Domain\Scheduling\Access\EntryPolicy;
 use Domain\Scheduling\Listeners\RemoveScheduledEntry;
@@ -21,6 +22,7 @@ final class SchedulingServiceProvider extends ServiceProvider
     public function boot(Dispatcher $events): void
     {
         $events->listen(PostWasDeleted::class, RemoveScheduledEntry::class);
+        $events->listen(PostWasPublished::class, RemoveScheduledEntry::class);
     }
 
     public function register(): void

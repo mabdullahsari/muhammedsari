@@ -3,7 +3,6 @@
 namespace Domain\Blogging\Models;
 
 use Domain\Blogging\ValueObjects\PostState;
-use Domain\Contracts\Blogging\Events\PostWasDeleted;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -33,10 +32,6 @@ final class Post extends Model
     ];
 
     protected $dates = ['published_at'];
-
-    protected $dispatchesEvents = [
-        'deleted' => PostWasDeleted::class,
-    ];
 
     protected $fillable = ['body', 'slug', 'summary', 'title'];
 

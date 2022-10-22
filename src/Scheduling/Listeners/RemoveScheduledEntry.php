@@ -3,6 +3,7 @@
 namespace Domain\Scheduling\Listeners;
 
 use Domain\Contracts\Blogging\Events\PostWasDeleted;
+use Domain\Contracts\Blogging\Events\PostWasPublished;
 use Domain\Scheduling\EntryRepository;
 use Domain\Scheduling\Exceptions\CouldNotFindEntry;
 
@@ -12,10 +13,10 @@ final class RemoveScheduledEntry
         private readonly EntryRepository $entries,
     ) {}
 
-    public function handle(PostWasDeleted $event): void
+    public function handle(PostWasDeleted|PostWasPublished $event): void
     {
         try {
-            $entry = $this->entries->findByPost($event->id());
+            $entry = $this->entries->findByPost($event->id);
         } catch (CouldNotFindEntry) {
             return;
         }
