@@ -57,9 +57,7 @@ final class Post
         $post->state = PostState::from($record->state);
         $post->summary = Summary::make($record->summary);
         $post->title = Title::make($record->title);
-        $post->publishedAt = $record->published_at // @phpstan-ignore-line
-            ? CarbonImmutable::createFromFormat('Y-m-d H:i:s', $record->published_at)
-            : null;
+        $post->publishedAt = transform($record->published_at, CarbonImmutable::parse(...)); // @phpstan-ignore-line
 
         return $post;
     }
