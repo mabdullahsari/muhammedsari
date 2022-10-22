@@ -2,7 +2,7 @@
 
 namespace Domain\Common\Model;
 
-trait Events
+trait HasEvents
 {
     private array $events = [];
 

@@ -3,11 +3,9 @@
 namespace Domain\Blogging\ValueObjects;
 
 use Dive\Utils\Makeable;
-use JsonSerializable;
-use Stringable;
 use UnexpectedValueException;
 
-final class Slug implements JsonSerializable, Stringable
+final class Slug
 {
     use Makeable;
 
@@ -23,11 +21,6 @@ final class Slug implements JsonSerializable, Stringable
         }
 
         $this->value = $value;
-    }
-
-    public function jsonSerialize(): string
-    {
-        return $this->value;
     }
 
     public function __toString(): string

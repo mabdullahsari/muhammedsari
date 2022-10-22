@@ -3,10 +3,8 @@
 namespace Domain\Blogging\ValueObjects;
 
 use Dive\Utils\Makeable;
-use JsonSerializable;
-use Stringable;
 
-final class Body implements JsonSerializable, Stringable
+final class Body
 {
     use Makeable;
 
@@ -17,11 +15,6 @@ final class Body implements JsonSerializable, Stringable
     public function isEmpty(): bool
     {
         return empty($this->value);
-    }
-
-    public function jsonSerialize(): string
-    {
-        return $this->value;
     }
 
     public function __toString(): string

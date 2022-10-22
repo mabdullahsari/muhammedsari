@@ -5,26 +5,19 @@ namespace Domain\Blogging\ValueObjects;
 use Dive\Utils\Makeable;
 use UnexpectedValueException;
 
-final class Summary
+final class Title
 {
     use Makeable;
-
-    public const MAX_LENGTH = 100;
 
     private readonly string $value;
 
     private function __construct(string $value)
     {
-        if (mb_strlen($value) > self::MAX_LENGTH) {
-            throw new UnexpectedValueException("'{$value}' is too long.");
+        if (empty($value)) {
+            throw new UnexpectedValueException('Title cannot be empty.');
         }
 
         $this->value = $value;
-    }
-
-    public function isEmpty(): bool
-    {
-        return empty($this->value);
     }
 
     public function __toString(): string

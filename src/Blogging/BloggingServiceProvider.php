@@ -16,6 +16,8 @@ use Illuminate\Support\ServiceProvider;
 
 final class BloggingServiceProvider extends ServiceProvider
 {
+    public array $singletons = [PostRepository::class => DatabasePostRepository::class];
+
     public function boot(): void
     {
         Relation::enforceMorphMap([
@@ -27,13 +29,13 @@ final class BloggingServiceProvider extends ServiceProvider
 
     public function register(): void
     {
-        $this->app->resolving(Dispatcher::class, $this->registerSubscribers(...));
+        $this->app->resolving(Dispatcher::class, $this->registerHandlers(...));
         $this->app->resolving(Gate::class, $this->registerPolicies(...));
     }
 
-    private function registerSubscribers(Dispatcher $bus): void
+    private function registerHandlers(Dispatcher $commands): void
     {
-        $bus->map([
+        $commands->map([
             PublishPost::class => PublishPostHandler::class,
         ]);
     }

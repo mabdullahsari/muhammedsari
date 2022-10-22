@@ -3,23 +3,22 @@
 namespace Domain\Blogging\Contracts\Events;
 
 use Dive\Utils\Makeable;
-use Domain\Blogging\Models\Post;
 
 final class PostWasPublished
 {
     use Makeable;
 
     private function __construct(
-        private readonly Post $model,
+        public readonly int $id,
     ) {}
 
     public function slug(): string
     {
-        return (string) $this->model->slug;
+        return 'wip';
     }
 
     public function title(): string
     {
-        return $this->model->title;
+        return 'wip';
     }
 }

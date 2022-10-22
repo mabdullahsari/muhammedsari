@@ -3,27 +3,27 @@
 namespace Domain\Blogging\Handlers;
 
 use Domain\Blogging\Contracts\Commands\PublishPost;
-use Domain\Blogging\Contracts\Events\PostWasPublished;
-use Domain\Blogging\Exceptions\CouldNotFindPost;
-use Domain\Blogging\Models\Post;
+use Domain\Blogging\PostRepository;
+use Domain\Clock\Contracts\Clock;
 use Illuminate\Contracts\Events\Dispatcher;
 
 final class PublishPostHandler
 {
     public function __construct(
+        private readonly Clock $clock,
         private readonly Dispatcher $events,
-        private readonly Post $model,
+        private readonly PostRepository $posts,
     ) {}
 
     public function handle(PublishPost $command): void
     {
-        /** @var Post $post */
-        $post = $this->model
-            ->newQuery()
-            ->findOr($command->id, fn () => CouldNotFindPost::withId($command->id));
+        $post = $this->posts->find($command->id);
 
-        $post->publish();
+        $post->publish($this->clock);
 
-        $this->events->dispatch(PostWasPublished::make($post));
+        $this->posts->save($post);
+
+        [$event] = $post->flushEvents();
+        $this->events->dispatch($event);
     }
 }

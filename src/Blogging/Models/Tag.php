@@ -3,8 +3,6 @@
 namespace Domain\Blogging\Models;
 
 use Dive\Eloquent\DisablesTimestamps;
-use Domain\Blogging\Models\Casts\AsSlug;
-use Domain\Blogging\ValueObjects\Slug;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -12,13 +10,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 /**
  * @property string                $name
  * @property Collection<int, Post> $posts
- * @property Slug                  $slug
+ * @property string                $slug
  */
 final class Tag extends Model
 {
     use DisablesTimestamps;
-
-    protected $casts = ['slug' => AsSlug::class];
 
     protected $fillable = ['name', 'slug'];
 
