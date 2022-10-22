@@ -14,7 +14,7 @@ final class UserSeeder extends Seeder
             'email' => 'hi@muhammedsari.me',
             'first_name' => 'Muhammed',
             'last_name' => 'Sari',
-            'password' => '$2y$10$TyAyNugEKR8Fh9dokkPhTusxPu1g7kCiw6A4PLlv6jeYBA15jHDLO',
+            'password' => '$2y$10$sh2vvZLfwoT60pnup/8zceQLo/93o2IzNdtrXJ.WUKPsoX2TSmPXm',
             'timezone' => 'Europe/Brussels',
             'username' => 'mabdullahsari',
         ]);
