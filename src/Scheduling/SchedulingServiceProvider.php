@@ -13,7 +13,7 @@ use Illuminate\Support\ServiceProvider;
 final class SchedulingServiceProvider extends ServiceProvider
 {
     public array $singletons = [
-        EntryRepository::class => DatabaseEntryRepository::class,
+        EntryRepository::class => SQLiteEntryRepository::class,
         Scheduler::class => Scheduler::class,
     ];
 

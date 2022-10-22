@@ -186,6 +186,7 @@ return [
          * Package Service Providers...
          */
         Carbon\Laravel\ServiceProvider::class,
+        Database\DatabaseServiceProvider::class,
 
         /**
          * Domain Service Providers...

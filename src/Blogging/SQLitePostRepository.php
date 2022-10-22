@@ -3,14 +3,14 @@
 namespace Domain\Blogging;
 
 use Domain\Blogging\Exceptions\CouldNotFindPost;
-use Illuminate\Database\ConnectionInterface;
 use Illuminate\Database\Query\Builder;
+use Illuminate\Database\SQLiteConnection;
 use stdClass;
 
-final class DatabasePostRepository implements PostRepository
+final class SQLitePostRepository implements PostRepository
 {
     public function __construct(
-        private readonly ConnectionInterface $db,
+        private readonly SQLiteConnection $db,
     ) {}
 
     public function find(int $id): Post

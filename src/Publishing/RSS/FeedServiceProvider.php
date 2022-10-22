@@ -7,5 +7,5 @@ use Illuminate\Support\ServiceProvider;
 
 final class FeedServiceProvider extends ServiceProvider
 {
-    public array $singletons = [FeedRepository::class => DatabaseFeedRepository::class];
+    public array $singletons = [FeedRepository::class => SQLiteFeedRepository::class];
 }

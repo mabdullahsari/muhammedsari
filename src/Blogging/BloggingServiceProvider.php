@@ -16,7 +16,7 @@ use Illuminate\Support\ServiceProvider;
 
 final class BloggingServiceProvider extends ServiceProvider
 {
-    public array $singletons = [PostRepository::class => DatabasePostRepository::class];
+    public array $singletons = [PostRepository::class => SQLitePostRepository::class];
 
     public function boot(): void
     {

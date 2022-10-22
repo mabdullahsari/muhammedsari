@@ -3,14 +3,14 @@
 namespace Domain\Publishing\RSS;
 
 use Domain\Publishing\RSS\Contracts\FeedRepository;
-use Illuminate\Database\ConnectionInterface;
+use Illuminate\Database\SQLiteConnection;
 use Illuminate\Support\Collection;
 use Spatie\Feed\FeedItem;
 
-final class DatabaseFeedRepository implements FeedRepository
+final class SQLiteFeedRepository implements FeedRepository
 {
     public function __construct(
-        private readonly ConnectionInterface $db,
+        private readonly SQLiteConnection $db,
         private readonly FeedItemMapper $mapper,
     ) {}
 

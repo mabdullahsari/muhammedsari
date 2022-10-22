@@ -4,14 +4,14 @@ namespace Domain\Scheduling;
 
 use Carbon\CarbonImmutable;
 use Domain\Scheduling\Exceptions\CouldNotFindEntry;
-use Illuminate\Database\ConnectionInterface;
 use Illuminate\Database\Query\Builder;
+use Illuminate\Database\SQLiteConnection;
 use Illuminate\Support\Collection;
 
-final class DatabaseEntryRepository implements EntryRepository
+final class SQLiteEntryRepository implements EntryRepository
 {
     public function __construct(
-        private readonly ConnectionInterface $db,
+        private readonly SQLiteConnection $db,
         private readonly EntryMapper $mapper,
     ) {}
 

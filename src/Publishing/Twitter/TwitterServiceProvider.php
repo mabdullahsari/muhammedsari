@@ -11,7 +11,7 @@ use Illuminate\Support\ServiceProvider;
 final class TwitterServiceProvider extends ServiceProvider
 {
     public array $singletons = [
-        PostRepository::class => DatabasePostRepository::class,
+        PostRepository::class => SQLitePostRepository::class,
         Twitter::class => TwitterManager::class,
     ];
 
