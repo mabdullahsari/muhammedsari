@@ -16,8 +16,8 @@ final class BusServiceProvider extends ServiceProvider
         $this->app->resolving(Dispatcher::class, $this->registerPipeline(...));
     }
 
-    private function registerPipeline(Dispatcher $bus): void
+    private function registerPipeline(Dispatcher $commands): void
     {
-        $bus->pipeThrough($this->pipes);
+        $commands->pipeThrough($this->pipes);
     }
 }

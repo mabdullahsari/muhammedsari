@@ -10,19 +10,22 @@ final class Scheduler
 {
     public function __construct(
         private readonly Clock $clock,
-        private readonly Dispatcher $bus,
+        private readonly Dispatcher $commands,
         private readonly EntryRepository $entries,
     ) {}
 
     public function tick(): void
     {
-        $this->entries->getBefore($this->clock->now())->each($this->process(...));
+        $this
+            ->entries
+            ->getBefore($this->clock->now())
+            ->each($this->process(...));
     }
 
     private function process(Entry $entry): void
     {
         $this->entries->remove($entry);
 
-        $this->bus->dispatch(PublishPost::make($entry->postId));
+        $this->commands->dispatch(PublishPost::make($entry->postId));
     }
 }
