@@ -2,7 +2,7 @@
 
 namespace Domain\Publishing\RSS;
 
-use Carbon\Carbon;
+use Carbon\CarbonImmutable;
 use Dive\Utils\Makeable;
 use Domain\Publishing\UrlGenerator;
 use Spatie\Feed\FeedItem;
@@ -25,6 +25,6 @@ final class FeedItemMapper
             ->link($url)
             ->summary($post->summary)
             ->title($post->title)
-            ->updated(Carbon::createFromFormat('Y-m-d H:i:s', $post->updated_at)); // @phpstan-ignore-line
+            ->updated(CarbonImmutable::createFromFormat('Y-m-d H:i:s', $post->updated_at)); // @phpstan-ignore-line
     }
 }
