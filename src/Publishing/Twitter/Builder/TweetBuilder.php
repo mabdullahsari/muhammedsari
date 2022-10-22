@@ -24,6 +24,20 @@ final class TweetBuilder
         return new self($message);
     }
 
+    public function get(): Tweet
+    {
+        $text = array_filter([$this->emoji, $this->message, $this->title]);
+        $text = implode(' ', $text);
+
+        $tags = array_map(strval(...), $this->tags);
+        $tags = implode(' ', $tags);
+
+        $tweet = array_filter([$text, $tags, $this->url]);
+        $tweet = implode("\n\n", $tweet);
+
+        return Tweet::make($tweet);
+    }
+
     public function useEmoji(string $emoji): self
     {
         $this->emoji = $emoji;
@@ -54,19 +68,5 @@ final class TweetBuilder
         $this->url = $url;
 
         return $this;
-    }
-
-    public function toTweet(): Tweet
-    {
-        $text = array_filter([$this->emoji, $this->message, $this->title]);
-        $text = implode(' ', $text);
-
-        $tags = array_map(strval(...), $this->tags);
-        $tags = implode(' ', $tags);
-
-        $tweet = array_filter([$text, $tags, $this->url]);
-        $tweet = implode("\n\n", $tweet);
-
-        return Tweet::make($tweet);
     }
 }

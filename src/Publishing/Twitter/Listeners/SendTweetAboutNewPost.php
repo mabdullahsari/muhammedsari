@@ -26,7 +26,7 @@ final class SendTweetAboutNewPost implements ShouldQueue
             ->useTitle($post->title)
             ->useUrl($this->url->generate($post->slug))
             ->useTags($post->tags)
-            ->toTweet();
+            ->get();
 
         $this->twitter->send($tweet);
     }
