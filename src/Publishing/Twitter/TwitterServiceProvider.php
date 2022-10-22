@@ -10,7 +10,10 @@ use Illuminate\Support\ServiceProvider;
 
 final class TwitterServiceProvider extends ServiceProvider
 {
-    public array $singletons = [Twitter::class => TwitterManager::class];
+    public array $singletons = [
+        PostRepository::class => DatabasePostRepository::class,
+        Twitter::class => TwitterManager::class,
+    ];
 
     public function boot(Dispatcher $events): void
     {

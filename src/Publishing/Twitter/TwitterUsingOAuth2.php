@@ -3,7 +3,6 @@
 namespace Domain\Publishing\Twitter;
 
 use Abraham\TwitterOAuth\TwitterOAuth;
-use Domain\Publishing\Twitter\Contracts\Tweet;
 use Domain\Publishing\Twitter\Contracts\Twitter;
 
 final class TwitterUsingOAuth2 implements Twitter

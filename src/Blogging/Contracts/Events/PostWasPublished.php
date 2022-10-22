@@ -11,14 +11,4 @@ final class PostWasPublished
     private function __construct(
         public readonly int $id,
     ) {}
-
-    public function slug(): string
-    {
-        return 'wip';
-    }
-
-    public function title(): string
-    {
-        return 'wip';
-    }
 }
