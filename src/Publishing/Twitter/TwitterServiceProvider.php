@@ -2,8 +2,8 @@
 
 namespace Domain\Publishing\Twitter;
 
-use Domain\Blogging\Contracts\Events\PostWasPublished;
-use Domain\Publishing\Twitter\Contracts\Twitter;
+use Domain\Contracts\Blogging\Events\PostWasPublished;
+use Domain\Contracts\Publishing\Twitter\Twitter;
 use Domain\Publishing\Twitter\Listeners\SendTweetAboutNewPost;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Support\ServiceProvider;

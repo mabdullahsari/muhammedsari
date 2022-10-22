@@ -1,8 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Publishing\Twitter\Contracts;
-
-use Domain\Publishing\Twitter\Tweet;
+namespace Domain\Contracts\Publishing\Twitter;
 
 interface Twitter
 {

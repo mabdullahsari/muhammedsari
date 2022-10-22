@@ -3,7 +3,7 @@
 namespace Domain\Clock;
 
 use Carbon\CarbonImmutable;
-use Domain\Clock\Contracts\Clock;
+use Domain\Contracts\Clock\Clock;
 use InvalidArgumentException;
 
 final class FakeClock implements Clock

@@ -4,11 +4,11 @@ namespace Domain\Blogging;
 
 use Domain\Blogging\Access\PostPolicy;
 use Domain\Blogging\Access\TagPolicy;
-use Domain\Blogging\Contracts\Commands\PublishPost;
 use Domain\Blogging\Handlers\PublishPostHandler;
 use Domain\Blogging\Models\Author;
 use Domain\Blogging\Models\Post;
 use Domain\Blogging\Models\Tag;
+use Domain\Contracts\Blogging\Commands\PublishPost;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Database\Eloquent\Relations\Relation;

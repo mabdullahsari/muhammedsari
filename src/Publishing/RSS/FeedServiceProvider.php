@@ -2,7 +2,7 @@
 
 namespace Domain\Publishing\RSS;
 
-use Domain\Publishing\RSS\Contracts\FeedRepository;
+use Domain\Contracts\Publishing\RSS\FeedRepository;
 use Illuminate\Support\ServiceProvider;
 
 final class FeedServiceProvider extends ServiceProvider

@@ -2,7 +2,8 @@
 
 namespace Domain\Scheduling;
 
-use Domain\Blogging\Contracts\Events\PostWasDeleted;
+use Domain\Contracts\Blogging\Events\PostWasDeleted;
+use Domain\Contracts\Scheduling\Scheduler;
 use Domain\Scheduling\Access\EntryPolicy;
 use Domain\Scheduling\Listeners\RemoveScheduledEntry;
 use Domain\Scheduling\Models\Entry;
@@ -14,7 +15,7 @@ final class SchedulingServiceProvider extends ServiceProvider
 {
     public array $singletons = [
         EntryRepository::class => SQLiteEntryRepository::class,
-        Scheduler::class => Scheduler::class,
+        Scheduler::class => CrontabDrivenScheduler::class,
     ];
 
     public function boot(Dispatcher $events): void

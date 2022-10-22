@@ -2,9 +2,9 @@
 
 namespace Domain\Blogging\Handlers;
 
-use Domain\Blogging\Contracts\Commands\PublishPost;
 use Domain\Blogging\PostRepository;
-use Domain\Clock\Contracts\Clock;
+use Domain\Contracts\Blogging\Commands\PublishPost;
+use Domain\Contracts\Clock\Clock;
 use Illuminate\Contracts\Events\Dispatcher;
 
 final class PublishPostHandler

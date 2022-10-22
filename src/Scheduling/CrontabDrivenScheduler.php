@@ -2,11 +2,12 @@
 
 namespace Domain\Scheduling;
 
-use Domain\Blogging\Contracts\Commands\PublishPost;
-use Domain\Clock\Contracts\Clock;
+use Domain\Contracts\Blogging\Commands\PublishPost;
+use Domain\Contracts\Clock\Clock;
+use Domain\Contracts\Scheduling\Scheduler;
 use Illuminate\Contracts\Bus\Dispatcher;
 
-final class Scheduler
+final class CrontabDrivenScheduler implements Scheduler
 {
     public function __construct(
         private readonly Clock $clock,

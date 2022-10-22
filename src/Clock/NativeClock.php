@@ -4,7 +4,7 @@ namespace Domain\Clock;
 
 use Carbon\CarbonImmutable;
 use DateTimeZone;
-use Domain\Clock\Contracts\Clock;
+use Domain\Contracts\Clock\Clock;
 
 final class NativeClock implements Clock
 {

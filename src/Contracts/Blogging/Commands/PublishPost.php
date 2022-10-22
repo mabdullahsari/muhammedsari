@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Blogging\Contracts\Commands;
+namespace Domain\Contracts\Blogging\Commands;
 
 use Dive\Utils\Makeable;
 use Illuminate\Contracts\Queue\ShouldQueue;

@@ -2,7 +2,7 @@
 
 namespace Domain\Publishing\RSS;
 
-use Domain\Publishing\RSS\Contracts\FeedRepository;
+use Domain\Contracts\Publishing\RSS\FeedRepository;
 use Illuminate\Database\SQLiteConnection;
 use Illuminate\Support\Collection;
 use Spatie\Feed\FeedItem;

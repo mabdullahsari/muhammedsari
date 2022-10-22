@@ -2,7 +2,7 @@
 
 namespace Domain\Scheduling\Listeners;
 
-use Domain\Blogging\Contracts\Events\PostWasDeleted;
+use Domain\Contracts\Blogging\Events\PostWasDeleted;
 use Domain\Scheduling\EntryRepository;
 use Domain\Scheduling\Exceptions\CouldNotFindEntry;
 

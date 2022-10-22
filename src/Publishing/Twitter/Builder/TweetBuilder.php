@@ -2,7 +2,7 @@
 
 namespace Domain\Publishing\Twitter\Builder;
 
-use Domain\Publishing\Twitter\Tweet;
+use Domain\Contracts\Publishing\Twitter\Tweet;
 use Illuminate\Support\Arr;
 
 final class TweetBuilder

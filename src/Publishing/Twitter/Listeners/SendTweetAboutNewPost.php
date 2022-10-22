@@ -2,9 +2,9 @@
 
 namespace Domain\Publishing\Twitter\Listeners;
 
-use Domain\Blogging\Contracts\Events\PostWasPublished;
+use Domain\Contracts\Blogging\Events\PostWasPublished;
+use Domain\Contracts\Publishing\Twitter\Twitter;
 use Domain\Publishing\Twitter\Builder\TweetBuilder;
-use Domain\Publishing\Twitter\Contracts\Twitter;
 use Domain\Publishing\Twitter\PostRepository;
 use Domain\Publishing\UrlGenerator;
 use Illuminate\Contracts\Queue\ShouldQueue;

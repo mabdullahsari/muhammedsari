@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Blogging\Contracts\Events;
+namespace Domain\Contracts\Blogging\Events;
 
 use Dive\Utils\Makeable;
 
