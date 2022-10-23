@@ -6,6 +6,7 @@ use Domain\Contracts\Publishing\Twitter\Tweet;
 use Domain\Contracts\Publishing\Twitter\Twitter;
 use Illuminate\Support\Manager;
 use InvalidArgumentException;
+use Spatie\LaravelRay\Ray;
 
 final class TwitterManager extends Manager implements Twitter
 {
@@ -39,6 +40,14 @@ final class TwitterManager extends Manager implements Twitter
             $config['access_token'],
             $config['access_token_secret'],
         );
+    }
+
+    protected function createRayDriver(): TwitterUsingRay
+    {
+        /** @var Ray $ray */
+        $ray = $this->container->get(Ray::class);
+
+        return new TwitterUsingRay($ray);
     }
 
     public function send(Tweet $tweet): void
