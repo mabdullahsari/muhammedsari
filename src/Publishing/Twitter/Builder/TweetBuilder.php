@@ -11,9 +11,10 @@ final class TweetBuilder
 
     private ?string $url = null;
 
+    /** @var Tag[] */
     private array $tags = [];
 
-    private ?string $title = null;
+    private ?Title $title = null;
 
     private function __construct(
         private readonly string $message,
@@ -26,7 +27,7 @@ final class TweetBuilder
 
     public function get(): Tweet
     {
-        $text = array_filter([$this->emoji, $this->message, $this->title]);
+        $text = array_filter([$this->emoji, $this->message, strval($this->title)]);
         $text = implode(' ', $text);
 
         $tags = array_map(strval(...), $this->tags);
@@ -58,7 +59,7 @@ final class TweetBuilder
 
     public function useTitle(string $title): self
     {
-        $this->title = "“{$title}”";
+        $this->title = Title::make($title);
 
         return $this;
     }
