@@ -18,11 +18,11 @@ return [
             /*
              * The feed will be available on this url.
              */
-            'url' => 'feed',
+            'url' => 'feed.atom',
 
             'title' => config('app.name'),
             'description' => 'A rather technical weblog where Muhammed likes to share his thoughts.',
-            'language' => 'en-US',
+            'language' => config('app.locale'),
 
             /*
              * The image to display for the feed. For Atom feeds, this is displayed as
