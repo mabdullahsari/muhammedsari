@@ -9,7 +9,7 @@
         "dive-be/eloquent-utils": "^0.1.1",
         "dive-be/php-enum-utils": "^1.1",
         "dive-be/php-utils": "^0.1.0",
-        "filament/filament": "^2.16.35",
+        "filament/filament": "^2.16.36",
         "guzzlehttp/guzzle": "^7.5",
         "laravel/framework": "^9.36.4",
         "laravel/tinker": "^2.7.2",
