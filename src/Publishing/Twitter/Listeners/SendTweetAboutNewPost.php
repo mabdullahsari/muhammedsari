@@ -25,7 +25,7 @@ final class SendTweetAboutNewPost implements ShouldQueue
             ->useEmoji('✍️')
             ->useTitle($post->title)
             ->useUrl($this->url->generate($post->slug))
-            ->useTags($post->tags)
+            ->useHashtags($post->tags)
             ->get();
 
         $this->twitter->send($tweet);

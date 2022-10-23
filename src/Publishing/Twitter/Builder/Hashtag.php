@@ -5,7 +5,7 @@ namespace Domain\Publishing\Twitter\Builder;
 use Dive\Utils\Makeable;
 use UnexpectedValueException;
 
-final class Tag
+final class Hashtag
 {
     use Makeable;
 
@@ -14,11 +14,11 @@ final class Tag
     private function __construct(string $value)
     {
         if (empty($value)) {
-            throw new UnexpectedValueException('A tag cannot be empty.');
+            throw new UnexpectedValueException('A hashtag cannot be empty.');
         }
 
         if (str_contains($value, ' ')) {
-            throw new UnexpectedValueException('A tag cannot contain whitespaces.');
+            throw new UnexpectedValueException('A hashtag cannot contain whitespaces.');
         }
 
         $this->value = $value;

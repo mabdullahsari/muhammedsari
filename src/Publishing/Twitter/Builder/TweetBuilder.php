@@ -11,7 +11,7 @@ final class TweetBuilder
 
     private ?string $url = null;
 
-    /** @var Tag[] */
+    /** @var Hashtag[] */
     private array $tags = [];
 
     private ?Title $title = null;
@@ -46,12 +46,12 @@ final class TweetBuilder
         return $this;
     }
 
-    public function useTags(array|string $tags): self
+    public function useHashtags(array|string $tags): self
     {
         $tags = Arr::wrap($tags);
 
         foreach ($tags as $tag) {
-            $this->tags[] = Tag::make($tag);
+            $this->tags[] = Hashtag::make($tag);
         }
 
         return $this;
