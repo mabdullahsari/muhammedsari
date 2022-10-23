@@ -6,7 +6,7 @@ use Carbon\CarbonImmutable;
 use Domain\Contracts\Clock\Clock;
 use InvalidArgumentException;
 
-final class FakeClock implements Clock
+final class FrozenClock implements Clock
 {
     private CarbonImmutable $time;
 
