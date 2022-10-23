@@ -3,6 +3,7 @@
 namespace Domain\Blogging;
 
 use Domain\Blogging\Exceptions\CouldNotFindPost;
+use Domain\Contracts\Clock\Clock;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Database\SQLiteConnection;
 use stdClass;
@@ -10,6 +11,7 @@ use stdClass;
 final class SQLitePostRepository implements PostRepository
 {
     public function __construct(
+        private readonly Clock $clock,
         private readonly SQLiteConnection $db,
     ) {}
 
@@ -27,7 +29,10 @@ final class SQLitePostRepository implements PostRepository
 
     public function save(Post $post): void
     {
-        $this->newQuery()->where('id', $post->id())->update($post->toDatabase());
+        $values = $post->toDatabase();
+        $values['updated_at'] = $this->clock->now()->toDateTimeString();
+
+        $this->newQuery()->where('id', $post->id())->update($values);
     }
 
     private function newQuery(): Builder
