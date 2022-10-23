@@ -4,16 +4,16 @@ namespace Domain\Publishing\Twitter;
 
 use Domain\Contracts\Publishing\Twitter\Tweet;
 use Domain\Contracts\Publishing\Twitter\Twitter;
-use Spatie\LaravelRay\Ray;
+use Illuminate\Log\Logger;
 
-final class TwitterUsingRay implements Twitter
+final class LogTwitter implements Twitter
 {
     public function __construct(
-        private readonly Ray $ray,
+        private readonly Logger $logger,
     ) {}
 
     public function send(Tweet $tweet): void
     {
-        $this->ray->send($tweet);
+        $this->logger->debug($tweet);
     }
 }
