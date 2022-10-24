@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Domain\Identity;
+namespace Tests\Unit\Domain\Identity\Models;
 
 use Domain\Identity\Models\User;
 use PHPUnit\Framework\TestCase;
@@ -18,5 +18,15 @@ final class UserTest extends TestCase
         $value = $user->name;
 
         $this->assertSame('Muhammed Sari', $value);
+    }
+
+    /** @test */
+    public function it_can_get_the_filament_avatar_url(): void
+    {
+        $user = new User(['username' => 'mabdullahsari']);
+
+        $value = $user->getFilamentAvatarUrl();
+
+        $this->assertSame('https://unavatar.io/mabdullahsari', $value);
     }
 }

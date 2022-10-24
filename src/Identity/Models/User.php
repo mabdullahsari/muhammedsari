@@ -20,7 +20,7 @@ final class User extends Authenticatable implements FilamentUser, HasAvatar
 {
     use DisablesTimestamps;
 
-    protected $fillable = ['email', 'first_name', 'last_name'];
+    protected $fillable = ['email', 'first_name', 'last_name', 'username'];
 
     protected function name(): Attribute
     {
