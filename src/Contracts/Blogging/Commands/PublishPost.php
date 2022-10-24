@@ -9,7 +9,7 @@ final class PublishPost implements ShouldQueue
 {
     use Makeable;
 
-    public function __construct(
+    private function __construct(
         public readonly int $id,
     ) {}
 }
