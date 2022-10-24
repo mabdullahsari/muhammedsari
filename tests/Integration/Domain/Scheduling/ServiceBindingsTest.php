@@ -6,9 +6,11 @@ use Domain\Contracts\Blogging\Events\PostWasDeleted;
 use Domain\Contracts\Blogging\Events\PostWasPublished;
 use Domain\Contracts\Scheduling\Scheduler;
 use Domain\Scheduling\Access\EntryPolicy;
+use Domain\Scheduling\CrontabDrivenScheduler;
 use Domain\Scheduling\EntryRepository;
 use Domain\Scheduling\Listeners\RemoveScheduledEntry;
 use Domain\Scheduling\Models\Entry;
+use Domain\Scheduling\SQLiteEntryRepository;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Events\Dispatcher;
 use PHPUnit\Framework\TestCase;
@@ -24,7 +26,10 @@ final class ServiceBindingsTest extends TestCase
         $app = $this->createApplication();
 
         $this->assertTrue($app->isShared(EntryRepository::class));
+        $this->assertInstanceOf(SQLiteEntryRepository::class, $app->make(EntryRepository::class));
+
         $this->assertTrue($app->isShared(Scheduler::class));
+        $this->assertInstanceOf(CrontabDrivenScheduler::class, $app->make(Scheduler::class));
     }
 
     /** @test */
