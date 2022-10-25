@@ -20,7 +20,7 @@ final class FrozenClock implements Clock
         return $this->time;
     }
 
-    public function travelTo(string $datetime, string $format = 'Y-m-d H:i'): void
+    public function travelTo(string $datetime, string $format = 'Y-m-d H:i:s'): void
     {
         $time = CarbonImmutable::createFromFormat($format, $datetime);
 
