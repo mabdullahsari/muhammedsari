@@ -5,7 +5,7 @@ namespace Domain\Scheduling;
 use Carbon\CarbonImmutable;
 use Dive\Utils\Makeable;
 
-final class Entry
+final class Publication
 {
     use Makeable;
 

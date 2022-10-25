@@ -4,7 +4,7 @@ namespace Domain\Scheduling\Access;
 
 use Illuminate\Contracts\Auth\Authenticatable;
 
-final class EntryPolicy
+final class PublicationPolicy
 {
     public function deleteAny(Authenticatable $user): bool
     {

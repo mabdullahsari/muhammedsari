@@ -12,20 +12,22 @@ final class CrontabDrivenScheduler implements Scheduler
     public function __construct(
         private readonly Clock $clock,
         private readonly Dispatcher $commands,
-        private readonly EntryRepository $entries,
+        private readonly PublicationRepository $publications,
     ) {}
 
     public function tick(): void
     {
-        $this->entries
-            ->getBefore($this->clock->now())
-            ->each($this->process(...));
+        $this->publications->getDue(
+            $this->clock->now()
+        )->each(
+            $this->publishPost(...)
+        );
     }
 
-    private function process(Entry $entry): void
+    private function publishPost(Publication $publication): void
     {
         $this->commands->dispatch(
-            PublishPost::make($entry->postId)
+            PublishPost::make($publication->postId)
         );
     }
 }

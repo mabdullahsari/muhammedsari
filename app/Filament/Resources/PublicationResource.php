@@ -2,10 +2,10 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\EntryResource\Pages\CreateEntry;
-use App\Filament\Resources\EntryResource\Pages\ListEntries;
+use App\Filament\Resources\PublicationResource\Pages\CreatePublication;
+use App\Filament\Resources\PublicationResource\Pages\ListPublications;
 use Domain\Identity\Models\User;
-use Domain\Scheduling\Models\Entry;
+use Domain\Scheduling\Models\Publication;
 use Filament\Facades\Filament;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
@@ -16,9 +16,9 @@ use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 
-final class EntryResource extends Resource
+final class PublicationResource extends Resource
 {
-    protected static ?string $model = Entry::class;
+    protected static ?string $model = Publication::class;
 
     protected static ?string $navigationGroup = 'Scheduling';
 
@@ -26,7 +26,7 @@ final class EntryResource extends Resource
 
     protected static ?int $navigationSort = 3;
 
-    protected static ?string $slug = 'entries';
+    protected static ?string $slug = 'publications';
 
     public static function form(Form $form): Form
     {
@@ -35,7 +35,7 @@ final class EntryResource extends Resource
 
         return $form->schema([
             Select::make('post_id')->relationship('post', 'title', static function (Builder $query) {
-                $query->where('state', 'draft')->whereDoesntHave('entry');
+                $query->where('state', 'draft')->whereDoesntHave('publication');
             })->required(),
             DateTimePicker::make('publish_at')
                 ->timezone($user->timezone)
@@ -55,15 +55,15 @@ final class EntryResource extends Resource
                 ->dateTime(timezone: $user->timezone)
                 ->label('Publish At'),
         ])->prependActions([
-            DeleteAction::make()->modalHeading('Delete scheduled entry')
+            DeleteAction::make()->modalHeading('Delete scheduled publication')
         ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => ListEntries::route('/'),
-            'create' => CreateEntry::route('/create'),
+            'index' => ListPublications::route('/'),
+            'create' => CreatePublication::route('/create'),
         ];
     }
 }

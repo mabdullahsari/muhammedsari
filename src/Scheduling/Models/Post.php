@@ -8,16 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
- * @property Entry|null $entry
- * @property string     $title
+ * @property Publication|null $publication
+ * @property string           $title
  */
 final class Post extends Model
 {
     use Unguarded;
     use Unwritable;
 
-    public function entry(): HasOne
+    public function publication(): HasOne
     {
-        return $this->hasOne(Entry::class);
+        return $this->hasOne(Publication::class);
     }
 }

@@ -4,15 +4,15 @@ namespace Domain\Scheduling\Exceptions;
 
 use Exception;
 
-final class CouldNotFindEntry extends Exception
+final class CouldNotFindPublication extends Exception
 {
     public static function withId(int $id): self
     {
-        return new self("Couldn't find Entry with id {$id}");
+        return new self("Couldn't find Publication with id {$id}");
     }
 
     public static function withPostId(int $id): self
     {
-        return new self("Couldn't find Entry with PostId {$id}");
+        return new self("Couldn't find Publication with PostId {$id}");
     }
 }

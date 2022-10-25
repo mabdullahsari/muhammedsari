@@ -5,9 +5,9 @@ namespace Domain\Scheduling;
 use Domain\Contracts\Blogging\Events\PostWasDeleted;
 use Domain\Contracts\Blogging\Events\PostWasPublished;
 use Domain\Contracts\Scheduling\Scheduler;
-use Domain\Scheduling\Access\EntryPolicy;
-use Domain\Scheduling\Listeners\RemoveScheduledEntry;
-use Domain\Scheduling\Models\Entry;
+use Domain\Scheduling\Access\PublicationPolicy;
+use Domain\Scheduling\Listeners\CancelScheduledPublication;
+use Domain\Scheduling\Models\Publication;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Support\ServiceProvider;
@@ -15,14 +15,14 @@ use Illuminate\Support\ServiceProvider;
 final class SchedulingServiceProvider extends ServiceProvider
 {
     public array $singletons = [
-        EntryRepository::class => SQLiteEntryRepository::class,
+        PublicationRepository::class => SQLitePublicationRepository::class,
         Scheduler::class => CrontabDrivenScheduler::class,
     ];
 
     public function boot(Dispatcher $events): void
     {
-        $events->listen(PostWasDeleted::class, RemoveScheduledEntry::class);
-        $events->listen(PostWasPublished::class, RemoveScheduledEntry::class);
+        $events->listen(PostWasDeleted::class, CancelScheduledPublication::class);
+        $events->listen(PostWasPublished::class, CancelScheduledPublication::class);
     }
 
     public function register(): void
@@ -32,6 +32,6 @@ final class SchedulingServiceProvider extends ServiceProvider
 
     private function registerPolicies(Gate $access): void
     {
-        $access->policy(Entry::class, EntryPolicy::class);
+        $access->policy(Publication::class, PublicationPolicy::class);
     }
 }

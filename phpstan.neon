@@ -16,4 +16,4 @@ parameters:
     checkGenericClassInNonGenericObjectType: false
 
     ignoreErrors:
-        - '#Domain\\Scheduling\\Entry#'
+        - '#Domain\\Scheduling\\Publication#'

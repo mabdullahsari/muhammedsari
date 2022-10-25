@@ -1,18 +1,18 @@
 <?php declare(strict_types=1);
 
-namespace App\Filament\Resources\EntryResource\Pages;
+namespace App\Filament\Resources\PublicationResource\Pages;
 
-use App\Filament\Resources\EntryResource;
+use App\Filament\Resources\PublicationResource;
 use Filament\Pages\Actions\Action;
 use Filament\Resources\Pages\CreateRecord;
 
-final class CreateEntry extends CreateRecord
+final class CreatePublication extends CreateRecord
 {
     protected static bool $canCreateAnother = false;
 
-    protected static string $resource = EntryResource::class;
+    protected static string $resource = PublicationResource::class;
 
-    protected static ?string $title = 'Schedule Auto Publishing';
+    protected static ?string $title = 'Schedule Publication';
 
     protected function getCreateFormAction(): Action
     {

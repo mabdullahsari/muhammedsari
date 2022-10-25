@@ -11,7 +11,7 @@ use Illuminate\Support\Carbon;
  * @property Post   $post
  * @property Carbon $publish_at
  */
-final class Entry extends Model
+final class Publication extends Model
 {
     use DisablesTimestamps;
 
