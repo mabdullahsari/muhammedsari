@@ -6,8 +6,10 @@ use App\Filament\Resources\PublicationResource;
 use Filament\Pages\Actions\Action;
 use Filament\Resources\Pages\CreateRecord;
 
-final class CreatePublication extends CreateRecord
+final class SchedulePublication extends CreateRecord
 {
+    protected static ?string $breadcrumb = 'Schedule';
+
     protected static bool $canCreateAnother = false;
 
     protected static string $resource = PublicationResource::class;

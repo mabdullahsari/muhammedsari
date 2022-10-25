@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PublicationResource\Pages\CreatePublication;
+use App\Filament\Resources\PublicationResource\Pages\SchedulePublication;
 use App\Filament\Resources\PublicationResource\Pages\ListPublications;
 use Domain\Identity\Models\User;
 use Domain\Scheduling\Models\Publication;
@@ -63,7 +63,7 @@ final class PublicationResource extends Resource
     {
         return [
             'index' => ListPublications::route('/'),
-            'create' => CreatePublication::route('/create'),
+            'create' => SchedulePublication::route('/schedule'),
         ];
     }
 }
