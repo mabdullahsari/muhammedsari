@@ -16,4 +16,5 @@ parameters:
     checkGenericClassInNonGenericObjectType: false
 
     ignoreErrors:
+        - '#Access to protected property Spatie\\Feed\\FeedItem::.*#'
         - '#Domain\\Scheduling\\Publication#'
