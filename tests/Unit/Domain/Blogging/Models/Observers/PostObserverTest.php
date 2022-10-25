@@ -16,9 +16,10 @@ final class PostObserverTest extends TestCase
     {
         $events = new EventFake(new Dispatcher());
 
-        (new PostObserver($events))->deleted(
-            (new Post())->setAttribute('id', 1453)
-        );
+        $model = new Post();
+        $model->setAttribute('id', 1453);
+
+        (new PostObserver($events))->deleted($model);
 
         $events->assertDispatched(PostWasDeleted::class, fn ($event) => $event->id === 1453);
     }

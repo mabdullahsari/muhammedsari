@@ -5,12 +5,12 @@ namespace Tests\Integration\Domain\Scheduling;
 use Domain\Contracts\Blogging\Events\PostWasDeleted;
 use Domain\Contracts\Blogging\Events\PostWasPublished;
 use Domain\Contracts\Scheduling\Scheduler;
-use Domain\Scheduling\Access\EntryPolicy;
+use Domain\Scheduling\Access\PublicationPolicy;
 use Domain\Scheduling\CrontabDrivenScheduler;
-use Domain\Scheduling\EntryRepository;
-use Domain\Scheduling\Listeners\RemoveScheduledEntry;
-use Domain\Scheduling\Models\Entry;
-use Domain\Scheduling\SQLiteEntryRepository;
+use Domain\Scheduling\PublicationRepository;
+use Domain\Scheduling\Listeners\CancelScheduledPublication;
+use Domain\Scheduling\Models\Publication;
+use Domain\Scheduling\SQLitePublicationRepository;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Events\Dispatcher;
 use PHPUnit\Framework\TestCase;
@@ -25,8 +25,8 @@ final class ServiceBindingsTest extends TestCase
     {
         $app = $this->createApplication();
 
-        $this->assertTrue($app->isShared(EntryRepository::class));
-        $this->assertInstanceOf(SQLiteEntryRepository::class, $app->make(EntryRepository::class));
+        $this->assertTrue($app->isShared(PublicationRepository::class));
+        $this->assertInstanceOf(SQLitePublicationRepository::class, $app->make(PublicationRepository::class));
 
         $this->assertTrue($app->isShared(Scheduler::class));
         $this->assertInstanceOf(CrontabDrivenScheduler::class, $app->make(Scheduler::class));
@@ -44,8 +44,8 @@ final class ServiceBindingsTest extends TestCase
         $deleted = $listeners[PostWasDeleted::class];
         $published = $listeners[PostWasPublished::class];
 
-        $this->assertContains(RemoveScheduledEntry::class, $deleted);
-        $this->assertContains(RemoveScheduledEntry::class, $published);
+        $this->assertContains(CancelScheduledPublication::class, $deleted);
+        $this->assertContains(CancelScheduledPublication::class, $published);
     }
 
     /** @test */
@@ -56,6 +56,6 @@ final class ServiceBindingsTest extends TestCase
         /** @var Gate $gate */
         $gate = $app->make(Gate::class);
 
-        $this->assertInstanceOf(EntryPolicy::class, $gate->getPolicyFor(Entry::class));
+        $this->assertInstanceOf(PublicationPolicy::class, $gate->getPolicyFor(Publication::class));
     }
 }
