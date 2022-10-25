@@ -9,7 +9,7 @@ final class TagPolicy
 {
     public function delete(Authenticatable $user, Tag $model): bool
     {
-        return $model->posts()->doesntExist();
+        return ! $model->posts_count;
     }
 
     public function deleteAny(Authenticatable $user): bool

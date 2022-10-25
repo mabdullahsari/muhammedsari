@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 /**
  * @property string                $name
  * @property Collection<int, Post> $posts
+ * @property int                   $posts_count
  * @property string                $slug
  */
 final class Tag extends Model

@@ -3,35 +3,36 @@
 namespace Domain\Identity\Access;
 
 use Domain\Identity\Models\User;
+use Illuminate\Contracts\Auth\Authenticatable;
 
 final class UserPolicy
 {
-    public function create(User $user): bool
+    public function create(Authenticatable $user): bool
     {
         return false;
     }
 
-    public function delete(User $user, User $model): bool
+    public function delete(Authenticatable $user, User $model): bool
     {
         return false;
     }
 
-    public function deleteAny(User $user): bool
+    public function deleteAny(Authenticatable $user): bool
     {
         return false;
     }
 
-    public function update(User $user, User $model): bool
+    public function update(Authenticatable $user, User $model): bool
     {
         return false;
     }
 
-    public function view(User $user, User $model): bool
+    public function view(Authenticatable $user, User $model): bool
     {
         return false;
     }
 
-    public function viewAny(User $user): bool
+    public function viewAny(Authenticatable $user): bool
     {
         return true;
     }
