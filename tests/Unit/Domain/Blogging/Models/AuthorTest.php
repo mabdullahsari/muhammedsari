@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Domain\Blogging;
+namespace Tests\Unit\Domain\Blogging\Models;
 
 use Domain\Blogging\Models\Author;
 use PHPUnit\Framework\TestCase;
