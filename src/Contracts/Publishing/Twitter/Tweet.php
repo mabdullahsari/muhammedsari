@@ -31,4 +31,9 @@ final class Tweet implements Arrayable
     {
         return ['text' => $this->message];
     }
+
+    public function __toString(): string
+    {
+        return $this->message;
+    }
 }

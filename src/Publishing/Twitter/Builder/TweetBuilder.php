@@ -41,33 +41,41 @@ final class TweetBuilder
 
     public function useEmoji(string $emoji): self
     {
-        $this->emoji = $emoji;
+        $that = clone $this;
 
-        return $this;
+        $that->emoji = $emoji;
+
+        return $that;
     }
 
     public function useHashtags(array|string $tags): self
     {
+        $that = clone $this;
+
         $tags = Arr::wrap($tags);
 
         foreach ($tags as $tag) {
-            $this->tags[] = Hashtag::make($tag);
+            $that->tags[] = Hashtag::make($tag);
         }
 
-        return $this;
+        return $that;
     }
 
     public function useTitle(string $title): self
     {
-        $this->title = Title::make($title);
+        $that = clone $this;
 
-        return $this;
+        $that->title = Title::make($title);
+
+        return $that;
     }
 
     public function useUrl(string $url): self
     {
-        $this->url = $url;
+        $that = clone $this;
 
-        return $this;
+        $that->url = $url;
+
+        return $that;
     }
 }
