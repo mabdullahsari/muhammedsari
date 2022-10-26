@@ -7,7 +7,7 @@ use Domain\Contracts\Blogging\Events\PostWasPublished;
 use Domain\Scheduling\PublicationRepository;
 use Domain\Scheduling\Exceptions\CouldNotFindPublication;
 
-final class CancelScheduledPublication
+final class RemoveScheduledPublication
 {
     public function __construct(
         private readonly PublicationRepository $publications,
@@ -21,6 +21,6 @@ final class CancelScheduledPublication
             return;
         }
 
-        $this->publications->cancel($publication);
+        $this->publications->remove($publication);
     }
 }

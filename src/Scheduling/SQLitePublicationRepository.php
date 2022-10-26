@@ -15,11 +15,6 @@ final class SQLitePublicationRepository implements PublicationRepository
         private readonly PublicationMapper $mapper,
     ) {}
 
-    public function cancel(Publication $publication): void
-    {
-        $this->newQuery()->delete($publication->id);
-    }
-
     public function findById(int $id): Publication
     {
         $record = $this->newQuery()->findOr($id, static fn () => throw CouldNotFindPublication::withPostId($id));
@@ -45,6 +40,11 @@ final class SQLitePublicationRepository implements PublicationRepository
             ->where('publish_at', '<', $now)
             ->get()
             ->transform($this->mapper);
+    }
+
+    public function remove(Publication $publication): void
+    {
+        $this->newQuery()->delete($publication->id);
     }
 
     private function newQuery(): Builder

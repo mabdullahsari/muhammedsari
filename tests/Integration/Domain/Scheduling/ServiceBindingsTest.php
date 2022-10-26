@@ -8,7 +8,7 @@ use Domain\Contracts\Scheduling\Scheduler;
 use Domain\Scheduling\Access\PublicationPolicy;
 use Domain\Scheduling\CrontabDrivenScheduler;
 use Domain\Scheduling\PublicationRepository;
-use Domain\Scheduling\Listeners\CancelScheduledPublication;
+use Domain\Scheduling\Listeners\RemoveScheduledPublication;
 use Domain\Scheduling\Models\Publication;
 use Domain\Scheduling\SQLitePublicationRepository;
 use Illuminate\Contracts\Auth\Access\Gate;
@@ -44,8 +44,8 @@ final class ServiceBindingsTest extends TestCase
         $deleted = $listeners[PostWasDeleted::class];
         $published = $listeners[PostWasPublished::class];
 
-        $this->assertContains(CancelScheduledPublication::class, $deleted);
-        $this->assertContains(CancelScheduledPublication::class, $published);
+        $this->assertContains(RemoveScheduledPublication::class, $deleted);
+        $this->assertContains(RemoveScheduledPublication::class, $published);
     }
 
     /** @test */

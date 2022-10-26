@@ -8,8 +8,6 @@ use Illuminate\Support\Collection;
 
 interface PublicationRepository
 {
-    public function cancel(Publication $publication): void;
-
     /** @throws CouldNotFindPublication */
     public function findById(int $id): Publication;
 
@@ -18,4 +16,6 @@ interface PublicationRepository
 
     /** @return Collection<int, Publication> */
     public function getDue(CarbonImmutable $now): Collection;
+
+    public function remove(Publication $publication): void;
 }
