@@ -3,20 +3,20 @@
 namespace Domain\Blogging;
 
 use Carbon\CarbonImmutable;
-use Domain\Common\Model\HasEvents;
+use Domain\Common\Entity;
 use Domain\Contracts\Blogging\Events\PostWasPublished;
 use Domain\Contracts\Clock\Clock;
 use stdClass;
 
-final class Post
+final class Post extends Entity
 {
-    use HasEvents;
+    private int $authorId;
 
     private int $id;
 
     private Body $body;
 
-    private ?CarbonImmutable $publishedAt;
+    private ?CarbonImmutable $publishedAt = null;
 
     private Slug $slug;
 
@@ -28,10 +28,11 @@ final class Post
 
     private function __construct() {}
 
-    public static function create(int $id, Body $body, Summary $summary, Title $title, Slug $slug): self
+    public static function create(int $id, int $authorId, Body $body, Summary $summary, Title $title, Slug $slug): self
     {
         $post = new Post();
 
+        $post->authorId = $authorId;
         $post->id = $id;
         $post->body = $body;
         $post->summary = $summary;
@@ -45,6 +46,7 @@ final class Post
     {
         $post = new Post();
 
+        $post->authorId = (int) $record->author_id;
         $post->id = (int) $record->id;
         $post->body = Body::fromString($record->body);
         $post->slug = Slug::fromString($record->slug);
@@ -80,6 +82,7 @@ final class Post
     public function toDatabase(): array
     {
         return [
+            'author_id' => $this->authorId,
             'body' => (string) $this->body,
             'published_at' => $this->publishedAt?->toDateTimeString(),
             'slug' => (string) $this->slug,

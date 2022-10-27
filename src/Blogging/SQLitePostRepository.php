@@ -23,15 +23,26 @@ final class SQLitePostRepository implements PostRepository
             throw CouldNotFindPost::withId($id);
         }
 
-        return Post::fromDatabase($record);
+        return Post::fromDatabase($record)->markAsPersisted();
     }
 
     public function save(Post $post): void
     {
         $values = $post->toDatabase();
-        $values['updated_at'] = $this->clock->now()->toDateTimeString();
 
-        $this->newQuery()->where('id', $post->id())->update($values);
+        $now = $this->clock->now()->toDateTimeString();
+        $values['updated_at'] = $now;
+
+        if ($post->wasRecentlyCreated()) {
+            $values['id'] = $post->id();
+            $values['created_at'] = $now;
+
+            $this->newQuery()->insert($values);
+
+            $post->markAsPersisted();
+        } else {
+            $this->newQuery()->where('id', $post->id())->update($values);
+        }
     }
 
     private function newQuery(): Builder
