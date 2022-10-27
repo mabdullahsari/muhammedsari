@@ -62,8 +62,6 @@ final class PostResource extends Resource
     public static function table(Table $table): Table
     {
         return $table->columns([
-
-
             TextColumn::make('author.full_name'),
             TextColumn::make('title')->searchable(),
             TextColumn::make('slug'),
