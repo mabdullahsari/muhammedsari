@@ -3,7 +3,6 @@
 namespace Domain\Scheduling;
 
 use Carbon\CarbonImmutable;
-use Domain\Scheduling\Exceptions\CouldNotFindPublication;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Database\SQLiteConnection;
 use Illuminate\Support\Collection;

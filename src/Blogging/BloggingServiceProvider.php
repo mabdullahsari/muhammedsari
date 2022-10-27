@@ -2,13 +2,12 @@
 
 namespace Domain\Blogging;
 
-use Domain\Blogging\Access\PostPolicy;
-use Domain\Blogging\Access\TagPolicy;
-use Domain\Blogging\Handlers\PublishPostHandler;
 use Domain\Blogging\Models\Author;
-use Domain\Blogging\Models\Observers\PostObserver;
 use Domain\Blogging\Models\Post;
+use Domain\Blogging\Models\PostObserver;
+use Domain\Blogging\Models\PostPolicy;
 use Domain\Blogging\Models\Tag;
+use Domain\Blogging\Models\TagPolicy;
 use Domain\Contracts\Blogging\Commands\PublishPost;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Bus\Dispatcher;

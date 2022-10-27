@@ -2,8 +2,8 @@
 
 namespace Tests\Integration\Domain\Identity;
 
-use Domain\Identity\Access\UserPolicy;
-use Domain\Identity\Models\User;
+use Domain\Identity\User;
+use Domain\Identity\UserPolicy;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use PHPUnit\Framework\TestCase;

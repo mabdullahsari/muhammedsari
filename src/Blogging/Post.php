@@ -3,12 +3,6 @@
 namespace Domain\Blogging;
 
 use Carbon\CarbonImmutable;
-use Domain\Blogging\Exceptions\CouldNotPublish;
-use Domain\Blogging\ValueObjects\Body;
-use Domain\Blogging\ValueObjects\PostState;
-use Domain\Blogging\ValueObjects\Slug;
-use Domain\Blogging\ValueObjects\Summary;
-use Domain\Blogging\ValueObjects\Title;
 use Domain\Common\Model\HasEvents;
 use Domain\Contracts\Blogging\Events\PostWasPublished;
 use Domain\Contracts\Clock\Clock;

@@ -2,7 +2,6 @@
 
 namespace Domain\Blogging;
 
-use Domain\Blogging\Exceptions\CouldNotFindPost;
 use Domain\Contracts\Clock\Clock;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Database\SQLiteConnection;

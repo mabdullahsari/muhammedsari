@@ -2,12 +2,12 @@
 
 namespace Tests\Unit\Domain\Blogging;
 
-use Domain\Blogging\Exceptions\CouldNotPublish;
+use Domain\Blogging\Body;
+use Domain\Blogging\CouldNotPublish;
 use Domain\Blogging\Post;
-use Domain\Blogging\ValueObjects\Body;
-use Domain\Blogging\ValueObjects\Slug;
-use Domain\Blogging\ValueObjects\Summary;
-use Domain\Blogging\ValueObjects\Title;
+use Domain\Blogging\Slug;
+use Domain\Blogging\Summary;
+use Domain\Blogging\Title;
 use Domain\Clock\FrozenClock;
 use Domain\Contracts\Blogging\Events\PostWasPublished;
 use PHPUnit\Framework\TestCase;

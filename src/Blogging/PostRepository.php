@@ -2,8 +2,6 @@
 
 namespace Domain\Blogging;
 
-use Domain\Blogging\Exceptions\CouldNotFindPost;
-
 interface PostRepository
 {
     /** @throws CouldNotFindPost */

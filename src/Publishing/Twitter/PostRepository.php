@@ -2,8 +2,6 @@
 
 namespace Domain\Publishing\Twitter;
 
-use Domain\Publishing\Twitter\Exceptions\CouldNotFindPost;
-
 interface PostRepository
 {
     /** @throws CouldNotFindPost */

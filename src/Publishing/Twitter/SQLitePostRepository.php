@@ -2,7 +2,6 @@
 
 namespace Domain\Publishing\Twitter;
 
-use Domain\Publishing\Twitter\Exceptions\CouldNotFindPost;
 use Illuminate\Database\SQLiteConnection;
 use stdClass;
 

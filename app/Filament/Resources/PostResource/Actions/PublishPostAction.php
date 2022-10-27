@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\PostResource\Actions;
 
-use Domain\Blogging\Exceptions\CouldNotPublish;
+use Domain\Blogging\CouldNotPublish;
 use Domain\Blogging\Models\Post;
 use Domain\Contracts\Blogging\Commands\PublishPost;
 use Filament\Tables\Actions\Action;

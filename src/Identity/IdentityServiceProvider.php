@@ -2,8 +2,6 @@
 
 namespace Domain\Identity;
 
-use Domain\Identity\Access\UserPolicy;
-use Domain\Identity\Models\User;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;

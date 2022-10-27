@@ -4,12 +4,12 @@ namespace Tests\Integration\Domain\Publishing;
 
 use Domain\Contracts\Blogging\Events\PostWasPublished;
 use Domain\Contracts\Publishing\RSS\FeedRepository;
-use Domain\Contracts\Publishing\Twitter\Twitter;
 use Domain\Publishing\PostUrlGenerator;
 use Domain\Publishing\RSS\SQLiteFeedRepository;
-use Domain\Publishing\Twitter\Listeners\SendTweetAboutNewPost;
 use Domain\Publishing\Twitter\PostRepository;
+use Domain\Publishing\Twitter\SendTweetAboutNewPost;
 use Domain\Publishing\Twitter\SQLitePostRepository;
+use Domain\Publishing\Twitter\Twitter;
 use Domain\Publishing\Twitter\TwitterManager;
 use Domain\Publishing\UrlGenerator;
 use Illuminate\Contracts\Events\Dispatcher;

@@ -10,14 +10,14 @@ use Spatie\Feed\FeedItem;
 final class SQLiteFeedRepository implements FeedRepository
 {
     public function __construct(
-        private readonly SQLiteConnection $db,
+        private readonly SQLiteConnection $connection,
         private readonly FeedItemMapper $mapper,
     ) {}
 
     /** @return Collection<int, FeedItem> */
     public function items(): Collection
     {
-        return $this->db
+        return $this->connection
             ->table('posts')
             ->where('state', 'published')
             ->join('users', 'users.id', '=', 'author_id')

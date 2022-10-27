@@ -2,9 +2,6 @@
 
 namespace Domain\Publishing\Twitter;
 
-use Domain\Contracts\Publishing\Twitter\Tweet;
-use Domain\Contracts\Publishing\Twitter\Twitter;
-
 final class InMemoryTwitter implements Twitter
 {
     private array $outbox = [];

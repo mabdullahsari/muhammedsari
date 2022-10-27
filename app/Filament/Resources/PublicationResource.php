@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\PublicationResource\Pages\SchedulePublication;
 use App\Filament\Resources\PublicationResource\Pages\ListPublications;
-use Domain\Identity\Models\User;
+use App\Filament\Resources\PublicationResource\Pages\SchedulePublication;
+use Domain\Identity\User;
 use Domain\Scheduling\Models\Publication;
 use Filament\Facades\Filament;
 use Filament\Forms\Components\DateTimePicker;
