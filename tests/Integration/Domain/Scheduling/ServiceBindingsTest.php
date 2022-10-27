@@ -13,32 +13,25 @@ use Domain\Scheduling\RemoveScheduledPublication;
 use Domain\Scheduling\SQLitePublicationRepository;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Events\Dispatcher;
-use PHPUnit\Framework\TestCase;
-use Tests\CreatesApplication;
+use Tests\KernelTestCase;
 
-final class ServiceBindingsTest extends TestCase
+final class ServiceBindingsTest extends KernelTestCase
 {
-    use CreatesApplication;
-
     /** @test */
     public function it_registers_singleton_bindings(): void
     {
-        $app = $this->createApplication();
+        $this->assertTrue($this->app->isShared(PublicationRepository::class));
+        $this->assertInstanceOf(SQLitePublicationRepository::class, $this->app->make(PublicationRepository::class));
 
-        $this->assertTrue($app->isShared(PublicationRepository::class));
-        $this->assertInstanceOf(SQLitePublicationRepository::class, $app->make(PublicationRepository::class));
-
-        $this->assertTrue($app->isShared(Scheduler::class));
-        $this->assertInstanceOf(CrontabDrivenScheduler::class, $app->make(Scheduler::class));
+        $this->assertTrue($this->app->isShared(Scheduler::class));
+        $this->assertInstanceOf(CrontabDrivenScheduler::class, $this->app->make(Scheduler::class));
     }
 
     /** @test */
     public function it_registers_listeners_for_blogging_events(): void
     {
-        $app = $this->createApplication();
-
         /** @var Dispatcher $events */
-        $events = $app->make(Dispatcher::class);
+        $events = $this->app->make(Dispatcher::class);
         $listeners = $events->getRawListeners();
 
         $deleted = $listeners[PostWasDeleted::class];
@@ -51,10 +44,8 @@ final class ServiceBindingsTest extends TestCase
     /** @test */
     public function it_registers_entry_policy_at_gate(): void
     {
-        $app = $this->createApplication();
-
         /** @var Gate $gate */
-        $gate = $app->make(Gate::class);
+        $gate = $this->app->make(Gate::class);
 
         $this->assertInstanceOf(PublicationPolicy::class, $gate->getPolicyFor(Publication::class));
     }

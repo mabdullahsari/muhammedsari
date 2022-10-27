@@ -13,41 +13,34 @@ use Domain\Publishing\Twitter\Twitter;
 use Domain\Publishing\Twitter\TwitterManager;
 use Domain\Publishing\UrlGenerator;
 use Illuminate\Contracts\Events\Dispatcher;
-use PHPUnit\Framework\TestCase;
-use Tests\CreatesApplication;
+use Tests\KernelTestCase;
 
-final class ServiceBindingsTest extends TestCase
+final class ServiceBindingsTest extends KernelTestCase
 {
-    use CreatesApplication;
-
     /** @test */
     public function it_registers_singleton_bindings(): void
     {
-        $app = $this->createApplication();
-
         // Publishing
-        $this->assertTrue($app->isShared(UrlGenerator::class));
-        $this->assertInstanceOf(PostUrlGenerator::class, $app->make(UrlGenerator::class));
+        $this->assertTrue($this->app->isShared(UrlGenerator::class));
+        $this->assertInstanceOf(PostUrlGenerator::class, $this->app->make(UrlGenerator::class));
 
         // RSS
-        $this->assertTrue($app->isShared(FeedRepository::class));
-        $this->assertInstanceOf(SQLiteFeedRepository::class, $app->make(FeedRepository::class));
+        $this->assertTrue($this->app->isShared(FeedRepository::class));
+        $this->assertInstanceOf(SQLiteFeedRepository::class, $this->app->make(FeedRepository::class));
 
         // Twitter
-        $this->assertTrue($app->isShared(PostRepository::class));
-        $this->assertInstanceOf(SQLitePostRepository::class, $app->make(PostRepository::class));
+        $this->assertTrue($this->app->isShared(PostRepository::class));
+        $this->assertInstanceOf(SQLitePostRepository::class, $this->app->make(PostRepository::class));
 
-        $this->assertTrue($app->isShared(Twitter::class));
-        $this->assertInstanceOf(TwitterManager::class, $app->make(Twitter::class));
+        $this->assertTrue($this->app->isShared(Twitter::class));
+        $this->assertInstanceOf(TwitterManager::class, $this->app->make(Twitter::class));
     }
 
     /** @test */
     public function it_registers_listeners_for_blogging_events(): void
     {
-        $app = $this->createApplication();
-
         /** @var Dispatcher $events */
-        $events = $app->make(Dispatcher::class);
+        $events = $this->app->make(Dispatcher::class);
         $listeners = $events->getRawListeners()[PostWasPublished::class];
 
         // Twitter

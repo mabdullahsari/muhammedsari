@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Domain\Scheduling;
+namespace Tests\Unit\Domain\Scheduling\Models;
 
 use Domain\Scheduling\Models\PublicationPolicy;
 use Illuminate\Foundation\Auth\User;

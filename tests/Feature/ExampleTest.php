@@ -2,7 +2,9 @@
 
 namespace Tests\Feature;
 
-final class ExampleTest extends TestCase
+use Tests\KernelTestCase;
+
+final class ExampleTest extends KernelTestCase
 {
     public function test_the_application_returns_a_successful_response(): void
     {

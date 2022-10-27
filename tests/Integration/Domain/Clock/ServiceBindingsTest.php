@@ -4,19 +4,14 @@ namespace Tests\Integration\Domain\Clock;
 
 use Domain\Clock\NativeClock;
 use Domain\Contracts\Clock\Clock;
-use PHPUnit\Framework\TestCase;
-use Tests\CreatesApplication;
+use Tests\KernelTestCase;
 
-final class ServiceBindingsTest extends TestCase
+final class ServiceBindingsTest extends KernelTestCase
 {
-    use CreatesApplication;
-
     /** @test */
     public function it_registers_singleton_bindings(): void
     {
-        $app = $this->createApplication();
-
-        $this->assertTrue($app->isShared(Clock::class));
-        $this->assertInstanceOf(NativeClock::class, $app->make(Clock::class));
+        $this->assertTrue($this->app->isShared(Clock::class));
+        $this->assertInstanceOf(NativeClock::class, $this->app->make(Clock::class));
     }
 }
