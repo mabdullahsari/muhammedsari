@@ -2,14 +2,11 @@
 
 namespace Domain\Contracts\Blogging\Commands;
 
-use Dive\Utils\Makeable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
 final class PublishPost implements ShouldQueue
 {
-    use Makeable;
-
-    private function __construct(
+    public function __construct(
         public readonly int $id,
     ) {}
 }

@@ -15,7 +15,7 @@ final class PostObserver
     public function deleted(Post $post): void
     {
         $this->events->dispatch(
-            PostWasDeleted::make($post->id)
+            new PostWasDeleted($post->id)
         );
     }
 }

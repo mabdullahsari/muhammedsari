@@ -2,15 +2,18 @@
 
 namespace Domain\Blogging\ValueObjects;
 
-use Dive\Utils\Makeable;
+use Stringable;
 
-final class Body
+final class Body implements Stringable
 {
-    use Makeable;
-
     private function __construct(
         private readonly string $value,
     ) {}
+
+    public static function fromString(string $value): self
+    {
+        return new self($value);
+    }
 
     public function isEmpty(): bool
     {

@@ -2,13 +2,11 @@
 
 namespace Domain\Blogging\ValueObjects;
 
-use Dive\Utils\Makeable;
+use Stringable;
 use UnexpectedValueException;
 
-final class Summary
+final class Summary implements Stringable
 {
-    use Makeable;
-
     public const MAX_LENGTH = 100;
 
     private readonly string $value;
@@ -20,6 +18,11 @@ final class Summary
         }
 
         $this->value = $value;
+    }
+
+    public static function fromString(string $value): self
+    {
+        return new self($value);
     }
 
     public function isEmpty(): bool

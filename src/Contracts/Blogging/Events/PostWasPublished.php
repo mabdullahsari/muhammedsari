@@ -2,13 +2,9 @@
 
 namespace Domain\Contracts\Blogging\Events;
 
-use Dive\Utils\Makeable;
-
 final class PostWasPublished
 {
-    use Makeable;
-
-    private function __construct(
+    public function __construct(
         public readonly int $id,
     ) {}
 }

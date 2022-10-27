@@ -27,6 +27,6 @@ final class SQLitePostRepository implements PostRepository
             ->pluck('slug')
             ->all();
 
-        return Post::make($post->title, $post->slug, $tags);
+        return new Post($post->title, $post->slug, $tags);
     }
 }

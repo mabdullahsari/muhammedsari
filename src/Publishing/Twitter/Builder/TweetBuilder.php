@@ -36,7 +36,7 @@ final class TweetBuilder
         $tweet = array_filter([$text, $tags, $this->url]);
         $tweet = implode("\n\n", $tweet);
 
-        return Tweet::make($tweet);
+        return Tweet::fromString($tweet);
     }
 
     public function useEmoji(string $emoji): self
@@ -55,7 +55,7 @@ final class TweetBuilder
         $tags = Arr::wrap($tags);
 
         foreach ($tags as $tag) {
-            $that->tags[] = Hashtag::make($tag);
+            $that->tags[] = Hashtag::fromString($tag);
         }
 
         return $that;
@@ -65,7 +65,7 @@ final class TweetBuilder
     {
         $that = clone $this;
 
-        $that->title = Title::make($title);
+        $that->title = Title::fromString($title);
 
         return $that;
     }

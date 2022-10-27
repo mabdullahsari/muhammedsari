@@ -20,7 +20,7 @@ final class PostTest extends TestCase
         $this->expectException(CouldNotPublish::class);
         $this->expectExceptionMessage('Post body may not be missing.');
 
-        $post = $this->createPost(['body' => Body::make('')]);
+        $post = $this->createPost(['body' => Body::fromString('')]);
 
         $post->publish(
             $this->aClock()
@@ -33,7 +33,7 @@ final class PostTest extends TestCase
         $this->expectException(CouldNotPublish::class);
         $this->expectExceptionMessage('Post summary may not be missing.');
 
-        $post = $this->createPost(['summary' => Summary::make('')]);
+        $post = $this->createPost(['summary' => Summary::fromString('')]);
 
         $post->publish(
             $this->aClock()
@@ -64,17 +64,17 @@ final class PostTest extends TestCase
             $this->aClock()
         );
 
-        $this->assertEquals([PostWasPublished::make(1)], $post->flushEvents());
+        $this->assertEquals([new PostWasPublished(1)], $post->flushEvents());
     }
 
     private function createPost(array $overrides = []): Post
     {
         $attributes = $overrides + [
             'id' => 1,
-            'title' => Title::make('Never gonna give you up'),
-            'slug' => Slug::make('never-gonna-give-you-up'),
-            'body' => Body::make('Never gonna let you down'),
-            'summary' => Summary::make('Never gonna turn around and desert you'),
+            'title' => Title::fromString('Never gonna give you up'),
+            'slug' => Slug::fromString('never-gonna-give-you-up'),
+            'body' => Body::fromString('Never gonna let you down'),
+            'summary' => Summary::fromString('Never gonna turn around and desert you'),
         ];
 
         return Post::create(...$attributes);

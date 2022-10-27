@@ -3,15 +3,12 @@
 namespace Domain\Publishing\RSS;
 
 use Carbon\CarbonImmutable;
-use Dive\Utils\Makeable;
 use Domain\Publishing\UrlGenerator;
 use Spatie\Feed\FeedItem;
 use stdClass;
 
 final class FeedItemMapper
 {
-    use Makeable;
-
     public function __construct(
         private readonly UrlGenerator $url,
     ) {}

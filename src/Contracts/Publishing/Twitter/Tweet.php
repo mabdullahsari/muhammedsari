@@ -2,14 +2,11 @@
 
 namespace Domain\Contracts\Publishing\Twitter;
 
-use Dive\Utils\Makeable;
-use Illuminate\Contracts\Support\Arrayable;
+use Stringable;
 use UnexpectedValueException;
 
-final class Tweet implements Arrayable
+final class Tweet implements Stringable
 {
-    use Makeable;
-
     public const MAX_LENGTH = 280;
 
     private readonly string $message;
@@ -27,9 +24,9 @@ final class Tweet implements Arrayable
         $this->message = $message;
     }
 
-    public function toArray(): array
+    public static function fromString(string $message): self
     {
-        return ['text' => $this->message];
+        return new self($message);
     }
 
     public function __toString(): string

@@ -2,13 +2,11 @@
 
 namespace Domain\Blogging\ValueObjects;
 
-use Dive\Utils\Makeable;
+use Stringable;
 use UnexpectedValueException;
 
-final class Title
+final class Title implements Stringable
 {
-    use Makeable;
-
     private readonly string $value;
 
     private function __construct(string $value)
@@ -18,6 +16,11 @@ final class Title
         }
 
         $this->value = $value;
+    }
+
+    public static function fromString(string $value): self
+    {
+        return new self($value);
     }
 
     public function __toString(): string

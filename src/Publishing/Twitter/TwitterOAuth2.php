@@ -22,6 +22,6 @@ final class TwitterOAuth2 implements Twitter
 
     public function send(Tweet $tweet): void
     {
-        $this->connection->post('tweets', $tweet->toArray(), true);
+        $this->connection->post('tweets', ['text' => (string) $tweet], true);
     }
 }

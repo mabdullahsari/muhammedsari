@@ -52,11 +52,11 @@ final class Post
         $post = new Post();
 
         $post->id = (int) $record->id;
-        $post->body = Body::make($record->body);
-        $post->slug = Slug::make($record->slug);
+        $post->body = Body::fromString($record->body);
+        $post->slug = Slug::fromString($record->slug);
         $post->state = PostState::from($record->state);
-        $post->summary = Summary::make($record->summary);
-        $post->title = Title::make($record->title);
+        $post->summary = Summary::fromString($record->summary);
+        $post->title = Title::fromString($record->title);
         $post->publishedAt = transform($record->published_at, CarbonImmutable::parse(...)); // @phpstan-ignore-line
 
         return $post;
@@ -80,7 +80,7 @@ final class Post
         $this->state = PostState::Published;
         $this->publishedAt = $clock->now();
 
-        $this->raise(PostWasPublished::make($this->id));
+        $this->raise(new PostWasPublished($this->id));
     }
 
     public function toDatabase(): array

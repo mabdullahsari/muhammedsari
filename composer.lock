@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "16836adc21aeeead1cd86704b119a6df",
+    "content-hash": "72dad032961e309f7c94deb6a4d85f5d",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -779,57 +779,6 @@
                 "source": "https://github.com/dive-be/php-enum-utils/tree/1.1.0"
             },
             "time": "2022-05-09T07:30:12+00:00"
-        },
-        {
-            "name": "dive-be/php-utils",
-            "version": "0.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dive-be/php-utils.git",
-                "reference": "795aa35f1df212d05193ef1dd11541a3a433a042"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dive-be/php-utils/zipball/795aa35f1df212d05193ef1dd11541a3a433a042",
-                "reference": "795aa35f1df212d05193ef1dd11541a3a433a042",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.1"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.8"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Dive\\Utils\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Muhammed Sari",
-                    "email": "muhammed@dive.be",
-                    "homepage": "https://dive.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Collection of useful tools used at DIVE",
-            "homepage": "https://github.com/dive-be/php-utils",
-            "keywords": [
-                "dive",
-                "support",
-                "utilities"
-            ],
-            "support": {
-                "issues": "https://github.com/dive-be/php-utils/issues",
-                "source": "https://github.com/dive-be/php-utils/tree/0.1.0"
-            },
-            "time": "2022-05-23T16:56:08+00:00"
         },
         {
             "name": "doctrine/cache",

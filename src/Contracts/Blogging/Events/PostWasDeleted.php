@@ -2,13 +2,9 @@
 
 namespace Domain\Contracts\Blogging\Events;
 
-use Dive\Utils\Makeable;
-
 final class PostWasDeleted
 {
-    use Makeable;
-
-    private function __construct(
+    public function __construct(
         public readonly int $id,
     ) {}
 }

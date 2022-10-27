@@ -27,7 +27,7 @@ final class CrontabDrivenScheduler implements Scheduler
     private function publishPost(Publication $publication): void
     {
         $this->commands->dispatch(
-            PublishPost::make($publication->postId)
+            new PublishPost($publication->postId)
         );
     }
 }

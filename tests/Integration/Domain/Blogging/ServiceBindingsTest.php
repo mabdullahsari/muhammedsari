@@ -77,7 +77,7 @@ final class ServiceBindingsTest extends TestCase
         /** @var Dispatcher $commands */
         $commands = $app->make(Dispatcher::class);
 
-        $handler = $commands->getCommandHandler(PublishPost::make(1));
+        $handler = $commands->getCommandHandler(new PublishPost(1));
 
         $this->assertInstanceOf(PublishPostHandler::class, $handler);
     }

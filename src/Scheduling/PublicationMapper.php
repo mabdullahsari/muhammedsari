@@ -14,7 +14,7 @@ final class PublicationMapper
 
     public function map(stdClass $record): Publication
     {
-        return Publication::make(
+        return new Publication(
             (int) $record->id,
             (int) $record->post_id,
             CarbonImmutable::createFromFormat('Y-m-d H:i:s', $record->publish_at),

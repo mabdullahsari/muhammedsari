@@ -2,13 +2,11 @@
 
 namespace Domain\Blogging\ValueObjects;
 
-use Dive\Utils\Makeable;
+use Stringable;
 use UnexpectedValueException;
 
-final class Slug
+final class Slug implements Stringable
 {
-    use Makeable;
-
     public const PATTERN = '[a-z0-9]+(?:-[a-z0-9]+)*';
     public const REGEX = '/^' . self::PATTERN . '$/';
 
@@ -21,6 +19,11 @@ final class Slug
         }
 
         $this->value = $value;
+    }
+
+    public static function fromString(string $value): self
+    {
+        return new self($value);
     }
 
     public function __toString(): string
