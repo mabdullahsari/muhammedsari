@@ -6,9 +6,9 @@ use Domain\Contracts\Blogging\Events\PostWasPublished;
 use Domain\Contracts\Publishing\RSS\FeedRepository;
 use Domain\Publishing\PostUrlGenerator;
 use Domain\Publishing\RSS\SQLiteFeedRepository;
-use Domain\Publishing\Twitter\PostRepository;
+use Domain\Publishing\Twitter\PostProvider;
 use Domain\Publishing\Twitter\SendTweetAboutNewPost;
-use Domain\Publishing\Twitter\SQLitePostRepository;
+use Domain\Publishing\Twitter\SQLitePostProvider;
 use Domain\Publishing\Twitter\Twitter;
 use Domain\Publishing\Twitter\TwitterManager;
 use Domain\Publishing\UrlGenerator;
@@ -29,8 +29,8 @@ final class ServiceBindingsTest extends KernelTestCase
         $this->assertInstanceOf(SQLiteFeedRepository::class, $this->app->make(FeedRepository::class));
 
         // Twitter
-        $this->assertTrue($this->app->isShared(PostRepository::class));
-        $this->assertInstanceOf(SQLitePostRepository::class, $this->app->make(PostRepository::class));
+        $this->assertTrue($this->app->isShared(PostProvider::class));
+        $this->assertInstanceOf(SQLitePostProvider::class, $this->app->make(PostProvider::class));
 
         $this->assertTrue($this->app->isShared(Twitter::class));
         $this->assertInstanceOf(TwitterManager::class, $this->app->make(Twitter::class));

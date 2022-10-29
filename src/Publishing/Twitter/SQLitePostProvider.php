@@ -5,13 +5,13 @@ namespace Domain\Publishing\Twitter;
 use Illuminate\Database\SQLiteConnection;
 use stdClass;
 
-final class SQLitePostRepository implements PostRepository
+final class SQLitePostProvider implements PostProvider
 {
     public function __construct(
         private readonly SQLiteConnection $db,
     ) {}
 
-    public function find(int $id): Post
+    public function getById(int $id): Post
     {
         /** @var stdClass|null $post */
         $post = $this->db->table('posts')->find($id, ['slug', 'title']);
