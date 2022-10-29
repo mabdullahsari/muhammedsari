@@ -14,7 +14,7 @@ final class SQLitePublicationRepository implements PublicationRepository
         private readonly PublicationMapper $mapper,
     ) {}
 
-    public function findById(int $id): Publication
+    public function find(int $id): Publication
     {
         $record = $this->newQuery()->findOr($id, static fn () => throw CouldNotFindPublication::withPostId($id));
 
