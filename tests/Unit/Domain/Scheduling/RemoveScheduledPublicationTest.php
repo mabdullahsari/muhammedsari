@@ -30,7 +30,6 @@ final class RemoveScheduledPublicationTest extends TestCase
         $publications->find(1234);
     }
 
-    /** @test */
     private function events(): array
     {
         return [

@@ -18,3 +18,4 @@ parameters:
     ignoreErrors:
         - '#Access to protected property Spatie\\Feed\\FeedItem::.*#'
         - '#Domain\\Scheduling\\Publication#'
+        - '#Method Tests\\Integration\\Domain\\Publishing\\Twitter\\TwitterManagerTest::concretions\(\) is unused\.#'
