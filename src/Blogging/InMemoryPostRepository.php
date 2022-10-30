@@ -4,8 +4,11 @@ namespace Domain\Blogging;
 
 final class InMemoryPostRepository implements PostRepository
 {
-    /** @var Post[] */
-    private array $posts = [];
+    private array $saves = [];
+
+    public function __construct(
+        private array $posts = [],
+    ) {}
 
     public function find(int $id): Post
     {
@@ -19,5 +22,11 @@ final class InMemoryPostRepository implements PostRepository
     public function save(Post $post): void
     {
         $this->posts[$post->id()] = $post;
+        $this->saves[] = $post->id();
+    }
+
+    public function wasSaved(int $id): bool
+    {
+        return in_array($id, $this->saves);
     }
 }
