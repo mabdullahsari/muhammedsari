@@ -32,5 +32,9 @@
         <env name="QUEUE_CONNECTION" value="sync"/>
         <env name="SESSION_DRIVER" value="array"/>
         <env name="TWITTER_DRIVER" value="array"/>
+        <env name="TWITTER_CONSUMER_KEY" value="yusSi1NprqLeTJBDJhYBcWR85" />
+        <env name="TWITTER_CONSUMER_SECRET" value="rg5pPrf3qE9KJ9gBxkwlMe29gh9Gq5fSayMMwzyaqQuKx0XMNx" />
+        <env name="TWITTER_ACCESS_TOKEN" value="4629921386012690064-sg1PLwYSIPpcWjGwfGgEi6nfZykoNd" />
+        <env name="TWITTER_ACCESS_TOKEN_SECRET" value="QmoOjwZxMN3cbDtms9GEdUa0BsEOnwgio9hCyqKDrOlSk" />
     </php>
 </phpunit>
