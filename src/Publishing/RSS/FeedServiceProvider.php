@@ -2,10 +2,10 @@
 
 namespace Domain\Publishing\RSS;
 
-use Domain\Contracts\Publishing\RSS\FeedRepository;
+use Domain\Contracts\Publishing\RSS\FeedProvider;
 use Illuminate\Support\ServiceProvider;
 
 final class FeedServiceProvider extends ServiceProvider
 {
-    public array $singletons = [FeedRepository::class => SQLiteFeedRepository::class];
+    public array $singletons = [FeedProvider::class => SQLiteFeedProvider::class];
 }

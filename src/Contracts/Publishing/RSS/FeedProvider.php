@@ -5,7 +5,7 @@ namespace Domain\Contracts\Publishing\RSS;
 use Illuminate\Support\Collection;
 use Spatie\Feed\FeedItem;
 
-interface FeedRepository
+interface FeedProvider
 {
     /** @return Collection<int, FeedItem> */
     public function items(): Collection;

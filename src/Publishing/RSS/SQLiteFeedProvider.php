@@ -2,12 +2,12 @@
 
 namespace Domain\Publishing\RSS;
 
-use Domain\Contracts\Publishing\RSS\FeedRepository;
+use Domain\Contracts\Publishing\RSS\FeedProvider;
 use Illuminate\Database\SQLiteConnection;
 use Illuminate\Support\Collection;
 use Spatie\Feed\FeedItem;
 
-final class SQLiteFeedRepository implements FeedRepository
+final class SQLiteFeedProvider implements FeedProvider
 {
     public function __construct(
         private readonly SQLiteConnection $connection,

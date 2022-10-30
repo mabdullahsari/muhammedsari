@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-use Domain\Contracts\Publishing\RSS\FeedRepository;
+use Domain\Contracts\Publishing\RSS\FeedProvider;
 
 return [
     'feeds' => [
@@ -13,7 +13,7 @@ return [
              * You can also pass an argument to that method. Note that their key must be the name of the parameter:
              * [App\Model::class, 'getAllFeedItems', 'parameterName' => 'argument']
              */
-            'items' => [FeedRepository::class, 'items'],
+            'items' => [FeedProvider::class, 'items'],
 
             /*
              * The feed will be available on this url.

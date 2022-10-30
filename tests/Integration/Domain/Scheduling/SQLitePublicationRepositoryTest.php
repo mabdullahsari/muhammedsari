@@ -5,6 +5,7 @@ namespace Tests\Integration\Domain\Scheduling;
 use Domain\Scheduling\PublicationMapper;
 use Domain\Scheduling\PublicationRepository;
 use Domain\Scheduling\SQLitePublicationRepository;
+use Illuminate\Database\SQLiteConnection;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\KernelTestCase;
 use Tests\Unit\Domain\Scheduling\PublicationRepositoryContractTests;
@@ -16,6 +17,11 @@ final class SQLitePublicationRepositoryTest extends KernelTestCase
 
     private function getInstance(): PublicationRepository
     {
+        return new SQLitePublicationRepository($this->setUpDatabase(), new PublicationMapper());
+    }
+
+    private function setUpDatabase(): SQLiteConnection
+    {
         $db = $this->app['db.connection'];
 
         $db->table('publications')->insert([
@@ -25,6 +31,6 @@ final class SQLitePublicationRepositoryTest extends KernelTestCase
             ['id' => 4, 'post_id' => 1456, 'publish_at' =>  $this->date('2022-10-27')],
         ]);
 
-        return new SQLitePublicationRepository($this->app['db.connection'], new PublicationMapper());
+        return $db;
     }
 }

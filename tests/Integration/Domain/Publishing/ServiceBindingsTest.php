@@ -3,9 +3,9 @@
 namespace Tests\Integration\Domain\Publishing;
 
 use Domain\Contracts\Blogging\Events\PostWasPublished;
-use Domain\Contracts\Publishing\RSS\FeedRepository;
+use Domain\Contracts\Publishing\RSS\FeedProvider;
 use Domain\Publishing\PostUrlGenerator;
-use Domain\Publishing\RSS\SQLiteFeedRepository;
+use Domain\Publishing\RSS\SQLiteFeedProvider;
 use Domain\Publishing\Twitter\PostProvider;
 use Domain\Publishing\Twitter\SendTweetAboutNewPost;
 use Domain\Publishing\Twitter\SQLitePostProvider;
@@ -25,8 +25,8 @@ final class ServiceBindingsTest extends KernelTestCase
         $this->assertInstanceOf(PostUrlGenerator::class, $this->app->make(UrlGenerator::class));
 
         // RSS
-        $this->assertTrue($this->app->isShared(FeedRepository::class));
-        $this->assertInstanceOf(SQLiteFeedRepository::class, $this->app->make(FeedRepository::class));
+        $this->assertTrue($this->app->isShared(FeedProvider::class));
+        $this->assertInstanceOf(SQLiteFeedProvider::class, $this->app->make(FeedProvider::class));
 
         // Twitter
         $this->assertTrue($this->app->isShared(PostProvider::class));
