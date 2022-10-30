@@ -19,3 +19,4 @@ parameters:
         - '#Access to protected property Spatie\\Feed\\FeedItem::.*#'
         - '#Domain\\Scheduling\\Publication#'
         - '#Method Tests\\Integration\\Domain\\Publishing\\Twitter\\TwitterManagerTest::concretions\(\) is unused\.#'
+        - '#Property .*::\$seed(er)? is never read, only written\.#'

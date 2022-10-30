@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\ConnectionInterface;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\SQLiteConnection;
 
 final class UserSeeder extends Seeder
 {
-    public function run(ConnectionInterface $db): void
+    public function run(SQLiteConnection $db): void
     {
         $db->table('users')->insert([
             'id' => 1,
