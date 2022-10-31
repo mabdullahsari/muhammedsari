@@ -10,4 +10,12 @@ final class ConsoleServiceProvider extends AggregateServiceProvider
         \Termwind\Laravel\TermwindServiceProvider::class,
         \Laravel\Tinker\TinkerServiceProvider::class,
     ];
+
+    public function boot(): void
+    {
+        $this->commands([
+            ProcessSchedulerTickCommand::class,
+            PublishBlogPostCommand::class,
+        ]);
+    }
 }

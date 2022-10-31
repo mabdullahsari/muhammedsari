@@ -2,7 +2,6 @@
 
 namespace App\Web;
 
-use App\Web\Providers\RouteServiceProvider;
 use Illuminate\Support\AggregateServiceProvider;
 
 final class WebServiceProvider extends AggregateServiceProvider

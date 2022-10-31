@@ -1,10 +1,17 @@
 <?php declare(strict_types=1);
 
+use App\Filament\HealthCheckResultsPage;
+use App\Filament\Post;
+use App\Filament\Publication;
+use App\Filament\Tag;
+use App\Filament\User;
+use Filament\AvatarProviders\UiAvatarsProvider;
+use Filament\Http\Livewire\Auth\Login;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Http\Middleware\MirrorConfigToSubpackages;
-use Filament\Pages;
-use Filament\Widgets;
+use Filament\Pages\Dashboard;
+use Filament\Widgets\AccountWidget;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -87,7 +94,7 @@ return [
     'auth' => [
         'guard' => env('FILAMENT_AUTH_GUARD', 'web'),
         'pages' => [
-            'login' => Filament\Http\Livewire\Auth\Login::class,
+            'login' => Login::class,
         ],
     ],
 
@@ -105,7 +112,8 @@ return [
         'namespace' => 'App\\Filament\\Pages',
         'path' => app_path('Filament/Pages'),
         'register' => [
-            Pages\Dashboard::class,
+            Dashboard::class,
+            HealthCheckResultsPage::class,
         ],
     ],
 
@@ -122,7 +130,12 @@ return [
     'resources' => [
         'namespace' => 'App\\Filament\\Resources',
         'path' => app_path('Filament/Resources'),
-        'register' => [],
+        'register' => [
+            Post::class,
+            Publication::class,
+            Tag::class,
+            User::class,
+        ],
     ],
 
     /*
@@ -139,7 +152,7 @@ return [
         'namespace' => 'App\\Filament\\Widgets',
         'path' => app_path('Filament/Widgets'),
         'register' => [
-            Widgets\AccountWidget::class,
+            AccountWidget::class,
         ],
     ],
 
@@ -273,7 +286,7 @@ return [
     |
     */
 
-    'default_avatar_provider' => Filament\AvatarProviders\UiAvatarsProvider::class,
+    'default_avatar_provider' => UiAvatarsProvider::class,
 
     /*
     |--------------------------------------------------------------------------

@@ -7,14 +7,14 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 final class Kernel extends ConsoleKernel
 {
-    protected function schedule(Schedule $schedule)
+    protected function schedule(Schedule $schedule): void
     {
         $schedule->command('health:check')->everyThirtyMinutes();
         $schedule->command('health:schedule-check-heartbeat')->everyMinute();
     }
 
-    protected function commands()
+    protected function commands(): void
     {
-        $this->load(__DIR__ . '/Commands');
+        $this->app->register(ConsoleServiceProvider::class);
     }
 }

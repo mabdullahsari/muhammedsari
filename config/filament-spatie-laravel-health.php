@@ -1,5 +1,7 @@
 <?php declare(strict_types=1);
 
+use App\Filament\HealthCheckResultsPage;
+
 return [
 
     /*
@@ -13,7 +15,7 @@ return [
     */
 
     'pages' => [
-        'health' => App\Filament\Pages\HealthCheckResultsPage::class
+        'health' => HealthCheckResultsPage::class,
     ],
 
 ];
