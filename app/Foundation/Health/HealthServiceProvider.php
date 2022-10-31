@@ -22,7 +22,7 @@ final class HealthServiceProvider extends AggregateServiceProvider
     {
         parent::register();
 
-        $this->app->afterResolving('health', $this->registerChecks(...));
+        $this->app->resolving(Health::class, $this->registerChecks(...));
     }
 
     private function registerChecks(Health $health): void

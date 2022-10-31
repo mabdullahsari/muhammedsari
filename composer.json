@@ -8,13 +8,13 @@
         "abraham/twitteroauth": "^4.0.1",
         "dive-be/eloquent-utils": "^0.1.1",
         "dive-be/php-enum-utils": "^1.1",
-        "filament/filament": "^2.16.36",
+        "filament/filament": "^2.16.37",
         "guzzlehttp/guzzle": "^7.5",
-        "laravel/framework": "^9.36.4",
+        "laravel/framework": "^9.37",
         "laravel/tinker": "^2.7.2",
         "shuvroroy/filament-spatie-laravel-health": "^1.6",
         "spatie/filament-markdown-editor": "^1.0",
-        "spatie/laravel-feed": "^4.1.4",
+        "spatie/laravel-feed": "^4.1.5",
         "spatie/laravel-health": "^1.15.2",
         "spatie/laravel-markdown": "^2.2.4",
         "spatie/security-advisories-health-check": "^1.0"
@@ -25,9 +25,9 @@
         "laravel/pint": "^1.2",
         "mockery/mockery": "^1.5.1",
         "nunomaduro/collision": "^6.3.1",
-        "nunomaduro/larastan": "^2.2.5",
-        "phpunit/phpunit": "^9.5.25",
-        "spatie/laravel-ignition": "^1.5.2"
+        "nunomaduro/larastan": "^2.2.6",
+        "phpunit/phpunit": "^9.5.26",
+        "spatie/laravel-ignition": "^1.6.1"
     },
     "autoload": {
         "psr-4": {
