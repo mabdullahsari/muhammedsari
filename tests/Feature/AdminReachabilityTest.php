@@ -10,8 +10,6 @@ final class AdminReachabilityTest extends KernelTestCase
     /** @test */
     public function test_login_redirect(): void
     {
-        // Arrange
-
         // Act
         $response = $this->get('admin');
 
