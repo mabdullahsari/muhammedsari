@@ -3,12 +3,12 @@
 namespace App\Foundation\Bus;
 
 use Closure;
-use Illuminate\Database\ConnectionInterface;
+use Illuminate\Database\SQLiteConnection;
 
 final class UseDatabaseTransactions
 {
     public function __construct(
-        private readonly ConnectionInterface $db,
+        private readonly SQLiteConnection $db,
     ) {}
 
     public function handle(object $command, Closure $next): mixed
