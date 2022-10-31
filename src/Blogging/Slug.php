@@ -3,7 +3,7 @@
 namespace Domain\Blogging;
 
 use Stringable;
-use UnexpectedValueException;
+use Webmozart\Assert\Assert;
 
 final class Slug implements Stringable
 {
@@ -14,9 +14,7 @@ final class Slug implements Stringable
 
     private function __construct(string $value)
     {
-        if (! preg_match(self::REGEX, $value)) {
-            throw new UnexpectedValueException("'{$value}' is not a valid slug.");
-        }
+        Assert::regex($value, self::REGEX);
 
         $this->value = $value;
     }

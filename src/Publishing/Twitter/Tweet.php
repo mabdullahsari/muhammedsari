@@ -3,7 +3,7 @@
 namespace Domain\Publishing\Twitter;
 
 use Stringable;
-use UnexpectedValueException;
+use Webmozart\Assert\Assert;
 
 final class Tweet implements Stringable
 {
@@ -13,13 +13,8 @@ final class Tweet implements Stringable
 
     private function __construct(string $message)
     {
-        if (empty($message)) {
-            throw new UnexpectedValueException('A tweet cannot be empty.');
-        }
-
-        if (mb_strlen($message) > self::MAX_LENGTH) {
-            throw new UnexpectedValueException('The message is too long to fit in a tweet.');
-        }
+        Assert::stringNotEmpty($message);
+        Assert::maxLength($message, self::MAX_LENGTH);
 
         $this->message = $message;
     }

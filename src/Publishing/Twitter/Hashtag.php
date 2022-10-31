@@ -3,7 +3,7 @@
 namespace Domain\Publishing\Twitter;
 
 use Stringable;
-use UnexpectedValueException;
+use Webmozart\Assert\Assert;
 
 final class Hashtag implements Stringable
 {
@@ -11,13 +11,8 @@ final class Hashtag implements Stringable
 
     private function __construct(string $value)
     {
-        if (empty($value)) {
-            throw new UnexpectedValueException('A hashtag cannot be empty.');
-        }
-
-        if (str_contains($value, ' ')) {
-            throw new UnexpectedValueException('A hashtag cannot contain whitespaces.');
-        }
+        Assert::stringNotEmpty($value);
+        Assert::notContains($value, ' ');
 
         $this->value = $value;
     }

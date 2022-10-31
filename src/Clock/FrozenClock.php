@@ -4,7 +4,7 @@ namespace Domain\Clock;
 
 use Carbon\CarbonImmutable;
 use Domain\Contracts\Clock\Clock;
-use InvalidArgumentException;
+use Webmozart\Assert\Assert;
 
 final class FrozenClock implements Clock
 {
@@ -24,10 +24,8 @@ final class FrozenClock implements Clock
     {
         $time = CarbonImmutable::createFromFormat($format, $datetime);
 
-        if ($time === false) {
-            throw new InvalidArgumentException("{$datetime}|{$format} is not a valid point in time.");
-        }
+        Assert::isInstanceOf($time, CarbonImmutable::class);
 
-        $this->time = $time;
+        $this->time = $time; // @phpstan-ignore-line
     }
 }

@@ -3,7 +3,7 @@
 namespace Domain\Publishing\Twitter;
 
 use Stringable;
-use UnexpectedValueException;
+use Webmozart\Assert\Assert;
 
 final class Title implements Stringable
 {
@@ -11,9 +11,7 @@ final class Title implements Stringable
 
     private function __construct(string $value)
     {
-        if (empty($value)) {
-            throw new UnexpectedValueException('A title cannot be empty.');
-        }
+        Assert::stringNotEmpty($value);
 
         $this->value = $value;
     }

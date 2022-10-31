@@ -3,7 +3,7 @@
 namespace Domain\Blogging;
 
 use Stringable;
-use UnexpectedValueException;
+use Webmozart\Assert\Assert;
 
 final class Summary implements Stringable
 {
@@ -13,9 +13,7 @@ final class Summary implements Stringable
 
     private function __construct(string $value)
     {
-        if (mb_strlen($value) > self::MAX_LENGTH) {
-            throw new UnexpectedValueException("'{$value}' is too long.");
-        }
+        Assert::maxLength($value, self::MAX_LENGTH);
 
         $this->value = $value;
     }

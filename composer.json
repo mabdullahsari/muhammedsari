@@ -17,7 +17,8 @@
         "spatie/laravel-feed": "^4.1.5",
         "spatie/laravel-health": "^1.15.2",
         "spatie/laravel-markdown": "^2.2.4",
-        "spatie/security-advisories-health-check": "^1.0"
+        "spatie/security-advisories-health-check": "^1.0",
+        "webmozart/assert": "^1.11"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.7",

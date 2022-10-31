@@ -2,17 +2,17 @@
 
 namespace Domain\Blogging;
 
-use InvalidArgumentException;
+use Webmozart\Assert\Assert;
 
 final class PostId
 {
+    private const MIN = 1;
+
     private readonly int $value;
 
     private function __construct(int $value)
     {
-        if ($value < 1) {
-            throw new InvalidArgumentException("{$value} is not a valid post identifier.");
-        }
+        Assert::greaterThanEq($value, self::MIN);
 
         $this->value = $value;
     }

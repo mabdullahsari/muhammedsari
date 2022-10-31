@@ -4,7 +4,7 @@ namespace Domain\Publishing\Twitter;
 
 use Illuminate\Log\Logger;
 use Illuminate\Support\Manager;
-use InvalidArgumentException;
+use Webmozart\Assert\Assert;
 
 final class TwitterManager extends Manager implements Twitter
 {
@@ -12,10 +12,9 @@ final class TwitterManager extends Manager implements Twitter
     {
         $driver = $this->config->get('services.twitter.driver', 'array');
 
-        if (! is_string($driver)) {
-            throw new InvalidArgumentException('Invalid Twitter driver.');
-        }
+        Assert::string($driver);
 
+        /** @var string $driver */
         return $driver;
     }
 
@@ -36,16 +35,10 @@ final class TwitterManager extends Manager implements Twitter
     {
         $config = $this->config->get('services.twitter.oauth2');
 
-        if (! is_array($config)) {
-            throw new InvalidArgumentException('Invalid Twitter configuration.');
-        }
+        Assert::isArray($config);
 
-        return new TwitterOAuth2(
-            $config['consumer_key'],
-            $config['consumer_secret'],
-            $config['access_token'],
-            $config['access_token_secret'],
-        );
+        // @phpstan-ignore-next-line
+        return new TwitterOAuth2($config['consumer_key'], $config['consumer_secret'], $config['access_token'], $config['access_token_secret']);
     }
 
     public function send(Tweet $tweet): void
