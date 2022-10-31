@@ -5,7 +5,7 @@ namespace App\Console;
 use Domain\Contracts\Scheduling\Scheduler;
 use Illuminate\Console\Command;
 
-final class ProcessSchedulerTickCommand extends Command
+final class ProcessSchedulerTick extends Command
 {
     protected $signature = 'scheduling:tick';
 

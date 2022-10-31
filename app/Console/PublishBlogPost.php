@@ -7,7 +7,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Bus;
 use Throwable;
 
-final class PublishBlogPostCommand extends Command
+final class PublishBlogPost extends Command
 {
     use WithValidatedInput;
 

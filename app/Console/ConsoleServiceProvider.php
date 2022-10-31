@@ -14,8 +14,8 @@ final class ConsoleServiceProvider extends AggregateServiceProvider
     public function boot(): void
     {
         $this->commands([
-            ProcessSchedulerTickCommand::class,
-            PublishBlogPostCommand::class,
+            ProcessSchedulerTick::class,
+            PublishBlogPost::class,
         ]);
     }
 }
