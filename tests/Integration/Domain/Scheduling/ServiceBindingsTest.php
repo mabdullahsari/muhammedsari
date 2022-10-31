@@ -30,7 +30,6 @@ final class ServiceBindingsTest extends KernelTestCase
     /** @test */
     public function it_registers_listeners_for_blogging_events(): void
     {
-        /** @var Dispatcher $events */
         $events = $this->app->make(Dispatcher::class);
         $listeners = $events->getRawListeners();
 
@@ -44,7 +43,6 @@ final class ServiceBindingsTest extends KernelTestCase
     /** @test */
     public function it_registers_entry_policy_at_gate(): void
     {
-        /** @var Gate $gate */
         $gate = $this->app->make(Gate::class);
 
         $this->assertInstanceOf(PublicationPolicy::class, $gate->getPolicyFor(Publication::class));

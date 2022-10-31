@@ -20,7 +20,7 @@ final class TwitterManagerTest extends KernelTestCase
 
         $instance = $manager->driver($driver);
 
-        $this->assertInstanceOf($implementation, $instance); // @phpstan-ignore-line
+        $this->assertInstanceOf($implementation, $instance);
     }
 
     private function concretions(): array

@@ -8,7 +8,7 @@ trait PublicationFactoryMethods
 {
     private function date(string $date): CarbonImmutable
     {
-        return CarbonImmutable::createFromFormat('!Y-m-d', $date); // @phpstan-ignore-line
+        return CarbonImmutable::createFromFormat('!Y-m-d', $date);
     }
 
     private function now(): CarbonImmutable

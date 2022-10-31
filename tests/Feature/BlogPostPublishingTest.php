@@ -3,10 +3,8 @@
 namespace Tests\Feature;
 
 use Database\Factories\PostFactory;
-use Domain\Blogging\Models\Post;
 use Domain\Blogging\PostState;
 use Domain\Contracts\Blogging\Commands\PublishPost;
-use Domain\Publishing\Twitter\InMemoryTwitter;
 use Domain\Publishing\Twitter\Twitter;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Carbon;
@@ -20,10 +18,11 @@ final class BlogPostPublishingTest extends KernelTestCase
     /** @test */
     public function test_user_can_publish_blog_post(): void
     {
-        /** @var Post $post */
-        $post = PostFactory::new()->createQuietly();
+        $post = PostFactory::new()
+            ->hasBody()
+            ->hasSummary()
+            ->createQuietly();
 
-        /** @var InMemoryTwitter $twitter */
         $twitter = $this->app->make(Twitter::class);
 
         $this->assertSame(PostState::Draft, $post->state);

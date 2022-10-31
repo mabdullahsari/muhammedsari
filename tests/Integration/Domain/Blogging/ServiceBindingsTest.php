@@ -41,7 +41,6 @@ final class ServiceBindingsTest extends KernelTestCase
     /** @test */
     public function it_registers_a_post_model_observer(): void
     {
-        /** @var \Illuminate\Contracts\Events\Dispatcher $events */
         $events = $this->app->make('events');
         $listeners = $events->getRawListeners()['eloquent.deleted: ' . Post::class];
 
@@ -51,7 +50,6 @@ final class ServiceBindingsTest extends KernelTestCase
     /** @test */
     public function it_registers_policies_at_gate(): void
     {
-        /** @var Gate $gate */
         $gate = $this->app->make(Gate::class);
 
         $this->assertInstanceOf(PostPolicy::class, $gate->getPolicyFor(Post::class));
@@ -61,7 +59,6 @@ final class ServiceBindingsTest extends KernelTestCase
     /** @test */
     public function it_registers_commands_with_handlers(): void
     {
-        /** @var Dispatcher $commands */
         $commands = $this->app->make(Dispatcher::class);
 
         $handler = $commands->getCommandHandler(new PublishPost(1));

@@ -39,7 +39,6 @@ final class ServiceBindingsTest extends KernelTestCase
     /** @test */
     public function it_registers_listeners_for_blogging_events(): void
     {
-        /** @var Dispatcher $events */
         $events = $this->app->make(Dispatcher::class);
         $listeners = $events->getRawListeners()[PostWasPublished::class];
 

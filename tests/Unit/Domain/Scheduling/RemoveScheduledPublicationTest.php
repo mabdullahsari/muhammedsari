@@ -23,7 +23,7 @@ final class RemoveScheduledPublicationTest extends TestCase
         $publications = new InMemoryPublicationRepository([1234 => new Publication(1234, 56, $this->now())]);
         $listener = new RemoveScheduledPublication($publications);
 
-        $listener->handle(new $event(56)); // @phpstan-ignore-line
+        $listener->handle(new $event(56));
 
         $this->expectException(CouldNotFindPublication::class);
 

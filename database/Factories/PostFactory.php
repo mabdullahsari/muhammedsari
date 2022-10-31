@@ -20,9 +20,27 @@ final class PostFactory extends Factory
             'author_id' => UserFactory::new(),
             'slug' => static fn (array $attributes) => Str::slug($attributes['title']),
             'title' => $this->faker->words(5, true),
-            'body' => $this->faker->text(300),
-            'summary' => $this->faker->text(100),
+            'body' => '',
+            'summary' => '',
             'state' => PostState::Draft,
         ];
+    }
+
+    public function hasBody(): self
+    {
+        return $this->state(['body' => $this->faker->text(300)]);
+    }
+
+    public function hasSummary(): self
+    {
+        return $this->state(['summary' => $this->faker->text(100)]);
+    }
+
+    public function published(): self
+    {
+        return $this
+            ->hasBody()
+            ->hasSummary()
+            ->state(['state' => PostState::Published]);
     }
 }
