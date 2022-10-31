@@ -11,6 +11,7 @@ final class Kernel extends ConsoleKernel
     {
         $schedule->command('health:check')->everyThirtyMinutes();
         $schedule->command('health:schedule-check-heartbeat')->everyMinute();
+        $schedule->command('scheduling:tick')->everyMinute();
     }
 
     protected function commands(): void
