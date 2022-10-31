@@ -15,6 +15,7 @@ final class BlogPostPublishingTest extends KernelTestCase
     /** @test */
     public function test_user_can_publish_blog_post(): void
     {
+        // Arrange
         $post = PostFactory::new()
             ->hasBody()
             ->hasSummary()

@@ -10,8 +10,12 @@ final class AdminReachabilityTest extends KernelTestCase
     /** @test */
     public function test_login_redirect(): void
     {
+        // Arrange
+
+        // Act
         $response = $this->get('admin');
 
+        // Assert
         $response->assertRedirect('admin/login');
     }
 
@@ -21,12 +25,15 @@ final class AdminReachabilityTest extends KernelTestCase
      */
     public function test_page_is_reachable(string $page): void
     {
+        // Arrange
         $this->actingAs(
             UserFactory::new()->make()
         );
 
+        // Act
         $response = $this->get($page);
 
+        // Assert
         $response->assertOk();
     }
 
