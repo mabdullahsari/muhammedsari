@@ -6,15 +6,12 @@ use Database\Factories\PostFactory;
 use Domain\Blogging\PostState;
 use Domain\Contracts\Blogging\Commands\PublishPost;
 use Domain\Publishing\Twitter\Twitter;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Bus;
 use Tests\KernelTestCase;
 
 final class BlogPostPublishingTest extends KernelTestCase
 {
-    use RefreshDatabase;
-
     /** @test */
     public function test_user_can_publish_blog_post(): void
     {

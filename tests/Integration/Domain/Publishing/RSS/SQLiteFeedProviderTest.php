@@ -6,7 +6,6 @@ use Domain\Contracts\Publishing\RSS\FeedProvider;
 use Domain\Publishing\PostUrlGenerator;
 use Domain\Publishing\RSS\FeedItemMapper;
 use Domain\Publishing\RSS\SQLiteFeedProvider;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\KernelTestCase;
 use Tests\PostsSeeder;
 use Tests\Unit\Domain\Publishing\RSS\FeedProviderContractTests;
@@ -14,11 +13,10 @@ use Tests\Unit\Domain\Publishing\RSS\FeedProviderContractTests;
 final class SQLiteFeedProviderTest extends KernelTestCase
 {
     use FeedProviderContractTests;
-    use RefreshDatabase;
 
-    private bool $seed = true;
+    protected bool $seed = true;
 
-    private string $seeder = PostsSeeder::class;
+    protected string $seeder = PostsSeeder::class;
 
     private function getInstance(): FeedProvider
     {

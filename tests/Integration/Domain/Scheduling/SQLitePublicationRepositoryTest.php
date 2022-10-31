@@ -6,14 +6,12 @@ use Domain\Scheduling\PublicationMapper;
 use Domain\Scheduling\PublicationRepository;
 use Domain\Scheduling\SQLitePublicationRepository;
 use Illuminate\Database\SQLiteConnection;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\KernelTestCase;
 use Tests\Unit\Domain\Scheduling\PublicationRepositoryContractTests;
 
 final class SQLitePublicationRepositoryTest extends KernelTestCase
 {
     use PublicationRepositoryContractTests;
-    use RefreshDatabase;
 
     private function getInstance(): PublicationRepository
     {
