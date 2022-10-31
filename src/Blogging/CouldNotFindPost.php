@@ -6,8 +6,8 @@ use Exception;
 
 final class CouldNotFindPost extends Exception
 {
-    public static function withId(int $id): self
+    public static function withId(PostId $id): self
     {
-        return new self("Couldn't find Post with id {$id}");
+        return new self("Couldn't find Post with id {$id->asInt()}");
     }
 }

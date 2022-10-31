@@ -16,7 +16,7 @@ final class PublishPostHandler
 
     public function handle(PublishPost $command): void
     {
-        $post = $this->posts->find($command->id);
+        $post = $this->posts->find(PostId::fromInt($command->id));
 
         $post->publish($this->clock);
 

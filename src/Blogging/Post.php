@@ -10,9 +10,9 @@ use stdClass;
 
 final class Post extends Entity
 {
-    private int $authorId;
+    private AuthorId $authorId;
 
-    private int $id;
+    private PostId $id;
 
     private Body $body;
 
@@ -28,8 +28,14 @@ final class Post extends Entity
 
     private function __construct() {}
 
-    public static function create(int $id, int $authorId, Body $body, Summary $summary, Title $title, Slug $slug): self
-    {
+    public static function create(
+        PostId $id,
+        AuthorId $authorId,
+        Body $body,
+        Summary $summary,
+        Title $title,
+        Slug $slug,
+    ): self {
         $post = new Post();
 
         $post->authorId = $authorId;
@@ -46,8 +52,8 @@ final class Post extends Entity
     {
         $post = new Post();
 
-        $post->authorId = (int) $record->author_id;
-        $post->id = (int) $record->id;
+        $post->authorId = AuthorId::fromInt($record->author_id);
+        $post->id = PostId::fromInt($record->id);
         $post->body = Body::fromString($record->body);
         $post->slug = Slug::fromString($record->slug);
         $post->state = PostState::from($record->state);
@@ -58,7 +64,7 @@ final class Post extends Entity
         return $post;
     }
 
-    public function id(): int
+    public function id(): PostId
     {
         return $this->id;
     }
@@ -76,13 +82,13 @@ final class Post extends Entity
         $this->state = PostState::Published;
         $this->publishedAt = $clock->now();
 
-        $this->raise(new PostWasPublished($this->id));
+        $this->raise(new PostWasPublished($this->id->asInt()));
     }
 
     public function toDatabase(): array
     {
         return [
-            'author_id' => $this->authorId,
+            'author_id' => $this->authorId->asInt(),
             'body' => (string) $this->body,
             'published_at' => $this->publishedAt?->toDateTimeString(),
             'slug' => (string) $this->slug,

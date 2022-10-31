@@ -10,19 +10,19 @@ final class InMemoryPostRepository implements PostRepository
         private array $posts = [],
     ) {}
 
-    public function find(int $id): Post
+    public function find(PostId $id): Post
     {
-        if (! array_key_exists($id, $this->posts)) {
+        if (! array_key_exists($id->asInt(), $this->posts)) {
             throw CouldNotFindPost::withId($id);
         }
 
-        return $this->posts[$id];
+        return $this->posts[$id->asInt()];
     }
 
     public function save(Post $post): void
     {
-        $this->posts[$post->id()] = $post;
-        $this->saves[] = $post->id();
+        $this->posts[$id = $post->id()->asInt()] = $post;
+        $this->saves[] = $id;
     }
 
     public function wasSaved(int $id): bool

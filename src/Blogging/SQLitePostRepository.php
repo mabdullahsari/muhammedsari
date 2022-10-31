@@ -14,10 +14,10 @@ final class SQLitePostRepository implements PostRepository
         private readonly SQLiteConnection $db,
     ) {}
 
-    public function find(int $id): Post
+    public function find(PostId $id): Post
     {
         /** @var stdClass|null $record */
-        $record = $this->newQuery()->find($id);
+        $record = $this->newQuery()->find($id->asInt());
 
         if (is_null($record)) {
             throw CouldNotFindPost::withId($id);
@@ -34,14 +34,14 @@ final class SQLitePostRepository implements PostRepository
         $values['updated_at'] = $now;
 
         if ($post->wasRecentlyCreated()) {
-            $values['id'] = $post->id();
+            $values['id'] = $post->id()->asInt();
             $values['created_at'] = $now;
 
             $this->newQuery()->insert($values);
 
             $post->markAsPersisted();
         } else {
-            $this->newQuery()->where('id', $post->id())->update($values);
+            $this->newQuery()->where('id', $post->id()->asInt())->update($values);
         }
     }
 

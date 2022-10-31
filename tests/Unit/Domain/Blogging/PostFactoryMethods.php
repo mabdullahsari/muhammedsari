@@ -2,8 +2,10 @@
 
 namespace Tests\Unit\Domain\Blogging;
 
+use Domain\Blogging\AuthorId;
 use Domain\Blogging\Body;
 use Domain\Blogging\Post;
+use Domain\Blogging\PostId;
 use Domain\Blogging\Slug;
 use Domain\Blogging\Summary;
 use Domain\Blogging\Title;
@@ -14,8 +16,8 @@ trait PostFactoryMethods
     private function aPost(array $overrides = []): Post
     {
         $attributes = $overrides + [
-            'authorId' => 1,
-            'id' => 1,
+            'authorId' => AuthorId::fromInt(1),
+            'id' => PostId::fromInt(1),
             'title' => Title::fromString('Never gonna give you up'),
             'slug' => Slug::fromString('never-gonna-give-you-up'),
             'body' => Body::fromString('Never gonna let you down'),

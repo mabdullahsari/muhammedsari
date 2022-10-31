@@ -5,7 +5,7 @@ namespace Domain\Blogging;
 interface PostRepository
 {
     /** @throws CouldNotFindPost */
-    public function find(int $id): Post;
+    public function find(PostId $id): Post;
 
     public function save(Post $post): void;
 }

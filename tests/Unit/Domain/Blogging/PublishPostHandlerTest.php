@@ -3,6 +3,7 @@
 namespace Tests\Unit\Domain\Blogging;
 
 use Domain\Blogging\InMemoryPostRepository;
+use Domain\Blogging\PostId;
 use Domain\Blogging\PublishPostHandler;
 use Domain\Contracts\Blogging\Commands\PublishPost;
 use Domain\Contracts\Blogging\Events\PostWasPublished;
@@ -37,7 +38,7 @@ final class PublishPostHandlerTest extends TestCase
     private function aPostRepository(int $id): InMemoryPostRepository
     {
         return new InMemoryPostRepository([
-            $id => $this->aPost(['id' => $id]),
+            $id => $this->aPost(['id' => PostId::fromInt($id)]),
         ]);
     }
 }

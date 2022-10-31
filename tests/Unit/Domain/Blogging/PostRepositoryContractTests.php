@@ -3,6 +3,7 @@
 namespace Tests\Unit\Domain\Blogging;
 
 use Domain\Blogging\CouldNotFindPost;
+use Domain\Blogging\PostId;
 use Domain\Blogging\PostRepository;
 use PHPUnit\Framework\TestCase;
 
@@ -34,6 +35,6 @@ trait PostRepositoryContractTests
 
         $repository = $this->getInstance();
 
-        $repository->find(272383273287);
+        $repository->find(PostId::fromInt(272383273287));
     }
 }
