@@ -3,8 +3,6 @@
 namespace Tests\Integration\Domain\Identity;
 
 use Domain\Identity\User;
-use Domain\Identity\UserPolicy;
-use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Tests\KernelTestCase;
 
@@ -16,13 +14,5 @@ final class ServiceBindingsTest extends KernelTestCase
         $model = Relation::getMorphedModel('user');
 
         $this->assertSame(User::class, $model);
-    }
-
-    /** @test */
-    public function it_registers_user_policy_at_gate(): void
-    {
-        $gate = $this->app->make(Gate::class);
-
-        $this->assertInstanceOf(UserPolicy::class, $gate->getPolicyFor(User::class));
     }
 }

@@ -5,7 +5,6 @@ use App\Filament\Post;
 use App\Filament\Publication;
 use App\Filament\Repository;
 use App\Filament\Tag;
-use App\Filament\User;
 use Filament\AvatarProviders\UiAvatarsProvider;
 use Filament\Http\Livewire\Auth\Login;
 use Filament\Http\Middleware\Authenticate;
@@ -136,7 +135,6 @@ return [
             Publication::class,
             Repository::class,
             Tag::class,
-            User::class,
         ],
     ],
 
