@@ -196,6 +196,7 @@ return [
         Domain\Identity\IdentityServiceProvider::class,
         Domain\Publishing\PublishingServiceProvider::class,
         Domain\Scheduling\SchedulingServiceProvider::class,
+        Domain\Showcasing\ShowcasingServiceProvider::class,
 
         /*
          * Application Service Providers...

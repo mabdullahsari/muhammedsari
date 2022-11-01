@@ -3,6 +3,7 @@
 use App\Filament\HealthCheckResultsPage;
 use App\Filament\Post;
 use App\Filament\Publication;
+use App\Filament\Repository;
 use App\Filament\Tag;
 use App\Filament\User;
 use Filament\AvatarProviders\UiAvatarsProvider;
@@ -133,6 +134,7 @@ return [
         'register' => [
             Post::class,
             Publication::class,
+            Repository::class,
             Tag::class,
             User::class,
         ],
