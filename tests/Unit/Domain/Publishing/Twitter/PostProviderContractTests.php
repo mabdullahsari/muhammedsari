@@ -3,7 +3,7 @@
 namespace Tests\Unit\Domain\Publishing\Twitter;
 
 use Domain\Publishing\Twitter\CouldNotFindPost;
-use Domain\Publishing\Twitter\PostProvider;
+use Domain\Publishing\Twitter\PublishedPostProvider;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
  */
 trait PostProviderContractTests
 {
-    abstract private function getInstance(): PostProvider;
+    abstract private function getInstance(): PublishedPostProvider;
 
     /** @test */
     public function it_can_get_a_post_by_id(): void

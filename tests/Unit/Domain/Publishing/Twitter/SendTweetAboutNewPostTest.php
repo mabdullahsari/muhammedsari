@@ -4,9 +4,9 @@ namespace Tests\Unit\Domain\Publishing\Twitter;
 
 use Domain\Contracts\Blogging\Events\PostWasPublished;
 use Domain\Publishing\PostUrlGenerator;
-use Domain\Publishing\Twitter\InMemoryPostProvider;
+use Domain\Publishing\Twitter\InMemoryPublishedPostProvider;
 use Domain\Publishing\Twitter\InMemoryTwitter;
-use Domain\Publishing\Twitter\Post;
+use Domain\Publishing\Twitter\PublishedPost;
 use Domain\Publishing\Twitter\SendTweetAboutNewPost;
 use PHPUnit\Framework\TestCase;
 
@@ -26,9 +26,11 @@ final class SendTweetAboutNewPostTest extends TestCase
         $this->assertCount(1, $twitter->outbox());
     }
 
-    private function aPostProvider(int $id): InMemoryPostProvider
+    private function aPostProvider(int $id): InMemoryPublishedPostProvider
     {
-        return new InMemoryPostProvider([$id => new Post('Unit Testing in PHP', 'unit-testing-in-php', ['php'])]);
+        return new InMemoryPublishedPostProvider([
+            $id => new PublishedPost('Unit Testing in PHP', 'unit-testing-in-php', ['php'])
+        ]);
     }
 
     private function aUrlGenerator(): PostUrlGenerator

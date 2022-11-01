@@ -2,8 +2,8 @@
 
 namespace Domain\Publishing\Twitter;
 
-interface PostProvider
+interface PublishedPostProvider
 {
     /** @throws CouldNotFindPost */
-    public function getById(int $id): Post;
+    public function getById(int $id): PublishedPost;
 }

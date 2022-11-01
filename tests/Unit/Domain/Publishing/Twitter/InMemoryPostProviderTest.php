@@ -2,19 +2,19 @@
 
 namespace Tests\Unit\Domain\Publishing\Twitter;
 
-use Domain\Publishing\Twitter\InMemoryPostProvider;
-use Domain\Publishing\Twitter\Post;
-use Domain\Publishing\Twitter\PostProvider;
+use Domain\Publishing\Twitter\InMemoryPublishedPostProvider;
+use Domain\Publishing\Twitter\PublishedPost;
+use Domain\Publishing\Twitter\PublishedPostProvider;
 use PHPUnit\Framework\TestCase;
 
 final class InMemoryPostProviderTest extends TestCase
 {
     use PostProviderContractTests;
 
-    private function getInstance(): PostProvider
+    private function getInstance(): PublishedPostProvider
     {
-        return new InMemoryPostProvider([
-            1 => new Post('Never Gonna Give You Up', 'never-gonna-give-you-up', ['rick', 'roll']),
+        return new InMemoryPublishedPostProvider([
+            1 => new PublishedPost('Never Gonna Give You Up', 'never-gonna-give-you-up', ['rick', 'roll']),
         ]);
     }
 }

@@ -5,13 +5,13 @@ namespace Domain\Publishing\Twitter;
 use Illuminate\Database\SQLiteConnection;
 use stdClass;
 
-final class SQLitePostProvider implements PostProvider
+final class SQLitePublishedPostProvider implements PublishedPostProvider
 {
     public function __construct(
         private readonly SQLiteConnection $db,
     ) {}
 
-    public function getById(int $id): Post
+    public function getById(int $id): PublishedPost
     {
         /** @var stdClass|null $post */
         $post = $this->db->table('posts')->find($id, ['slug', 'title']);
@@ -26,6 +26,6 @@ final class SQLitePostProvider implements PostProvider
             ->pluck('slug')
             ->all();
 
-        return new Post($post->title, $post->slug, $tags);
+        return new PublishedPost($post->title, $post->slug, $tags);
     }
 }

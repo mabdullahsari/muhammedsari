@@ -2,7 +2,7 @@
 
 namespace Domain\Publishing\Twitter;
 
-final class Post
+final class PublishedPost
 {
     public function __construct(
         public readonly string $title,

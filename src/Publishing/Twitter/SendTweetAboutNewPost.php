@@ -9,7 +9,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 final class SendTweetAboutNewPost implements ShouldQueue
 {
     public function __construct(
-        private readonly PostProvider $posts,
+        private readonly PublishedPostProvider $posts,
         private readonly Twitter $twitter,
         private readonly UrlGenerator $url,
     ) {}

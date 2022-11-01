@@ -9,7 +9,7 @@ use Illuminate\Support\ServiceProvider;
 final class TwitterServiceProvider extends ServiceProvider
 {
     public array $singletons = [
-        PostProvider::class => SQLitePostProvider::class,
+        PublishedPostProvider::class => SQLitePublishedPostProvider::class,
         Twitter::class => TwitterManager::class,
     ];
 
