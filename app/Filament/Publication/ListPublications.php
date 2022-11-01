@@ -14,4 +14,9 @@ final class ListPublications extends ListRecords
     {
         return [CreateAction::make()->label('Schedule')];
     }
+
+    protected function isTablePaginationEnabled(): bool
+    {
+        return false;
+    }
 }

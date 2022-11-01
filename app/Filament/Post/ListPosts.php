@@ -14,4 +14,9 @@ final class ListPosts extends ListRecords
     {
         return [CreateAction::make()];
     }
+
+    protected function isTablePaginationEnabled(): bool
+    {
+        return false;
+    }
 }
