@@ -10,9 +10,13 @@ final class ShowcasingServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        Repository::observe(RepositoryObserver::class);
+        Repository::observe(SortingObserver::class);
+        Resource::observe(SortingObserver::class);
 
-        Relation::enforceMorphMap(['repository' => Repository::class]);
+        Relation::enforceMorphMap([
+            'repository' => Repository::class,
+            'resource' => Resource::class,
+        ]);
     }
 
     public function register(): void
@@ -23,5 +27,6 @@ final class ShowcasingServiceProvider extends ServiceProvider
     private function registerPolicies(Gate $access): void
     {
         $access->policy(Repository::class, RepositoryPolicy::class);
+        $access->policy(Resource::class, ResourcePolicy::class);
     }
 }

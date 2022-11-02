@@ -4,6 +4,7 @@ use App\Filament\HealthCheckResultsPage;
 use App\Filament\Post;
 use App\Filament\Publication;
 use App\Filament\Repository;
+use App\Filament\Resource;
 use App\Filament\Tag;
 use Filament\AvatarProviders\UiAvatarsProvider;
 use Filament\Http\Livewire\Auth\Login;
@@ -134,6 +135,7 @@ return [
             Post::class,
             Publication::class,
             Repository::class,
+            Resource::class,
             Tag::class,
         ],
     ],

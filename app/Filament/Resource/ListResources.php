@@ -1,14 +1,14 @@
 <?php declare(strict_types=1);
 
-namespace App\Filament\Repository;
+namespace App\Filament\Resource;
 
-use App\Filament\Repository;
+use App\Filament\Resource;
 use Filament\Pages\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
-final class ListRepositories extends ListRecords
+final class ListResources extends ListRecords
 {
-    protected static string $resource = Repository::class;
+    protected static string $resource = Resource::class;
 
     protected function getActions(): array
     {

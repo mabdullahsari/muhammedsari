@@ -5,14 +5,14 @@ namespace App\Web;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 
-final class UsesController
+final class ResourceController
 {
     public function __construct(
         private readonly Factory $view,
     ) {}
 
-    public function __invoke(): View
+    public function index(): View
     {
-        return $this->view->make('uses');
+        return $this->view->make('resources.index');
     }
 }

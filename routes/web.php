@@ -5,7 +5,7 @@ use App\Web\HomeController;
 use App\Web\PostController;
 use App\Web\RepositoryController;
 use App\Web\TagController;
-use App\Web\UsesController;
+use App\Web\ResourceController;
 use Domain\Blogging\Slug;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +19,7 @@ Route::get('oss', [RepositoryController::class, 'index'])->name('repositories.in
 Route::get('tags/{slug}', [TagController::class, 'show'])->where('slug', Slug::PATTERN)->name('tags.show');
 Route::get('tags', [TagController::class, 'index'])->name('tags.index');
 
-Route::get('uses', UsesController::class)->name('uses');
+Route::get('uses', [ResourceController::class, 'index'])->name('resources.index');
 
 Route::get('', HomeController::class)->name('home');
 

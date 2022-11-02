@@ -10,6 +10,7 @@ final class DatabaseSeeder extends Seeder
     {
         $this->call([
             RepositorySeeder::class,
+            ResourceSeeder::class,
             TagSeeder::class,
             UserSeeder::class,
         ]);

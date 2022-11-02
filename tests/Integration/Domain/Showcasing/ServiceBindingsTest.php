@@ -3,7 +3,9 @@
 namespace Tests\Integration\Domain\Showcasing;
 
 use Domain\Showcasing\Repository;
-use Domain\Showcasing\RepositoryObserver;
+use Domain\Showcasing\Resource;
+use Domain\Showcasing\ResourcePolicy;
+use Domain\Showcasing\SortingObserver;
 use Domain\Showcasing\RepositoryPolicy;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Database\Eloquent\Relations\Relation;
@@ -15,17 +17,21 @@ final class ServiceBindingsTest extends KernelTestCase
     public function it_registers_models_into_morph_map(): void
     {
         $repository = Relation::getMorphedModel('repository');
+        $resource = Relation::getMorphedModel('resource');
 
         $this->assertSame(Repository::class, $repository);
+        $this->assertSame(Resource::class, $resource);
     }
 
     /** @test */
-    public function it_registers_a_repository_model_observer(): void
+    public function it_registers_sorting_model_observers(): void
     {
         $events = $this->app->make('events');
-        $listeners = $events->getRawListeners()['eloquent.creating: ' . Repository::class];
+        $repository = $events->getRawListeners()['eloquent.creating: ' . Repository::class];
+        $resource = $events->getRawListeners()['eloquent.creating: ' . Resource::class];
 
-        $this->assertContains(RepositoryObserver::class . '@creating', $listeners);
+        $this->assertContains(SortingObserver::class . '@creating', $repository);
+        $this->assertContains(SortingObserver::class . '@creating', $resource);
     }
 
     /** @test */
@@ -34,5 +40,6 @@ final class ServiceBindingsTest extends KernelTestCase
         $gate = $this->app->make(Gate::class);
 
         $this->assertInstanceOf(RepositoryPolicy::class, $gate->getPolicyFor(Repository::class));
+        $this->assertInstanceOf(ResourcePolicy::class, $gate->getPolicyFor(Resource::class));
     }
 }
