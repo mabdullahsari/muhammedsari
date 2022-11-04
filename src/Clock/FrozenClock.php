@@ -26,6 +26,6 @@ final class FrozenClock implements Clock
 
         Assert::isInstanceOf($time, CarbonImmutable::class);
 
-        $this->time = $time; // @phpstan-ignore-line
+        $this->time = $time;
     }
 }

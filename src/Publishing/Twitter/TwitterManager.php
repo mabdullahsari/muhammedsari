@@ -14,7 +14,6 @@ final class TwitterManager extends Manager implements Twitter
 
         Assert::string($driver);
 
-        /** @var string $driver */
         return $driver;
     }
 
@@ -31,13 +30,12 @@ final class TwitterManager extends Manager implements Twitter
         return new LogTwitter($logger);
     }
 
-    protected function createOauth2Driver(): TwitterOAuth2
+    protected function createOAuth2Driver(): TwitterOAuth2
     {
         $config = $this->config->get('services.twitter.oauth2');
 
         Assert::isArray($config);
 
-        // @phpstan-ignore-next-line
         return new TwitterOAuth2($config['consumer_key'], $config['consumer_secret'], $config['access_token'], $config['access_token_secret']);
     }
 
