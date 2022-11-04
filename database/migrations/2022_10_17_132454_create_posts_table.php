@@ -12,8 +12,8 @@ return new class () extends Migration {
             $table->unsignedBigInteger('author_id');
             $table->string('slug')->unique();
             $table->string('title');
-            $table->text('body');
-            $table->string('summary');
+            $table->text('body')->default('');
+            $table->string('summary')->default('');
             $table->string('state', 9)->default('draft'); // draft, published
             $table->timestamp('published_at')->nullable();
             $table->timestamps();

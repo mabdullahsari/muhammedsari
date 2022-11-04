@@ -46,11 +46,11 @@ final class Post extends Resource
                 ->required()
                 ->unique(ignorable: static fn ($record) => $record),
             MarkdownEditor::make('body')
-                ->columnSpan(2)
-                ->nullable(),
+                ->default('')
+                ->columnSpan(2),
             TextInput::make('summary')
+                ->default('')
                 ->columnSpan(2)
-                ->nullable()
                 ->maxLength(Summary::MAX_LENGTH),
             CheckboxList::make('tags')
                 ->required()

@@ -28,7 +28,9 @@ final class Post extends Model
     ];
 
     protected $casts = [
+        'body' => ConvertNullToEmptyString::class,
         'state' => PostState::class,
+        'summary' => ConvertNullToEmptyString::class,
     ];
 
     protected $dates = ['published_at'];
