@@ -14,7 +14,7 @@
         "laravel/tinker": "^2.7.2",
         "shuvroroy/filament-spatie-laravel-health": "^1.6",
         "spatie/filament-markdown-editor": "^1.0",
-        "spatie/laravel-feed": "^4.1.5",
+        "spatie/laravel-feed": "^4.2",
         "spatie/laravel-health": "^1.15.2",
         "spatie/laravel-markdown": "^2.2.4",
         "spatie/security-advisories-health-check": "^1.0",
