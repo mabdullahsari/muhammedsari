@@ -5,10 +5,10 @@ namespace Domain\Scheduling;
 use Domain\Contracts\Blogging\Events\PostWasDeleted;
 use Domain\Contracts\Blogging\Events\PostWasPublished;
 
-final class RemoveScheduledPublication
+final readonly class RemoveScheduledPublication
 {
     public function __construct(
-        private readonly PublicationRepository $publications,
+        private PublicationRepository $publications,
     ) {}
 
     public function handle(PostWasDeleted|PostWasPublished $event): void

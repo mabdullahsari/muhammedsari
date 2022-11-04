@@ -7,12 +7,12 @@ use Domain\Contracts\Clock\Clock;
 use Domain\Contracts\Scheduling\Scheduler;
 use Illuminate\Contracts\Bus\Dispatcher;
 
-final class CrontabDrivenScheduler implements Scheduler
+final readonly class CrontabDrivenScheduler implements Scheduler
 {
     public function __construct(
-        private readonly Clock $clock,
-        private readonly Dispatcher $commands,
-        private readonly PublicationRepository $publications,
+        private Clock $clock,
+        private Dispatcher $commands,
+        private PublicationRepository $publications,
     ) {}
 
     public function tick(): void

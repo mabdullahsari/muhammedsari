@@ -5,10 +5,10 @@ namespace App\Web;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 
-final class RepositoryController
+final readonly class RepositoryController
 {
     public function __construct(
-        private readonly Factory $view,
+        private Factory $view,
     ) {}
 
     public function index(): View

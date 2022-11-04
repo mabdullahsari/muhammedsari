@@ -6,12 +6,12 @@ use Domain\Contracts\Blogging\Commands\PublishPost;
 use Domain\Contracts\Clock\Clock;
 use Illuminate\Contracts\Events\Dispatcher;
 
-final class PublishPostHandler
+final readonly class PublishPostHandler
 {
     public function __construct(
-        private readonly Clock $clock,
-        private readonly Dispatcher $events,
-        private readonly PostRepository $posts,
+        private Clock $clock,
+        private Dispatcher $events,
+        private PostRepository $posts,
     ) {}
 
     public function handle(PublishPost $command): void

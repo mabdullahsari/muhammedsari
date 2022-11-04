@@ -7,11 +7,11 @@ use Illuminate\Database\Query\Builder;
 use Illuminate\Database\SQLiteConnection;
 use Illuminate\Support\Collection;
 
-final class SQLitePublicationRepository implements PublicationRepository
+final readonly class SQLitePublicationRepository implements PublicationRepository
 {
     public function __construct(
-        private readonly SQLiteConnection $db,
-        private readonly PublicationMapper $mapper,
+        private SQLiteConnection $db,
+        private PublicationMapper $mapper,
     ) {}
 
     public function find(int $id): Publication

@@ -2,10 +2,10 @@
 
 namespace Domain\Publishing\Twitter;
 
-final class InMemoryPublishedPostProvider implements PublishedPostProvider
+final readonly class InMemoryPublishedPostProvider implements PublishedPostProvider
 {
     public function __construct(
-        private readonly array $posts = [],
+        private array $posts = [],
     ) {}
 
     public function getById(int $id): PublishedPost

@@ -4,10 +4,10 @@ namespace Domain\Publishing\Twitter;
 
 use Psr\Log\LoggerInterface;
 
-final class LogTwitter implements Twitter
+final readonly class LogTwitter implements Twitter
 {
     public function __construct(
-        private readonly LoggerInterface $logger,
+        private LoggerInterface $logger,
     ) {}
 
     public function send(Tweet $tweet): void

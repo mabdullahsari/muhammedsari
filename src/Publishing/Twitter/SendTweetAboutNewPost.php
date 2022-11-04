@@ -6,12 +6,12 @@ use Domain\Contracts\Blogging\Events\PostWasPublished;
 use Domain\Publishing\UrlGenerator;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-final class SendTweetAboutNewPost implements ShouldQueue
+final readonly class SendTweetAboutNewPost implements ShouldQueue
 {
     public function __construct(
-        private readonly PublishedPostProvider $posts,
-        private readonly Twitter $twitter,
-        private readonly UrlGenerator $url,
+        private PublishedPostProvider $posts,
+        private Twitter $twitter,
+        private UrlGenerator $url,
     ) {}
 
     public function handle(PostWasPublished $event): void

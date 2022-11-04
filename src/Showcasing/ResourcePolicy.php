@@ -4,7 +4,7 @@ namespace Domain\Showcasing;
 
 use Illuminate\Contracts\Auth\Authenticatable;
 
-final class ResourcePolicy
+final readonly class ResourcePolicy
 {
     public function deleteAny(Authenticatable $user): bool
     {

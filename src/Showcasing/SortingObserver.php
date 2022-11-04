@@ -4,7 +4,7 @@ namespace Domain\Showcasing;
 
 use Illuminate\Database\Eloquent\Model;
 
-final class SortingObserver
+final readonly class SortingObserver
 {
     public function creating(Model $model): void
     {

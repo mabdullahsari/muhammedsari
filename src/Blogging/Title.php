@@ -5,9 +5,9 @@ namespace Domain\Blogging;
 use Stringable;
 use Webmozart\Assert\Assert;
 
-final class Title implements Stringable
+final readonly class Title implements Stringable
 {
-    private readonly string $value;
+    private string $value;
 
     private function __construct(string $value)
     {

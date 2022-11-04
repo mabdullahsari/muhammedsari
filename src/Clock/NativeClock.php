@@ -6,9 +6,9 @@ use Carbon\CarbonImmutable;
 use DateTimeZone;
 use Domain\Contracts\Clock\Clock;
 
-final class NativeClock implements Clock
+final readonly class NativeClock implements Clock
 {
-    private readonly DateTimeZone $timezone;
+    private DateTimeZone $timezone;
 
     public function __construct(string $timezone)
     {

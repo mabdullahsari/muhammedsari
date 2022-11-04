@@ -4,7 +4,7 @@ namespace Domain\Blogging\Models;
 
 use Illuminate\Contracts\Auth\Authenticatable;
 
-final class PostPolicy
+final readonly class PostPolicy
 {
     public function delete(Authenticatable $user, Post $model): bool
     {

@@ -7,11 +7,11 @@ use Illuminate\Database\SQLiteConnection;
 use Illuminate\Support\Collection;
 use Spatie\Feed\FeedItem;
 
-final class SQLiteFeedProvider implements FeedProvider
+final readonly class SQLiteFeedProvider implements FeedProvider
 {
     public function __construct(
-        private readonly SQLiteConnection $connection,
-        private readonly FeedItemMapper $mapper,
+        private SQLiteConnection $connection,
+        private FeedItemMapper $mapper,
     ) {}
 
     /** @return Collection<int, FeedItem> */

@@ -7,11 +7,11 @@ use Illuminate\Database\Query\Builder;
 use Illuminate\Database\SQLiteConnection;
 use stdClass;
 
-final class SQLitePostRepository implements PostRepository
+final readonly class SQLitePostRepository implements PostRepository
 {
     public function __construct(
-        private readonly Clock $clock,
-        private readonly SQLiteConnection $db,
+        private Clock $clock,
+        private SQLiteConnection $db,
     ) {}
 
     public function find(PostId $id): Post

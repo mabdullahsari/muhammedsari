@@ -4,11 +4,11 @@ namespace Domain\Scheduling;
 
 use Carbon\CarbonImmutable;
 
-final class Publication
+final readonly class Publication
 {
     public function __construct(
-        public readonly int $id,
-        public readonly int $postId,
-        public readonly CarbonImmutable $publishAt,
+        public int $id,
+        public int $postId,
+        public CarbonImmutable $publishAt,
     ) {}
 }

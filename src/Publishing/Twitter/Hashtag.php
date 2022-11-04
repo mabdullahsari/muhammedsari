@@ -5,9 +5,9 @@ namespace Domain\Publishing\Twitter;
 use Stringable;
 use Webmozart\Assert\Assert;
 
-final class Hashtag implements Stringable
+final readonly class Hashtag implements Stringable
 {
-    private readonly string $value;
+    private string $value;
 
     private function __construct(string $value)
     {

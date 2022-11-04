@@ -2,9 +2,9 @@
 
 namespace Domain\Contracts\Blogging\Events;
 
-final class PostWasDeleted
+final readonly class PostWasDeleted
 {
     public function __construct(
-        public readonly int $id,
+        public int $id,
     ) {}
 }

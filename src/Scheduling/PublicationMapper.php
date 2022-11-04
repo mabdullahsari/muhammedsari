@@ -5,7 +5,7 @@ namespace Domain\Scheduling;
 use Carbon\CarbonImmutable;
 use stdClass;
 
-final class PublicationMapper
+final readonly class PublicationMapper
 {
     public function __invoke(stdClass $record): Publication
     {

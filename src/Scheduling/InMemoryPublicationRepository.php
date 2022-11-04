@@ -5,9 +5,9 @@ namespace Domain\Scheduling;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Collection;
 
-final class InMemoryPublicationRepository implements PublicationRepository
+final readonly class InMemoryPublicationRepository implements PublicationRepository
 {
-    private readonly Collection $publications;
+    private Collection $publications;
 
     public function __construct(array $publications)
     {

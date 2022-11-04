@@ -7,10 +7,10 @@ use Domain\Publishing\UrlGenerator;
 use Spatie\Feed\FeedItem;
 use stdClass;
 
-final class FeedItemMapper
+final readonly class FeedItemMapper
 {
     public function __construct(
-        private readonly UrlGenerator $url,
+        private UrlGenerator $url,
     ) {}
 
     public function __invoke(stdClass $post): FeedItem

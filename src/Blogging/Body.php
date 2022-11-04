@@ -4,10 +4,10 @@ namespace Domain\Blogging;
 
 use Stringable;
 
-final class Body implements Stringable
+final readonly class Body implements Stringable
 {
     private function __construct(
-        private readonly string $value,
+        private string $value,
     ) {}
 
     public static function fromString(string $value): self

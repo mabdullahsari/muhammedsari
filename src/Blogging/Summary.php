@@ -5,11 +5,11 @@ namespace Domain\Blogging;
 use Stringable;
 use Webmozart\Assert\Assert;
 
-final class Summary implements Stringable
+final readonly class Summary implements Stringable
 {
     public const MAX_LENGTH = 100;
 
-    private readonly string $value;
+    private string $value;
 
     private function __construct(string $value)
     {

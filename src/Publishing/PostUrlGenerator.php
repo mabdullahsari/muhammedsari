@@ -2,10 +2,10 @@
 
 namespace Domain\Publishing;
 
-final class PostUrlGenerator implements UrlGenerator
+final readonly class PostUrlGenerator implements UrlGenerator
 {
     public function __construct(
-        private readonly string $hostAndScheme,
+        private string $hostAndScheme,
     ) {}
 
     public function generate(string $slug): string

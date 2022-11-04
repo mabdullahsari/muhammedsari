@@ -4,9 +4,9 @@ namespace Domain\Contracts\Blogging\Commands;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-final class PublishPost implements ShouldQueue
+final readonly class PublishPost implements ShouldQueue
 {
     public function __construct(
-        public readonly int $id,
+        public int $id,
     ) {}
 }

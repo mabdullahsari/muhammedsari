@@ -4,11 +4,11 @@ namespace Domain\Blogging;
 
 use Webmozart\Assert\Assert;
 
-final class PostId
+final readonly class PostId
 {
     private const MIN = 1;
 
-    private readonly int $value;
+    private int $value;
 
     private function __construct(int $value)
     {

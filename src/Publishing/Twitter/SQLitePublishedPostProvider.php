@@ -5,10 +5,10 @@ namespace Domain\Publishing\Twitter;
 use Illuminate\Database\SQLiteConnection;
 use stdClass;
 
-final class SQLitePublishedPostProvider implements PublishedPostProvider
+final readonly class SQLitePublishedPostProvider implements PublishedPostProvider
 {
     public function __construct(
-        private readonly SQLiteConnection $db,
+        private SQLiteConnection $db,
     ) {}
 
     public function getById(int $id): PublishedPost

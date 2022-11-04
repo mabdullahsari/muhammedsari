@@ -3,16 +3,17 @@
 namespace Domain\Publishing\Twitter;
 
 use Abraham\TwitterOAuth\TwitterOAuth;
+use SensitiveParameter;
 
-final class TwitterOAuth2 implements Twitter
+final readonly class TwitterOAuth2 implements Twitter
 {
-    private readonly TwitterOAuth $connection;
+    private TwitterOAuth $connection;
 
     public function __construct(
-        string $consumerKey,
-        string $consumerSecret,
-        string $accessToken,
-        string $accessTokenSecret,
+        #[SensitiveParameter] string $consumerKey,
+        #[SensitiveParameter] string $consumerSecret,
+        #[SensitiveParameter] string $accessToken,
+        #[SensitiveParameter] string $accessTokenSecret,
     ) {
         $this->connection = new TwitterOAuth($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
         $this->connection->setApiVersion('2');

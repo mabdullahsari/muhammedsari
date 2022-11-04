@@ -5,12 +5,12 @@ namespace Domain\Blogging;
 use Stringable;
 use Webmozart\Assert\Assert;
 
-final class Slug implements Stringable
+final readonly class Slug implements Stringable
 {
     public const PATTERN = '[a-z0-9]+(?:-[a-z0-9]+)*';
     public const REGEX = '/^' . self::PATTERN . '$/';
 
-    private readonly string $value;
+    private string $value;
 
     private function __construct(string $value)
     {
