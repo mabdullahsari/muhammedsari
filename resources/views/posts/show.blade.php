@@ -1,3 +1,3 @@
-<x-page title="Post">
+<x-page name="Post">
     Post
 </x-page>

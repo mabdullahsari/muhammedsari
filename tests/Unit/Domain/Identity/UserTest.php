@@ -21,12 +21,12 @@ final class UserTest extends TestCase
     }
 
     /** @test */
-    public function it_can_get_the_filament_avatar_url(): void
+    public function it_can_get_the_avatar_url(): void
     {
         $user = new User(['username' => 'mabdullahsari']);
 
-        $value = $user->getFilamentAvatarUrl();
+        $value = $user->avatar;
 
-        $this->assertSame('https://unavatar.io/mabdullahsari', $value);
+        $this->assertSame('/img/mabdullahsari.jpg', $value);
     }
 }

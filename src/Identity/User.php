@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
+ * @property string $avatar
  * @property string $email
  * @property string $first_name
  * @property string $last_name
@@ -22,6 +23,11 @@ final class User extends Authenticatable implements FilamentUser, HasAvatar
 
     protected $fillable = ['email', 'first_name', 'last_name', 'username'];
 
+    protected function avatar(): Attribute
+    {
+        return Attribute::get(fn () => "/img/{$this->username}.jpg");
+    }
+
     protected function name(): Attribute
     {
         return Attribute::get(fn () => "{$this->first_name} {$this->last_name}");
@@ -34,6 +40,6 @@ final class User extends Authenticatable implements FilamentUser, HasAvatar
 
     public function getFilamentAvatarUrl(): string
     {
-        return "https://unavatar.io/{$this->username}";
+        return $this->avatar;
     }
 }

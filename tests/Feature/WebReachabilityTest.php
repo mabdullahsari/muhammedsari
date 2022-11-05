@@ -2,10 +2,15 @@
 
 namespace Tests\Feature;
 
+use Database\Seeders\UserSeeder;
 use Tests\KernelTestCase;
 
 final class WebReachabilityTest extends KernelTestCase
 {
+    protected bool $seed = true;
+
+    protected string $seeder = UserSeeder::class;
+
     /**
      * @dataProvider pages
      * @test

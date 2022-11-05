@@ -1,3 +1,3 @@
-<x-page title="Tag">
+<x-page name="Tag">
     Tag
 </x-page>

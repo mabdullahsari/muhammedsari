@@ -1,3 +1,3 @@
-<x-page title="Uses">
+<x-page name="Uses">
     Uses
 </x-page>

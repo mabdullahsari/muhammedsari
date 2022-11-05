@@ -3,6 +3,7 @@
 namespace App\Web;
 
 use Illuminate\Support\AggregateServiceProvider;
+use Illuminate\View\Compilers\BladeCompiler;
 
 final class WebServiceProvider extends AggregateServiceProvider
 {
@@ -13,8 +14,15 @@ final class WebServiceProvider extends AggregateServiceProvider
         RouteServiceProvider::class,
     ];
 
-    public function boot(): void
+    public function register(): void
     {
-        $this->loadRoutesFrom($this->app->basePath('routes/web.php'));
+        parent::register();
+
+        $this->app->resolving('blade.compiler', $this->registerPageComponent(...));
+    }
+
+    private function registerPageComponent(BladeCompiler $blade): void
+    {
+        $blade->component(Page::class, 'page');
     }
 }

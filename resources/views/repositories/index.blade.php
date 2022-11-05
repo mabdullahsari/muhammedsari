@@ -1,3 +1,3 @@
-<x-page title="OSS">
+<x-page name="OSS">
     OSS
 </x-page>
