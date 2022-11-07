@@ -8,13 +8,8 @@ final class WebServiceProvider extends AggregateServiceProvider
 {
     protected $providers = [
         \Spatie\LaravelMarkdown\MarkdownServiceProvider::class,
+        \Spatie\RouteAttributes\RouteAttributesServiceProvider::class,
 
-        About\AboutServiceProvider::class,
-        Blog\BlogServiceProvider::class,
-        Home\HomeServiceProvider::class,
-        OSS\OpenSourceServiceProvider::class,
-        Tags\TagsServiceProvider::class,
-        Uses\UsesServiceProvider::class,
         View\ViewServiceProvider::class,
     ];
 }

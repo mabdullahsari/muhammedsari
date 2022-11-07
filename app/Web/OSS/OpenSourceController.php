@@ -4,6 +4,7 @@ namespace App\Web\OSS;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Spatie\RouteAttributes\Attributes\Get;
 
 final readonly class OpenSourceController
 {
@@ -11,6 +12,7 @@ final readonly class OpenSourceController
         private Factory $view,
     ) {}
 
+    #[Get('oss', 'oss')]
     public function index(): View
     {
         return $this->view->make('OSS.Index');

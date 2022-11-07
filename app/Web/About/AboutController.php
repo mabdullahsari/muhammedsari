@@ -4,6 +4,7 @@ namespace App\Web\About;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Spatie\RouteAttributes\Attributes\Get;
 
 final readonly class AboutController
 {
@@ -11,6 +12,7 @@ final readonly class AboutController
         private Factory $view,
     ) {}
 
+    #[Get('about', 'about')]
     public function index(): View
     {
         return $this->view->make('About.Index');

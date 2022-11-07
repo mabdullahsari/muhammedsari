@@ -2,8 +2,11 @@
 
 namespace App\Web\Tags;
 
+use Core\Blogging\Slug;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Spatie\RouteAttributes\Attributes\Get;
+use Spatie\RouteAttributes\Attributes\Where;
 
 final readonly class TagController
 {
@@ -11,11 +14,14 @@ final readonly class TagController
         private Factory $view,
     ) {}
 
+    #[Get('tags', 'tags.index')]
     public function index(): View
     {
         return $this->view->make('Tags.Index');
     }
 
+    #[Get('tags/{slug}', 'tags.show')]
+    #[Where('slug', Slug::PATTERN)]
     public function show(string $slug): View
     {
         return $this->view->make('Tags.Show');

@@ -17,6 +17,7 @@
         "spatie/laravel-feed": "^4.2",
         "spatie/laravel-health": "^1.15.2",
         "spatie/laravel-markdown": "^2.2.4",
+        "spatie/laravel-route-attributes": "^1.15",
         "spatie/security-advisories-health-check": "^1.0",
         "webmozart/assert": "^1.11"
     },
@@ -79,7 +80,8 @@
                 "spatie/filament-markdown-editor",
                 "spatie/laravel-feed",
                 "spatie/laravel-health",
-                "spatie/laravel-markdown"
+                "spatie/laravel-markdown",
+                "spatie/laravel-route-attributes"
             ]
         }
     },

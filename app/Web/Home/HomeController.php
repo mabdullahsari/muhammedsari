@@ -4,6 +4,7 @@ namespace App\Web\Home;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Spatie\RouteAttributes\Attributes\Get;
 
 final readonly class HomeController
 {
@@ -11,6 +12,7 @@ final readonly class HomeController
         private Factory $view,
     ) {}
 
+    #[Get('/', 'home')]
     public function index(): View
     {
         return $this->view->make('Home.Index');

@@ -4,6 +4,7 @@ namespace App\Web\Uses;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Spatie\RouteAttributes\Attributes\Get;
 
 final readonly class UsesController
 {
@@ -11,6 +12,7 @@ final readonly class UsesController
         private Factory $view,
     ) {}
 
+    #[Get('uses')]
     public function index(): View
     {
         return $this->view->make('Uses.Index');
