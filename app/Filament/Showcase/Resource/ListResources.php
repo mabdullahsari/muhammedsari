@@ -1,18 +1,22 @@
 <?php declare(strict_types=1);
 
-namespace App\Filament\Post;
+namespace App\Filament\Showcase\Resource;
 
-use App\Filament\Post;
 use Filament\Pages\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
-final class ListPosts extends ListRecords
+final class ListResources extends ListRecords
 {
-    protected static string $resource = Post::class;
+    protected static string $resource = Resource::class;
 
     protected function getActions(): array
     {
         return [CreateAction::make()];
+    }
+
+    protected function getTableReorderColumn(): string
+    {
+        return 'sort';
     }
 
     protected function isTablePaginationEnabled(): bool

@@ -1,10 +1,7 @@
 <?php declare(strict_types=1);
 
-namespace App\Filament;
+namespace App\Filament\Blog\Tag;
 
-use App\Filament\Tag\CreateTag;
-use App\Filament\Tag\EditTag;
-use App\Filament\Tag\ListTags;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -17,13 +14,13 @@ final class Tag extends Resource
 {
     protected static ?string $model = \Core\Blogging\Models\Tag::class;
 
-    protected static ?string $navigationGroup = 'Blogging';
+    protected static ?string $navigationGroup = 'Blog';
 
     protected static ?string $navigationIcon = 'heroicon-o-tag';
 
     protected static ?int $navigationSort = 2;
 
-    protected static ?string $slug = 'tags';
+    protected static ?string $slug = 'blog/tags';
 
     public static function form(Form $form): Form
     {

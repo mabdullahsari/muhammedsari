@@ -1,9 +1,7 @@
 <?php declare(strict_types=1);
 
-namespace App\Filament;
+namespace App\Filament\Schedule\Publication;
 
-use App\Filament\Publication\ListPublications;
-use App\Filament\Publication\SchedulePublication;
 use Core\Identity\User;
 use Filament\Facades\Filament;
 use Filament\Forms\Components\DateTimePicker;
@@ -19,13 +17,13 @@ final class Publication extends Resource
 {
     protected static ?string $model = \Core\Scheduling\Models\Publication::class;
 
-    protected static ?string $navigationGroup = 'Scheduling';
+    protected static ?string $navigationGroup = 'Schedule';
 
     protected static ?string $navigationIcon = 'heroicon-o-clock';
 
     protected static ?int $navigationSort = 3;
 
-    protected static ?string $slug = 'publications';
+    protected static ?string $slug = 'schedule/publications';
 
     public static function form(Form $form): Form
     {
@@ -62,7 +60,7 @@ final class Publication extends Resource
     {
         return [
             'index' => ListPublications::route('/'),
-            'create' => SchedulePublication::route('/schedule'),
+            'create' => SchedulePublication::route('/create'),
         ];
     }
 }

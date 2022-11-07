@@ -1,8 +1,7 @@
 <?php declare(strict_types=1);
 
-namespace App\Filament\Tag;
+namespace App\Filament\Blog\Tag;
 
-use App\Filament\Tag;
 use Filament\Resources\Pages\CreateRecord;
 
 final class CreateTag extends CreateRecord

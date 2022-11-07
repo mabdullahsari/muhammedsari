@@ -1,11 +1,7 @@
 <?php declare(strict_types=1);
 
-namespace App\Filament;
+namespace App\Filament\Blog\Post;
 
-use App\Filament\Post\CreatePost;
-use App\Filament\Post\EditPost;
-use App\Filament\Post\ListPosts;
-use App\Filament\Post\PublishBlogPost;
 use Core\Blogging\PostState;
 use Core\Blogging\Slug;
 use Core\Blogging\Summary;
@@ -25,13 +21,13 @@ final class Post extends Resource
 {
     protected static ?string $model = \Core\Blogging\Models\Post::class;
 
-    protected static ?string $navigationGroup = 'Blogging';
+    protected static ?string $navigationGroup = 'Blog';
 
     protected static ?string $navigationIcon = 'heroicon-o-newspaper';
 
     protected static ?int $navigationSort = 1;
 
-    protected static ?string $slug = 'posts';
+    protected static ?string $slug = 'blog/posts';
 
     public static function form(Form $form): Form
     {

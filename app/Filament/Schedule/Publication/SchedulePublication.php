@@ -1,8 +1,7 @@
 <?php declare(strict_types=1);
 
-namespace App\Filament\Publication;
+namespace App\Filament\Schedule\Publication;
 
-use App\Filament\Publication;
 use Filament\Pages\Actions\Action;
 use Filament\Resources\Pages\CreateRecord;
 

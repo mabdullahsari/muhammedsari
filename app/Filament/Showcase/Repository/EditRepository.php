@@ -1,13 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace App\Filament\Tag;
+namespace App\Filament\Showcase\Repository;
 
-use App\Filament\Tag;
 use Filament\Resources\Pages\EditRecord;
 
-final class EditTag extends EditRecord
+final class EditRepository extends EditRecord
 {
-    protected static string $resource = Tag::class;
+    protected static string $resource = Repository::class;
 
     protected function getActions(): array
     {

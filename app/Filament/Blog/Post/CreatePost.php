@@ -1,8 +1,7 @@
 <?php declare(strict_types=1);
 
-namespace App\Filament\Post;
+namespace App\Filament\Blog\Post;
 
-use App\Filament\Post;
 use Filament\Resources\Pages\CreateRecord;
 
 final class CreatePost extends CreateRecord

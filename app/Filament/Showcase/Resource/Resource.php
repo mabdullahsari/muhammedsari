@@ -1,10 +1,7 @@
 <?php declare(strict_types=1);
 
-namespace App\Filament;
+namespace App\Filament\Showcase\Resource;
 
-use App\Filament\Resource\CreateResource;
-use App\Filament\Resource\EditResource;
-use App\Filament\Resource\ListResources;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource as FilamentResource;
@@ -17,13 +14,13 @@ final class Resource extends FilamentResource
 {
     protected static ?string $model = \Core\Showcasing\Resource::class;
 
-    protected static ?string $navigationGroup = 'Showcasing';
+    protected static ?string $navigationGroup = 'Showcase';
 
     protected static ?string $navigationIcon = 'heroicon-o-cube';
 
     protected static ?int $navigationSort = 5;
 
-    protected static ?string $slug = 'resources';
+    protected static ?string $slug = 'showcase/resources';
 
     public static function form(Form $form): Form
     {

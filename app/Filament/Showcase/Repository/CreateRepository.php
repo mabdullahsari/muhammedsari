@@ -1,8 +1,7 @@
 <?php declare(strict_types=1);
 
-namespace App\Filament\Repository;
+namespace App\Filament\Showcase\Repository;
 
-use App\Filament\Repository;
 use Filament\Resources\Pages\CreateRecord;
 
 final class CreateRepository extends CreateRecord

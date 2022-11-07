@@ -1,8 +1,7 @@
 <?php declare(strict_types=1);
 
-namespace App\Filament\Resource;
+namespace App\Filament\Showcase\Resource;
 
-use App\Filament\Resource;
 use Filament\Resources\Pages\CreateRecord;
 
 final class CreateResource extends CreateRecord

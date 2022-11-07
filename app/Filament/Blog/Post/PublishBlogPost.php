@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Filament\Post;
+namespace App\Filament\Blog\Post;
 
 use Core\Blogging\CouldNotPublish;
 use Core\Blogging\Models\Post;

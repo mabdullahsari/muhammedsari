@@ -1,14 +1,15 @@
 <?php declare(strict_types=1);
 
-use App\Filament\HealthCheckResultsPage;
-use App\Filament\Post;
-use App\Filament\Publication;
-use App\Filament\Repository;
-use App\Filament\Resource;
-use App\Filament\Tag;
+use App\Filament\Blog\Post\Post;
+use App\Filament\Blog\Tag\Tag;
+use App\Filament\Schedule\Publication\Publication;
+use App\Filament\Showcase\Repository\Repository;
+use App\Filament\Showcase\Resource\Resource;
+use App\Filament\General\Health;
 use Filament\AvatarProviders\UiAvatarsProvider;
 use Filament\Http\Livewire\Auth\Login;
 use Filament\Http\Middleware\Authenticate;
+use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Http\Middleware\MirrorConfigToSubpackages;
 use Filament\Pages\Dashboard;
 use Filament\Widgets\AccountWidget;
@@ -106,7 +107,7 @@ return [
         'path' => app_path('Filament/Pages'),
         'register' => [
             Dashboard::class,
-            HealthCheckResultsPage::class,
+            Health::class,
         ],
     ],
 
@@ -325,6 +326,7 @@ return [
         ],
         'base' => [
             'web',
+            DispatchServingFilamentEvent::class,
             MirrorConfigToSubpackages::class,
         ],
     ],

@@ -1,10 +1,7 @@
 <?php declare(strict_types=1);
 
-namespace App\Filament;
+namespace App\Filament\Showcase\Repository;
 
-use App\Filament\Repository\CreateRepository;
-use App\Filament\Repository\EditRepository;
-use App\Filament\Repository\ListRepositories;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
@@ -18,13 +15,13 @@ final class Repository extends Resource
 {
     protected static ?string $model = \Core\Showcasing\Repository::class;
 
-    protected static ?string $navigationGroup = 'Showcasing';
+    protected static ?string $navigationGroup = 'Showcase';
 
     protected static ?string $navigationIcon = 'heroicon-o-code';
 
     protected static ?int $navigationSort = 4;
 
-    protected static ?string $slug = 'repositories';
+    protected static ?string $slug = 'showcase/repositories';
 
     public static function form(Form $form): Form
     {
