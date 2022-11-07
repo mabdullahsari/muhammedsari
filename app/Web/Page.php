@@ -2,7 +2,7 @@
 
 namespace App\Web;
 
-use Domain\Identity\User;
+use Core\Identity\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Config;

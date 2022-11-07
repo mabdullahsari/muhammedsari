@@ -16,7 +16,7 @@ use Filament\Tables\Columns\TextColumn;
 
 final class Repository extends Resource
 {
-    protected static ?string $model = \Domain\Showcasing\Repository::class;
+    protected static ?string $model = \Core\Showcasing\Repository::class;
 
     protected static ?string $navigationGroup = 'Showcasing';
 

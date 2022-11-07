@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Blogging;
+namespace Core\Blogging;
 
 use Carbon\CarbonImmutable;
-use Domain\Common\Entity;
-use Domain\Contracts\Blogging\Events\PostWasPublished;
-use Domain\Contracts\Clock\Clock;
+use Core\Common\Entity;
+use Core\Contracts\Blogging\Events\PostWasPublished;
+use Core\Contracts\Clock\Clock;
 use stdClass;
 
 final class Post extends Entity

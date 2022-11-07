@@ -6,7 +6,7 @@ use App\Web\PostController;
 use App\Web\RepositoryController;
 use App\Web\TagController;
 use App\Web\ResourceController;
-use Domain\Blogging\Slug;
+use Core\Blogging\Slug;
 use Illuminate\Support\Facades\Route;
 
 Route::get('about', AboutController::class)->name('about');

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Scheduling;
+namespace Core\Scheduling;
 
 use Carbon\CarbonImmutable;
 use Illuminate\Database\Query\Builder;

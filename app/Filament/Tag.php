@@ -15,7 +15,7 @@ use Illuminate\Support\Str;
 
 final class Tag extends Resource
 {
-    protected static ?string $model = \Domain\Blogging\Models\Tag::class;
+    protected static ?string $model = \Core\Blogging\Models\Tag::class;
 
     protected static ?string $navigationGroup = 'Blogging';
 

@@ -1,14 +1,14 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Blogging;
+namespace Core\Blogging;
 
-use Domain\Blogging\Models\Author;
-use Domain\Blogging\Models\Post;
-use Domain\Blogging\Models\PostObserver;
-use Domain\Blogging\Models\PostPolicy;
-use Domain\Blogging\Models\Tag;
-use Domain\Blogging\Models\TagPolicy;
-use Domain\Contracts\Blogging\Commands\PublishPost;
+use Core\Blogging\Models\Author;
+use Core\Blogging\Models\Post;
+use Core\Blogging\Models\PostObserver;
+use Core\Blogging\Models\PostPolicy;
+use Core\Blogging\Models\Tag;
+use Core\Blogging\Models\TagPolicy;
+use Core\Contracts\Blogging\Commands\PublishPost;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Database\Eloquent\Relations\Relation;

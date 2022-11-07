@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Blogging\Models;
+namespace Core\Blogging\Models;
 
-use Domain\Blogging\PostState;
+use Core\Blogging\PostState;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

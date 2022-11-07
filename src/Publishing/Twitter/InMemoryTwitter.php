@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Publishing\Twitter;
+namespace Core\Publishing\Twitter;
 
 final class InMemoryTwitter implements Twitter
 {

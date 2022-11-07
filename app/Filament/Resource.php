@@ -15,7 +15,7 @@ use Filament\Tables\Columns\TextColumn;
 
 final class Resource extends FilamentResource
 {
-    protected static ?string $model = \Domain\Showcasing\Resource::class;
+    protected static ?string $model = \Core\Showcasing\Resource::class;
 
     protected static ?string $navigationGroup = 'Showcasing';
 

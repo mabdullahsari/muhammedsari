@@ -3,9 +3,9 @@
 namespace Tests\Feature;
 
 use Database\Factories\PostFactory;
-use Domain\Blogging\PostState;
-use Domain\Contracts\Blogging\Commands\PublishPost;
-use Domain\Publishing\Twitter\Twitter;
+use Core\Blogging\PostState;
+use Core\Contracts\Blogging\Commands\PublishPost;
+use Core\Publishing\Twitter\Twitter;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Bus;
 use Tests\KernelTestCase;

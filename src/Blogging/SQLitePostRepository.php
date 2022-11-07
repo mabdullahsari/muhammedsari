@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Blogging;
+namespace Core\Blogging;
 
-use Domain\Contracts\Clock\Clock;
+use Core\Contracts\Clock\Clock;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Database\SQLiteConnection;
 use stdClass;

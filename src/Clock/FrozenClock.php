@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Clock;
+namespace Core\Clock;
 
 use Carbon\CarbonImmutable;
-use Domain\Contracts\Clock\Clock;
+use Core\Contracts\Clock\Clock;
 use Webmozart\Assert\Assert;
 
 final class FrozenClock implements Clock

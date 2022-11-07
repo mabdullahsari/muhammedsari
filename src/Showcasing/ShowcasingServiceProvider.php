@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Showcasing;
+namespace Core\Showcasing;
 
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Database\Eloquent\Relations\Relation;

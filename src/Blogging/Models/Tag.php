@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Blogging\Models;
+namespace Core\Blogging\Models;
 
 use Dive\Eloquent\DisablesTimestamps;
 use Illuminate\Database\Eloquent\Collection;

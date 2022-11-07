@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Scheduling\Models;
+namespace Core\Scheduling\Models;
 
 use Dive\Eloquent\DisablesTimestamps;
 use Illuminate\Database\Eloquent\Model;

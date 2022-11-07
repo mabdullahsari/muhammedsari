@@ -2,7 +2,7 @@
 
 namespace App\Console;
 
-use Domain\Contracts\Scheduling\Scheduler;
+use Core\Contracts\Scheduling\Scheduler;
 use Illuminate\Console\Command;
 
 final class ProcessSchedulerTick extends Command

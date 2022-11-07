@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Publishing;
+namespace Core\Publishing;
 
 final readonly class PostUrlGenerator implements UrlGenerator
 {

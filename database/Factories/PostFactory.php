@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use Domain\Blogging\Models\Post;
-use Domain\Blogging\PostState;
+use Core\Blogging\Models\Post;
+use Core\Blogging\PostState;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 

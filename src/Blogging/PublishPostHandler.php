@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Blogging;
+namespace Core\Blogging;
 
-use Domain\Contracts\Blogging\Commands\PublishPost;
-use Domain\Contracts\Clock\Clock;
+use Core\Contracts\Blogging\Commands\PublishPost;
+use Core\Contracts\Clock\Clock;
 use Illuminate\Contracts\Events\Dispatcher;
 
 final readonly class PublishPostHandler

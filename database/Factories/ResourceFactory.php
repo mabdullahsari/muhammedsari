@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use Domain\Showcasing\Resource;
+use Core\Showcasing\Resource;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

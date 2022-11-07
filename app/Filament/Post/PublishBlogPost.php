@@ -2,9 +2,9 @@
 
 namespace App\Filament\Post;
 
-use Domain\Blogging\CouldNotPublish;
-use Domain\Blogging\Models\Post;
-use Domain\Contracts\Blogging\Commands\PublishPost;
+use Core\Blogging\CouldNotPublish;
+use Core\Blogging\Models\Post;
+use Core\Contracts\Blogging\Commands\PublishPost;
 use Filament\Tables\Actions\Action;
 use Illuminate\Support\Facades\Bus;
 

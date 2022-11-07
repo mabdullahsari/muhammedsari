@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Identity;
+namespace Core\Identity;
 
 use Dive\Eloquent\DisablesTimestamps;
 use Filament\Models\Contracts\FilamentUser;

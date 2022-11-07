@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Common;
+namespace Core\Common;
 
 abstract class Entity
 {

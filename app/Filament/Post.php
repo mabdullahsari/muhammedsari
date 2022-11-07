@@ -6,9 +6,9 @@ use App\Filament\Post\CreatePost;
 use App\Filament\Post\EditPost;
 use App\Filament\Post\ListPosts;
 use App\Filament\Post\PublishBlogPost;
-use Domain\Blogging\PostState;
-use Domain\Blogging\Slug;
-use Domain\Blogging\Summary;
+use Core\Blogging\PostState;
+use Core\Blogging\Slug;
+use Core\Blogging\Summary;
 use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
@@ -23,7 +23,7 @@ use Spatie\FilamentMarkdownEditor\MarkdownEditor;
 
 final class Post extends Resource
 {
-    protected static ?string $model = \Domain\Blogging\Models\Post::class;
+    protected static ?string $model = \Core\Blogging\Models\Post::class;
 
     protected static ?string $navigationGroup = 'Blogging';
 

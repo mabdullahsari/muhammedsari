@@ -189,14 +189,14 @@ return [
         Database\DatabaseServiceProvider::class,
 
         /**
-         * Domain Service Providers...
+         * Core Service Providers...
          */
-        Domain\Blogging\BloggingServiceProvider::class,
-        Domain\Clock\ClockServiceProvider::class,
-        Domain\Identity\IdentityServiceProvider::class,
-        Domain\Publishing\PublishingServiceProvider::class,
-        Domain\Scheduling\SchedulingServiceProvider::class,
-        Domain\Showcasing\ShowcasingServiceProvider::class,
+        Core\Blogging\BloggingServiceProvider::class,
+        Core\Clock\ClockServiceProvider::class,
+        Core\Identity\IdentityServiceProvider::class,
+        Core\Publishing\PublishingServiceProvider::class,
+        Core\Scheduling\SchedulingServiceProvider::class,
+        Core\Showcasing\ShowcasingServiceProvider::class,
 
         /*
          * Application Service Providers...

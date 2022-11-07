@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Domain\Publishing\Twitter;
+namespace Core\Publishing\Twitter;
 
-use Domain\Contracts\Blogging\Events\PostWasPublished;
+use Core\Contracts\Blogging\Events\PostWasPublished;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Support\ServiceProvider;
 
