@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace App\Web;
+namespace App\Web\About;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 
-final readonly class ResourceController
+final readonly class AboutController
 {
     public function __construct(
         private Factory $view,
@@ -13,6 +13,6 @@ final readonly class ResourceController
 
     public function index(): View
     {
-        return $this->view->make('resources.index');
+        return $this->view->make('About.Index');
     }
 }

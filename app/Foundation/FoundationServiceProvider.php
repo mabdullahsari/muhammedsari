@@ -9,5 +9,6 @@ final class FoundationServiceProvider extends AggregateServiceProvider
     protected $providers = [
         BusServiceProvider::class,
         HealthServiceProvider::class,
+        RouteServiceProvider::class,
     ];
 }

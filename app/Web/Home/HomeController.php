@@ -1,18 +1,18 @@
 <?php declare(strict_types=1);
 
-namespace App\Web;
+namespace App\Web\Home;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 
-final readonly class AboutController
+final readonly class HomeController
 {
     public function __construct(
         private Factory $view,
     ) {}
 
-    public function __invoke(): View
+    public function index(): View
     {
-        return $this->view->make('about');
+        return $this->view->make('Home.Index');
     }
 }

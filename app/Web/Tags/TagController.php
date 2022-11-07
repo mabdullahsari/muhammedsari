@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace App\Web;
+namespace App\Web\Tags;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 
-final readonly class RepositoryController
+final readonly class TagController
 {
     public function __construct(
         private Factory $view,
@@ -13,6 +13,11 @@ final readonly class RepositoryController
 
     public function index(): View
     {
-        return $this->view->make('repositories.index');
+        return $this->view->make('Tags.Index');
+    }
+
+    public function show(string $slug): View
+    {
+        return $this->view->make('Tags.Show');
     }
 }

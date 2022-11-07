@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Web;
+namespace App\Foundation;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -16,12 +16,7 @@ final class RouteServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->middlewareGroup('web', $this->web);
-    }
 
-    public function map(): void
-    {
-        $this->group([
-            'middleware' => 'web',
-        ], __DIR__ . '/../../routes/web.php');
+        $this->loadRoutesFrom(__DIR__ . '/../../routes/web.php');
     }
 }

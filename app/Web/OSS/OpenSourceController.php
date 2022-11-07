@@ -1,18 +1,18 @@
 <?php declare(strict_types=1);
 
-namespace App\Web;
+namespace App\Web\OSS;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 
-final readonly class HomeController
+final readonly class OpenSourceController
 {
     public function __construct(
         private Factory $view,
     ) {}
 
-    public function __invoke(): View
+    public function index(): View
     {
-        return $this->view->make('home');
+        return $this->view->make('OSS.Index');
     }
 }

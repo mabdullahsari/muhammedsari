@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Web;
+namespace App\Web\Blog;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -13,11 +13,11 @@ final readonly class PostController
 
     public function index(): View
     {
-        return $this->view->make('posts.index');
+        return $this->view->make('Blog.Index');
     }
 
     public function show(string $slug): View
     {
-        return $this->view->make('posts.show');
+        return $this->view->make('Blog.Show');
     }
 }
