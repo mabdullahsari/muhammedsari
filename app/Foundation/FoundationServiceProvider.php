@@ -7,6 +7,8 @@ use Illuminate\Support\AggregateServiceProvider;
 final class FoundationServiceProvider extends AggregateServiceProvider
 {
     protected $providers = [
+        \Spatie\Feed\FeedServiceProvider::class,
+
         BusServiceProvider::class,
         HealthServiceProvider::class,
         RouteServiceProvider::class,
