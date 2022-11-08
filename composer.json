@@ -22,9 +22,9 @@
         "webmozart/assert": "^1.11"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.7",
         "fakerphp/faker": "^1.20",
         "laravel/pint": "^1.2",
+        "laravel/telescope": "^4.9",
         "mockery/mockery": "^1.5.1",
         "nunomaduro/collision": "^6.3.1",
         "nunomaduro/larastan": "^2.2.9",
