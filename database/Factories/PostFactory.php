@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Core\Blogging\Models\Author;
 use Core\Blogging\Models\Post;
 use Core\Blogging\PostState;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -17,7 +18,7 @@ final class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            'author_id' => UserFactory::new(),
+            'author_id' => Author::MUHAMMED,
             'slug' => static fn (array $attributes) => Str::slug($attributes['title']),
             'title' => $this->faker->words(5, true),
             'body' => '',
@@ -38,9 +39,9 @@ final class PostFactory extends Factory
 
     public function published(): self
     {
-        return $this
-            ->hasBody()
-            ->hasSummary()
-            ->state(['state' => PostState::Published]);
+        return $this->hasBody()->hasSummary()->state([
+            'published_at' => '1970-01-01 00:00:00',
+            'state' => PostState::Published,
+        ]);
     }
 }

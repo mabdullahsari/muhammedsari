@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 final readonly class GetMyPostsController
 {
     public function __construct(
-        private GetMyPosts $posts,
+        private GetMyPosts $query,
         private Request $request,
         private ResponseFactory $response,
     ) {}
@@ -18,7 +18,7 @@ final readonly class GetMyPostsController
     #[Get('blog')]
     public function __invoke(): Response
     {
-        $posts = $this->posts->get();
+        $posts = $this->query->get();
 
         if ($this->request->expectsJson()) {
             return $this->response->json($posts);
