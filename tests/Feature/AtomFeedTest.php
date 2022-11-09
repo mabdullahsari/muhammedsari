@@ -3,10 +3,15 @@
 namespace Tests\Feature;
 
 use Database\Factories\PostFactory;
+use Database\Seeders\UserSeeder;
 use Tests\KernelTestCase;
 
 final class AtomFeedTest extends KernelTestCase
 {
+    protected bool $seed = true;
+
+    protected string $seeder = UserSeeder::class;
+
     /** @test */
     public function test_feed_includes_published_posts(): void
     {
