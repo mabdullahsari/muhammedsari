@@ -10,6 +10,7 @@ final class WebServiceProvider extends AggregateServiceProvider
         \Spatie\LaravelMarkdown\MarkdownServiceProvider::class,
         \Spatie\RouteAttributes\RouteAttributesServiceProvider::class,
 
+        Blog\BlogServiceProvider::class,
         View\ViewServiceProvider::class,
     ];
 }

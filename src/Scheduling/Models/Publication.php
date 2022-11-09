@@ -2,20 +2,22 @@
 
 namespace Core\Scheduling\Models;
 
+use Carbon\CarbonImmutable;
 use Dive\Eloquent\DisablesTimestamps;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Support\Carbon;
 
 /**
- * @property Post   $post
- * @property Carbon $publish_at
+ * @property Post            $post
+ * @property CarbonImmutable $publish_at
  */
 final class Publication extends Model
 {
     use DisablesTimestamps;
 
-    protected $dates = ['publish_at'];
+    protected $casts = [
+        'publish_at' => 'immutable_datetime',
+    ];
 
     protected $fillable = ['post_id', 'publish_at'];
 

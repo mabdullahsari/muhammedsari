@@ -2,18 +2,18 @@
 
 namespace Core\Blogging\Models;
 
+use Carbon\CarbonImmutable;
 use Core\Blogging\PostState;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Support\Carbon;
 
 /**
  * @property Author               $author
  * @property string               $body
  * @property int                  $id
- * @property Carbon|null          $published_at
+ * @property CarbonImmutable      $published_at
  * @property string               $slug
  * @property PostState            $state
  * @property string               $summary
@@ -29,11 +29,10 @@ final class Post extends Model
 
     protected $casts = [
         'body' => ConvertNullToEmptyString::class,
+        'published_at' => 'immutable_datetime',
         'state' => PostState::class,
         'summary' => ConvertNullToEmptyString::class,
     ];
-
-    protected $dates = ['published_at'];
 
     protected $fillable = ['body', 'slug', 'summary', 'title'];
 
