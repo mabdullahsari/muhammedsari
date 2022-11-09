@@ -11,16 +11,21 @@ final readonly class GetSinglePostUsingEloquent implements GetSinglePost
         private Post $model,
     ) {}
 
-    public function get(string $slug): ?PostViewModel
+    /** @throws CouldNotGetPost */
+    public function get(string $slug): PostViewModel
     {
         $post = $this->model
             ->newQuery()
             ->where('slug', $slug)
             ->where('state', 'published')
-            ->with('tags:id,slug')
+            ->with('tags:slug')
             ->first(['body', 'id', 'published_at', 'slug', 'summary', 'title']);
 
-        return $post instanceof Post ? $this->map($post) : null;
+        if (! $post instanceof Post) {
+            throw CouldNotGetPost::withSlug($slug);
+        }
+
+        return $this->map($post);
     }
 
     private function map(Post $post): PostViewModel

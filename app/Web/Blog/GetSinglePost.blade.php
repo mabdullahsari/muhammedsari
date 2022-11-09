@@ -1,3 +1,3 @@
-<x-page name="Post">
-    Post
+<x-page :name="$post->title">
+    <h1>{{ $post->title }}</h1>
 </x-page>

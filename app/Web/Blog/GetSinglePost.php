@@ -6,5 +6,6 @@ use Core\Blogging\PostViewModel;
 
 interface GetSinglePost
 {
-    public function get(string $slug): ?PostViewModel;
+    /** @throws CouldNotGetPost */
+    public function get(string $slug): PostViewModel;
 }
