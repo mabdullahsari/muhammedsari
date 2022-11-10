@@ -6,7 +6,7 @@ use ShuvroRoy\FilamentSpatieLaravelHealth\Pages\HealthCheckResults;
 
 final class Health extends HealthCheckResults
 {
-    protected static ?int $navigationSort = 6;
+    protected static ?int $navigationSort = 0;
 
     protected static ?string $slug = 'health';
 

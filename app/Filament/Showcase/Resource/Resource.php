@@ -18,7 +18,7 @@ final class Resource extends FilamentResource
 
     protected static ?string $navigationIcon = 'heroicon-o-cube';
 
-    protected static ?int $navigationSort = 5;
+    protected static ?int $navigationSort = 1;
 
     protected static ?string $slug = 'showcase/resources';
 

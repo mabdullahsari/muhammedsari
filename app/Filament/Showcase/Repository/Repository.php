@@ -19,7 +19,7 @@ final class Repository extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-code';
 
-    protected static ?int $navigationSort = 4;
+    protected static ?int $navigationSort = 0;
 
     protected static ?string $slug = 'showcase/repositories';
 
