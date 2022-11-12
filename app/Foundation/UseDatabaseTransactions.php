@@ -5,10 +5,10 @@ namespace App\Foundation;
 use Closure;
 use Illuminate\Database\SQLiteConnection;
 
-final class UseDatabaseTransactions
+final readonly class UseDatabaseTransactions
 {
     public function __construct(
-        private readonly SQLiteConnection $db,
+        private SQLiteConnection $db,
     ) {}
 
     public function handle(object $command, Closure $next): mixed
