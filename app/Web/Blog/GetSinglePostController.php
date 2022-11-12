@@ -19,7 +19,7 @@ final readonly class GetSinglePostController
 
     #[Get('blog/{slug}')]
     #[Where('slug', Slug::PATTERN)]
-    public function show(string $slug): Response
+    public function __invoke(string $slug): Response
     {
         $post = $this->query->get($slug);
 
@@ -27,6 +27,6 @@ final readonly class GetSinglePostController
             return $this->response->json($post);
         }
 
-        return $this->response->view('Blog.GetSinglePost', ['post' => $post]);
+        return $this->response->view('Blog::GetSinglePost', ['post' => $post]);
     }
 }

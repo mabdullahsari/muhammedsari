@@ -15,6 +15,6 @@ final readonly class HomeController
     #[Get('/', 'home')]
     public function index(): View
     {
-        return $this->view->make('Home.Index');
+        return $this->view->make('Home::Index');
     }
 }

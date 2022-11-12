@@ -24,6 +24,6 @@ final readonly class GetMyPostsController
             return $this->response->json($posts);
         }
 
-        return $this->response->view('Blog.GetMyPosts', ['posts' => $posts]);
+        return $this->response->view('Blog::GetMyPosts', ['posts' => $posts]);
     }
 }

@@ -15,6 +15,6 @@ final readonly class UsesController
     #[Get('uses')]
     public function index(): View
     {
-        return $this->view->make('Uses.Index');
+        return $this->view->make('Uses::Index');
     }
 }

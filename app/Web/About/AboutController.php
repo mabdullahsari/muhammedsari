@@ -15,6 +15,6 @@ final readonly class AboutController
     #[Get('about', 'about')]
     public function index(): View
     {
-        return $this->view->make('About.Index');
+        return $this->view->make('About::Index');
     }
 }

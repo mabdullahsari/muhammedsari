@@ -7,10 +7,15 @@ use Illuminate\Support\AggregateServiceProvider;
 final class WebServiceProvider extends AggregateServiceProvider
 {
     protected $providers = [
-        \Spatie\LaravelMarkdown\MarkdownServiceProvider::class,
         \Spatie\RouteAttributes\RouteAttributesServiceProvider::class,
 
-        Blog\BlogServiceProvider::class,
         View\ViewServiceProvider::class,
+
+        About\AboutServiceProvider::class,
+        Blog\BlogServiceProvider::class,
+        Home\HomeServiceProvider::class,
+        OSS\OSSServiceProvider::class,
+        Tags\TagsServiceProvider::class,
+        Uses\UsesServiceProvider::class,
     ];
 }
