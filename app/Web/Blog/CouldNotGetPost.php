@@ -10,7 +10,7 @@ final class CouldNotGetPost extends Exception implements HttpExceptionInterface
 {
     public static function withSlug(string $slug): self
     {
-        return new self("Could not get the post with slug {$slug}");
+        return new self("Couldn't find {$slug}.");
     }
 
     public function getStatusCode(): int
