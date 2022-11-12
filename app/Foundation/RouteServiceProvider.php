@@ -2,6 +2,7 @@
 
 namespace App\Foundation;
 
+use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 final class RouteServiceProvider extends ServiceProvider
@@ -15,8 +16,9 @@ final class RouteServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        $this->middlewareGroup('web', $this->web);
+        $this->app->make(Kernel::class)->pushMiddleware(StripTrailingSlash::class);
 
+        $this->middlewareGroup('web', $this->web);
         $this->loadRoutesFrom(__DIR__ . '/../../routes/web.php');
     }
 }
