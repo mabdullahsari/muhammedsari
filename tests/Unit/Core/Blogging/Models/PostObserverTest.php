@@ -4,7 +4,7 @@ namespace Tests\Unit\Core\Blogging\Models;
 
 use Core\Blogging\Models\Post;
 use Core\Blogging\Models\PostObserver;
-use Core\Contracts\Blogging\Events\PostWasDeleted;
+use Core\Contract\Blogging\Event\PostWasDeleted;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Support\Testing\Fakes\EventFake;
 use PHPUnit\Framework\TestCase;

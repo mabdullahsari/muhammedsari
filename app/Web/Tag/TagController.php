@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Web\Tags;
+namespace App\Web\Tag;
 
 use Core\Blogging\Slug;
 use Illuminate\Contracts\View\Factory;
@@ -17,13 +17,13 @@ final readonly class TagController
     #[Get('tags', 'tags.index')]
     public function index(): View
     {
-        return $this->view->make('Tags::Index');
+        return $this->view->make('Tag::Index');
     }
 
     #[Get('tags/{slug}', 'tags.show')]
     #[Where('slug', Slug::PATTERN)]
     public function show(string $slug): View
     {
-        return $this->view->make('Tags::Show');
+        return $this->view->make('Tag::Show');
     }
 }

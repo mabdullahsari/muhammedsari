@@ -2,8 +2,8 @@
 
 namespace Core\Scheduling;
 
-use Core\Contracts\Blogging\Events\PostWasDeleted;
-use Core\Contracts\Blogging\Events\PostWasPublished;
+use Core\Contract\Blogging\Event\PostWasDeleted;
+use Core\Contract\Blogging\Event\PostWasPublished;
 
 final readonly class RemoveScheduledPublication
 {

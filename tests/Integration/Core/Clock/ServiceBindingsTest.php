@@ -3,7 +3,7 @@
 namespace Tests\Integration\Core\Clock;
 
 use Core\Clock\NativeClock;
-use Core\Contracts\Clock\Clock;
+use Core\Contract\Clock\Clock;
 use Tests\KernelTestCase;
 
 final class ServiceBindingsTest extends KernelTestCase

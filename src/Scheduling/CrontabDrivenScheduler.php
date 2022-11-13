@@ -2,9 +2,9 @@
 
 namespace Core\Scheduling;
 
-use Core\Contracts\Blogging\Commands\PublishPost;
-use Core\Contracts\Clock\Clock;
-use Core\Contracts\Scheduling\Scheduler;
+use Core\Contract\Blogging\Command\PublishPost;
+use Core\Contract\Clock\Clock;
+use Core\Contract\Scheduling\Scheduler;
 use Illuminate\Contracts\Bus\Dispatcher;
 
 final readonly class CrontabDrivenScheduler implements Scheduler

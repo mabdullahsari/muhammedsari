@@ -2,8 +2,8 @@
 
 namespace Tests\Integration\Core\Publishing;
 
-use Core\Contracts\Blogging\Events\PostWasPublished;
-use Core\Contracts\Publishing\RSS\FeedProvider;
+use Core\Contract\Blogging\Event\PostWasPublished;
+use Core\Contract\Publishing\RSS\FeedProvider;
 use Core\Publishing\PostUrlGenerator;
 use Core\Publishing\RSS\SQLiteFeedProvider;
 use Core\Publishing\Twitter\PublishedPostProvider;

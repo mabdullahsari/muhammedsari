@@ -11,7 +11,7 @@ use Core\Blogging\Models\TagPolicy;
 use Core\Blogging\PostRepository;
 use Core\Blogging\PublishPostHandler;
 use Core\Blogging\SQLitePostRepository;
-use Core\Contracts\Blogging\Commands\PublishPost;
+use Core\Contract\Blogging\Command\PublishPost;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Database\Eloquent\Relations\Relation;

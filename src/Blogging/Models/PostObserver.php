@@ -2,7 +2,7 @@
 
 namespace Core\Blogging\Models;
 
-use Core\Contracts\Blogging\Events\PostWasDeleted;
+use Core\Contract\Blogging\Event\PostWasDeleted;
 use Illuminate\Contracts\Events\Dispatcher;
 
 final readonly class PostObserver

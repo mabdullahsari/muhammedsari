@@ -2,7 +2,7 @@
 
 namespace Core\Publishing\Twitter;
 
-use Core\Contracts\Blogging\Events\PostWasPublished;
+use Core\Contract\Blogging\Event\PostWasPublished;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Support\ServiceProvider;
 

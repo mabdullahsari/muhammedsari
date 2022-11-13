@@ -1,13 +1,13 @@
 <?php declare(strict_types=1);
 
-namespace App\Web\Tags;
+namespace App\Web\Tag;
 
 use Illuminate\Support\ServiceProvider;
 
-final class TagsServiceProvider extends ServiceProvider
+final class TagServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->loadViewsFrom(__DIR__, 'Tags');
+        $this->loadViewsFrom(__DIR__, 'Tag');
     }
 }

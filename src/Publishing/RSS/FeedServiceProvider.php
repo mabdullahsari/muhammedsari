@@ -2,7 +2,7 @@
 
 namespace Core\Publishing\RSS;
 
-use Core\Contracts\Publishing\RSS\FeedProvider;
+use Core\Contract\Publishing\RSS\FeedProvider;
 use Illuminate\Support\ServiceProvider;
 
 final class FeedServiceProvider extends ServiceProvider

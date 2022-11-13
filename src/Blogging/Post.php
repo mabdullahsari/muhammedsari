@@ -4,8 +4,8 @@ namespace Core\Blogging;
 
 use Carbon\CarbonImmutable;
 use Core\Common\Entity;
-use Core\Contracts\Blogging\Events\PostWasPublished;
-use Core\Contracts\Clock\Clock;
+use Core\Contract\Blogging\Event\PostWasPublished;
+use Core\Contract\Clock\Clock;
 use stdClass;
 
 final class Post extends Entity

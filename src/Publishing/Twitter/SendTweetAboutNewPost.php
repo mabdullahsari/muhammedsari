@@ -2,7 +2,7 @@
 
 namespace Core\Publishing\Twitter;
 
-use Core\Contracts\Blogging\Events\PostWasPublished;
+use Core\Contract\Blogging\Event\PostWasPublished;
 use Core\Publishing\UrlGenerator;
 use Illuminate\Contracts\Queue\ShouldQueue;
 

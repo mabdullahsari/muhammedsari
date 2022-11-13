@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\Core\Publishing\Twitter;
 
-use Core\Contracts\Blogging\Events\PostWasPublished;
+use Core\Contract\Blogging\Event\PostWasPublished;
 use Core\Publishing\PostUrlGenerator;
 use Core\Publishing\Twitter\InMemoryPublishedPostProvider;
 use Core\Publishing\Twitter\InMemoryTwitter;

@@ -5,7 +5,7 @@ namespace Tests\Unit\Core\Blogging;
 use Core\Blogging\Body;
 use Core\Blogging\CouldNotPublish;
 use Core\Blogging\Summary;
-use Core\Contracts\Blogging\Events\PostWasPublished;
+use Core\Contract\Blogging\Event\PostWasPublished;
 use PHPUnit\Framework\TestCase;
 
 final class PostTest extends TestCase

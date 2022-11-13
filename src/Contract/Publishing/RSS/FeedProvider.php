@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Core\Contracts\Publishing\RSS;
+namespace Core\Contract\Publishing\RSS;
 
 use Illuminate\Support\Collection;
 use Spatie\Feed\FeedItem;

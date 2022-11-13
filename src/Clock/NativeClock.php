@@ -4,7 +4,7 @@ namespace Core\Clock;
 
 use Carbon\CarbonImmutable;
 use DateTimeZone;
-use Core\Contracts\Clock\Clock;
+use Core\Contract\Clock\Clock;
 
 final readonly class NativeClock implements Clock
 {

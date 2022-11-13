@@ -3,7 +3,7 @@
 namespace Tests\Integration\Core\Scheduling;
 
 use Core\Clock\FrozenClock;
-use Core\Contracts\Blogging\Commands\PublishPost;
+use Core\Contract\Blogging\Command\PublishPost;
 use Core\Scheduling\CrontabDrivenScheduler;
 use Core\Scheduling\InMemoryPublicationRepository;
 use Core\Scheduling\Publication;

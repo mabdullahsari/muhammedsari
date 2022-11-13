@@ -2,7 +2,7 @@
 
 namespace Core\Clock;
 
-use Core\Contracts\Clock\Clock;
+use Core\Contract\Clock\Clock;
 use Illuminate\Support\ServiceProvider;
 
 final class ClockServiceProvider extends ServiceProvider

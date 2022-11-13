@@ -2,7 +2,7 @@
 
 namespace Core\Blogging;
 
-use Core\Contracts\Clock\Clock;
+use Core\Contract\Clock\Clock;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Database\SQLiteConnection;
 use stdClass;

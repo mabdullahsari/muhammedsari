@@ -2,9 +2,9 @@
 
 namespace Tests\Integration\Core\Scheduling;
 
-use Core\Contracts\Blogging\Events\PostWasDeleted;
-use Core\Contracts\Blogging\Events\PostWasPublished;
-use Core\Contracts\Scheduling\Scheduler;
+use Core\Contract\Blogging\Event\PostWasDeleted;
+use Core\Contract\Blogging\Event\PostWasPublished;
+use Core\Contract\Scheduling\Scheduler;
 use Core\Scheduling\CrontabDrivenScheduler;
 use Core\Scheduling\Models\Publication;
 use Core\Scheduling\Models\PublicationPolicy;

@@ -5,7 +5,7 @@ namespace Tests\Feature;
 use Carbon\CarbonImmutable;
 use Database\Factories\PostFactory;
 use Core\Blogging\PostState;
-use Core\Contracts\Blogging\Commands\PublishPost;
+use Core\Contract\Blogging\Command\PublishPost;
 use Core\Publishing\Twitter\Twitter;
 use Illuminate\Support\Facades\Bus;
 use Tests\KernelTestCase;
