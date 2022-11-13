@@ -9,12 +9,13 @@ final class WebServiceProvider extends AggregateServiceProvider
     protected $providers = [
         \Spatie\RouteAttributes\RouteAttributesServiceProvider::class,
 
-        About\AboutServiceProvider::class,
-        Blog\BlogServiceProvider::class,
-        Home\HomeServiceProvider::class,
-        OSS\OSSServiceProvider::class,
-        Tag\TagServiceProvider::class,
-        Uses\UsesServiceProvider::class,
         View\ViewServiceProvider::class,
+
+        Feature\About\AboutServiceProvider::class,
+        Feature\Blog\BlogServiceProvider::class,
+        Feature\Home\HomeServiceProvider::class,
+        Feature\OSS\OSSServiceProvider::class,
+        Feature\Tag\TagServiceProvider::class,
+        Feature\Uses\UsesServiceProvider::class,
     ];
 }
