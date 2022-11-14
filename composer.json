@@ -8,7 +8,7 @@
         "abraham/twitteroauth": "^4.0.1",
         "dive-be/eloquent-utils": "^0.1.1",
         "dive-be/php-enum-utils": "^1.1",
-        "filament/filament": "^2.16.45",
+        "filament/filament": "^2.16.49",
         "guzzlehttp/guzzle": "^7.5",
         "laravel/framework": "^9.39",
         "laravel/tinker": "^2.7.2",
@@ -18,7 +18,7 @@
         "spatie/laravel-feed": "^4.2",
         "spatie/laravel-health": "^1.15.2",
         "spatie/laravel-markdown": "^2.2.4",
-        "spatie/laravel-route-attributes": "^1.15",
+        "spatie/laravel-route-attributes": "^1.16",
         "spatie/security-advisories-health-check": "^1.0",
         "webmozart/assert": "^1.11"
     },
