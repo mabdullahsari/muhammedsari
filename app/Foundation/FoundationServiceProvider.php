@@ -11,6 +11,5 @@ final class FoundationServiceProvider extends AggregateServiceProvider
 
         BusServiceProvider::class,
         HealthServiceProvider::class,
-        RouteServiceProvider::class,
     ];
 }

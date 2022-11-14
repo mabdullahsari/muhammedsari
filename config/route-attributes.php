@@ -14,7 +14,7 @@ return [
      * Optionally, you can specify group configuration by using key/values
      */
     'directories' => [
-        app_path('Web'),
+        app_path('Http/Web/Feature'),
     ],
 
     /**

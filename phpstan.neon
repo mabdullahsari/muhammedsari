@@ -16,4 +16,4 @@ parameters:
 
     ignoreErrors:
         - '#Core\\Scheduling\\Publication#'
-        - '#Method App\\Web\\View\\Components\\Page::description\(\) should return string but returns mixed#'
+        - '#Method App\\Http\\Web\\View\\Components\\Page::description\(\) should return string but returns mixed#'

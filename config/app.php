@@ -203,8 +203,8 @@ return [
          */
         App\Console\ConsoleServiceProvider::class,
         App\Foundation\FoundationServiceProvider::class,
-        App\Filament\FilamentServiceProvider::class,
-        App\Web\WebServiceProvider::class,
+        App\Http\Filament\FilamentServiceProvider::class,
+        App\Http\Web\WebServiceProvider::class,
 
     ],
 

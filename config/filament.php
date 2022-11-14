@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-use App\Filament\Feature\Blog\Post\Post;
-use App\Filament\Feature\Blog\Tag\Tag;
-use App\Filament\Feature\General\Health;
-use App\Filament\Feature\Schedule\Publication\Publication;
-use App\Filament\Feature\Showcase\Repository\Repository;
-use App\Filament\Feature\Showcase\Resource\Resource;
+use App\Http\Filament\Feature\Blog\Post\Post;
+use App\Http\Filament\Feature\Blog\Tag\Tag;
+use App\Http\Filament\Feature\General\Health;
+use App\Http\Filament\Feature\Schedule\Publication\Publication;
+use App\Http\Filament\Feature\Showcase\Repository\Repository;
+use App\Http\Filament\Feature\Showcase\Resource\Resource;
 use Filament\AvatarProviders\UiAvatarsProvider;
 use Filament\Http\Livewire\Auth\Login;
 use Filament\Http\Middleware\Authenticate;

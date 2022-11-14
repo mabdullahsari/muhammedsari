@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-use App\Filament\Feature\General\Health;
+use App\Http\Filament\Feature\General\Health;
 
 return [
 
