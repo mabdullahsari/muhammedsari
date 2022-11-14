@@ -7,6 +7,7 @@ use Illuminate\Support\AggregateServiceProvider;
 final class WebServiceProvider extends AggregateServiceProvider
 {
     protected $providers = [
+        \Spatie\Feed\FeedServiceProvider::class,
         \Spatie\RouteAttributes\RouteAttributesServiceProvider::class,
 
         RouteServiceProvider::class,
