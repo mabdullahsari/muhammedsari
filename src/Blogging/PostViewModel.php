@@ -24,7 +24,7 @@ final readonly class PostViewModel implements JsonSerializable
             $post->published_at,
             $post->slug,
             $post->summary,
-            $post->tags->pluck('slug')->all(),
+            $post->tags->map(TagViewModel::fromEloquent(...))->all(),
             $post->title,
         );
     }

@@ -19,7 +19,7 @@ final readonly class GetSinglePostUsingEloquent implements GetSinglePost
         $post = $this->model
             ->newQuery()
             ->where('slug', $slug)
-            ->with('tags:slug')
+            ->with('tags')
             ->first(self::COLUMNS);
 
         if (! $post instanceof Post) {
