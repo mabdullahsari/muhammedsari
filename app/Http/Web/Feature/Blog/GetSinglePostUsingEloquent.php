@@ -7,6 +7,8 @@ use Core\Blogging\PostViewModel;
 
 final readonly class GetSinglePostUsingEloquent implements GetSinglePost
 {
+    private const COLUMNS = ['body', 'id', 'published_at', 'slug', 'summary', 'title'];
+
     public function __construct(
         private Post $model,
     ) {}
@@ -18,24 +20,12 @@ final readonly class GetSinglePostUsingEloquent implements GetSinglePost
             ->newQuery()
             ->where('slug', $slug)
             ->with('tags:slug')
-            ->first(['body', 'id', 'published_at', 'slug', 'summary', 'title']);
+            ->first(self::COLUMNS);
 
         if (! $post instanceof Post) {
             throw CouldNotGetPost::withSlug($slug);
         }
 
-        return $this->map($post);
-    }
-
-    private function map(Post $post): PostViewModel
-    {
-        return new PostViewModel(
-            $post->body,
-            $post->published_at,
-            $post->slug,
-            $post->summary,
-            $post->tags->pluck('slug')->all(),
-            $post->title,
-        );
+        return PostViewModel::fromEloquent($post);
     }
 }

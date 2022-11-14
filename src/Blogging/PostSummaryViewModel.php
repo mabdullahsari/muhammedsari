@@ -3,6 +3,7 @@
 namespace Core\Blogging;
 
 use Carbon\CarbonImmutable;
+use Core\Blogging\Models\Post;
 use JsonSerializable;
 
 final readonly class PostSummaryViewModel implements JsonSerializable
@@ -13,6 +14,11 @@ final readonly class PostSummaryViewModel implements JsonSerializable
         public string $summary,
         public string $title,
     ) {}
+
+    public static function fromEloquent(Post $post): self
+    {
+        return new self($post->published_at, $post->slug, $post->summary, $post->title);
+    }
 
     public function jsonSerialize(): array
     {
