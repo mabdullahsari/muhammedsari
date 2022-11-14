@@ -19,7 +19,7 @@ jobs:
           coverage: none
 
       - name: Install dependencies
-        run: composer install --prefer-dist --no-interaction
+        run: composer install --prefer-dist --no-interaction --no-scripts
 
       - name: Execute tests
         run: composer test

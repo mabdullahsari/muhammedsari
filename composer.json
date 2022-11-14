@@ -55,7 +55,7 @@
         "post-update-cmd": [
             "@php artisan filament:upgrade"
         ],
-        "test": "@php artisan test",
+        "test": "@php ./vendor/bin/phpunit",
         "verify": [
             "@larastan",
             "@test"
