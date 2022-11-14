@@ -21,7 +21,21 @@ final class User extends Authenticatable implements FilamentUser, HasAvatar
 {
     use DisablesTimestamps;
 
+    private static ?self $me = null;
+
     protected $fillable = ['email', 'first_name', 'last_name', 'username'];
+
+    public static function me(): self
+    {
+        if (self::$me) {
+            return self::$me;
+        }
+
+        /** @var self $instance */
+        $instance = self::query()->sole();
+
+        return self::$me = $instance;
+    }
 
     protected function avatar(): Attribute
     {

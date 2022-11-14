@@ -2,19 +2,19 @@
 
 namespace App\Web\View;
 
-use App\Web\View\Composers\MeComposer;
-use Illuminate\Contracts\View\Factory;
+use App\Web\View\Components\Page;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\View\Compilers\BladeCompiler;
 
 final class ViewServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->app->resolving('view', $this->registerComposers(...));
+        $this->app->resolving('blade.compiler', $this->registerComponents(...));
     }
 
-    private function registerComposers(Factory $view): void
+    private function registerComponents(BladeCompiler $blade): void
     {
-        $view->composer('components.page', MeComposer::class);
+        $blade->component(Page::class, 'page');
     }
 }
