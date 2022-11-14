@@ -12,22 +12,10 @@ final class GetSinglePostTest extends KernelTestCase
 
     protected string $seeder = UserSeeder::class;
 
-    public function test_non_draft_posts_return_not_found(): void
+    public function test_post_can_be_displayed(): void
     {
         // Arrange
         $post = PostFactory::new()->createQuietly();
-
-        // Act
-        $response = $this->get("blog/{$post->slug}");
-
-        // Assert
-        $response->assertNotFound();
-    }
-
-    public function test_published_post_can_be_displayed(): void
-    {
-        // Arrange
-        $post = PostFactory::new()->published()->createQuietly();
 
         // Act
         $response = $this->get("blog/{$post->slug}");

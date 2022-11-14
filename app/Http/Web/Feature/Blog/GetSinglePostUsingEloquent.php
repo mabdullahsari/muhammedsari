@@ -17,7 +17,6 @@ final readonly class GetSinglePostUsingEloquent implements GetSinglePost
         $post = $this->model
             ->newQuery()
             ->where('slug', $slug)
-            ->where('state', 'published')
             ->with('tags:slug')
             ->first(['body', 'id', 'published_at', 'slug', 'summary', 'title']);
 
