@@ -2,7 +2,6 @@
 
 namespace App\Http\Web\View\Components;
 
-use Core\Identity\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
@@ -16,11 +15,6 @@ final class Page extends Component
     public function description(): string
     {
         return $this->description ?? config('feed.feeds.main.description');
-    }
-
-    public function me(): User
-    {
-        return User::me();
     }
 
     public function title(): string

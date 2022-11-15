@@ -3,15 +3,10 @@
 namespace Tests\Feature;
 
 use Database\Factories\PostFactory;
-use Database\Seeders\UserSeeder;
 use Tests\KernelTestCase;
 
 final class GetSinglePostTest extends KernelTestCase
 {
-    protected bool $seed = true;
-
-    protected string $seeder = UserSeeder::class;
-
     public function test_post_can_be_displayed(): void
     {
         // Arrange

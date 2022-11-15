@@ -3,16 +3,11 @@
 namespace Tests\Feature;
 
 use Database\Factories\PostFactory;
-use Database\Seeders\UserSeeder;
 use Illuminate\Testing\Fluent\AssertableJson;
 use Tests\KernelTestCase;
 
 final class GetMyPostsTest extends KernelTestCase
 {
-    protected bool $seed = true;
-
-    protected string $seeder = UserSeeder::class;
-
     /** @test */
     public function test_only_published_posts_are_displayed(): void
     {
