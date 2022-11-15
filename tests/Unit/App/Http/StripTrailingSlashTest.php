@@ -32,9 +32,9 @@ final class StripTrailingSlashTest extends TestCase
         $request = Request::create('/');
 
         // Act
-        $result = (new StripTrailingSlash())->handle($request, fn () => 'success');
+        $result = (new StripTrailingSlash())->handle($request, fn () => new Response());
 
         // Assert
-        $this->assertSame('success', $result);
+        $this->assertInstanceOf(Response::class, $result);
     }
 }

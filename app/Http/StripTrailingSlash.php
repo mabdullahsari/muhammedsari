@@ -12,7 +12,7 @@ final readonly class StripTrailingSlash
 {
     private const FORWARD_SLASH = '/';
 
-    public function handle(Request $request, Closure $next): mixed
+    public function handle(Request $request, Closure $next): Response
     {
         $path = $request->getPathInfo();
 
