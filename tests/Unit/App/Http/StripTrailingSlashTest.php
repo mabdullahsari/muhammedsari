@@ -1,6 +1,6 @@
-<?php
+<?php declare(strict_types=1);
 
-namespace Tests\Unit\App\Foundation;
+namespace Tests\Unit\App\Http;
 
 use App\Http\StripTrailingSlash;
 use Illuminate\Http\RedirectResponse;
