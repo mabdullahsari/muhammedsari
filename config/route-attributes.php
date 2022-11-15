@@ -20,5 +20,5 @@ return [
     /**
      * This middleware will be applied to all routes.
      */
-    'middleware' => []
+    'middleware' => ['html']
 ];

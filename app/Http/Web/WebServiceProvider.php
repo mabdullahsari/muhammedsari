@@ -11,6 +11,7 @@ final class WebServiceProvider extends AggregateServiceProvider
         \Spatie\RouteAttributes\RouteAttributesServiceProvider::class,
 
         RouteServiceProvider::class,
+        Html\HtmlServiceProvider::class,
         View\ViewServiceProvider::class,
 
         Feature\About\AboutServiceProvider::class,
