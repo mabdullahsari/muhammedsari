@@ -15,4 +15,9 @@ final class HtmlServiceProvider extends ServiceProvider
     {
         $router->aliasMiddleware('html', BeautifyHtml::class);
     }
+
+    public function register(): void
+    {
+        $this->app->alias(HtmlBeautifier::class, 'html');
+    }
 }

@@ -8,10 +8,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 final readonly class BeautifyHtml
 {
-    public function __construct(
-        private HtmlBeautifier $html,
-    ) {}
-
     public function handle(Request $request, Closure $next): Response
     {
         /** @var Response $response */
@@ -24,7 +20,7 @@ final readonly class BeautifyHtml
         }
 
         return $response->setContent(
-            $this->html->beautify($content)
+            Html::beautify($content)
         );
     }
 
