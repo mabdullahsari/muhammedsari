@@ -4,11 +4,12 @@ namespace Tests\Unit\Core\Scheduling\Models;
 
 use Core\Scheduling\Models\PublicationPolicy;
 use Illuminate\Foundation\Auth\User;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 final class PublicationPolicyTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_denies(): void
     {
         $policy = new PublicationPolicy();

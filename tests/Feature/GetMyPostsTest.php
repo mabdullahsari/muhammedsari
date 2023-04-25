@@ -4,12 +4,13 @@ namespace Tests\Feature;
 
 use Database\Factories\PostFactory;
 use Illuminate\Testing\Fluent\AssertableJson;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
 
 final class GetMyPostsTest extends KernelTestCase
 {
-    /** @test */
-    public function test_only_published_posts_are_displayed(): void
+    #[Test]
+    public function only_published_posts_are_displayed(): void
     {
         // Arrange
         $draft = PostFactory::new()->createQuietly();
@@ -27,8 +28,8 @@ final class GetMyPostsTest extends KernelTestCase
             ->assertDontSee($draft->title);
     }
 
-    /** @test */
-    public function test_json_content_is_negotiable(): void
+    #[Test]
+    public function json_content_is_negotiable(): void
     {
         // Arrange
         PostFactory::new()->createQuietly();

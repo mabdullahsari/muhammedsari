@@ -13,11 +13,12 @@ use Core\Publishing\Twitter\Twitter;
 use Core\Publishing\Twitter\TwitterManager;
 use Core\Publishing\UrlGenerator;
 use Illuminate\Contracts\Events\Dispatcher;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
 
 final class ServiceBindingsTest extends KernelTestCase
 {
-    /** @test */
+    #[Test]
     public function it_registers_singleton_bindings(): void
     {
         // Publishing
@@ -36,7 +37,7 @@ final class ServiceBindingsTest extends KernelTestCase
         $this->assertInstanceOf(TwitterManager::class, $this->app->make(Twitter::class));
     }
 
-    /** @test */
+    #[Test]
     public function it_registers_listeners_for_blogging_events(): void
     {
         $events = $this->app->make(Dispatcher::class);

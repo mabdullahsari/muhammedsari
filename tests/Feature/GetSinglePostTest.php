@@ -3,11 +3,12 @@
 namespace Tests\Feature;
 
 use Database\Factories\PostFactory;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
 
 final class GetSinglePostTest extends KernelTestCase
 {
-    public function test_post_can_be_displayed(): void
+    public function post_can_be_displayed(): void
     {
         // Arrange
         $post = PostFactory::new()->createQuietly();
@@ -21,8 +22,8 @@ final class GetSinglePostTest extends KernelTestCase
             ->assertSee($post->title);
     }
 
-    /** @test */
-    public function test_json_content_is_negotiable(): void
+    #[Test]
+    public function json_content_is_negotiable(): void
     {
         // Arrange
         $post = PostFactory::new()->published()->createQuietly();

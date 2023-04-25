@@ -7,11 +7,12 @@ use Core\Blogging\Models\PostObserver;
 use Core\Contract\Blogging\Event\PostWasDeleted;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Support\Testing\Fakes\EventFake;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 final class PostObserverTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_produces_a_custom_deleted_event_upon_deletion(): void
     {
         $events = new EventFake(new Dispatcher());

@@ -5,11 +5,12 @@ namespace Tests\Integration\Core\Clock;
 use Carbon\CarbonImmutable;
 use Core\Clock\NativeClock;
 use Exception;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 final class NativeClockTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_can_get_now_from_the_system_clock(): void
     {
         $clock = new NativeClock('Europe/Brussels');
@@ -24,7 +25,7 @@ final class NativeClockTest extends TestCase
         $this->assertLessThan($after, $now);
     }
 
-    /** @test */
+    #[Test]
     public function it_does_not_accept_an_invalid_timezone(): void
     {
         $this->expectException(Exception::class);

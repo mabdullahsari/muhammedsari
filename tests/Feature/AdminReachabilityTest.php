@@ -3,12 +3,14 @@
 namespace Tests\Feature;
 
 use Database\Factories\UserFactory;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
 
 final class AdminReachabilityTest extends KernelTestCase
 {
-    /** @test */
-    public function test_login_redirect(): void
+    #[Test]
+    public function login_redirect(): void
     {
         // Act
         $response = $this->get('admin');
@@ -17,11 +19,9 @@ final class AdminReachabilityTest extends KernelTestCase
         $response->assertRedirect('admin/login');
     }
 
-    /**
-     * @dataProvider pages
-     * @test
-     */
-    public function test_page_is_reachable(string $page): void
+    #[DataProvider('pages')]
+    #[Test]
+    public function page_is_reachable(string $page): void
     {
         // Arrange
         $this->actingAs(
@@ -35,7 +35,7 @@ final class AdminReachabilityTest extends KernelTestCase
         $response->assertOk();
     }
 
-    private function pages(): array
+    public static function pages(): array
     {
         return [
             ['admin'],

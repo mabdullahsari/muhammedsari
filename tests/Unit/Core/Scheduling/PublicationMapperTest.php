@@ -4,11 +4,12 @@ namespace Tests\Unit\Core\Scheduling;
 
 use Core\Scheduling\Publication;
 use Core\Scheduling\PublicationMapper;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 final class PublicationMapperTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_can_map_to_a_publication_instance(): void
     {
         $mapper = new PublicationMapper();

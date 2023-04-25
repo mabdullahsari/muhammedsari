@@ -13,11 +13,12 @@ use Core\Scheduling\RemoveScheduledPublication;
 use Core\Scheduling\SQLitePublicationRepository;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Events\Dispatcher;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
 
 final class ServiceBindingsTest extends KernelTestCase
 {
-    /** @test */
+    #[Test]
     public function it_registers_singleton_bindings(): void
     {
         $this->assertTrue($this->app->isShared(PublicationRepository::class));
@@ -27,7 +28,7 @@ final class ServiceBindingsTest extends KernelTestCase
         $this->assertInstanceOf(CrontabDrivenScheduler::class, $this->app->make(Scheduler::class));
     }
 
-    /** @test */
+    #[Test]
     public function it_registers_listeners_for_blogging_events(): void
     {
         $events = $this->app->make(Dispatcher::class);
@@ -40,7 +41,7 @@ final class ServiceBindingsTest extends KernelTestCase
         $this->assertContains(RemoveScheduledPublication::class, $published);
     }
 
-    /** @test */
+    #[Test]
     public function it_registers_entry_policy_at_gate(): void
     {
         $gate = $this->app->make(Gate::class);

@@ -6,14 +6,14 @@ use Core\Blogging\Models\Post;
 use Core\Blogging\Models\PostPolicy;
 use Core\Blogging\PostState;
 use Illuminate\Foundation\Auth\User;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 final class PostPolicyTest extends TestCase
 {
-    /**
-     * @dataProvider abilities
-     * @test
-     */
+    #[DataProvider('abilities')]
+    #[Test]
     public function it_allows_only_if_drafted(string $ability): void
     {
         $policy = new PostPolicy();
@@ -27,7 +27,7 @@ final class PostPolicyTest extends TestCase
         $this->assertFalse($result);
     }
 
-    /** @test */
+    #[Test]
     public function it_denies(): void
     {
         $policy = new PostPolicy();
@@ -37,7 +37,7 @@ final class PostPolicyTest extends TestCase
         $this->assertFalse($result);
     }
 
-    private function abilities(): array
+    public static function abilities(): array
     {
         return [
             ['delete'],

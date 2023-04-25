@@ -4,18 +4,17 @@ namespace Tests\Unit\Core\Scheduling;
 
 use Core\Scheduling\CouldNotFindPublication;
 use Core\Scheduling\PublicationRepository;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @mixin TestCase
- */
+/** @mixin TestCase */
 trait PublicationRepositoryContractTests
 {
     use PublicationFactoryMethods;
 
     abstract private function getInstance(): PublicationRepository;
 
-    /** @test */
+    #[Test]
     public function it_can_get_a_publication_by_its_post_id(): void
     {
         $repository = $this->getInstance();
@@ -25,7 +24,7 @@ trait PublicationRepositoryContractTests
         $this->assertSame(1453, $publication->postId);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_get_the_publications_due(): void
     {
         $repository = $this->getInstance();
@@ -37,7 +36,7 @@ trait PublicationRepositoryContractTests
         $this->assertLessThan($now, $publications->last()->publishAt);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_find_and_remove_a_publication(): void
     {
         $repository = $this->getInstance();

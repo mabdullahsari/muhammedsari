@@ -5,6 +5,7 @@ namespace Tests\Unit\Core\Blogging;
 use Core\Blogging\CouldNotFindPost;
 use Core\Blogging\PostId;
 use Core\Blogging\PostRepository;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -16,7 +17,7 @@ trait PostRepositoryContractTests
 
     abstract private function getInstance(): PostRepository;
 
-    /** @test */
+    #[Test]
     public function it_can_save_and_get_a_post_by_its_id(): void
     {
         $repository = $this->getInstance();
@@ -28,7 +29,7 @@ trait PostRepositoryContractTests
         $this->assertEquals($postA, $postB);
     }
 
-    /** @test */
+    #[Test]
     public function it_throws_if_a_post_cannot_be_found(): void
     {
         $this->expectException(CouldNotFindPost::class);

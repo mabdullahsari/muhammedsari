@@ -5,11 +5,12 @@ namespace Tests\Unit\Core\Blogging\Models;
 use Core\Blogging\Models\Tag;
 use Core\Blogging\Models\TagPolicy;
 use Illuminate\Foundation\Auth\User;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 final class TagPolicyTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_allows_only_if_there_are_no_posts_yet(): void
     {
         $policy = new TagPolicy();
@@ -23,7 +24,7 @@ final class TagPolicyTest extends TestCase
         $this->assertFalse($result);
     }
 
-    /** @test */
+    #[Test]
     public function it_denies(): void
     {
         $policy = new TagPolicy();

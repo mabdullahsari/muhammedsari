@@ -59,7 +59,7 @@ final class Post extends Entity
         $post->state = PostState::from($record->state);
         $post->summary = Summary::fromString($record->summary);
         $post->title = Title::fromString($record->title);
-        $post->publishedAt = transform($record->published_at, CarbonImmutable::parse(...)); // @phpstan-ignore-line
+        $post->publishedAt = transform($record->published_at, CarbonImmutable::parse(...));
 
         return $post;
     }

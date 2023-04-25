@@ -3,11 +3,12 @@
 namespace Tests\Unit\Core\Publishing\Twitter;
 
 use Core\Publishing\Twitter\TweetBuilder;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 final class TweetBuilderTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_can_build_a_structured_tweet(): void
     {
         $tweet = TweetBuilder::create('Rick Astley')

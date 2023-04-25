@@ -5,12 +5,13 @@ namespace Tests\Unit\App\Http;
 use App\Http\StripTrailingSlash;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 final class StripTrailingSlashTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_redirects_if_the_request_uri_contains_a_trailing_forward_slash(): void
     {
         // Arrange
@@ -25,7 +26,7 @@ final class StripTrailingSlashTest extends TestCase
         $this->assertSame(Response::HTTP_MOVED_PERMANENTLY, $result->getStatusCode());
     }
 
-    /** @test */
+    #[Test]
     public function it_does_not_redirect_if_root_path_is_being_served(): void
     {
         // Arrange

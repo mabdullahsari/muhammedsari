@@ -6,13 +6,14 @@ use Core\Blogging\Body;
 use Core\Blogging\CouldNotPublish;
 use Core\Blogging\Summary;
 use Core\Contract\Blogging\Event\PostWasPublished;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 final class PostTest extends TestCase
 {
     use PostFactoryMethods;
 
-    /** @test */
+    #[Test]
     public function it_is_impossible_to_publish_with_an_empty_body(): void
     {
         $this->expectException(CouldNotPublish::class);
@@ -25,7 +26,7 @@ final class PostTest extends TestCase
         );
     }
 
-    /** @test */
+    #[Test]
     public function it_is_impossible_to_publish_with_an_empty_summary(): void
     {
         $this->expectException(CouldNotPublish::class);
@@ -38,7 +39,7 @@ final class PostTest extends TestCase
         );
     }
 
-    /** @test */
+    #[Test]
     public function it_cannot_be_published_twice_or_more(): void
     {
         $this->expectException(CouldNotPublish::class);
@@ -53,7 +54,7 @@ final class PostTest extends TestCase
         $post->publish($clock);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_be_published(): void
     {
         $post = $this->aPost();

@@ -9,13 +9,14 @@ use Core\Contract\Blogging\Command\PublishPost;
 use Core\Contract\Blogging\Event\PostWasPublished;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Support\Testing\Fakes\EventFake;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 final class PublishPostHandlerTest extends TestCase
 {
     use PostFactoryMethods;
 
-    /** @test */
+    #[Test]
     public function it_can_publish_a_blog_post(): void
     {
         $handler = new PublishPostHandler(

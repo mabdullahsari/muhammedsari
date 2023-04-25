@@ -2,15 +2,15 @@
 
 namespace Tests\Feature;
 
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
 
 final class WebReachabilityTest extends KernelTestCase
 {
-    /**
-     * @dataProvider pages
-     * @test
-     */
-    public function test_page_is_reachable(string $page): void
+    #[DataProvider('pages')]
+    #[Test]
+    public function page_is_reachable(string $page): void
     {
         // Act
         $response = $this->get($page);
@@ -19,7 +19,7 @@ final class WebReachabilityTest extends KernelTestCase
         $response->assertHeader('Content-Type', 'text/html; charset=UTF-8')->assertOk();
     }
 
-    private function pages(): array
+    public static function pages(): array
     {
         return [
             ['about'],

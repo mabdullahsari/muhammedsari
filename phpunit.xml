@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.1/phpunit.xsd"
          bootstrap="vendor/autoload.php"
          colors="true"
          executionOrder="random"
+         cacheDirectory=".phpunit.cache"
 >
     <testsuites>
         <testsuite name="Feature">
@@ -16,11 +17,7 @@
             <directory suffix="Test.php">./tests/Unit</directory>
         </testsuite>
     </testsuites>
-    <coverage processUncoveredFiles="true">
-        <include>
-            <directory suffix=".php">./app</directory>
-        </include>
-    </coverage>
+
     <php>
         <env name="APP_ENV" value="testing"/>
         <env name="APP_KEY" value="base64:TaUN5M30kEy4U+fj7RDG0+ppdVWwI9apTf1a0inKdP0="/>
@@ -33,9 +30,9 @@
         <env name="SESSION_DRIVER" value="array"/>
         <env name="TELESCOPE_ENABLED" value="false"/>
         <env name="TWITTER_DRIVER" value="array"/>
-        <env name="TWITTER_CONSUMER_KEY" value="yusSi1NprqLeTJBDJhYBcWR85" />
-        <env name="TWITTER_CONSUMER_SECRET" value="rg5pPrf3qE9KJ9gBxkwlMe29gh9Gq5fSayMMwzyaqQuKx0XMNx" />
-        <env name="TWITTER_ACCESS_TOKEN" value="4629921386012690064-sg1PLwYSIPpcWjGwfGgEi6nfZykoNd" />
-        <env name="TWITTER_ACCESS_TOKEN_SECRET" value="QmoOjwZxMN3cbDtms9GEdUa0BsEOnwgio9hCyqKDrOlSk" />
+        <env name="TWITTER_CONSUMER_KEY" value="yusSi1NprqLeTJBDJhYBcWR85"/>
+        <env name="TWITTER_CONSUMER_SECRET" value="rg5pPrf3qE9KJ9gBxkwlMe29gh9Gq5fSayMMwzyaqQuKx0XMNx"/>
+        <env name="TWITTER_ACCESS_TOKEN" value="4629921386012690064-sg1PLwYSIPpcWjGwfGgEi6nfZykoNd"/>
+        <env name="TWITTER_ACCESS_TOKEN_SECRET" value="QmoOjwZxMN3cbDtms9GEdUa0BsEOnwgio9hCyqKDrOlSk"/>
     </php>
 </phpunit>

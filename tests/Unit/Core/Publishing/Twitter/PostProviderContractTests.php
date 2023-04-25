@@ -4,16 +4,15 @@ namespace Tests\Unit\Core\Publishing\Twitter;
 
 use Core\Publishing\Twitter\CouldNotFindPost;
 use Core\Publishing\Twitter\PublishedPostProvider;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @mixin TestCase
- */
+/** @mixin TestCase */
 trait PostProviderContractTests
 {
     abstract private function getInstance(): PublishedPostProvider;
 
-    /** @test */
+    #[Test]
     public function it_can_get_a_post_by_id(): void
     {
         $provider = $this->getInstance();
@@ -25,7 +24,7 @@ trait PostProviderContractTests
         $this->assertSame($post->tags, ['rick', 'roll']);
     }
 
-    /** @test */
+    #[Test]
     public function it_throws_if_a_post_doesnt_exist(): void
     {
         $this->expectException(CouldNotFindPost::class);

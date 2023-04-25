@@ -15,11 +15,12 @@ use Core\Contract\Blogging\Command\PublishPost;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Database\Eloquent\Relations\Relation;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
 
 final class ServiceBindingsTest extends KernelTestCase
 {
-    /** @test */
+    #[Test]
     public function it_registers_models_into_morph_map(): void
     {
         $author = Relation::getMorphedModel('author');
@@ -31,14 +32,14 @@ final class ServiceBindingsTest extends KernelTestCase
         $this->assertSame(Tag::class, $tag);
     }
 
-    /** @test */
+    #[Test]
     public function it_registers_singleton_bindings(): void
     {
         $this->assertTrue($this->app->isShared(PostRepository::class));
         $this->assertInstanceOf(SQLitePostRepository::class, $this->app->make(PostRepository::class));
     }
 
-    /** @test */
+    #[Test]
     public function it_registers_a_post_model_observer(): void
     {
         $events = $this->app->make('events');
@@ -47,7 +48,7 @@ final class ServiceBindingsTest extends KernelTestCase
         $this->assertContains(PostObserver::class . '@deleted', $listeners);
     }
 
-    /** @test */
+    #[Test]
     public function it_registers_policies_at_gate(): void
     {
         $gate = $this->app->make(Gate::class);
@@ -56,7 +57,7 @@ final class ServiceBindingsTest extends KernelTestCase
         $this->assertInstanceOf(TagPolicy::class, $gate->getPolicyFor(Tag::class));
     }
 
-    /** @test */
+    #[Test]
     public function it_registers_commands_with_handlers(): void
     {
         $commands = $this->app->make(Dispatcher::class);

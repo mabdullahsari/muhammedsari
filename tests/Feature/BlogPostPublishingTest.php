@@ -8,12 +8,13 @@ use Core\Blogging\PostState;
 use Core\Contract\Blogging\Command\PublishPost;
 use Core\Publishing\Twitter\Twitter;
 use Illuminate\Support\Facades\Bus;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
 
 final class BlogPostPublishingTest extends KernelTestCase
 {
-    /** @test */
-    public function test_user_can_publish_blog_post(): void
+    #[Test]
+    public function user_can_publish_blog_post(): void
     {
         // Arrange
         $post = PostFactory::new()

@@ -3,11 +3,12 @@
 namespace Tests\Unit\Core\Identity;
 
 use Core\Identity\User;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 final class UserTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_can_retrieve_the_full_name_of_a_user(): void
     {
         $user = new User([
@@ -20,7 +21,7 @@ final class UserTest extends TestCase
         $this->assertSame('Muhammed Sari', $value);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_get_the_avatar_url(): void
     {
         $user = new User(['username' => 'mabdullahsari']);

@@ -9,11 +9,12 @@ use Core\Showcasing\SortingObserver;
 use Core\Showcasing\RepositoryPolicy;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Database\Eloquent\Relations\Relation;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
 
 final class ServiceBindingsTest extends KernelTestCase
 {
-    /** @test */
+    #[Test]
     public function it_registers_models_into_morph_map(): void
     {
         $repository = Relation::getMorphedModel('repository');
@@ -23,7 +24,7 @@ final class ServiceBindingsTest extends KernelTestCase
         $this->assertSame(Resource::class, $resource);
     }
 
-    /** @test */
+    #[Test]
     public function it_registers_sorting_model_observers(): void
     {
         $events = $this->app->make('events');
@@ -34,7 +35,7 @@ final class ServiceBindingsTest extends KernelTestCase
         $this->assertContains(SortingObserver::class . '@creating', $resource);
     }
 
-    /** @test */
+    #[Test]
     public function it_registers_policies_at_gate(): void
     {
         $gate = $this->app->make(Gate::class);

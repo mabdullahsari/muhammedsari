@@ -10,6 +10,7 @@ use Core\Scheduling\Publication;
 use Core\Scheduling\PublicationRepository;
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Testing\Fakes\BusFake;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
 use Tests\Unit\Core\Scheduling\PublicationFactoryMethods;
 
@@ -17,7 +18,7 @@ final class CrontabDrivenSchedulerTest extends KernelTestCase
 {
     use PublicationFactoryMethods;
 
-    /** @test */
+    #[Test]
     public function it_dispatches_commands_for_publications_that_are_due(): void
     {
         $scheduler = new CrontabDrivenScheduler($this->aClock(), $bus = $this->aBus(), $this->aRepository());

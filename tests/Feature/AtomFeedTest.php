@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use Database\Factories\PostFactory;
 use Database\Seeders\UserSeeder;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
 
 final class AtomFeedTest extends KernelTestCase
@@ -12,8 +13,8 @@ final class AtomFeedTest extends KernelTestCase
 
     protected string $seeder = UserSeeder::class;
 
-    /** @test */
-    public function test_feed_includes_published_posts(): void
+    #[Test]
+    public function feed_includes_published_posts(): void
     {
         // Arrange
         $draft = PostFactory::new()->createQuietly();

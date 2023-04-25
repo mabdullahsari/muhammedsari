@@ -4,12 +4,13 @@ namespace Tests\Unit\Core\Publishing\RSS;
 
 use Core\Publishing\PostUrlGenerator;
 use Core\Publishing\RSS\FeedItemMapper;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Spatie\Feed\FeedItem;
 
 final class FeedItemMapperTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_can_map_to_a_feed_item_instance(): void
     {
         $url = new PostUrlGenerator('https://yolo.test');
