@@ -4,8 +4,6 @@ use App\Http\Filament\Feature\Blog\Post\Post;
 use App\Http\Filament\Feature\Blog\Tag\Tag;
 use App\Http\Filament\Feature\General\Health;
 use App\Http\Filament\Feature\Schedule\Publication\Publication;
-use App\Http\Filament\Feature\Showcase\Repository\Repository;
-use App\Http\Filament\Feature\Showcase\Resource\Resource;
 use Filament\AvatarProviders\UiAvatarsProvider;
 use Filament\Http\Livewire\Auth\Login;
 use Filament\Http\Middleware\Authenticate;
@@ -127,8 +125,6 @@ return [
         'register' => [
             Post::class,
             Publication::class,
-            Repository::class,
-            Resource::class,
             Tag::class,
         ],
     ],

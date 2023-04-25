@@ -46,10 +46,6 @@ final class AdminReachabilityTest extends KernelTestCase
             ['admin/health'],
             ['admin/schedule/publications'],
             ['admin/schedule/publications/create'],
-            ['admin/showcase/repositories'],
-            ['admin/showcase/repositories/create'],
-            ['admin/showcase/resources'],
-            ['admin/showcase/resources/create'],
         ];
     }
 }

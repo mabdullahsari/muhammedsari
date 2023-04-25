@@ -196,7 +196,6 @@ return [
         Core\Identity\IdentityServiceProvider::class,
         Core\Publishing\PublishingServiceProvider::class,
         Core\Scheduling\SchedulingServiceProvider::class,
-        Core\Showcasing\ShowcasingServiceProvider::class,
 
         /*
          * Application Service Providers...
