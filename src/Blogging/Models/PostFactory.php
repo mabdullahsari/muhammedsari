@@ -1,16 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace Database\Factories;
+namespace Blogging\Models;
 
-use Blogging\Models\Author;
-use Blogging\Models\Post;
 use Blogging\PostState;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-/**
- * @extends Factory<Post>
- */
+/** @extends Factory<Post> */
 final class PostFactory extends Factory
 {
     protected $model = Post::class;

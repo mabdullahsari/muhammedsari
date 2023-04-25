@@ -2,7 +2,6 @@
 
 namespace Blogging;
 
-use Blogging\Entity;
 use Carbon\CarbonImmutable;
 use Contract\Blogging\Event\PostWasPublished;
 use Contract\Clock\Clock;

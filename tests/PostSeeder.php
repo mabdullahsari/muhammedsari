@@ -5,7 +5,7 @@ namespace Tests;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\SQLiteConnection;
 
-final class PostsSeeder extends Seeder
+final class PostSeeder extends Seeder
 {
     public function run(SQLiteConnection $db): void
     {

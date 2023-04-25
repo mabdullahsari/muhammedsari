@@ -2,13 +2,13 @@
 
 namespace Tests\Feature;
 
-use Carbon\CarbonImmutable;
-use Database\Factories\PostFactory;
+use Blogging\Models\PostFactory;
 use Blogging\PostState;
+use Carbon\CarbonImmutable;
 use Contract\Blogging\Command\PublishPost;
-use Publishing\Twitter\Twitter;
 use Illuminate\Support\Facades\Bus;
 use PHPUnit\Framework\Attributes\Test;
+use Publishing\Twitter\Twitter;
 use Tests\KernelTestCase;
 
 final class BlogPostPublishingTest extends KernelTestCase

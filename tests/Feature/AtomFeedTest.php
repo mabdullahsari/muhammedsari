@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use Database\Factories\PostFactory;
-use Database\Seeders\UserSeeder;
+use Blogging\Models\PostFactory;
+use Identity\UserSeeder;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
 

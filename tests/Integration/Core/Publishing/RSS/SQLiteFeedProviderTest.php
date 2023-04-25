@@ -7,7 +7,7 @@ use Publishing\PostUrlGenerator;
 use Publishing\RSS\FeedItemMapper;
 use Publishing\RSS\SQLiteFeedProvider;
 use Tests\KernelTestCase;
-use Tests\PostsSeeder;
+use Tests\PostSeeder;
 use Tests\Unit\Core\Publishing\RSS\FeedProviderContractTests;
 
 final class SQLiteFeedProviderTest extends KernelTestCase
@@ -16,7 +16,7 @@ final class SQLiteFeedProviderTest extends KernelTestCase
 
     protected bool $seed = true;
 
-    protected string $seeder = PostsSeeder::class;
+    protected string $seeder = PostSeeder::class;
 
     private function getInstance(): FeedProvider
     {

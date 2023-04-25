@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use Database\Factories\UserFactory;
+use Identity\UserFactory;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;

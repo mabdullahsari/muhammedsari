@@ -1,13 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace Database\Factories;
+namespace Identity;
 
-use Identity\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends Factory<User>
- */
+/** @extends Factory<User> */
 final class UserFactory extends Factory
 {
     protected $model = User::class;

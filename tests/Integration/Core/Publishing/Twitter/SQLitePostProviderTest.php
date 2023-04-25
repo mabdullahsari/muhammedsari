@@ -5,7 +5,7 @@ namespace Tests\Integration\Core\Publishing\Twitter;
 use Publishing\Twitter\PublishedPostProvider;
 use Publishing\Twitter\SQLitePublishedPostProvider;
 use Tests\KernelTestCase;
-use Tests\PostsSeeder;
+use Tests\PostSeeder;
 use Tests\Unit\Core\Publishing\Twitter\PostProviderContractTests;
 
 final class SQLitePostProviderTest extends KernelTestCase
@@ -14,7 +14,7 @@ final class SQLitePostProviderTest extends KernelTestCase
 
     protected bool $seed = true;
 
-    protected string $seeder = PostsSeeder::class;
+    protected string $seeder = PostSeeder::class;
 
     private function getInstance(): PublishedPostProvider
     {

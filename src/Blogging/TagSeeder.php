@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Database\Seeders;
+namespace Blogging;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\SQLiteConnection;
