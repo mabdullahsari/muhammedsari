@@ -2,11 +2,11 @@
 
 namespace Tests\Unit\Core\Blogging;
 
+use Blogging\Contract\PostPublished;
+use Blogging\Contract\PublishPost;
 use Blogging\InMemoryPostRepository;
 use Blogging\PostId;
 use Blogging\PublishPostHandler;
-use Contract\Blogging\Command\PublishPost;
-use Contract\Blogging\Event\PostWasPublished;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Support\Testing\Fakes\EventFake;
 use PHPUnit\Framework\Attributes\Test;
@@ -27,13 +27,13 @@ final class PublishPostHandlerTest extends TestCase
 
         $handler->handle(new PublishPost($id));
 
-        $events->assertDispatched(PostWasPublished::class);
+        $events->assertDispatched(PostPublished::class);
         $this->assertTrue($posts->wasSaved($id));
     }
 
     private function aDispatcher(): EventFake
     {
-        return new EventFake(new Dispatcher(), PostWasPublished::class);
+        return new EventFake(new Dispatcher(), PostPublished::class);
     }
 
     private function aPostRepository(int $id): InMemoryPostRepository

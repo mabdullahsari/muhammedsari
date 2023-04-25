@@ -2,15 +2,15 @@
 
 namespace Tests\Integration\Core\Scheduling;
 
+use Blogging\Contract\PublishPost;
 use Clock\FrozenClock;
-use Contract\Blogging\Command\PublishPost;
+use Illuminate\Support\Facades\Bus;
+use Illuminate\Support\Testing\Fakes\BusFake;
+use PHPUnit\Framework\Attributes\Test;
 use Scheduling\CrontabDrivenScheduler;
 use Scheduling\InMemoryPublicationRepository;
 use Scheduling\Publication;
 use Scheduling\PublicationRepository;
-use Illuminate\Support\Facades\Bus;
-use Illuminate\Support\Testing\Fakes\BusFake;
-use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
 use Tests\Unit\Core\Scheduling\PublicationFactoryMethods;
 

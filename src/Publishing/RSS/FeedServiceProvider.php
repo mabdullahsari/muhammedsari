@@ -2,8 +2,8 @@
 
 namespace Publishing\RSS;
 
-use Contract\Publishing\RSS\FeedProvider;
 use Illuminate\Support\ServiceProvider;
+use Publishing\Contract\FeedProvider;
 
 final class FeedServiceProvider extends ServiceProvider
 {

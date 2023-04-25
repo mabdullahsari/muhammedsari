@@ -2,14 +2,14 @@
 
 namespace Tests\Unit\Core\Publishing\Twitter;
 
-use Contract\Blogging\Event\PostWasPublished;
+use Blogging\Contract\PostPublished;
+use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\TestCase;
 use Publishing\PostUrlGenerator;
 use Publishing\Twitter\InMemoryPublishedPostProvider;
 use Publishing\Twitter\InMemoryTwitter;
 use Publishing\Twitter\PublishedPost;
 use Publishing\Twitter\SendTweetAboutNewPost;
-use PHPUnit\Framework\Attributes\Test;
-use PHPUnit\Framework\TestCase;
 
 final class SendTweetAboutNewPostTest extends TestCase
 {
@@ -22,7 +22,7 @@ final class SendTweetAboutNewPostTest extends TestCase
             $this->aUrlGenerator(),
         );
 
-        $listener->handle(new PostWasPublished($id));
+        $listener->handle(new PostPublished($id));
 
         $this->assertCount(1, $twitter->outbox());
     }

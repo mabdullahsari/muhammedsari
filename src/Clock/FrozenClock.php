@@ -3,7 +3,7 @@
 namespace Clock;
 
 use Carbon\CarbonImmutable;
-use Contract\Clock\Clock;
+use Clock\Contract\Clock;
 use Webmozart\Assert\Assert;
 
 final class FrozenClock implements Clock

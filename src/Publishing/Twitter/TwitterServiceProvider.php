@@ -2,7 +2,7 @@
 
 namespace Publishing\Twitter;
 
-use Contract\Blogging\Event\PostWasPublished;
+use Blogging\Contract\PostPublished;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Support\ServiceProvider;
 
@@ -15,6 +15,6 @@ final class TwitterServiceProvider extends ServiceProvider
 
     public function boot(Dispatcher $events): void
     {
-        $events->listen(PostWasPublished::class, SendTweetAboutNewPost::class);
+        $events->listen(PostPublished::class, SendTweetAboutNewPost::class);
     }
 }

@@ -2,14 +2,14 @@
 
 namespace Scheduling;
 
-use Contract\Blogging\Event\PostWasDeleted;
-use Contract\Blogging\Event\PostWasPublished;
-use Contract\Scheduling\Scheduler;
-use Scheduling\Models\Publication;
-use Scheduling\Models\PublicationPolicy;
+use Blogging\Contract\PostDeleted;
+use Blogging\Contract\PostPublished;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Support\ServiceProvider;
+use Scheduling\Contract\Scheduler;
+use Scheduling\Models\Publication;
+use Scheduling\Models\PublicationPolicy;
 
 final class SchedulingServiceProvider extends ServiceProvider
 {
@@ -20,8 +20,8 @@ final class SchedulingServiceProvider extends ServiceProvider
 
     public function boot(Dispatcher $events): void
     {
-        $events->listen(PostWasDeleted::class, RemoveScheduledPublication::class);
-        $events->listen(PostWasPublished::class, RemoveScheduledPublication::class);
+        $events->listen(PostDeleted::class, RemoveScheduledPublication::class);
+        $events->listen(PostPublished::class, RemoveScheduledPublication::class);
     }
 
     public function register(): void

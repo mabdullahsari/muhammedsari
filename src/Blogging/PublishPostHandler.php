@@ -2,8 +2,8 @@
 
 namespace Blogging;
 
-use Contract\Blogging\Command\PublishPost;
-use Contract\Clock\Clock;
+use Blogging\Contract\PublishPost;
+use Clock\Contract\Clock;
 use Illuminate\Contracts\Events\Dispatcher;
 
 final readonly class PublishPostHandler

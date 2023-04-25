@@ -2,6 +2,8 @@
 
 namespace Blogging;
 
+use Blogging\Contract\CouldNotFindPost;
+
 interface PostRepository
 {
     /** @throws CouldNotFindPost */

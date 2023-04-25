@@ -1,12 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace App\Http\Web\Blog;
+namespace Blogging\Contract;
 
-use Blogging\PostSummaryViewModel;
 use Illuminate\Support\Collection;
 
 interface GetMyPosts
 {
-    /** @return Collection<int, PostSummaryViewModel> */
+    /** @return Collection<int, PostSummary> */
     public function get(): Collection;
 }

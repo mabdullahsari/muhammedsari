@@ -1,12 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Blogging;
+namespace Blogging\Contract;
 
 use Carbon\CarbonImmutable;
-use Blogging\Models\Post;
 use JsonSerializable;
 
-final readonly class PostViewModel implements JsonSerializable
+final readonly class Post implements JsonSerializable
 {
     public function __construct(
         public string $body,
@@ -16,18 +15,6 @@ final readonly class PostViewModel implements JsonSerializable
         public array $tags,
         public string $title,
     ) {}
-
-    public static function fromEloquent(Post $post): self
-    {
-        return new self(
-            $post->body,
-            $post->published_at,
-            $post->slug,
-            $post->summary,
-            $post->tags->map(TagViewModel::fromEloquent(...))->all(),
-            $post->title,
-        );
-    }
 
     public function jsonSerialize(): array
     {

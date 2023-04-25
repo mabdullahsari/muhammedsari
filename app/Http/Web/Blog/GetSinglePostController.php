@@ -2,6 +2,7 @@
 
 namespace App\Http\Web\Blog;
 
+use Blogging\Contract\GetSinglePost;
 use Blogging\Slug;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;

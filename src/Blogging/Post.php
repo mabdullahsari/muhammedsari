@@ -2,9 +2,10 @@
 
 namespace Blogging;
 
+use Blogging\Contract\CouldNotPublish;
+use Blogging\Contract\PostPublished;
 use Carbon\CarbonImmutable;
-use Contract\Blogging\Event\PostWasPublished;
-use Contract\Clock\Clock;
+use Clock\Contract\Clock;
 use stdClass;
 
 final class Post extends Entity
@@ -81,7 +82,7 @@ final class Post extends Entity
         $this->state = PostState::Published;
         $this->publishedAt = $clock->now();
 
-        $this->raise(new PostWasPublished($this->id->asInt()));
+        $this->raise(new PostPublished($this->id->asInt()));
     }
 
     public function toDatabase(): array

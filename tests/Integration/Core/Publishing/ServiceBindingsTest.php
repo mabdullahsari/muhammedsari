@@ -2,8 +2,10 @@
 
 namespace Tests\Integration\Core\Publishing;
 
-use Contract\Blogging\Event\PostWasPublished;
-use Contract\Publishing\RSS\FeedProvider;
+use Blogging\Contract\PostPublished;
+use Illuminate\Contracts\Events\Dispatcher;
+use PHPUnit\Framework\Attributes\Test;
+use Publishing\Contract\FeedProvider;
 use Publishing\PostUrlGenerator;
 use Publishing\RSS\SQLiteFeedProvider;
 use Publishing\Twitter\PublishedPostProvider;
@@ -12,8 +14,6 @@ use Publishing\Twitter\SQLitePublishedPostProvider;
 use Publishing\Twitter\Twitter;
 use Publishing\Twitter\TwitterManager;
 use Publishing\UrlGenerator;
-use Illuminate\Contracts\Events\Dispatcher;
-use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
 
 final class ServiceBindingsTest extends KernelTestCase
@@ -41,7 +41,7 @@ final class ServiceBindingsTest extends KernelTestCase
     public function it_registers_listeners_for_blogging_events(): void
     {
         $events = $this->app->make(Dispatcher::class);
-        $listeners = $events->getRawListeners()[PostWasPublished::class];
+        $listeners = $events->getRawListeners()[PostPublished::class];
 
         // Twitter
         $this->assertContains(SendTweetAboutNewPost::class, $listeners);

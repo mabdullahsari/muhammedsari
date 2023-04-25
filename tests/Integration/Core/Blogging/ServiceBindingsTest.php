@@ -2,6 +2,7 @@
 
 namespace Tests\Integration\Core\Blogging;
 
+use Blogging\Contract\PublishPost;
 use Blogging\Models\Author;
 use Blogging\Models\Post;
 use Blogging\Models\PostObserver;
@@ -11,7 +12,6 @@ use Blogging\Models\TagPolicy;
 use Blogging\PostRepository;
 use Blogging\PublishPostHandler;
 use Blogging\SQLitePostRepository;
-use Contract\Blogging\Command\PublishPost;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Database\Eloquent\Relations\Relation;

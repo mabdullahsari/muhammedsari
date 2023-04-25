@@ -2,7 +2,7 @@
 
 namespace Blogging\Models;
 
-use Contract\Blogging\Event\PostWasDeleted;
+use Blogging\Contract\PostDeleted;
 use Illuminate\Contracts\Events\Dispatcher;
 
 final readonly class PostObserver
@@ -12,7 +12,7 @@ final readonly class PostObserver
     public function deleted(Post $post): void
     {
         $this->events->dispatch(
-            new PostWasDeleted($post->id)
+            new PostDeleted($post->id)
         );
     }
 }

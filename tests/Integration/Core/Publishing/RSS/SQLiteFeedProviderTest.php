@@ -2,7 +2,7 @@
 
 namespace Tests\Integration\Core\Publishing\RSS;
 
-use Contract\Publishing\RSS\FeedProvider;
+use Publishing\Contract\FeedProvider;
 use Publishing\PostUrlGenerator;
 use Publishing\RSS\FeedItemMapper;
 use Publishing\RSS\SQLiteFeedProvider;

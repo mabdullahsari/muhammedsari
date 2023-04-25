@@ -2,10 +2,10 @@
 
 namespace Tests\Feature;
 
+use Blogging\Contract\PublishPost;
 use Blogging\Models\PostFactory;
 use Blogging\PostState;
 use Carbon\CarbonImmutable;
-use Contract\Blogging\Command\PublishPost;
 use Illuminate\Support\Facades\Bus;
 use PHPUnit\Framework\Attributes\Test;
 use Publishing\Twitter\Twitter;

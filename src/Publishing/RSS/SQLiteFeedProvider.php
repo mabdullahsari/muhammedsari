@@ -2,9 +2,9 @@
 
 namespace Publishing\RSS;
 
-use Contract\Publishing\RSS\FeedProvider;
 use Illuminate\Database\SQLiteConnection;
 use Illuminate\Support\Collection;
+use Publishing\Contract\FeedProvider;
 use Spatie\Feed\FeedItem;
 
 final readonly class SQLiteFeedProvider implements FeedProvider

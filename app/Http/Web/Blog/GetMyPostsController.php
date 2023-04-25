@@ -2,6 +2,7 @@
 
 namespace App\Http\Web\Blog;
 
+use Blogging\Contract\GetMyPosts;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
 use Spatie\RouteAttributes\Attributes\Get;

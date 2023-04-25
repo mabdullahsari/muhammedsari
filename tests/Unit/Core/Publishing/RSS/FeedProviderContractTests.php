@@ -2,9 +2,9 @@
 
 namespace Tests\Unit\Core\Publishing\RSS;
 
-use Contract\Publishing\RSS\FeedProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Publishing\Contract\FeedProvider;
 use Spatie\Feed\FeedItem;
 
 /** @mixin TestCase */

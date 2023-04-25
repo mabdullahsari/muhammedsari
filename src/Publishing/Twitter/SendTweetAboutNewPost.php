@@ -2,9 +2,9 @@
 
 namespace Publishing\Twitter;
 
-use Contract\Blogging\Event\PostWasPublished;
-use Publishing\UrlGenerator;
+use Blogging\Contract\PostPublished;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Publishing\UrlGenerator;
 
 final readonly class SendTweetAboutNewPost implements ShouldQueue
 {
@@ -14,7 +14,7 @@ final readonly class SendTweetAboutNewPost implements ShouldQueue
         private UrlGenerator $url,
     ) {}
 
-    public function handle(PostWasPublished $event): void
+    public function handle(PostPublished $event): void
     {
         $post = $this->posts->getById($event->id);
 

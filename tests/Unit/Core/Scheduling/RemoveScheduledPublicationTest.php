@@ -2,15 +2,15 @@
 
 namespace Tests\Unit\Core\Scheduling;
 
-use Contract\Blogging\Event\PostWasDeleted;
-use Contract\Blogging\Event\PostWasPublished;
+use Blogging\Contract\PostDeleted;
+use Blogging\Contract\PostPublished;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\TestCase;
 use Scheduling\CouldNotFindPublication;
 use Scheduling\InMemoryPublicationRepository;
 use Scheduling\Publication;
 use Scheduling\RemoveScheduledPublication;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Test;
-use PHPUnit\Framework\TestCase;
 
 final class RemoveScheduledPublicationTest extends TestCase
 {
@@ -33,8 +33,8 @@ final class RemoveScheduledPublicationTest extends TestCase
     public static function events(): array
     {
         return [
-            [PostWasPublished::class],
-            [PostWasDeleted::class],
+            [PostPublished::class],
+            [PostDeleted::class],
         ];
     }
 }

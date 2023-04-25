@@ -2,9 +2,9 @@
 
 namespace Tests\Unit\Core\Blogging\Models;
 
+use Blogging\Contract\PostDeleted;
 use Blogging\Models\Post;
 use Blogging\Models\PostObserver;
-use Contract\Blogging\Event\PostWasDeleted;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Support\Testing\Fakes\EventFake;
 use PHPUnit\Framework\Attributes\Test;
@@ -22,6 +22,6 @@ final class PostObserverTest extends TestCase
 
         (new PostObserver($events))->deleted($model);
 
-        $events->assertDispatched(PostWasDeleted::class, fn ($event) => $event->id === 1453);
+        $events->assertDispatched(PostDeleted::class, fn ($event) => $event->id === 1453);
     }
 }

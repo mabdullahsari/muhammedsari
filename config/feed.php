@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-use Contract\Publishing\RSS\FeedProvider;
+use Publishing\Contract\FeedProvider;
 
 return [
     'feeds' => [

@@ -2,8 +2,8 @@
 
 namespace Tests\Integration\Core\Clock;
 
+use Clock\Contract\Clock;
 use Clock\NativeClock;
-use Contract\Clock\Clock;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
 

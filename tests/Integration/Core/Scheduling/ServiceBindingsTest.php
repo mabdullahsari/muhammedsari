@@ -2,18 +2,18 @@
 
 namespace Tests\Integration\Core\Scheduling;
 
-use Contract\Blogging\Event\PostWasDeleted;
-use Contract\Blogging\Event\PostWasPublished;
-use Contract\Scheduling\Scheduler;
+use Blogging\Contract\PostDeleted;
+use Blogging\Contract\PostPublished;
+use Illuminate\Contracts\Auth\Access\Gate;
+use Illuminate\Contracts\Events\Dispatcher;
+use PHPUnit\Framework\Attributes\Test;
+use Scheduling\Contract\Scheduler;
 use Scheduling\CrontabDrivenScheduler;
 use Scheduling\Models\Publication;
 use Scheduling\Models\PublicationPolicy;
 use Scheduling\PublicationRepository;
 use Scheduling\RemoveScheduledPublication;
 use Scheduling\SQLitePublicationRepository;
-use Illuminate\Contracts\Auth\Access\Gate;
-use Illuminate\Contracts\Events\Dispatcher;
-use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
 
 final class ServiceBindingsTest extends KernelTestCase
@@ -34,8 +34,8 @@ final class ServiceBindingsTest extends KernelTestCase
         $events = $this->app->make(Dispatcher::class);
         $listeners = $events->getRawListeners();
 
-        $deleted = $listeners[PostWasDeleted::class];
-        $published = $listeners[PostWasPublished::class];
+        $deleted = $listeners[PostDeleted::class];
+        $published = $listeners[PostPublished::class];
 
         $this->assertContains(RemoveScheduledPublication::class, $deleted);
         $this->assertContains(RemoveScheduledPublication::class, $published);

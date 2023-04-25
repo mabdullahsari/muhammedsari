@@ -3,9 +3,9 @@
 namespace Tests\Unit\Core\Blogging;
 
 use Blogging\Body;
-use Blogging\CouldNotPublish;
+use Blogging\Contract\CouldNotPublish;
+use Blogging\Contract\PostPublished;
 use Blogging\Summary;
-use Contract\Blogging\Event\PostWasPublished;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
@@ -63,6 +63,6 @@ final class PostTest extends TestCase
             $this->aClock()
         );
 
-        $this->assertEquals([new PostWasPublished(1)], $post->flushEvents());
+        $this->assertEquals([new PostPublished(1)], $post->flushEvents());
     }
 }

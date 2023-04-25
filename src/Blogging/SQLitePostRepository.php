@@ -2,7 +2,8 @@
 
 namespace Blogging;
 
-use Contract\Clock\Clock;
+use Blogging\Contract\CouldNotFindPost;
+use Clock\Contract\Clock;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Database\SQLiteConnection;
 use stdClass;

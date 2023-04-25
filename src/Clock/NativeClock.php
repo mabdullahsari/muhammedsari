@@ -3,8 +3,8 @@
 namespace Clock;
 
 use Carbon\CarbonImmutable;
+use Clock\Contract\Clock;
 use DateTimeZone;
-use Contract\Clock\Clock;
 
 final readonly class NativeClock implements Clock
 {

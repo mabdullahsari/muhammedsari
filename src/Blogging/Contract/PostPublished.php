@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Contract\Blogging\Event;
+namespace Blogging\Contract;
 
-final readonly class PostWasPublished
+final readonly class PostPublished
 {
     public function __construct(public int $id) {}
 }

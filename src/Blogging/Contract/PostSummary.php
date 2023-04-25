@@ -1,12 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Blogging;
+namespace Blogging\Contract;
 
 use Carbon\CarbonImmutable;
-use Blogging\Models\Post;
 use JsonSerializable;
 
-final readonly class PostSummaryViewModel implements JsonSerializable
+final readonly class PostSummary implements JsonSerializable
 {
     public function __construct(
         public CarbonImmutable $publishedAt,
@@ -14,11 +13,6 @@ final readonly class PostSummaryViewModel implements JsonSerializable
         public string $summary,
         public string $title,
     ) {}
-
-    public static function fromEloquent(Post $post): self
-    {
-        return new self($post->published_at, $post->slug, $post->summary, $post->title);
-    }
 
     public function jsonSerialize(): array
     {

@@ -2,10 +2,10 @@
 
 namespace Scheduling;
 
-use Contract\Blogging\Command\PublishPost;
-use Contract\Clock\Clock;
-use Contract\Scheduling\Scheduler;
+use Blogging\Contract\PublishPost;
+use Clock\Contract\Clock;
 use Illuminate\Contracts\Bus\Dispatcher;
+use Scheduling\Contract\Scheduler;
 
 final readonly class CrontabDrivenScheduler implements Scheduler
 {

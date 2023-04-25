@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\Core\Blogging;
 
-use Blogging\CouldNotFindPost;
+use Blogging\Contract\CouldNotFindPost;
 use Blogging\PostId;
 use Blogging\PostRepository;
 use PHPUnit\Framework\Attributes\Test;
