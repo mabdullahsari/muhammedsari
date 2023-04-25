@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Foundation;
+namespace Health;
 
 use Illuminate\Support\AggregateServiceProvider;
 use Spatie\Health\Checks\Checks\CacheCheck;

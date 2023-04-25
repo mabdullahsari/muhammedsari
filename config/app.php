@@ -193,6 +193,7 @@ return [
          */
         Blogging\BloggingServiceProvider::class,
         Clock\ClockServiceProvider::class,
+        Health\HealthServiceProvider::class,
         Identity\IdentityServiceProvider::class,
         Publishing\PublishingServiceProvider::class,
         Scheduling\SchedulingServiceProvider::class,
@@ -200,8 +201,8 @@ return [
         /*
          * Application Service Providers...
          */
+        App\Foundation\BusServiceProvider::class,
         App\Console\ConsoleServiceProvider::class,
-        App\Foundation\FoundationServiceProvider::class,
         App\Http\Filament\FilamentServiceProvider::class,
         App\Http\Web\WebServiceProvider::class,
 
