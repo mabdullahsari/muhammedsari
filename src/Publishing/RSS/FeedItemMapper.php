@@ -9,9 +9,7 @@ use stdClass;
 
 final readonly class FeedItemMapper
 {
-    public function __construct(
-        private UrlGenerator $url,
-    ) {}
+    public function __construct(private UrlGenerator $url) {}
 
     public function __invoke(stdClass $post): FeedItem
     {

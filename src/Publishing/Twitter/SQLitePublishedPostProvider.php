@@ -7,9 +7,7 @@ use stdClass;
 
 final readonly class SQLitePublishedPostProvider implements PublishedPostProvider
 {
-    public function __construct(
-        private SQLiteConnection $db,
-    ) {}
+    public function __construct(private SQLiteConnection $db) {}
 
     public function getById(int $id): PublishedPost
     {

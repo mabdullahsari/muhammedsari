@@ -7,9 +7,7 @@ use Illuminate\Database\SQLiteConnection;
 
 final readonly class UseDatabaseTransactions
 {
-    public function __construct(
-        private SQLiteConnection $db,
-    ) {}
+    public function __construct(private SQLiteConnection $db) {}
 
     public function handle(object $command, Closure $next): mixed
     {

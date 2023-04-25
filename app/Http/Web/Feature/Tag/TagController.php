@@ -10,9 +10,7 @@ use Spatie\RouteAttributes\Attributes\Where;
 
 final readonly class TagController
 {
-    public function __construct(
-        private Factory $view,
-    ) {}
+    public function __construct(private Factory $view) {}
 
     #[Get('tags', 'tags.index')]
     public function index(): View

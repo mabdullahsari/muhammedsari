@@ -8,9 +8,7 @@ use Spatie\RouteAttributes\Attributes\Get;
 
 final readonly class OSSController
 {
-    public function __construct(
-        private Factory $view,
-    ) {}
+    public function __construct(private Factory $view) {}
 
     #[Get('oss', 'oss')]
     public function index(): View

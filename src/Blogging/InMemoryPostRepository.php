@@ -6,9 +6,7 @@ final class InMemoryPostRepository implements PostRepository
 {
     private array $saves = [];
 
-    public function __construct(
-        private array $posts = [],
-    ) {}
+    public function __construct(private array $posts = []) {}
 
     public function find(PostId $id): Post
     {

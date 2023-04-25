@@ -8,9 +8,7 @@ use Spatie\RouteAttributes\Attributes\Get;
 
 final readonly class UsesController
 {
-    public function __construct(
-        private Factory $view,
-    ) {}
+    public function __construct(private Factory $view) {}
 
     #[Get('uses')]
     public function index(): View

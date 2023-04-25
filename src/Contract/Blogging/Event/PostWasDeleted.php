@@ -4,7 +4,5 @@ namespace Core\Contract\Blogging\Event;
 
 final readonly class PostWasDeleted
 {
-    public function __construct(
-        public int $id,
-    ) {}
+    public function __construct(public int $id) {}
 }

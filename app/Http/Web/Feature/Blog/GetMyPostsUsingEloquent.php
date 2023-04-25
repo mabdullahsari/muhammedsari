@@ -12,9 +12,7 @@ final readonly class GetMyPostsUsingEloquent implements GetMyPosts
 {
     private const COLUMNS = ['published_at', 'slug', 'summary', 'title'];
 
-    public function __construct(
-        private Post $model,
-    ) {}
+    public function __construct(private Post $model) {}
 
     public function get(): Collection
     {

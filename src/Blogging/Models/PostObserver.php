@@ -7,9 +7,7 @@ use Illuminate\Contracts\Events\Dispatcher;
 
 final readonly class PostObserver
 {
-    public function __construct(
-        private Dispatcher $events,
-    ) {}
+    public function __construct(private Dispatcher $events) {}
 
     public function deleted(Post $post): void
     {

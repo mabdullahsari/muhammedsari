@@ -7,9 +7,7 @@ use Core\Contract\Blogging\Event\PostWasPublished;
 
 final readonly class RemoveScheduledPublication
 {
-    public function __construct(
-        private PublicationRepository $publications,
-    ) {}
+    public function __construct(private PublicationRepository $publications) {}
 
     public function handle(PostWasDeleted|PostWasPublished $event): void
     {

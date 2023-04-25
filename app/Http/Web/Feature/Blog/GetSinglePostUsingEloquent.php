@@ -9,9 +9,7 @@ final readonly class GetSinglePostUsingEloquent implements GetSinglePost
 {
     private const COLUMNS = ['body', 'id', 'published_at', 'slug', 'summary', 'title'];
 
-    public function __construct(
-        private Post $model,
-    ) {}
+    public function __construct(private Post $model) {}
 
     /** @throws CouldNotGetPost */
     public function get(string $slug): PostViewModel

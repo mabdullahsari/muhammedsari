@@ -4,9 +4,7 @@ namespace Core\Publishing\Twitter;
 
 final readonly class InMemoryPublishedPostProvider implements PublishedPostProvider
 {
-    public function __construct(
-        private array $posts = [],
-    ) {}
+    public function __construct(private array $posts = []) {}
 
     public function getById(int $id): PublishedPost
     {
