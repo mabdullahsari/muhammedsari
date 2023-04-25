@@ -14,9 +14,9 @@ final class WebServiceProvider extends AggregateServiceProvider
         RouteServiceProvider::class,
         View\ViewServiceProvider::class,
 
-        Feature\About\AboutServiceProvider::class,
-        Feature\Blog\BlogServiceProvider::class,
-        Feature\Home\HomeServiceProvider::class,
-        Feature\Tag\TagServiceProvider::class,
+        About\AboutServiceProvider::class,
+        Blog\BlogServiceProvider::class,
+        Home\HomeServiceProvider::class,
+        Tag\TagServiceProvider::class,
     ];
 }
