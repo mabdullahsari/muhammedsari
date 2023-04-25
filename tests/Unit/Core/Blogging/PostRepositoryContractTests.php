@@ -2,9 +2,9 @@
 
 namespace Tests\Unit\Core\Blogging;
 
-use Core\Blogging\CouldNotFindPost;
-use Core\Blogging\PostId;
-use Core\Blogging\PostRepository;
+use Blogging\CouldNotFindPost;
+use Blogging\PostId;
+use Blogging\PostRepository;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

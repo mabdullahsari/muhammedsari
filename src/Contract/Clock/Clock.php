@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Core\Contract\Clock;
+namespace Contract\Clock;
 
 use Carbon\CarbonImmutable;
 

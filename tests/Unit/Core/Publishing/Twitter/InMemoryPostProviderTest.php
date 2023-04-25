@@ -2,9 +2,9 @@
 
 namespace Tests\Unit\Core\Publishing\Twitter;
 
-use Core\Publishing\Twitter\InMemoryPublishedPostProvider;
-use Core\Publishing\Twitter\PublishedPost;
-use Core\Publishing\Twitter\PublishedPostProvider;
+use Publishing\Twitter\InMemoryPublishedPostProvider;
+use Publishing\Twitter\PublishedPost;
+use Publishing\Twitter\PublishedPostProvider;
 use PHPUnit\Framework\TestCase;
 
 final class InMemoryPostProviderTest extends TestCase

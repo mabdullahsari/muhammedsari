@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Core\Blogging\Models;
+namespace Blogging\Models;
 
-use Core\Blogging\PostState;
+use Blogging\PostState;
 use Illuminate\Database\Eloquent\Builder;
 
 final class MustBePublished

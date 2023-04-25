@@ -14,5 +14,5 @@ parameters:
     checkGenericClassInNonGenericObjectType: false
 
     ignoreErrors:
-        - '#Core\\Scheduling\\Publication#'
+        - '#Scheduling\\Publication#'
         - '#Method App\\Http\\Web\\View\\Components\\Page::description\(\) should return string but returns mixed#'

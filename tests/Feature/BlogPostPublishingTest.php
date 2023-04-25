@@ -4,9 +4,9 @@ namespace Tests\Feature;
 
 use Carbon\CarbonImmutable;
 use Database\Factories\PostFactory;
-use Core\Blogging\PostState;
-use Core\Contract\Blogging\Command\PublishPost;
-use Core\Publishing\Twitter\Twitter;
+use Blogging\PostState;
+use Contract\Blogging\Command\PublishPost;
+use Publishing\Twitter\Twitter;
 use Illuminate\Support\Facades\Bus;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;

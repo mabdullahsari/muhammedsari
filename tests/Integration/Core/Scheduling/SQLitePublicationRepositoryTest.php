@@ -2,9 +2,9 @@
 
 namespace Tests\Integration\Core\Scheduling;
 
-use Core\Scheduling\PublicationMapper;
-use Core\Scheduling\PublicationRepository;
-use Core\Scheduling\SQLitePublicationRepository;
+use Scheduling\PublicationMapper;
+use Scheduling\PublicationRepository;
+use Scheduling\SQLitePublicationRepository;
 use Illuminate\Database\SQLiteConnection;
 use Tests\KernelTestCase;
 use Tests\Unit\Core\Scheduling\PublicationRepositoryContractTests;

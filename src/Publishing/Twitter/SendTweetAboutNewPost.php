@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Core\Publishing\Twitter;
+namespace Publishing\Twitter;
 
-use Core\Contract\Blogging\Event\PostWasPublished;
-use Core\Publishing\UrlGenerator;
+use Contract\Blogging\Event\PostWasPublished;
+use Publishing\UrlGenerator;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
 final readonly class SendTweetAboutNewPost implements ShouldQueue

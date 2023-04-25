@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace Core\Scheduling;
+namespace Scheduling;
 
-use Core\Contract\Blogging\Command\PublishPost;
-use Core\Contract\Clock\Clock;
-use Core\Contract\Scheduling\Scheduler;
+use Contract\Blogging\Command\PublishPost;
+use Contract\Clock\Clock;
+use Contract\Scheduling\Scheduler;
 use Illuminate\Contracts\Bus\Dispatcher;
 
 final readonly class CrontabDrivenScheduler implements Scheduler

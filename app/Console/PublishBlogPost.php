@@ -2,7 +2,7 @@
 
 namespace App\Console;
 
-use Core\Contract\Blogging\Command\PublishPost;
+use Contract\Blogging\Command\PublishPost;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Bus;
 use Throwable;

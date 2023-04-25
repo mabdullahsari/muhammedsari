@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace Core\Clock;
+namespace Clock;
 
 use Carbon\CarbonImmutable;
 use DateTimeZone;
-use Core\Contract\Clock\Clock;
+use Contract\Clock\Clock;
 
 final readonly class NativeClock implements Clock
 {

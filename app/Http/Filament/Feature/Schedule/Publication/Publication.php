@@ -2,7 +2,7 @@
 
 namespace App\Http\Filament\Feature\Schedule\Publication;
 
-use Core\Identity\User;
+use Identity\User;
 use Filament\Facades\Filament;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 final class Publication extends Resource
 {
-    protected static ?string $model = \Core\Scheduling\Models\Publication::class;
+    protected static ?string $model = \Scheduling\Models\Publication::class;
 
     protected static ?string $navigationGroup = 'Schedule';
 

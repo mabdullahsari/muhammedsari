@@ -2,8 +2,8 @@
 
 namespace Tests\Unit\Core\Scheduling;
 
-use Core\Scheduling\Publication;
-use Core\Scheduling\PublicationMapper;
+use Scheduling\Publication;
+use Scheduling\PublicationMapper;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

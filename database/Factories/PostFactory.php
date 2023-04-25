@@ -2,9 +2,9 @@
 
 namespace Database\Factories;
 
-use Core\Blogging\Models\Author;
-use Core\Blogging\Models\Post;
-use Core\Blogging\PostState;
+use Blogging\Models\Author;
+use Blogging\Models\Post;
+use Blogging\PostState;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 

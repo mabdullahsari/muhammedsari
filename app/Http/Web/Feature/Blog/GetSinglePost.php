@@ -2,7 +2,7 @@
 
 namespace App\Http\Web\Feature\Blog;
 
-use Core\Blogging\PostViewModel;
+use Blogging\PostViewModel;
 
 interface GetSinglePost
 {

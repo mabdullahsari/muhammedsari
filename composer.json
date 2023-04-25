@@ -36,8 +36,13 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "Core\\": "src/",
-            "Database\\": "database/"
+            "Blogging\\": "src/Blogging",
+            "Clock\\": "src/Clock",
+            "Contract\\": "src/Contract",
+            "Database\\": "database/",
+            "Identity\\": "src/Identity",
+            "Publishing\\": "src/Publishing",
+            "Scheduling\\": "src/Scheduling"
         }
     },
     "autoload-dev": {

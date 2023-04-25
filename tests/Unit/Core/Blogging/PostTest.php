@@ -2,10 +2,10 @@
 
 namespace Tests\Unit\Core\Blogging;
 
-use Core\Blogging\Body;
-use Core\Blogging\CouldNotPublish;
-use Core\Blogging\Summary;
-use Core\Contract\Blogging\Event\PostWasPublished;
+use Blogging\Body;
+use Blogging\CouldNotPublish;
+use Blogging\Summary;
+use Contract\Blogging\Event\PostWasPublished;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

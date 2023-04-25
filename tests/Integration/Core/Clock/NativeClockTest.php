@@ -3,7 +3,7 @@
 namespace Tests\Integration\Core\Clock;
 
 use Carbon\CarbonImmutable;
-use Core\Clock\NativeClock;
+use Clock\NativeClock;
 use Exception;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

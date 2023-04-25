@@ -2,10 +2,10 @@
 
 namespace App\Http\Web\Feature\Blog;
 
-use Core\Blogging\Models\Post;
-use Core\Blogging\Models\MustBePublished;
-use Core\Blogging\Models\SortByPublicationDate;
-use Core\Blogging\PostSummaryViewModel;
+use Blogging\Models\Post;
+use Blogging\Models\MustBePublished;
+use Blogging\Models\SortByPublicationDate;
+use Blogging\PostSummaryViewModel;
 use Illuminate\Support\Collection;
 
 final readonly class GetMyPostsUsingEloquent implements GetMyPosts

@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Core\Blogging\Models;
+namespace Blogging\Models;
 
-use Core\Contract\Blogging\Event\PostWasDeleted;
+use Contract\Blogging\Event\PostWasDeleted;
 use Illuminate\Contracts\Events\Dispatcher;
 
 final readonly class PostObserver

@@ -2,8 +2,8 @@
 
 namespace Tests\Unit\Core\Blogging;
 
-use Core\Blogging\InMemoryPostRepository;
-use Core\Blogging\PostRepository;
+use Blogging\InMemoryPostRepository;
+use Blogging\PostRepository;
 use PHPUnit\Framework\TestCase;
 
 final class InMemoryPostRepositoryTest extends TestCase

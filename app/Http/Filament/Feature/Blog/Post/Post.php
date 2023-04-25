@@ -2,9 +2,9 @@
 
 namespace App\Http\Filament\Feature\Blog\Post;
 
-use Core\Blogging\PostState;
-use Core\Blogging\Slug;
-use Core\Blogging\Summary;
+use Blogging\PostState;
+use Blogging\Slug;
+use Blogging\Summary;
 use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
@@ -19,7 +19,7 @@ use Spatie\FilamentMarkdownEditor\MarkdownEditor;
 
 final class Post extends Resource
 {
-    protected static ?string $model = \Core\Blogging\Models\Post::class;
+    protected static ?string $model = \Blogging\Models\Post::class;
 
     protected static ?string $navigationGroup = 'Blog';
 

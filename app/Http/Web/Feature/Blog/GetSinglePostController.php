@@ -2,7 +2,7 @@
 
 namespace App\Http\Web\Feature\Blog;
 
-use Core\Blogging\Slug;
+use Blogging\Slug;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
 use Spatie\RouteAttributes\Attributes\Get;

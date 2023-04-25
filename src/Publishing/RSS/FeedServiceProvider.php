@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Core\Publishing\RSS;
+namespace Publishing\RSS;
 
-use Core\Contract\Publishing\RSS\FeedProvider;
+use Contract\Publishing\RSS\FeedProvider;
 use Illuminate\Support\ServiceProvider;
 
 final class FeedServiceProvider extends ServiceProvider

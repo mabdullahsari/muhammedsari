@@ -2,7 +2,7 @@
 
 namespace App\Http\Web\Feature\Tag;
 
-use Core\Blogging\Slug;
+use Blogging\Slug;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Spatie\RouteAttributes\Attributes\Get;

@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Core\Blogging;
+namespace Blogging;
 
 use Carbon\CarbonImmutable;
-use Core\Blogging\Models\Post;
+use Blogging\Models\Post;
 use JsonSerializable;
 
 final readonly class PostViewModel implements JsonSerializable

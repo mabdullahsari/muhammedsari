@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Core\Clock;
+namespace Clock;
 
-use Core\Contract\Clock\Clock;
+use Contract\Clock\Clock;
 use Illuminate\Support\ServiceProvider;
 
 final class ClockServiceProvider extends ServiceProvider

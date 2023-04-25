@@ -2,7 +2,7 @@
 
 namespace Tests\Integration\Core\Identity;
 
-use Core\Identity\User;
+use Identity\User;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;

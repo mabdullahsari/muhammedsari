@@ -2,12 +2,12 @@
 
 namespace Tests\Unit\Core\Scheduling;
 
-use Core\Contract\Blogging\Event\PostWasDeleted;
-use Core\Contract\Blogging\Event\PostWasPublished;
-use Core\Scheduling\CouldNotFindPublication;
-use Core\Scheduling\InMemoryPublicationRepository;
-use Core\Scheduling\Publication;
-use Core\Scheduling\RemoveScheduledPublication;
+use Contract\Blogging\Event\PostWasDeleted;
+use Contract\Blogging\Event\PostWasPublished;
+use Scheduling\CouldNotFindPublication;
+use Scheduling\InMemoryPublicationRepository;
+use Scheduling\Publication;
+use Scheduling\RemoveScheduledPublication;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

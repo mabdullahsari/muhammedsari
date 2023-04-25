@@ -2,10 +2,10 @@
 
 namespace Tests\Integration\Core\Publishing\Twitter;
 
-use Core\Publishing\Twitter\InMemoryTwitter;
-use Core\Publishing\Twitter\LogTwitter;
-use Core\Publishing\Twitter\TwitterManager;
-use Core\Publishing\Twitter\TwitterOAuth2;
+use Publishing\Twitter\InMemoryTwitter;
+use Publishing\Twitter\LogTwitter;
+use Publishing\Twitter\TwitterManager;
+use Publishing\Twitter\TwitterOAuth2;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;

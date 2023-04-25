@@ -2,16 +2,16 @@
 
 namespace Tests\Integration\Core\Blogging;
 
-use Core\Blogging\Models\Author;
-use Core\Blogging\Models\Post;
-use Core\Blogging\Models\PostObserver;
-use Core\Blogging\Models\PostPolicy;
-use Core\Blogging\Models\Tag;
-use Core\Blogging\Models\TagPolicy;
-use Core\Blogging\PostRepository;
-use Core\Blogging\PublishPostHandler;
-use Core\Blogging\SQLitePostRepository;
-use Core\Contract\Blogging\Command\PublishPost;
+use Blogging\Models\Author;
+use Blogging\Models\Post;
+use Blogging\Models\PostObserver;
+use Blogging\Models\PostPolicy;
+use Blogging\Models\Tag;
+use Blogging\Models\TagPolicy;
+use Blogging\PostRepository;
+use Blogging\PublishPostHandler;
+use Blogging\SQLitePostRepository;
+use Contract\Blogging\Command\PublishPost;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Database\Eloquent\Relations\Relation;

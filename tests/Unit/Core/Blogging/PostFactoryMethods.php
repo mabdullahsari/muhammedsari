@@ -2,14 +2,14 @@
 
 namespace Tests\Unit\Core\Blogging;
 
-use Core\Blogging\AuthorId;
-use Core\Blogging\Body;
-use Core\Blogging\Post;
-use Core\Blogging\PostId;
-use Core\Blogging\Slug;
-use Core\Blogging\Summary;
-use Core\Blogging\Title;
-use Core\Clock\FrozenClock;
+use Blogging\AuthorId;
+use Blogging\Body;
+use Blogging\Post;
+use Blogging\PostId;
+use Blogging\Slug;
+use Blogging\Summary;
+use Blogging\Title;
+use Clock\FrozenClock;
 
 trait PostFactoryMethods
 {

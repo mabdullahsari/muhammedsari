@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\Core\Scheduling\Models;
 
-use Core\Scheduling\Models\PublicationPolicy;
+use Scheduling\Models\PublicationPolicy;
 use Illuminate\Foundation\Auth\User;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

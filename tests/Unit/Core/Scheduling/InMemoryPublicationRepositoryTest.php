@@ -2,9 +2,9 @@
 
 namespace Tests\Unit\Core\Scheduling;
 
-use Core\Scheduling\InMemoryPublicationRepository;
-use Core\Scheduling\Publication;
-use Core\Scheduling\PublicationRepository;
+use Scheduling\InMemoryPublicationRepository;
+use Scheduling\Publication;
+use Scheduling\PublicationRepository;
 use PHPUnit\Framework\TestCase;
 
 final class InMemoryPublicationRepositoryTest extends TestCase

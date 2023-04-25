@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Core\Scheduling;
+namespace Scheduling;
 
-use Core\Contract\Blogging\Event\PostWasDeleted;
-use Core\Contract\Blogging\Event\PostWasPublished;
+use Contract\Blogging\Event\PostWasDeleted;
+use Contract\Blogging\Event\PostWasPublished;
 
 final readonly class RemoveScheduledPublication
 {

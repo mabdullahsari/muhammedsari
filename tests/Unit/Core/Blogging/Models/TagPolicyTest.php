@@ -2,8 +2,8 @@
 
 namespace Tests\Unit\Core\Blogging\Models;
 
-use Core\Blogging\Models\Tag;
-use Core\Blogging\Models\TagPolicy;
+use Blogging\Models\Tag;
+use Blogging\Models\TagPolicy;
 use Illuminate\Foundation\Auth\User;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Core\Contract\Blogging\Command;
+namespace Contract\Blogging\Command;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 

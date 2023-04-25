@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Core\Blogging;
+namespace Blogging;
 
-use Core\Blogging\Models\Tag;
+use Blogging\Models\Tag;
 
 final readonly class TagViewModel
 {

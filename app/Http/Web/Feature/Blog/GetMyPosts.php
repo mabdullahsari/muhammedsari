@@ -2,7 +2,7 @@
 
 namespace App\Http\Web\Feature\Blog;
 
-use Core\Blogging\PostSummaryViewModel;
+use Blogging\PostSummaryViewModel;
 use Illuminate\Support\Collection;
 
 interface GetMyPosts

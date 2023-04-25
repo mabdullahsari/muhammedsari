@@ -191,11 +191,11 @@ return [
         /**
          * Core Service Providers...
          */
-        Core\Blogging\BloggingServiceProvider::class,
-        Core\Clock\ClockServiceProvider::class,
-        Core\Identity\IdentityServiceProvider::class,
-        Core\Publishing\PublishingServiceProvider::class,
-        Core\Scheduling\SchedulingServiceProvider::class,
+        Blogging\BloggingServiceProvider::class,
+        Clock\ClockServiceProvider::class,
+        Identity\IdentityServiceProvider::class,
+        Publishing\PublishingServiceProvider::class,
+        Scheduling\SchedulingServiceProvider::class,
 
         /*
          * Application Service Providers...

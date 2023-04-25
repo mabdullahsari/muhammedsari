@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use Core\Identity\User;
+use Identity\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

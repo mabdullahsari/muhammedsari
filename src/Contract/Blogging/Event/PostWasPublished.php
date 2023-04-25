@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Core\Contract\Blogging\Event;
+namespace Contract\Blogging\Event;
 
 final readonly class PostWasPublished
 {

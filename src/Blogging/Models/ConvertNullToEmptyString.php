@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Core\Blogging\Models;
+namespace Blogging\Models;
 
 use Illuminate\Contracts\Database\Eloquent\CastsInboundAttributes;
 use InvalidArgumentException;

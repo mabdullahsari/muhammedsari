@@ -2,10 +2,10 @@
 
 namespace Tests\Integration\Core\Publishing\RSS;
 
-use Core\Contract\Publishing\RSS\FeedProvider;
-use Core\Publishing\PostUrlGenerator;
-use Core\Publishing\RSS\FeedItemMapper;
-use Core\Publishing\RSS\SQLiteFeedProvider;
+use Contract\Publishing\RSS\FeedProvider;
+use Publishing\PostUrlGenerator;
+use Publishing\RSS\FeedItemMapper;
+use Publishing\RSS\SQLiteFeedProvider;
 use Tests\KernelTestCase;
 use Tests\PostsSeeder;
 use Tests\Unit\Core\Publishing\RSS\FeedProviderContractTests;

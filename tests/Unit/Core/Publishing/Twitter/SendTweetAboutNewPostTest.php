@@ -2,12 +2,12 @@
 
 namespace Tests\Unit\Core\Publishing\Twitter;
 
-use Core\Contract\Blogging\Event\PostWasPublished;
-use Core\Publishing\PostUrlGenerator;
-use Core\Publishing\Twitter\InMemoryPublishedPostProvider;
-use Core\Publishing\Twitter\InMemoryTwitter;
-use Core\Publishing\Twitter\PublishedPost;
-use Core\Publishing\Twitter\SendTweetAboutNewPost;
+use Contract\Blogging\Event\PostWasPublished;
+use Publishing\PostUrlGenerator;
+use Publishing\Twitter\InMemoryPublishedPostProvider;
+use Publishing\Twitter\InMemoryTwitter;
+use Publishing\Twitter\PublishedPost;
+use Publishing\Twitter\SendTweetAboutNewPost;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

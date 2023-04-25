@@ -2,8 +2,8 @@
 
 namespace App\Http\Web\Feature\Blog;
 
-use Core\Blogging\Models\Post;
-use Core\Blogging\PostViewModel;
+use Blogging\Models\Post;
+use Blogging\PostViewModel;
 
 final readonly class GetSinglePostUsingEloquent implements GetSinglePost
 {

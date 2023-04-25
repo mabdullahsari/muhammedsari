@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\Core\Publishing\Twitter;
 
-use Core\Publishing\Twitter\TweetBuilder;
+use Publishing\Twitter\TweetBuilder;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

@@ -2,12 +2,12 @@
 
 namespace Tests\Integration\Core\Scheduling;
 
-use Core\Clock\FrozenClock;
-use Core\Contract\Blogging\Command\PublishPost;
-use Core\Scheduling\CrontabDrivenScheduler;
-use Core\Scheduling\InMemoryPublicationRepository;
-use Core\Scheduling\Publication;
-use Core\Scheduling\PublicationRepository;
+use Clock\FrozenClock;
+use Contract\Blogging\Command\PublishPost;
+use Scheduling\CrontabDrivenScheduler;
+use Scheduling\InMemoryPublicationRepository;
+use Scheduling\Publication;
+use Scheduling\PublicationRepository;
 use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Testing\Fakes\BusFake;
 use PHPUnit\Framework\Attributes\Test;

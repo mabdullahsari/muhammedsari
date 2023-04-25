@@ -2,8 +2,8 @@
 
 namespace Tests\Integration\Core\Publishing\Twitter;
 
-use Core\Publishing\Twitter\PublishedPostProvider;
-use Core\Publishing\Twitter\SQLitePublishedPostProvider;
+use Publishing\Twitter\PublishedPostProvider;
+use Publishing\Twitter\SQLitePublishedPostProvider;
 use Tests\KernelTestCase;
 use Tests\PostsSeeder;
 use Tests\Unit\Core\Publishing\Twitter\PostProviderContractTests;

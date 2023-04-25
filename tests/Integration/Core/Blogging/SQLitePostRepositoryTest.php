@@ -2,8 +2,8 @@
 
 namespace Tests\Integration\Core\Blogging;
 
-use Core\Blogging\PostRepository;
-use Core\Blogging\SQLitePostRepository;
+use Blogging\PostRepository;
+use Blogging\SQLitePostRepository;
 use Tests\KernelTestCase;
 use Tests\Unit\Core\Blogging\PostRepositoryContractTests;
 

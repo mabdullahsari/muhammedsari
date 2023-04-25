@@ -2,9 +2,9 @@
 
 namespace Tests\Unit\Core\Blogging\Models;
 
-use Core\Blogging\Models\Post;
-use Core\Blogging\Models\PostPolicy;
-use Core\Blogging\PostState;
+use Blogging\Models\Post;
+use Blogging\Models\PostPolicy;
+use Blogging\PostState;
 use Illuminate\Foundation\Auth\User;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;

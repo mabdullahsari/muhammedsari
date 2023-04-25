@@ -2,8 +2,8 @@
 
 namespace Tests\Unit\Core\Publishing\RSS;
 
-use Core\Publishing\PostUrlGenerator;
-use Core\Publishing\RSS\FeedItemMapper;
+use Publishing\PostUrlGenerator;
+use Publishing\RSS\FeedItemMapper;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Spatie\Feed\FeedItem;

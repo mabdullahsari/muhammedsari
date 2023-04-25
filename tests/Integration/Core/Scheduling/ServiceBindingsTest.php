@@ -2,15 +2,15 @@
 
 namespace Tests\Integration\Core\Scheduling;
 
-use Core\Contract\Blogging\Event\PostWasDeleted;
-use Core\Contract\Blogging\Event\PostWasPublished;
-use Core\Contract\Scheduling\Scheduler;
-use Core\Scheduling\CrontabDrivenScheduler;
-use Core\Scheduling\Models\Publication;
-use Core\Scheduling\Models\PublicationPolicy;
-use Core\Scheduling\PublicationRepository;
-use Core\Scheduling\RemoveScheduledPublication;
-use Core\Scheduling\SQLitePublicationRepository;
+use Contract\Blogging\Event\PostWasDeleted;
+use Contract\Blogging\Event\PostWasPublished;
+use Contract\Scheduling\Scheduler;
+use Scheduling\CrontabDrivenScheduler;
+use Scheduling\Models\Publication;
+use Scheduling\Models\PublicationPolicy;
+use Scheduling\PublicationRepository;
+use Scheduling\RemoveScheduledPublication;
+use Scheduling\SQLitePublicationRepository;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Events\Dispatcher;
 use PHPUnit\Framework\Attributes\Test;

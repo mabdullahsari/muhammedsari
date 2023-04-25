@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\Core\Publishing;
 
-use Core\Publishing\PostUrlGenerator;
+use Publishing\PostUrlGenerator;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

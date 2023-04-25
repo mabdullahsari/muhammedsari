@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\Core\Blogging\Models;
 
-use Core\Blogging\Models\Author;
+use Blogging\Models\Author;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

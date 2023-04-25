@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Core\Blogging\Models;
+namespace Blogging\Models;
 
 use Carbon\CarbonImmutable;
-use Core\Blogging\PostState;
+use Blogging\PostState;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

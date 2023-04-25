@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\Core\Clock;
 
-use Core\Clock\FrozenClock;
+use Clock\FrozenClock;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

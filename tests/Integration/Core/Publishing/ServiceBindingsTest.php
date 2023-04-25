@@ -2,16 +2,16 @@
 
 namespace Tests\Integration\Core\Publishing;
 
-use Core\Contract\Blogging\Event\PostWasPublished;
-use Core\Contract\Publishing\RSS\FeedProvider;
-use Core\Publishing\PostUrlGenerator;
-use Core\Publishing\RSS\SQLiteFeedProvider;
-use Core\Publishing\Twitter\PublishedPostProvider;
-use Core\Publishing\Twitter\SendTweetAboutNewPost;
-use Core\Publishing\Twitter\SQLitePublishedPostProvider;
-use Core\Publishing\Twitter\Twitter;
-use Core\Publishing\Twitter\TwitterManager;
-use Core\Publishing\UrlGenerator;
+use Contract\Blogging\Event\PostWasPublished;
+use Contract\Publishing\RSS\FeedProvider;
+use Publishing\PostUrlGenerator;
+use Publishing\RSS\SQLiteFeedProvider;
+use Publishing\Twitter\PublishedPostProvider;
+use Publishing\Twitter\SendTweetAboutNewPost;
+use Publishing\Twitter\SQLitePublishedPostProvider;
+use Publishing\Twitter\Twitter;
+use Publishing\Twitter\TwitterManager;
+use Publishing\UrlGenerator;
 use Illuminate\Contracts\Events\Dispatcher;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Core\Scheduling\Models;
+namespace Scheduling\Models;
 
 use Carbon\CarbonImmutable;
 use Dive\Eloquent\DisablesTimestamps;

@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\Core\Identity;
 
-use Core\Identity\User;
+use Identity\User;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

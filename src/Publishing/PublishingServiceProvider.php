@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Core\Publishing;
+namespace Publishing;
 
-use Core\Publishing\RSS\FeedServiceProvider;
-use Core\Publishing\Twitter\TwitterServiceProvider;
+use Publishing\RSS\FeedServiceProvider;
+use Publishing\Twitter\TwitterServiceProvider;
 use Illuminate\Support\AggregateServiceProvider;
 
 final class PublishingServiceProvider extends AggregateServiceProvider

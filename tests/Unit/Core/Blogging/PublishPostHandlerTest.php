@@ -2,11 +2,11 @@
 
 namespace Tests\Unit\Core\Blogging;
 
-use Core\Blogging\InMemoryPostRepository;
-use Core\Blogging\PostId;
-use Core\Blogging\PublishPostHandler;
-use Core\Contract\Blogging\Command\PublishPost;
-use Core\Contract\Blogging\Event\PostWasPublished;
+use Blogging\InMemoryPostRepository;
+use Blogging\PostId;
+use Blogging\PublishPostHandler;
+use Contract\Blogging\Command\PublishPost;
+use Contract\Blogging\Event\PostWasPublished;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Support\Testing\Fakes\EventFake;
 use PHPUnit\Framework\Attributes\Test;

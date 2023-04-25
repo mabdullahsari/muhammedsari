@@ -2,8 +2,8 @@
 
 namespace Tests\Unit\Core\Publishing\Twitter;
 
-use Core\Publishing\Twitter\CouldNotFindPost;
-use Core\Publishing\Twitter\PublishedPostProvider;
+use Publishing\Twitter\CouldNotFindPost;
+use Publishing\Twitter\PublishedPostProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Core\Publishing\RSS;
+namespace Publishing\RSS;
 
 use Carbon\CarbonImmutable;
-use Core\Publishing\UrlGenerator;
+use Publishing\UrlGenerator;
 use Spatie\Feed\FeedItem;
 use stdClass;
 
