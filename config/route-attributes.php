@@ -1,5 +1,7 @@
 <?php declare(strict_types=1);
 
+use Html\Contract\BeautifyHtml;
+
 return [
 
     /*
@@ -23,5 +25,5 @@ return [
     /**
      * This middleware will be applied to all routes.
      */
-    'middleware' => ['html']
+    'middleware' => [BeautifyHtml::NAME]
 ];

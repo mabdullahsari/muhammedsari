@@ -2,6 +2,7 @@
 
 namespace Html;
 
+use Html\Contract\BeautifyHtml;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 
@@ -13,7 +14,7 @@ final class HtmlServiceProvider extends ServiceProvider
 
     public function boot(Router $router): void
     {
-        $router->aliasMiddleware(self::NAME, BeautifyHtml::class);
+        $router->aliasMiddleware(BeautifyHtml::NAME, BeautifyHtml::class);
     }
 
     public function register(): void

@@ -1,13 +1,16 @@
 <?php declare(strict_types=1);
 
-namespace Html;
+namespace Html\Contract;
 
 use Closure;
+use Html\Html;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 final readonly class BeautifyHtml
 {
+    public const NAME = 'html';
+
     public function handle(Request $request, Closure $next): Response
     {
         /** @var Response $response */
