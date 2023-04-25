@@ -41,6 +41,7 @@
             "Contract\\": "src/Contract",
             "Database\\": "database/",
             "Database\\Seeders\\": "database/seeders",
+            "Html\\": "src/Html",
             "Identity\\": "src/Identity",
             "Publishing\\": "src/Publishing",
             "Scheduling\\": "src/Scheduling"

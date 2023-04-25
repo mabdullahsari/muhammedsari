@@ -1,23 +1,23 @@
 <?php declare(strict_types=1);
 
-namespace App\Http\Web\Html;
+namespace Html;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 
 final class HtmlServiceProvider extends ServiceProvider
 {
-    public array $singletons = [
-        HtmlBeautifier::class => HtmlBeautifierUsingDindent::class,
-    ];
+    public const NAME = 'html';
+
+    public array $singletons = [HtmlBeautifier::class => HtmlBeautifierUsingDindent::class];
 
     public function boot(Router $router): void
     {
-        $router->aliasMiddleware('html', BeautifyHtml::class);
+        $router->aliasMiddleware(self::NAME, BeautifyHtml::class);
     }
 
     public function register(): void
     {
-        $this->app->alias(HtmlBeautifier::class, 'html');
+        $this->app->alias(HtmlBeautifier::class, self::NAME);
     }
 }

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Http\Web\Html;
+namespace Html;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -11,6 +11,6 @@ final class Html extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return 'html';
+        return HtmlServiceProvider::NAME;
     }
 }

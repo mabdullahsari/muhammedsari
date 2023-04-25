@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Http\Web\Html;
+namespace Html;
 
 use Closure;
 use Illuminate\Http\Request;
