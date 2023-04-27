@@ -2,8 +2,6 @@
 
 namespace Blogging;
 
-use Blogging\Contract\CouldNotFindPost;
-
 final class InMemoryPostRepository implements PostRepository
 {
     private array $saves = [];

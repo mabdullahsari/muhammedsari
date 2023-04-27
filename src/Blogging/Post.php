@@ -2,7 +2,6 @@
 
 namespace Blogging;
 
-use Blogging\Contract\CouldNotPublish;
 use Blogging\Contract\PostPublished;
 use Carbon\CarbonImmutable;
 use Clock\Contract\Clock;

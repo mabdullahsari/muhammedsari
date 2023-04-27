@@ -2,7 +2,6 @@
 
 namespace Blogging;
 
-use Blogging\Contract\CouldNotFindPost;
 use Blogging\Contract\GetSinglePost;
 use Blogging\Contract\Post as PostViewModel;
 use Blogging\Contract\Tag as TagViewModel;

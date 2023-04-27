@@ -3,8 +3,8 @@
 namespace Tests\Unit\Core\Blogging;
 
 use Blogging\Body;
-use Blogging\Contract\CouldNotPublish;
 use Blogging\Contract\PostPublished;
+use Blogging\CouldNotPublish;
 use Blogging\Summary;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

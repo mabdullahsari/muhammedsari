@@ -2,6 +2,8 @@
 
 namespace Blogging\Contract;
 
+use Blogging\CouldNotFindPost;
+
 interface GetSinglePost
 {
     /** @throws CouldNotFindPost */

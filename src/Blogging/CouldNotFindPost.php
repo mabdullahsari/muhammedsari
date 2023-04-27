@@ -1,8 +1,7 @@
 <?php declare(strict_types=1);
 
-namespace Blogging\Contract;
+namespace Blogging;
 
-use Blogging\PostId;
 use Exception;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
