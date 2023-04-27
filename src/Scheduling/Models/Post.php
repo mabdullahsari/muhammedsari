@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  */
 final class Post extends Model
 {
+    protected $table = 'blogging_posts';
+
     public function publication(): HasOne
     {
         return $this->hasOne(Publication::class);

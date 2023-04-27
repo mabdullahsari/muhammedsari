@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class () extends Migration {
     public function up(): void
     {
-        Schema::create('publications', static function (Blueprint $table) {
+        Schema::create('scheduling_publications', static function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('post_id')->unique();
             $table->timestamp('publish_at')->nullable();

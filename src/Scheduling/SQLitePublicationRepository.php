@@ -48,6 +48,6 @@ final readonly class SQLitePublicationRepository implements PublicationRepositor
 
     private function newQuery(): Builder
     {
-        return $this->db->table('publications');
+        return $this->db->table('scheduling_publications');
     }
 }

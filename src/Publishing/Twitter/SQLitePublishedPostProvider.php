@@ -12,15 +12,15 @@ final readonly class SQLitePublishedPostProvider implements PublishedPostProvide
     public function getById(int $id): PublishedPost
     {
         /** @var stdClass|null $post */
-        $post = $this->db->table('posts')->find($id, ['slug', 'title']);
+        $post = $this->db->table('blogging_posts')->find($id, ['slug', 'title']);
 
         if (is_null($post)) {
             throw CouldNotFindPost::withId($id);
         }
 
         $tags = $this->db
-            ->table('tags')
-            ->whereIn('id', $this->db->table('post_tag')->where('post_id', $id)->select('tag_id'))
+            ->table('blogging_tags')
+            ->whereIn('id', $this->db->table('blogging_post_tag')->where('post_id', $id)->select('tag_id'))
             ->pluck('slug')
             ->all();
 

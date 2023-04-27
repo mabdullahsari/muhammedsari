@@ -11,10 +11,8 @@ final class AuthorTest extends TestCase
     #[Test]
     public function it_can_retrieve_the_full_name_of_an_author(): void
     {
-        $author = new Author([
-           'first_name' => 'Muhammed',
-           'last_name' => 'Sari',
-        ]);
+        $author = new Author();
+        $author->forceFill(['first_name' => 'Muhammed', 'last_name' => 'Sari']);
 
         $value = $author->full_name;
 

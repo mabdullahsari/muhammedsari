@@ -36,6 +36,8 @@ final class Post extends Model
 
     protected $fillable = ['body', 'slug', 'summary', 'title'];
 
+    protected $table = 'blogging_posts';
+
     public function isDraft(): bool
     {
         return $this->state->isDraft();
@@ -53,7 +55,7 @@ final class Post extends Model
 
     public function tags(): BelongsToMany
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Tag::class, 'blogging_post_tag');
     }
 
     public function getRouteKeyName(): string

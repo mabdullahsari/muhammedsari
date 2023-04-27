@@ -3,7 +3,6 @@
 namespace Tests\Integration\Core\Blogging;
 
 use Blogging\Contract\PublishPost;
-use Blogging\Models\Author;
 use Blogging\Models\Post;
 use Blogging\Models\PostObserver;
 use Blogging\Models\PostPolicy;
@@ -14,24 +13,11 @@ use Blogging\PublishPostHandler;
 use Blogging\SQLitePostRepository;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Bus\Dispatcher;
-use Illuminate\Database\Eloquent\Relations\Relation;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
 
 final class ServiceBindingsTest extends KernelTestCase
 {
-    #[Test]
-    public function it_registers_models_into_morph_map(): void
-    {
-        $author = Relation::getMorphedModel('author');
-        $post = Relation::getMorphedModel('post');
-        $tag = Relation::getMorphedModel('tag');
-
-        $this->assertSame(Author::class, $author);
-        $this->assertSame(Post::class, $post);
-        $this->assertSame(Tag::class, $tag);
-    }
-
     #[Test]
     public function it_registers_singleton_bindings(): void
     {

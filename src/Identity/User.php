@@ -20,6 +20,8 @@ final class User extends Authenticatable implements FilamentUser, HasAvatar
 {
     protected $fillable = ['email', 'first_name', 'last_name', 'username'];
 
+    protected $table = 'identity_users';
+
     public $timestamps = false;
 
     protected function avatar(): Attribute

@@ -9,7 +9,7 @@ final class PostSeeder extends Seeder
 {
     public function run(SQLiteConnection $db): void
     {
-        $db->table('users')->insert([
+        $db->table('identity_users')->insert([
             'id' => 1,
             'first_name' => 'Rick',
             'last_name' => 'Astley',
@@ -19,7 +19,7 @@ final class PostSeeder extends Seeder
             'timezone' => 'Europe/London',
         ]);
 
-        $db->table('posts')->insert([
+        $db->table('blogging_posts')->insert([
             'id' => 1,
             'author_id' => 1,
             'slug' => 'never-gonna-give-you-up',
@@ -32,12 +32,12 @@ final class PostSeeder extends Seeder
             'updated_at' => '1970-01-01 00:00:00',
         ]);
 
-        $db->table('tags')->insert([
+        $db->table('blogging_tags')->insert([
             ['id' => 1, 'name' => 'Rick', 'slug' => 'rick'],
             ['id' => 2, 'name' => 'Roll', 'slug' => 'roll'],
         ]);
 
-        $db->table('post_tag')->insert([
+        $db->table('blogging_post_tag')->insert([
             ['post_id' => 1, 'tag_id' => 1],
             ['post_id' => 1, 'tag_id' => 2],
         ]);

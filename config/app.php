@@ -169,7 +169,6 @@ return [
         Blogging\BloggingServiceProvider::class,
         Clock\ClockServiceProvider::class,
         Health\HealthServiceProvider::class,
-        Identity\IdentityServiceProvider::class,
         Publishing\PublishingServiceProvider::class,
         Scheduling\SchedulingServiceProvider::class,
 

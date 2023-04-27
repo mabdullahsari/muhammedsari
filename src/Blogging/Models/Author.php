@@ -14,7 +14,7 @@ final class Author extends Model
 {
     public const MUHAMMED = 1;
 
-    protected $table = 'users';
+    protected $table = 'identity_users';
 
     protected function fullName(): Attribute
     {

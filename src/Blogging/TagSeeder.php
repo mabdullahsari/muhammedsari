@@ -9,7 +9,7 @@ final class TagSeeder extends Seeder
 {
     public function run(SQLiteConnection $db): void
     {
-        $db->table('tags')->insert([
+        $db->table('blogging_tags')->insert([
             ['id' => 1, 'name' => 'CSS', 'slug' => 'css'],
             ['id' => 2, 'name' => 'JavaScript', 'slug' => 'javascript'],
             ['id' => 3, 'name' => 'Laravel', 'slug' => 'laravel'],

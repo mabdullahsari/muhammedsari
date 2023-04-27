@@ -22,7 +22,7 @@ final class SQLitePublicationRepositoryTest extends KernelTestCase
     {
         $db = $this->app['db.connection'];
 
-        $db->table('publications')->insert([
+        $db->table('scheduling_publications')->insert([
             ['id' => 1, 'post_id' => 1453, 'publish_at' =>  $this->date('2022-10-30')],
             ['id' => 2, 'post_id' => 1454, 'publish_at' =>  $this->date('2022-10-29')],
             ['id' => 3, 'post_id' => 1455, 'publish_at' =>  $this->date('2022-10-28')],

@@ -47,6 +47,6 @@ final readonly class SQLitePostRepository implements PostRepository
 
     private function newQuery(): Builder
     {
-        return $this->db->table('posts');
+        return $this->db->table('blogging_posts');
     }
 }

@@ -16,6 +16,8 @@ final class Publication extends Model
 
     protected $fillable = ['post_id', 'publish_at'];
 
+    protected $table = 'scheduling_publications';
+
     public $timestamps = false;
 
     public function post(): BelongsTo

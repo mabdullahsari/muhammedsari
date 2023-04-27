@@ -18,9 +18,9 @@ final readonly class SQLiteFeedProvider implements FeedProvider
     public function items(): Collection
     {
         return $this->connection
-            ->table('posts')
+            ->table('blogging_posts')
             ->where('state', 'published')
-            ->join('users', 'users.id', '=', 'author_id')
+            ->join('identity_users', 'identity_users.id', '=', 'author_id')
             ->get(['email', 'first_name', 'last_name', 'slug', 'summary', 'title', 'updated_at'])
             ->transform($this->mapper); // @phpstan-ignore-line
     }

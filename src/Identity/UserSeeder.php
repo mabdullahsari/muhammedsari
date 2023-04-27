@@ -9,7 +9,7 @@ final class UserSeeder extends Seeder
 {
     public function run(SQLiteConnection $db): void
     {
-        $db->table('users')->insert([
+        $db->table('identity_users')->insert([
             'id' => 1,
             'email' => 'hi@muhammedsari.me',
             'first_name' => 'Muhammed',
