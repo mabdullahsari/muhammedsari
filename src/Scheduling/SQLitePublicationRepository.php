@@ -9,10 +9,7 @@ use Illuminate\Support\Collection;
 
 final readonly class SQLitePublicationRepository implements PublicationRepository
 {
-    public function __construct(
-        private SQLiteConnection $db,
-        private PublicationMapper $mapper,
-    ) {}
+    public function __construct(private SQLiteConnection $db, private PublicationMapper $mapper) {}
 
     public function find(int $id): Publication
     {

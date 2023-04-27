@@ -2,21 +2,18 @@
 
 namespace Scheduling;
 
-use Blogging\Contract\PostDeleted;
-use Blogging\Contract\PostPublished;
-
 final readonly class RemoveScheduledPublication
 {
-    public function __construct(private PublicationRepository $publications) {}
+    public function __construct(private int $postId) {}
 
-    public function handle(PostDeleted|PostPublished $event): void
+    public function handle(PublicationRepository $publications): void
     {
         try {
-            $publication = $this->publications->findByPost($event->id);
+            $publication = $publications->findByPost($this->postId);
         } catch (CouldNotFindPublication) {
             return;
         }
 
-        $this->publications->remove($publication);
+        $publications->remove($publication);
     }
 }
