@@ -2,8 +2,6 @@
 
 namespace Blogging\Models;
 
-use Dive\Eloquent\Unguarded;
-use Dive\Eloquent\Unwritable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,9 +12,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 final class Author extends Model
 {
-    use Unguarded;
-    use Unwritable;
-
     public const MUHAMMED = 1;
 
     protected $table = 'users';

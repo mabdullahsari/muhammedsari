@@ -6,9 +6,8 @@
     "require": {
         "php": "~8.2",
         "abraham/twitteroauth": "^5.0",
-        "dive-be/eloquent-utils": "^0.2",
-        "dive-be/php-enum-utils": "^1.1",
-        "filament/filament": "^2.17.28",
+        "dive-be/php-enum-utils": "^1.2",
+        "filament/filament": "^2.17.29",
         "gajus/dindent": "^2.0.2",
         "guzzlehttp/guzzle": "^7.5.1",
         "laravel/framework": "^10.9",

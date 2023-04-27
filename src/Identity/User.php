@@ -2,7 +2,6 @@
 
 namespace Identity;
 
-use Dive\Eloquent\DisablesTimestamps;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Models\Contracts\HasAvatar;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -19,9 +18,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  */
 final class User extends Authenticatable implements FilamentUser, HasAvatar
 {
-    use DisablesTimestamps;
-
     protected $fillable = ['email', 'first_name', 'last_name', 'username'];
+
+    public $timestamps = false;
 
     protected function avatar(): Attribute
     {

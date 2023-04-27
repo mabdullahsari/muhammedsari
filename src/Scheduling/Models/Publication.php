@@ -3,7 +3,6 @@
 namespace Scheduling\Models;
 
 use Carbon\CarbonImmutable;
-use Dive\Eloquent\DisablesTimestamps;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -13,13 +12,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 final class Publication extends Model
 {
-    use DisablesTimestamps;
-
-    protected $casts = [
-        'publish_at' => 'immutable_datetime',
-    ];
+    protected $casts = ['publish_at' => 'immutable_datetime'];
 
     protected $fillable = ['post_id', 'publish_at'];
+
+    public $timestamps = false;
 
     public function post(): BelongsTo
     {
