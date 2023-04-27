@@ -10,10 +10,7 @@ final class PublishingServiceProvider extends AggregateServiceProvider
 {
     public array $singletons = [UrlGenerator::class => PostUrlGenerator::class];
 
-    protected $providers = [
-        FeedServiceProvider::class,
-        TwitterServiceProvider::class,
-    ];
+    protected $providers = [FeedServiceProvider::class, TwitterServiceProvider::class];
 
     public function register(): void
     {

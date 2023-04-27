@@ -18,12 +18,12 @@ final class RemoveScheduledPublicationTest extends TestCase
 
     #[DataProvider('events')]
     #[Test]
-    public function it_can_remove_a_scheduled_publication(string $event): void
+    public function it_can_remove_a_scheduled_publication($event): void
     {
         $publications = new InMemoryPublicationRepository([1234 => new Publication(1234, 56, $this->now())]);
         $listener = new RemoveScheduledPublication($publications);
 
-        $listener->handle(new $event(56));
+        $listener->handle($event);
 
         $this->expectException(CouldNotFindPublication::class);
 
@@ -33,8 +33,8 @@ final class RemoveScheduledPublicationTest extends TestCase
     public static function events(): array
     {
         return [
-            [PostPublished::class],
-            [PostDeleted::class],
+            [new PostPublished(56, 'this-is-a-test', [], 'This is a test')],
+            [new PostDeleted(56)],
         ];
     }
 }

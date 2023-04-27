@@ -2,7 +2,7 @@
 
 namespace Tests\Integration\Core\Publishing\Twitter;
 
-use Publishing\Twitter\InMemoryTwitter;
+use Publishing\Twitter\ArrayTwitter;
 use Publishing\Twitter\LogTwitter;
 use Publishing\Twitter\TwitterManager;
 use Publishing\Twitter\TwitterOAuth2;
@@ -26,7 +26,7 @@ final class TwitterManagerTest extends KernelTestCase
     public static function concretions(): array
     {
         return [
-            ['array', InMemoryTwitter::class],
+            ['array', ArrayTwitter::class],
             ['log', LogTwitter::class],
             ['oauth2', TwitterOAuth2::class],
         ];

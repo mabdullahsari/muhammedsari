@@ -63,6 +63,8 @@ final class PostTest extends TestCase
             $this->aClock()
         );
 
-        $this->assertEquals([new PostPublished(1)], $post->flushEvents());
+        $this->assertEquals([
+            new PostPublished(1, 'never-gonna-give-you-up', [], 'Never gonna give you up')
+        ], $post->flushEvents());
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Publishing\Twitter;
 
-final class InMemoryTwitter implements Twitter
+final class ArrayTwitter implements Twitter
 {
     private array $outbox = [];
 

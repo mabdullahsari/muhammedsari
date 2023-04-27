@@ -2,29 +2,22 @@
 
 namespace Publishing\Twitter;
 
-use Blogging\Contract\PostPublished;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Publishing\UrlGenerator;
 
 final readonly class SendTweetAboutNewPost implements ShouldQueue
 {
-    public function __construct(
-        private PublishedPostProvider $posts,
-        private Twitter $twitter,
-        private UrlGenerator $url,
-    ) {}
+    public function __construct(private string $slug, private array $tags, private string $title) {}
 
-    public function handle(PostPublished $event): void
+    public function handle(Twitter $twitter, UrlGenerator $url): void
     {
-        $post = $this->posts->getById($event->id);
-
         $tweet = TweetBuilder::create("I've just published")
             ->useEmoji('✍️')
-            ->useTitle($post->title)
-            ->useUrl($this->url->generate($post->slug))
-            ->useHashtags($post->tags)
+            ->useTitle($this->title)
+            ->useUrl($url->generate($this->slug))
+            ->useHashtags($this->tags)
             ->get();
 
-        $this->twitter->send($tweet);
+        $twitter->send($tweet);
     }
 }

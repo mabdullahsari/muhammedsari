@@ -81,7 +81,9 @@ final class Post extends Entity
         $this->state = PostState::Published;
         $this->publishedAt = $clock->now();
 
-        $this->raise(new PostPublished($this->id->asInt()));
+        $this->raise(
+            new PostPublished($this->id->asInt(), (string) $this->slug, [], (string) $this->title)
+        );
     }
 
     public function toDatabase(): array

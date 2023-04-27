@@ -15,9 +15,7 @@ final class TweetBuilder
 
     private ?Title $title = null;
 
-    private function __construct(
-        private readonly string $message,
-    ) {}
+    private function __construct(private readonly string $message) {}
 
     public static function create(string $message): self
     {

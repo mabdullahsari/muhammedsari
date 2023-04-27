@@ -17,9 +17,9 @@ final class TwitterManager extends Manager implements Twitter
         return $driver;
     }
 
-    protected function createArrayDriver(): InMemoryTwitter
+    protected function createArrayDriver(): ArrayTwitter
     {
-        return new InMemoryTwitter();
+        return new ArrayTwitter();
     }
 
     protected function createLogDriver(): LogTwitter
@@ -36,7 +36,12 @@ final class TwitterManager extends Manager implements Twitter
 
         Assert::isArray($config);
 
-        return new TwitterOAuth2($config['consumer_key'], $config['consumer_secret'], $config['access_token'], $config['access_token_secret']);
+        return new TwitterOAuth2(
+            $config['consumer_key'],
+            $config['consumer_secret'],
+            $config['access_token'],
+            $config['access_token_secret'],
+        );
     }
 
     public function send(Tweet $tweet): void
