@@ -3,10 +3,13 @@
 namespace Publishing\Twitter;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
 use Publishing\UrlGenerator;
 
 final readonly class SendTweetAboutNewPost implements ShouldQueue
 {
+    use Dispatchable;
+
     public function __construct(private string $slug, private array $tags, private string $title) {}
 
     public function handle(Twitter $twitter, UrlGenerator $url): void

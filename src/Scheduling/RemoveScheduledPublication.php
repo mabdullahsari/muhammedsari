@@ -2,8 +2,12 @@
 
 namespace Scheduling;
 
+use Illuminate\Foundation\Bus\Dispatchable;
+
 final readonly class RemoveScheduledPublication
 {
+    use Dispatchable;
+
     public function __construct(private int $postId) {}
 
     public function handle(PublicationRepository $publications): void

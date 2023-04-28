@@ -4,14 +4,11 @@ namespace Scheduling;
 
 use Blogging\Contract\PostDeleted;
 use Blogging\Contract\PostPublished;
-use Illuminate\Contracts\Bus\Dispatcher as CommandBus;
-use Illuminate\Contracts\Events\Dispatcher as EventBus;
+use Illuminate\Contracts\Events\Dispatcher;
 
 final readonly class BloggingSubscriber
 {
-    public function __construct(private CommandBus $commands) {}
-
-    public function subscribe(EventBus $events): void
+    public function subscribe(Dispatcher $events): void
     {
         $events->listen(PostDeleted::class, $this->whenPostDeleted(...));
         $events->listen(PostPublished::class, $this->whenPostPublished(...));
@@ -19,15 +16,11 @@ final readonly class BloggingSubscriber
 
     protected function whenPostDeleted(PostDeleted $event): void
     {
-        $this->commands->dispatch(
-            new RemoveScheduledPublication($event->id)
-        );
+        RemoveScheduledPublication::dispatch($event->id);
     }
 
     protected function whenPostPublished(PostPublished $event): void
     {
-        $this->commands->dispatch(
-            new RemoveScheduledPublication($event->id)
-        );
+        RemoveScheduledPublication::dispatch($event->id);
     }
 }
