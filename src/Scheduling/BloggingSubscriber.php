@@ -16,11 +16,11 @@ final readonly class BloggingSubscriber
 
     protected function whenPostDeleted(PostDeleted $event): void
     {
-        RemoveScheduledPublication::dispatch($event->id);
+        CancelPublication::dispatch($event->id);
     }
 
     protected function whenPostPublished(PostPublished $event): void
     {
-        RemoveScheduledPublication::dispatch($event->id);
+        CancelPublication::dispatch($event->id);
     }
 }

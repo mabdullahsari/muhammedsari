@@ -5,11 +5,9 @@ namespace Tests\Integration\Core\Scheduling;
 use Illuminate\Contracts\Auth\Access\Gate;
 use PHPUnit\Framework\Attributes\Test;
 use Scheduling\Contract\Scheduler;
-use Scheduling\CrontabDrivenScheduler;
-use Scheduling\Models\Publication;
-use Scheduling\Models\PublicationPolicy;
-use Scheduling\PublicationRepository;
-use Scheduling\SQLitePublicationRepository;
+use Scheduling\CrontabScheduler;
+use Scheduling\Publication;
+use Scheduling\PublicationPolicy;
 use Tests\KernelTestCase;
 
 final class ServiceBindingsTest extends KernelTestCase
@@ -17,11 +15,8 @@ final class ServiceBindingsTest extends KernelTestCase
     #[Test]
     public function it_registers_singleton_bindings(): void
     {
-        $this->assertTrue($this->app->isShared(PublicationRepository::class));
-        $this->assertInstanceOf(SQLitePublicationRepository::class, $this->app->make(PublicationRepository::class));
-
         $this->assertTrue($this->app->isShared(Scheduler::class));
-        $this->assertInstanceOf(CrontabDrivenScheduler::class, $this->app->make(Scheduler::class));
+        $this->assertInstanceOf(CrontabScheduler::class, $this->app->make(Scheduler::class));
     }
 
     #[Test]

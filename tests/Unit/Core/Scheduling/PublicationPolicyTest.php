@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Core\Scheduling\Models;
+namespace Tests\Unit\Core\Scheduling;
 
-use Scheduling\Models\PublicationPolicy;
 use Illuminate\Foundation\Auth\User;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Scheduling\PublicationPolicy;
 
 final class PublicationPolicyTest extends TestCase
 {

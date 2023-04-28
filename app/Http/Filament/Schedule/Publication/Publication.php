@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 final class Publication extends Resource
 {
-    protected static ?string $model = \Scheduling\Models\Publication::class;
+    protected static ?string $model = \Scheduling\Publication::class;
 
     protected static ?string $navigationGroup = 'Schedule';
 
