@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Health;
+namespace Monitoring;
 
 use Illuminate\Support\AggregateServiceProvider;
 use Spatie\Health\Checks\Checks\CacheCheck;
@@ -12,7 +12,7 @@ use Spatie\Health\Checks\Checks\UsedDiskSpaceCheck;
 use Spatie\Health\Health;
 use Spatie\SecurityAdvisoriesHealthCheck\SecurityAdvisoriesCheck;
 
-final class HealthServiceProvider extends AggregateServiceProvider
+final class MonitoringServiceProvider extends AggregateServiceProvider
 {
     protected $providers = [
         \Spatie\Health\HealthServiceProvider::class,

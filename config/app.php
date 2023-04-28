@@ -168,7 +168,7 @@ return [
          */
         Blogging\BloggingServiceProvider::class,
         Clock\ClockServiceProvider::class,
-        Health\HealthServiceProvider::class,
+        Monitoring\MonitoringServiceProvider::class,
         Publishing\PublishingServiceProvider::class,
         Scheduling\SchedulingServiceProvider::class,
 

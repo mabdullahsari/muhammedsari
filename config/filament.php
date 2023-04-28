@@ -2,7 +2,7 @@
 
 use App\Http\Filament\Blog\Post\Post;
 use App\Http\Filament\Blog\Tag\Tag;
-use App\Http\Filament\General\Health;
+use App\Http\Filament\General\ApplicationHealth;
 use App\Http\Filament\Schedule\Publication\Publication;
 use Filament\AvatarProviders\UiAvatarsProvider;
 use Filament\Http\Livewire\Auth\Login;
@@ -105,7 +105,7 @@ return [
         'path' => app_path('Filament/Pages'),
         'register' => [
             Dashboard::class,
-            Health::class,
+            ApplicationHealth::class,
         ],
     ],
 

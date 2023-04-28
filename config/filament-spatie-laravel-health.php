@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-use App\Http\Filament\General\Health;
+use App\Http\Filament\General\ApplicationHealth;
 
 return [
 
@@ -15,7 +15,7 @@ return [
     */
 
     'pages' => [
-        'health' => Health::class,
+        'health' => ApplicationHealth::class,
     ],
 
 ];
