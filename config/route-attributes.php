@@ -16,10 +16,7 @@ return [
      * Optionally, you can specify group configuration by using key/values
      */
     'directories' => [
-        app_path('Http/Web/About'),
-        app_path('Http/Web/Blog'),
-        app_path('Http/Web/Home'),
-        app_path('Http/Web/Tag'),
+        app_path('UI/Http/Site'),
     ],
 
     /**

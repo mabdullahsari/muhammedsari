@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-use App\Http\Admin\Blog\Post\Post;
-use App\Http\Admin\Blog\Tag\Tag;
-use App\Http\Admin\General\ApplicationHealth;
-use App\Http\Admin\Schedule\Publication\Publication;
+use App\UI\Http\Admin\Blog\Post\Post;
+use App\UI\Http\Admin\Blog\Tag\Tag;
+use App\UI\Http\Admin\General\ApplicationHealth;
+use App\UI\Http\Admin\Schedule\Publication\Publication;
 use Filament\AvatarProviders\UiAvatarsProvider;
 use Filament\Http\Livewire\Auth\Login;
 use Filament\Http\Middleware\Authenticate;

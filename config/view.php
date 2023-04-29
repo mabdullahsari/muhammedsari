@@ -14,7 +14,7 @@ return [
     */
 
     'paths' => [
-        app_path('Http/Web/View/Shared'),
+        app_path('UI/Http/Site/View/Shared'),
     ],
 
     /*
