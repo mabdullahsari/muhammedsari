@@ -2,7 +2,7 @@
 
 namespace App\Http;
 
-use App\Http\Filament\FilamentServiceProvider;
+use App\Http\Admin\AdminServiceProvider;
 use App\Http\Web\WebServiceProvider;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Foundation\Application;
@@ -21,7 +21,7 @@ final readonly class LoadUserInterfaceProvider
         $path = ltrim($httpContext->getPathInfo(), DIRECTORY_SEPARATOR);
 
         $config->set('app.providers', (new DefaultProviders())->merge(match (true) {
-            $this->wantsAdmin($path, $config) => [FilamentServiceProvider::class],
+            $this->wantsAdmin($path, $config) => [AdminServiceProvider::class],
             default => [WebServiceProvider::class],
         })->toArray());
     }

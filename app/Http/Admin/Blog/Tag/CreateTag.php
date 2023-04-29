@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Http\Filament\Blog\Tag;
+namespace App\Http\Admin\Blog\Tag;
 
 use Filament\Resources\Pages\CreateRecord;
 

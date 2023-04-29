@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Http\Filament\General;
+namespace App\Http\Admin\General;
 
 use ShuvroRoy\FilamentSpatieLaravelHealth\Pages\HealthCheckResults;
 

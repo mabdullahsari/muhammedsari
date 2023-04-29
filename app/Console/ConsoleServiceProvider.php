@@ -10,8 +10,8 @@ final class ConsoleServiceProvider extends AggregateServiceProvider
         \Termwind\Laravel\TermwindServiceProvider::class,
         \Laravel\Tinker\TinkerServiceProvider::class,
 
+        \App\Http\Admin\AdminServiceProvider::class,
         \App\Http\Web\WebServiceProvider::class,
-        \App\Http\Filament\FilamentServiceProvider::class,
 
         \Blogging\BloggingServiceProvider::class,
         \Monitoring\MonitoringServiceProvider::class,

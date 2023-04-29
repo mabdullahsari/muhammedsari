@@ -1,17 +1,17 @@
 <?php declare(strict_types=1);
 
-namespace App\Http\Filament\Blog\Post;
+namespace App\Http\Admin\Schedule\Publication;
 
 use Filament\Pages\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
-final class ListPosts extends ListRecords
+final class ListPublications extends ListRecords
 {
-    protected static string $resource = Post::class;
+    protected static string $resource = Publication::class;
 
     protected function getActions(): array
     {
-        return [CreateAction::make()];
+        return [CreateAction::make()->label('Schedule')];
     }
 
     protected function isTablePaginationEnabled(): bool

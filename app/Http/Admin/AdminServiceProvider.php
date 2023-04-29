@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace App\Http\Filament;
+namespace App\Http\Admin;
 
 use Illuminate\Support\AggregateServiceProvider;
 
-final class FilamentServiceProvider extends AggregateServiceProvider
+final class AdminServiceProvider extends AggregateServiceProvider
 {
     protected $providers = [
         \Blogging\BloggingServiceProvider::class,

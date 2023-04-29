@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-use App\Http\Filament\General\ApplicationHealth;
+use App\Http\Admin\General\ApplicationHealth;
 
 return [
 

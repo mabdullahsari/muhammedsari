@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\Http\Filament\Schedule\Publication;
+namespace App\Http\Admin\Schedule\Publication;
 
 use Filament\Facades\Filament;
 use Filament\Forms\Components\DateTimePicker;
