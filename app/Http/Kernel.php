@@ -6,9 +6,7 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 final class Kernel extends HttpKernel
 {
-    protected $middleware = [
-        StripTrailingSlash::class,
-    ];
+    protected $middleware = [StripTrailingSlash::class];
 
     protected $middlewareGroups = [
         'web' => [
@@ -18,4 +16,11 @@ final class Kernel extends HttpKernel
             \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class,
         ],
     ];
+
+    public function bootstrappers(): array
+    {
+        array_splice($this->bootstrappers, 4, 0, LoadUserInterfaceProvider::class);
+
+        return $this->bootstrappers;
+    }
 }

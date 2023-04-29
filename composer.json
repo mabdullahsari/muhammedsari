@@ -24,7 +24,6 @@
     "require-dev": {
         "fakerphp/faker": "^1.21",
         "laravel/pint": "1.7",
-        "laravel/telescope": "^4.14.2",
         "mockery/mockery": "^1.5.1",
         "nunomaduro/collision": "^7.5.2",
         "nunomaduro/larastan": "^2.6.0",
@@ -84,7 +83,6 @@
                 "nesbot/carbon",
                 "nunomaduro/termwind",
                 "ryangjchandler/blade-capture-directive",
-                "ryangjchandler/filament-log",
                 "shuvroroy/filament-spatie-laravel-health",
                 "spatie/filament-markdown-editor",
                 "spatie/laravel-feed",

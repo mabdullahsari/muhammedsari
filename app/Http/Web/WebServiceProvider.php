@@ -7,8 +7,11 @@ use Illuminate\Support\AggregateServiceProvider;
 final class WebServiceProvider extends AggregateServiceProvider
 {
     protected $providers = [
+        \Blogging\BloggingServiceProvider::class,
+        \Database\DatabaseServiceProvider::class,
+        \Publishing\PublishingServiceProvider::class,
         \Html\HtmlServiceProvider::class,
-        \Spatie\Feed\FeedServiceProvider::class,
+
         \Spatie\RouteAttributes\RouteAttributesServiceProvider::class,
 
         RouteServiceProvider::class,

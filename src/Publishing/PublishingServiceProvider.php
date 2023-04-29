@@ -2,15 +2,17 @@
 
 namespace Publishing;
 
-use Publishing\RSS\FeedServiceProvider;
-use Publishing\Twitter\TwitterServiceProvider;
 use Illuminate\Support\AggregateServiceProvider;
 
 final class PublishingServiceProvider extends AggregateServiceProvider
 {
     public array $singletons = [UrlGenerator::class => PostUrlGenerator::class];
 
-    protected $providers = [FeedServiceProvider::class, TwitterServiceProvider::class];
+    protected $providers = [
+        \Clock\ClockServiceProvider::class,
+        \Publishing\RSS\FeedServiceProvider::class,
+        \Publishing\Twitter\TwitterServiceProvider::class
+    ];
 
     public function register(): void
     {

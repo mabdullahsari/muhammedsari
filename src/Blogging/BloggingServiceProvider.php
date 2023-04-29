@@ -12,14 +12,18 @@ use Blogging\Models\Tag;
 use Blogging\Models\TagPolicy;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Bus\Dispatcher;
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\AggregateServiceProvider;
 
-final class BloggingServiceProvider extends ServiceProvider
+final class BloggingServiceProvider extends AggregateServiceProvider
 {
     public array $singletons = [
         GetMyPosts::class => GetMyPostsUsingEloquent::class,
         GetSinglePost::class => GetSinglePostUsingEloquent::class,
         PostRepository::class => SQLitePostRepository::class,
+    ];
+
+    protected $providers = [
+        \Clock\ClockServiceProvider::class,
     ];
 
     public function boot(): void
@@ -29,6 +33,8 @@ final class BloggingServiceProvider extends ServiceProvider
 
     public function register(): void
     {
+        parent::register();
+
         $this->app->resolving(Dispatcher::class, $this->registerHandlers(...));
         $this->app->resolving(Gate::class, $this->registerPolicies(...));
     }

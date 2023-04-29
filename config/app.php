@@ -1,7 +1,5 @@
 <?php declare(strict_types=1);
 
-use Illuminate\Support\Facades\Facade;
-use Illuminate\Support\ServiceProvider;
 
 return [
 
@@ -155,31 +153,7 @@ return [
     |
     */
 
-    'providers' => ServiceProvider::defaultProviders()->merge([
-
-        /*
-         * Package Service Providers...
-         */
-        Carbon\Laravel\ServiceProvider::class,
-        Database\DatabaseServiceProvider::class,
-
-        /**
-         * Core Service Providers...
-         */
-        Blogging\BloggingServiceProvider::class,
-        Clock\ClockServiceProvider::class,
-        Monitoring\MonitoringServiceProvider::class,
-        Publishing\PublishingServiceProvider::class,
-        Scheduling\SchedulingServiceProvider::class,
-
-        /*
-         * Application Service Providers...
-         */
-        App\Foundation\BusServiceProvider::class,
-        App\Console\ConsoleServiceProvider::class,
-        App\Http\Filament\FilamentServiceProvider::class,
-        App\Http\Web\WebServiceProvider::class,
-    ])->toArray(),
+    'providers' => [/* These are registered at runtime, depending on incoming request */],
 
     /*
     |--------------------------------------------------------------------------
@@ -192,8 +166,6 @@ return [
     |
     */
 
-    'aliases' => Facade::defaultAliases()->merge([
-        // 'Example' => App\Facades\Example::class,
-    ])->toArray(),
+    'aliases' => [/* Please don't use... */],
 
 ];

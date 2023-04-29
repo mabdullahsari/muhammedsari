@@ -10,18 +10,16 @@ use Symfony\Component\HttpFoundation\Response;
 
 final readonly class StripTrailingSlash
 {
-    private const FORWARD_SLASH = '/';
-
     public function handle(Request $request, Closure $next): Response
     {
         $path = $request->getPathInfo();
 
-        if ($path === self::FORWARD_SLASH || ! str_ends_with($path, self::FORWARD_SLASH)) {
+        if ($path === DIRECTORY_SEPARATOR || ! str_ends_with($path, DIRECTORY_SEPARATOR)) {
             return $next($request);
         }
 
         $url = Str::of($request->getRequestUri())
-            ->replaceLast(self::FORWARD_SLASH, '')
+            ->replaceLast(DIRECTORY_SEPARATOR, '')
             ->value();
 
         return new RedirectResponse($url, Response::HTTP_MOVED_PERMANENTLY);
