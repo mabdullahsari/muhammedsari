@@ -5,25 +5,24 @@ namespace App\UI\Http;
 use App\UI\Http\Admin\AdminServiceProvider;
 use App\UI\Http\Site\SiteServiceProvider;
 use Illuminate\Contracts\Config\Repository;
-use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 use Illuminate\Support\DefaultProviders;
 
-final readonly class LoadHttpProvider
+final readonly class ConfigureHttpProvider
 {
     public function bootstrap(Application $app): void
     {
-        /** @var Repository $config */
-        $config = $app->get('config');
+        $path = ltrim($app[Request::class]->getPathInfo(), DIRECTORY_SEPARATOR);
 
-        /** @var Request $httpContext */
-        $httpContext = $app->get('request');
-        $path = ltrim($httpContext->getPathInfo(), DIRECTORY_SEPARATOR);
+        $config = $app[Repository::class];
 
-        $config->set('app.providers', (new DefaultProviders())->merge(match (true) {
+        $providers = (new DefaultProviders())->merge(match (true) {
             $this->wantsAdmin($path, $config) => [AdminServiceProvider::class],
             default => [SiteServiceProvider::class],
-        })->toArray());
+        })->toArray();
+
+        $config->set('app.providers', $providers);
     }
 
     private function wantsAdmin(string $path, Repository $config): bool

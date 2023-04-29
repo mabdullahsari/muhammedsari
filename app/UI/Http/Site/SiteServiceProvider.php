@@ -8,7 +8,6 @@ use Illuminate\Support\AggregateServiceProvider;
 final class SiteServiceProvider extends AggregateServiceProvider
 {
     protected $providers = [
-        \Illuminate\Foundation\Support\Providers\RouteServiceProvider::class,
         \Spatie\RouteAttributes\RouteAttributesServiceProvider::class,
 
         \App\AppServiceProvider::class,
@@ -16,6 +15,7 @@ final class SiteServiceProvider extends AggregateServiceProvider
         \Publishing\PublishingServiceProvider::class,
         \Html\HtmlServiceProvider::class,
 
+        \App\UI\Http\RouteServiceProvider::class,
         \App\UI\Http\Site\About\AboutServiceProvider::class,
         \App\UI\Http\Site\Blog\BlogServiceProvider::class,
         \App\UI\Http\Site\Home\HomeServiceProvider::class,

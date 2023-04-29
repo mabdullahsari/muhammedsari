@@ -19,9 +19,9 @@ final class Kernel extends ConsoleKernel
         $this->load(__DIR__);
     }
 
-    public function bootstrappers(): array
+    protected function bootstrappers(): array
     {
-        array_splice($this->bootstrappers, 5, 0, LoadConsoleProvider::class);
+        array_splice($this->bootstrappers, 5, 0, ConfigureConsoleProvider::class);
 
         return $this->bootstrappers;
     }

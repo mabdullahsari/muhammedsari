@@ -8,18 +8,9 @@ final class Kernel extends HttpKernel
 {
     protected $middleware = [StripTrailingSlash::class];
 
-    protected $middlewareGroups = [
-        'web' => [
-            \Illuminate\Cookie\Middleware\EncryptCookies::class,
-            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
-            \Illuminate\Session\Middleware\StartSession::class,
-            \Illuminate\Foundation\Http\Middleware\VerifyCsrfToken::class,
-        ],
-    ];
-
     public function bootstrappers(): array
     {
-        array_splice($this->bootstrappers, 4, 0, LoadHttpProvider::class);
+        array_splice($this->bootstrappers, 4, 0, ConfigureHttpProvider::class);
 
         return $this->bootstrappers;
     }

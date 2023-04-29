@@ -13,6 +13,7 @@ final class AdminServiceProvider extends AggregateServiceProvider
         \Publishing\PublishingServiceProvider::class,
         \Scheduling\SchedulingServiceProvider::class,
 
+        \App\UI\Http\RouteServiceProvider::class,
         \BladeUI\Icons\BladeIconsServiceProvider::class,
         \BladeUI\Heroicons\BladeHeroiconsServiceProvider::class,
         \Filament\FilamentServiceProvider::class,
@@ -20,7 +21,6 @@ final class AdminServiceProvider extends AggregateServiceProvider
         \Filament\Notifications\NotificationsServiceProvider::class,
         \Filament\Support\SupportServiceProvider::class,
         \Filament\Tables\TablesServiceProvider::class,
-        \Illuminate\Foundation\Support\Providers\RouteServiceProvider::class,
         \Livewire\LivewireServiceProvider::class,
         \RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider::class,
         \ShuvroRoy\FilamentSpatieLaravelHealth\FilamentSpatieLaravelHealthServiceProvider::class,
