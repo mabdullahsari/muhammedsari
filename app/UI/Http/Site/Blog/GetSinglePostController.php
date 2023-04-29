@@ -3,7 +3,6 @@
 namespace App\UI\Http\Site\Blog;
 
 use Blogging\Contract\GetSinglePost;
-use Blogging\Slug;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
 use Spatie\RouteAttributes\Attributes\Get;
@@ -19,7 +18,7 @@ final readonly class GetSinglePostController
     ) {}
 
     #[Get('blog/{slug}')]
-    #[Where('slug', Slug::PATTERN)]
+    #[Where('slug', '[a-z0-9]+(?:-[a-z0-9]+)*')]
     public function __invoke(string $slug): Response
     {
         $post = $this->query->get($slug);

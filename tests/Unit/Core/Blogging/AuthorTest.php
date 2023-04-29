@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Core\Blogging\Models;
+namespace Tests\Unit\Core\Blogging;
 
-use Blogging\Models\Author;
+use Blogging\Author;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

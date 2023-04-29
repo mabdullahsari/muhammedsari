@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Blogging\Models;
+namespace Blogging;
 
 use Blogging\Contract\PostDeleted;
 use Illuminate\Contracts\Events\Dispatcher;

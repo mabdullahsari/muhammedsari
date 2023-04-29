@@ -3,7 +3,7 @@
 namespace Tests\Feature;
 
 use Blogging\Contract\PublishPost;
-use Blogging\Models\PostFactory;
+use Blogging\Post;
 use Blogging\PostState;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\Bus;
@@ -17,10 +17,7 @@ final class BlogPostPublishingTest extends KernelTestCase
     public function user_can_publish_blog_post(): void
     {
         // Arrange
-        $post = PostFactory::new()
-            ->hasBody()
-            ->hasSummary()
-            ->createQuietly();
+        $post = Post::factory()->publishable()->createQuietly();
 
         $twitter = $this->app->make(Twitter::class);
 

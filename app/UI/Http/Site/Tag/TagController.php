@@ -2,7 +2,6 @@
 
 namespace App\UI\Http\Site\Tag;
 
-use Blogging\Slug;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Spatie\RouteAttributes\Attributes\Get;
@@ -19,7 +18,7 @@ final readonly class TagController
     }
 
     #[Get('tags/{slug}', 'tags.show')]
-    #[Where('slug', Slug::PATTERN)]
+    #[Where('slug', '[a-z0-9]+(?:-[a-z0-9]+)*')]
     public function show(string $slug): View
     {
         return $this->view->make('Tag::Show');

@@ -1,8 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Blogging\Models;
+namespace Blogging;
 
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
@@ -14,6 +15,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  */
 final class Tag extends Model
 {
+    use HasFactory;
+
     protected $fillable = ['name', 'slug'];
 
     protected $table = 'blogging_tags';
@@ -28,5 +31,10 @@ final class Tag extends Model
     public function getRouteKeyName(): string
     {
         return 'slug';
+    }
+
+    protected static function newFactory(): TagFactory
+    {
+        return TagFactory::new();
     }
 }

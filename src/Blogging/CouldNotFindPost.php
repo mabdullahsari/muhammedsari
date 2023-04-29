@@ -8,14 +8,14 @@ use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 
 final class CouldNotFindPost extends Exception implements HttpExceptionInterface
 {
-    public static function withId(PostId $id): self
+    public static function withId(int $id): self
     {
-        return new self("Couldn't find Post with id {$id->asInt()}");
+        return new self("Could not find post with ID {$id}");
     }
 
     public static function withSlug(string $slug): self
     {
-        return new self("Couldn't find {$slug}.");
+        return new self("Could not find '{$slug}'.");
     }
 
     public function getStatusCode(): int

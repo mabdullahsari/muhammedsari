@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Core\Blogging\Models;
+namespace Tests\Unit\Core\Blogging;
 
-use Blogging\Models\Post;
-use Blogging\Models\PostPolicy;
+use Blogging\Post;
+use Blogging\PostPolicy;
 use Blogging\PostState;
 use Illuminate\Foundation\Auth\User;
 use PHPUnit\Framework\Attributes\DataProvider;

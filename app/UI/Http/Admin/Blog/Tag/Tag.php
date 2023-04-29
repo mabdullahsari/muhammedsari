@@ -12,7 +12,7 @@ use Illuminate\Support\Str;
 
 final class Tag extends Resource
 {
-    protected static ?string $model = \Blogging\Models\Tag::class;
+    protected static ?string $model = \Blogging\Tag::class;
 
     protected static ?string $navigationGroup = 'Blog';
 

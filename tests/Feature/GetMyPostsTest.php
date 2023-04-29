@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use Blogging\Models\PostFactory;
+use Blogging\PostFactory;
 use Illuminate\Testing\Fluent\AssertableJson;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
@@ -40,7 +40,7 @@ final class GetMyPostsTest extends KernelTestCase
 
         // Assert
         $response->assertOk()->assertJson(static function (AssertableJson $json) {
-            $json->count(1)->each(fn ($json) => $json->hasAll(['published_at', 'slug', 'summary', 'title']));
+            $json->count(1)->each(fn ($json) => $json->hasAll(['published_at', 'slug', 'summary', 'tags', 'title']));
         });
     }
 }

@@ -5,97 +5,124 @@ namespace Blogging;
 use Blogging\Contract\PostPublished;
 use Carbon\CarbonImmutable;
 use Clock\Contract\Clock;
-use stdClass;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-final class Post extends Entity
+/**
+ * @property Author               $author
+ * @property string               $body
+ * @property int                  $id
+ * @property CarbonImmutable      $published_at
+ * @property string               $slug
+ * @property PostState            $state
+ * @property string               $summary
+ * @property Collection<int, Tag> $tags
+ * @property string               $title
+ */
+final class Post extends Model
 {
-    private AuthorId $authorId;
+    use HasFactory;
 
-    private PostId $id;
+    protected $attributes = [
+        'author_id' => Author::MUHAMMED,
+        'state' => PostState::Draft,
+    ];
 
-    private Body $body;
+    protected $casts = [
+        'body' => ConvertNullToEmptyString::class,
+        'published_at' => 'immutable_datetime',
+        'state' => PostState::class,
+        'summary' => ConvertNullToEmptyString::class,
+    ];
 
-    private ?CarbonImmutable $publishedAt = null;
+    protected $guarded = [];
 
-    private Slug $slug;
+    protected $table = 'blogging_posts';
 
-    private PostState $state = PostState::Draft;
+    private array $events = [];
 
-    private Summary $summary;
-
-    private Title $title;
-
-    private function __construct() {}
-
-    public static function create(
-        PostId $id,
-        AuthorId $authorId,
-        Body $body,
-        Summary $summary,
-        Title $title,
-        Slug $slug,
-    ): self {
-        $post = new Post();
-
-        $post->authorId = $authorId;
-        $post->id = $id;
-        $post->body = $body;
-        $post->summary = $summary;
-        $post->slug = $slug;
-        $post->title = $title;
-
-        return $post;
+    public function author(): BelongsTo
+    {
+        return $this->belongsTo(Author::class);
     }
 
-    public static function fromDatabase(stdClass $record): self
+    public function tags(): BelongsToMany
     {
-        $post = new Post();
-
-        $post->authorId = AuthorId::fromInt($record->author_id);
-        $post->id = PostId::fromInt($record->id);
-        $post->body = Body::fromString($record->body);
-        $post->slug = Slug::fromString($record->slug);
-        $post->state = PostState::from($record->state);
-        $post->summary = Summary::fromString($record->summary);
-        $post->title = Title::fromString($record->title);
-        $post->publishedAt = transform($record->published_at, CarbonImmutable::parse(...));
-
-        return $post;
+        return $this->belongsToMany(Tag::class, 'blogging_post_tag');
     }
 
-    public function id(): PostId
+    /** @throws CouldNotFindPost */
+    public function find(int $id): self
     {
-        return $this->id;
-    }
+        $post = $this->newQuery()->first();
 
-    public function publish(Clock $clock): void
-    {
-        if ($this->state->isPublished()) {
-            throw CouldNotPublish::becauseAlreadyPublished();
-        } elseif ($this->summary->isEmpty()) {
-            throw CouldNotPublish::becauseSummaryIsMissing();
-        } elseif ($this->body->isEmpty()) {
-            throw CouldNotPublish::becauseBodyIsMissing();
+        if (! $post instanceof self) {
+            throw CouldNotFindPost::withId($id);
         }
 
-        $this->state = PostState::Published;
-        $this->publishedAt = $clock->now();
+        return $post;
+    }
+
+    public function isDraft(): bool
+    {
+        return $this->state->isDraft();
+    }
+
+    public function isPublished(): bool
+    {
+        return $this->state->isPublished();
+    }
+
+    /** @throws CouldNotPublish */
+    public function publish(Clock $clock): void
+    {
+        if ($this->isPublished()) {
+            throw CouldNotPublish::becauseAlreadyPublished();
+        } elseif (empty($this->summary)) {
+            throw CouldNotPublish::becauseSummaryIsMissing();
+        } elseif (empty($this->body)) {
+            throw CouldNotPublish::becauseBodyIsMissing();
+        } elseif ($this->tags->isEmpty()) {
+            throw CouldNotPublish::becauseTagsAreMissing();
+        }
+
+        $this->attributes['published_at'] = $clock->now()->toDateTimeString();
+        $this->attributes['state'] = PostState::Published->value;
 
         $this->raise(
-            new PostPublished($this->id->asInt(), (string) $this->slug, [], (string) $this->title)
+            new PostPublished(
+                $this->id,
+                $this->slug,
+                $this->tags->map(static fn (Tag $t) => $t->slug)->all(),
+                $this->title,
+            )
         );
     }
 
-    public function toDatabase(): array
+    public function flushEvents(): array
     {
-        return [
-            'author_id' => $this->authorId->asInt(),
-            'body' => (string) $this->body,
-            'published_at' => $this->publishedAt?->toDateTimeString(),
-            'slug' => (string) $this->slug,
-            'state' => $this->state->value,
-            'summary' => (string) $this->summary,
-            'title' => (string) $this->title,
-        ];
+        $events = $this->events;
+
+        $this->events = [];
+
+        return $events;
+    }
+
+    private function raise(object $event): void
+    {
+        $this->events[] = $event;
+    }
+
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
+
+    protected static function newFactory(): PostFactory
+    {
+        return PostFactory::new();
     }
 }

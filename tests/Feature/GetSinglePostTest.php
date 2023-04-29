@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use Blogging\Models\PostFactory;
+use Blogging\PostFactory;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
 

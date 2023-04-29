@@ -16,6 +16,11 @@ final class CouldNotPublish extends Exception
         return new self('Post body may not be missing.');
     }
 
+    public static function becauseTagsAreMissing(): self
+    {
+        return new self('Post must have at least one tag.');
+    }
+
     public static function becauseSummaryIsMissing(): self
     {
         return new self('Post summary may not be missing.');

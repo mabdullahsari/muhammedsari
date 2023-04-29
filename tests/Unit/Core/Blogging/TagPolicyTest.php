@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Core\Blogging\Models;
+namespace Tests\Unit\Core\Blogging;
 
-use Blogging\Models\Tag;
-use Blogging\Models\TagPolicy;
+use Blogging\Tag;
+use Blogging\TagPolicy;
 use Illuminate\Foundation\Auth\User;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;

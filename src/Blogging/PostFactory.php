@@ -1,12 +1,13 @@
 <?php declare(strict_types=1);
 
-namespace Blogging\Models;
+namespace Blogging;
 
-use Blogging\PostState;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-/** @extends Factory<Post> */
+/**
+ * @method PostFactory hasTags(int $amount)
+ */
 final class PostFactory extends Factory
 {
     protected $model = Post::class;
@@ -33,9 +34,14 @@ final class PostFactory extends Factory
         return $this->state(['summary' => $this->faker->text(100)]);
     }
 
+    public function publishable(): self
+    {
+        return $this->hasTags(1)->hasBody()->hasSummary();
+    }
+
     public function published(): self
     {
-        return $this->hasBody()->hasSummary()->state([
+        return $this->publishable()->state([
             'published_at' => '1970-01-01 00:00:00',
             'state' => PostState::Published,
         ]);

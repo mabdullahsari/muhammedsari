@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Core\Blogging\Models;
+namespace Tests\Unit\Core\Blogging;
 
 use Blogging\Contract\PostDeleted;
-use Blogging\Models\Post;
-use Blogging\Models\PostObserver;
+use Blogging\Post;
+use Blogging\PostObserver;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Support\Testing\Fakes\EventFake;
 use PHPUnit\Framework\Attributes\Test;

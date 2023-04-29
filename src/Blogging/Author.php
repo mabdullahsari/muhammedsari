@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Blogging\Models;
+namespace Blogging;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;

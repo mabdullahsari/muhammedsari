@@ -3,8 +3,6 @@
 namespace App\UI\Http\Admin\Blog\Post;
 
 use Blogging\PostState;
-use Blogging\Slug;
-use Blogging\Summary;
 use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
@@ -19,7 +17,7 @@ use Spatie\FilamentMarkdownEditor\MarkdownEditor;
 
 final class Post extends Resource
 {
-    protected static ?string $model = \Blogging\Models\Post::class;
+    protected static ?string $model = \Blogging\Post::class;
 
     protected static ?string $navigationGroup = 'Blog';
 
@@ -38,7 +36,7 @@ final class Post extends Resource
                 ->afterStateUpdated(fn ($record, $set, $state) => ! $record?->isPublished() && $set('slug', Str::slug($state))),
             TextInput::make('slug')
                 ->disabled(static fn ($record) => $record?->isPublished())
-                ->regex(Slug::REGEX)
+                ->regex('/^[a-z0-9]+(?:-[a-z0-9]+)*$/')
                 ->required()
                 ->unique(ignorable: static fn ($record) => $record),
             MarkdownEditor::make('body')
@@ -47,9 +45,8 @@ final class Post extends Resource
             TextInput::make('summary')
                 ->default('')
                 ->columnSpan(2)
-                ->maxLength(Summary::MAX_LENGTH),
+                ->maxLength(100),
             CheckboxList::make('tags')
-                ->required()
                 ->relationship('tags', 'name'),
         ]);
     }

@@ -11,6 +11,7 @@ final readonly class PostSummary implements JsonSerializable
         public CarbonImmutable $publishedAt,
         public string $slug,
         public string $summary,
+        public array $tags,
         public string $title,
     ) {}
 
@@ -20,6 +21,7 @@ final readonly class PostSummary implements JsonSerializable
             'published_at' => $this->publishedAt->toIso8601String(),
             'slug' => $this->slug,
             'summary' => $this->summary,
+            'tags' => $this->tags,
             'title' => $this->title,
         ];
     }

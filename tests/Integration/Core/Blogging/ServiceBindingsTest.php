@@ -2,15 +2,17 @@
 
 namespace Tests\Integration\Core\Blogging;
 
+use Blogging\Contract\GetMyPosts;
+use Blogging\Contract\GetSinglePost;
 use Blogging\Contract\PublishPost;
-use Blogging\Models\Post;
-use Blogging\Models\PostObserver;
-use Blogging\Models\PostPolicy;
-use Blogging\Models\Tag;
-use Blogging\Models\TagPolicy;
-use Blogging\PostRepository;
+use Blogging\GetMyPostsUsingEloquent;
+use Blogging\GetSinglePostUsingEloquent;
+use Blogging\Post;
+use Blogging\PostObserver;
+use Blogging\PostPolicy;
 use Blogging\PublishPostHandler;
-use Blogging\SQLitePostRepository;
+use Blogging\Tag;
+use Blogging\TagPolicy;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Bus\Dispatcher;
 use PHPUnit\Framework\Attributes\Test;
@@ -21,8 +23,11 @@ final class ServiceBindingsTest extends KernelTestCase
     #[Test]
     public function it_registers_singleton_bindings(): void
     {
-        $this->assertTrue($this->app->isShared(PostRepository::class));
-        $this->assertInstanceOf(SQLitePostRepository::class, $this->app->make(PostRepository::class));
+        $this->assertTrue($this->app->isShared(GetMyPosts::class));
+        $this->assertInstanceOf(GetMyPostsUsingEloquent::class, $this->app->make(GetMyPosts::class));
+
+        $this->assertTrue($this->app->isShared(GetSinglePost::class));
+        $this->assertInstanceOf(GetSinglePostUsingEloquent::class, $this->app->make(GetSinglePost::class));
     }
 
     #[Test]

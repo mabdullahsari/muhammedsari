@@ -2,10 +2,17 @@
 
 namespace Blogging\Contract;
 
-final readonly class Tag
+use JsonSerializable;
+
+final readonly class Tag implements JsonSerializable
 {
     public function __construct(
         public string $slug,
         public string $name,
     ) {}
+
+    public function jsonSerialize(): array
+    {
+        return get_object_vars($this);
+    }
 }
