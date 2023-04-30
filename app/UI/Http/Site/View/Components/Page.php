@@ -7,6 +7,8 @@ use Illuminate\View\Component;
 
 final class Page extends Component
 {
+    public const NAME = 'page';
+
     public function __construct(
         private readonly ?string $description = null,
         private readonly ?string $name = null,

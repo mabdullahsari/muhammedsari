@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\UI\Http\Site\Blog;
+namespace App\UI\Http\Site\Page\Blog;
 
 use Blogging\Contract\GetMyPosts;
 use Illuminate\Contracts\Routing\ResponseFactory;
@@ -10,13 +10,15 @@ use Symfony\Component\HttpFoundation\Response;
 
 final readonly class GetMyPostsController
 {
+    public const ROUTE = 'blog';
+
     public function __construct(
         private GetMyPosts $query,
         private Request $request,
         private ResponseFactory $response,
     ) {}
 
-    #[Get('blog')]
+    #[Get(self::ROUTE)]
     public function __invoke(): Response
     {
         $posts = $this->query->get();

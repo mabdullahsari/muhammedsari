@@ -1,18 +1,20 @@
 <?php declare(strict_types=1);
 
-namespace App\UI\Http\Site\Home;
+namespace App\UI\Http\Site\Page\About;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Spatie\RouteAttributes\Attributes\Get;
 
-final readonly class HomeController
+final readonly class AboutController
 {
+    public const ROUTE = 'about';
+
     public function __construct(private Factory $view) {}
 
-    #[Get('/', 'home')]
+    #[Get(self::ROUTE, self::ROUTE)]
     public function index(): View
     {
-        return $this->view->make('Home::Index');
+        return $this->view->make('About::Index');
     }
 }

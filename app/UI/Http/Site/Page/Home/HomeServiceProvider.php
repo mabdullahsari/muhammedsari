@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\UI\Http\Site\Home;
+namespace App\UI\Http\Site\Page\Home;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-@include('partials.greeting')
+@include('social.greeting')
 <html dir="ltr" lang="{{ $app->getLocale() }}">
 <head>
     <meta charset="UTF-8" />
@@ -11,19 +11,19 @@
     <meta name="author" content="{{ $app['config']['app.name'] }}" />
     <meta name="description" content="{{ $description }}" />
     <!-- Open Graph -->
-    @include('partials.open-graph')
+    @include('social.open-graph')
     <!-- Twitter -->
-    @include('partials.twitter')
+    @include('social.twitter')
     <!-- Schema.org -->
-    @include('partials.person')
+    @include('social.person')
     @stack('seo')
     <!-- Stylesheets -->
+    @vite('app/UI/Http/Site/Style/site.css')
     @stack('styles')
 </head>
-<body>
-    <header>
-        Header
-    </header>
+<body class="bg-zinc-900 font-sans leading-normal text-zinc-300/80">
+    <x-navigation />
+
     <main{{ $attributes }}>
         {{ $slot }}
     </main>

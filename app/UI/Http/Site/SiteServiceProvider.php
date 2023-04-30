@@ -10,17 +10,18 @@ final class SiteServiceProvider extends AggregateServiceProvider
     protected $providers = [
         \Spatie\RouteAttributes\RouteAttributesServiceProvider::class,
 
-        \App\AppServiceProvider::class,
-        \Blogging\BloggingServiceProvider::class,
         \Publishing\PublishingServiceProvider::class,
         \Html\HtmlServiceProvider::class,
 
+        \App\AppServiceProvider::class,
         \App\UI\Http\RouteServiceProvider::class,
-        \App\UI\Http\Site\About\AboutServiceProvider::class,
-        \App\UI\Http\Site\Blog\BlogServiceProvider::class,
-        \App\UI\Http\Site\Home\HomeServiceProvider::class,
-        \App\UI\Http\Site\Tag\TagServiceProvider::class,
         \App\UI\Http\Site\View\ViewServiceProvider::class,
+
+        Page\About\AboutServiceProvider::class,
+        Page\Blog\BlogServiceProvider::class,
+        Page\Contact\ContactServiceProvider::class,
+        Page\Home\HomeServiceProvider::class,
+        Page\Tag\TagServiceProvider::class,
     ];
 
     public function boot(Router $router): void

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\UI\Http\Site\Blog;
+namespace App\UI\Http\Site\Page\Blog;
 
 use Blogging\Contract\GetSinglePost;
 use Illuminate\Contracts\Routing\ResponseFactory;
