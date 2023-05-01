@@ -9,6 +9,13 @@ use Tests\KernelTestCase;
 
 final class GetMyPostsTest extends KernelTestCase
 {
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->withoutVite();
+    }
+
     #[Test]
     public function only_published_posts_are_displayed(): void
     {

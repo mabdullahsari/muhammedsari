@@ -8,6 +8,13 @@ use Tests\KernelTestCase;
 
 final class GetSinglePostTest extends KernelTestCase
 {
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->withoutVite();
+    }
+
     public function post_can_be_displayed(): void
     {
         // Arrange

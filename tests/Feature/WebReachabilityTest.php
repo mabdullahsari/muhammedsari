@@ -8,6 +8,13 @@ use Tests\KernelTestCase;
 
 final class WebReachabilityTest extends KernelTestCase
 {
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->withoutVite();
+    }
+
     #[DataProvider('pages')]
     #[Test]
     public function page_is_reachable(string $page): void
