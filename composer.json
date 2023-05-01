@@ -6,6 +6,7 @@
     "require": {
         "php": "~8.2",
         "abraham/twitteroauth": "^5.0",
+        "blade-ui-kit/blade-icons": "^1.5",
         "dive-be/php-enum-utils": "^1.2",
         "filament/filament": "^2.17.30",
         "gajus/dindent": "^2.0.2",

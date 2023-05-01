@@ -2,13 +2,19 @@
 
 namespace App\UserInterface\Http\Site\View;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\AggregateServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
 
-final class ViewServiceProvider extends ServiceProvider
+final class ViewServiceProvider extends AggregateServiceProvider
 {
+    protected $providers = [
+        \BladeUI\Icons\BladeIconsServiceProvider::class,
+    ];
+
     public function register(): void
     {
+        parent::register();
+
         $this->registerFooter();
         $this->registerNavigation();
         $this->registerPage();
