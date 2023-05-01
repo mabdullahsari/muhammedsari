@@ -3,7 +3,6 @@
 namespace App\UserInterface\Http\Site\Page\About;
 
 use App\UserInterface\Http\Site\View\Navigation;
-use HtmlBeautifier\Contract\BeautifyHtml;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 
@@ -16,7 +15,7 @@ final class AboutServiceProvider extends ServiceProvider
         Navigation::register(self::NAME, AboutController::INDEX, 0);
 
         if (! $this->app->routesAreCached()) {
-            $router->middleware(BeautifyHtml::MIDDLEWARE)->group($this->app->basePath('routes/about.php'));
+            $router->group([], $this->app->basePath('routes/about.php'));
         }
     }
 }
