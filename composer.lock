@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f3e777d4963d63c83169120e4efc437a",
+    "content-hash": "75d2616c281c9e5b7604e1c3de079f11",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -4747,77 +4747,6 @@
                 }
             ],
             "time": "2023-04-27T08:09:01+00:00"
-        },
-        {
-            "name": "spatie/laravel-route-attributes",
-            "version": "1.18.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-route-attributes.git",
-                "reference": "6f19ad379f79a8c87b3b21ee9c3b6dc72080123d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-route-attributes/zipball/6f19ad379f79a8c87b3b21ee9c3b6dc72080123d",
-                "reference": "6f19ad379f79a8c87b3b21ee9c3b6dc72080123d",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/contracts": "^8.70|^9.0|^10.0",
-                "nesbot/carbon": "^2.63",
-                "php": "^8.0"
-            },
-            "require-dev": {
-                "orchestra/testbench": "^6.25|^7.0|^8.0",
-                "phpunit/phpunit": "^9.5.10"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Spatie\\RouteAttributes\\RouteAttributesServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\RouteAttributes\\": "src",
-                    "Spatie\\RouteAttributes\\Database\\Factories\\": "database/factories"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Auto register routes using PHP attributes",
-            "homepage": "https://github.com/spatie/laravel-route-attributes",
-            "keywords": [
-                "laravel-route-attributes",
-                "spatie"
-            ],
-            "support": {
-                "issues": "https://github.com/spatie/laravel-route-attributes/issues",
-                "source": "https://github.com/spatie/laravel-route-attributes/tree/1.18.2"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/sponsors/spatie",
-                    "type": "github"
-                },
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "other"
-                }
-            ],
-            "time": "2023-03-09T15:47:11+00:00"
         },
         {
             "name": "spatie/packagist-api",

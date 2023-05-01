@@ -4,13 +4,13 @@ namespace App\UI\Http\Site\Page\Home;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Spatie\RouteAttributes\Attributes\Get;
 
 final readonly class HomeController
 {
+    public const INDEX = '/';
+
     public function __construct(private Factory $view) {}
 
-    #[Get('/', 'home')]
     public function index(): View
     {
         return $this->view->make('Home::Index');

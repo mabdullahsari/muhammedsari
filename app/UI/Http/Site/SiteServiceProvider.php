@@ -8,8 +8,6 @@ use Illuminate\Support\AggregateServiceProvider;
 final class SiteServiceProvider extends AggregateServiceProvider
 {
     protected $providers = [
-        \Spatie\RouteAttributes\RouteAttributesServiceProvider::class,
-
         \Publishing\PublishingServiceProvider::class,
         \Html\HtmlServiceProvider::class,
 
@@ -20,8 +18,8 @@ final class SiteServiceProvider extends AggregateServiceProvider
         Page\About\AboutServiceProvider::class,
         Page\Blog\BlogServiceProvider::class,
         Page\Contact\ContactServiceProvider::class,
-        Page\Home\HomeServiceProvider::class,
         Page\Tag\TagServiceProvider::class,
+        Page\Home\HomeServiceProvider::class,
     ];
 
     public function boot(Router $router): void

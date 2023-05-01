@@ -5,7 +5,6 @@ namespace App\UI\Http\Site\Page\Blog;
 use Blogging\Contract\GetMyPosts;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
-use Spatie\RouteAttributes\Attributes\Get;
 use Symfony\Component\HttpFoundation\Response;
 
 final readonly class GetMyPostsController
@@ -18,7 +17,6 @@ final readonly class GetMyPostsController
         private ResponseFactory $response,
     ) {}
 
-    #[Get(self::ROUTE)]
     public function __invoke(): Response
     {
         $posts = $this->query->get();

@@ -5,8 +5,6 @@ namespace App\UI\Http\Site\Page\Blog;
 use Blogging\Contract\GetSinglePost;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
-use Spatie\RouteAttributes\Attributes\Get;
-use Spatie\RouteAttributes\Attributes\Where;
 use Symfony\Component\HttpFoundation\Response;
 
 final readonly class GetSinglePostController
@@ -17,8 +15,6 @@ final readonly class GetSinglePostController
         private ResponseFactory $response,
     ) {}
 
-    #[Get('blog/{slug}')]
-    #[Where('slug', '[a-z0-9]+(?:-[a-z0-9]+)*')]
     public function __invoke(string $slug): Response
     {
         $post = $this->query->get($slug);

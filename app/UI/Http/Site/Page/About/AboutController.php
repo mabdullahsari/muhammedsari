@@ -4,15 +4,13 @@ namespace App\UI\Http\Site\Page\About;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Spatie\RouteAttributes\Attributes\Get;
 
 final readonly class AboutController
 {
-    public const ROUTE = 'about';
+    public const INDEX = 'about';
 
     public function __construct(private Factory $view) {}
 
-    #[Get(self::ROUTE, self::ROUTE)]
     public function index(): View
     {
         return $this->view->make('About::Index');

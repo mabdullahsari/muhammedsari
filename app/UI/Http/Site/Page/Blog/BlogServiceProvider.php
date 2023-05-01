@@ -3,6 +3,8 @@
 namespace App\UI\Http\Site\Page\Blog;
 
 use App\UI\Http\Site\View\Components\Navigation;
+use Html\Contract\BeautifyHtml;
+use Illuminate\Routing\Router;
 use Illuminate\Support\AggregateServiceProvider;
 
 final class BlogServiceProvider extends AggregateServiceProvider
@@ -14,9 +16,13 @@ final class BlogServiceProvider extends AggregateServiceProvider
         \Spatie\LaravelMarkdown\MarkdownServiceProvider::class,
     ];
 
-    public function boot(): void
+    public function boot(Router $router): void
     {
         Navigation::register(self::NAME, GetMyPostsController::ROUTE, 1);
+
+        if (! $this->app->routesAreCached()) {
+            $router->middleware(BeautifyHtml::NAME)->group($this->app->basePath('routes/blog.php'));
+        }
     }
 
     public function register(): void
