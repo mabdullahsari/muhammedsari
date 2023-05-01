@@ -6,7 +6,7 @@ use Illuminate\Contracts\Config\Repository;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\DefaultProviders;
 
-final readonly class ConfigureConsoleProvider
+final readonly class ConfigureConsoleProviders
 {
     public function bootstrap(Application $app): void
     {

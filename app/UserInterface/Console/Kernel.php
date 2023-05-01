@@ -21,7 +21,7 @@ final class Kernel extends ConsoleKernel
 
     protected function bootstrappers(): array
     {
-        array_splice($this->bootstrappers, 5, 0, ConfigureConsoleProvider::class);
+        array_splice($this->bootstrappers, 5, 0, ConfigureConsoleProviders::class);
 
         return $this->bootstrappers;
     }

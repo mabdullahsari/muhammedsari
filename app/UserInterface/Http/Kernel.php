@@ -10,7 +10,7 @@ final class Kernel extends HttpKernel
 
     public function bootstrappers(): array
     {
-        array_splice($this->bootstrappers, 4, 0, ConfigureHttpProvider::class);
+        array_splice($this->bootstrappers, 4, 0, ConfigureHttpProviders::class);
 
         return $this->bootstrappers;
     }

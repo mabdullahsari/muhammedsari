@@ -9,7 +9,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 use Illuminate\Support\DefaultProviders;
 
-final readonly class ConfigureHttpProvider
+final readonly class ConfigureHttpProviders
 {
     public function bootstrap(Application $app): void
     {
