@@ -2,7 +2,7 @@
 
 namespace App\UserInterface\Http\Site\Page\Contact;
 
-use App\UserInterface\Http\Site\View\Components\Navigation;
+use App\UserInterface\Http\Site\View\Navigation;
 use HtmlBeautifier\Contract\BeautifyHtml;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
@@ -18,10 +18,5 @@ final class ContactServiceProvider extends ServiceProvider
         if (! $this->app->routesAreCached()) {
             $router->middleware(BeautifyHtml::MIDDLEWARE)->group($this->app->basePath('routes/contact.php'));
         }
-    }
-
-    public function register(): void
-    {
-        $this->loadViewsFrom(__DIR__, self::NAME);
     }
 }

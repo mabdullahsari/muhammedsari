@@ -11,11 +11,11 @@ final readonly class TagController
 
     public function index(): View
     {
-        return $this->view->make('Tag::Index');
+        return $this->view->make('tag-index');
     }
 
     public function show(string $slug): View
     {
-        return $this->view->make('Tag::Show');
+        return $this->view->make('tag-show');
     }
 }

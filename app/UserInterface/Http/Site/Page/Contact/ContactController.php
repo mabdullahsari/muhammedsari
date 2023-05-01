@@ -13,6 +13,6 @@ final readonly class ContactController
 
     public function index(): View
     {
-        return $this->view->make('Contact::Index');
+        return $this->view->make('contact');
     }
 }

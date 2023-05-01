@@ -2,29 +2,27 @@
 
 namespace App\UserInterface\Http\Site\Page\Blog;
 
-use Blogging\Contract\GetMyPosts;
+use Blogging\Contract\GetSinglePost;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-final readonly class GetMyPostsController
+final readonly class ReadBlogPostController
 {
-    public const ROUTE = 'blog';
-
     public function __construct(
-        private GetMyPosts $query,
+        private GetSinglePost $query,
         private Request $request,
         private ResponseFactory $response,
     ) {}
 
-    public function __invoke(): Response
+    public function __invoke(string $slug): Response
     {
-        $posts = $this->query->get();
+        $post = $this->query->get($slug);
 
         if ($this->request->expectsJson()) {
-            return $this->response->json($posts);
+            return $this->response->json($post);
         }
 
-        return $this->response->view('Blog::GetMyPosts', ['posts' => $posts]);
+        return $this->response->view('read-blog-post', ['post' => $post]);
     }
 }

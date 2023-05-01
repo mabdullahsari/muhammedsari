@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\UserInterface\Http\Site\View\Components;
+namespace App\UserInterface\Http\Site\View;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -8,20 +8,17 @@ use Illuminate\View\Component;
 final class Page extends Component
 {
     public const NAME = 'page';
+    private const DELIMITER = ' - ';
 
     public function __construct(
-        private readonly ?string $description = null,
+        public readonly string $description,
+        private readonly string $suffix,
         private readonly ?string $name = null,
     ) {}
 
-    public function description(): string
-    {
-        return $this->description ?? config('feed.feeds.main.description');
-    }
-
     public function title(): string
     {
-        return implode(' - ', array_filter([$this->name, config('app.name')]));
+        return implode(self::DELIMITER, array_filter([$this->name, $this->suffix]));
     }
 
     public function render(): View

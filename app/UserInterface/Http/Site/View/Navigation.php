@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\UserInterface\Http\Site\View\Components;
+namespace App\UserInterface\Http\Site\View;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Fluent;

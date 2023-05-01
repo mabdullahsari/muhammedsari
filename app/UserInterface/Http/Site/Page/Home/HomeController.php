@@ -13,6 +13,6 @@ final readonly class HomeController
 
     public function index(): View
     {
-        return $this->view->make('Home::Index');
+        return $this->view->make('home');
     }
 }

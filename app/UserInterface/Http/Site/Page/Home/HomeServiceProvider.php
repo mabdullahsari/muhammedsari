@@ -14,9 +14,4 @@ final class HomeServiceProvider extends ServiceProvider
             $router->middleware(BeautifyHtml::MIDDLEWARE)->group($this->app->basePath('routes/home.php'));
         }
     }
-
-    public function register(): void
-    {
-        $this->loadViewsFrom(__DIR__, 'Home');
-    }
 }

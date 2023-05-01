@@ -13,6 +13,6 @@ final readonly class AboutController
 
     public function index(): View
     {
-        return $this->view->make('About::Index');
+        return $this->view->make('about');
     }
 }

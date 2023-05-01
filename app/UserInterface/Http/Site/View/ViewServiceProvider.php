@@ -2,8 +2,6 @@
 
 namespace App\UserInterface\Http\Site\View;
 
-use App\UserInterface\Http\Site\View\Components\Navigation;
-use App\UserInterface\Http\Site\View\Components\Page;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
 
@@ -26,6 +24,8 @@ final class ViewServiceProvider extends ServiceProvider
 
     private function registerPage(): void
     {
+        $this->app->when(Page::class)->needs('$description')->giveConfig('feed.feeds.main.description');
+        $this->app->when(Page::class)->needs('$suffix')->giveConfig('app.name');
         $this->app->resolving('blade.compiler', static function (BladeCompiler $blade) {
             $blade->component(Page::class, Page::NAME);
         });

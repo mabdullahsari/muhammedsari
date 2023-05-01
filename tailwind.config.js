@@ -1,5 +1,5 @@
 module.exports = {
-    content: ['./app/UI/Http/Site/**/*.blade.php'],
+    content: ['./resources/views/**/*.blade.php'],
     theme: {
         extend: {},
     },

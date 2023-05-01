@@ -18,7 +18,7 @@
     @include('social.person')
     @stack('seo')
     <!-- Stylesheets -->
-    @vite('app/UI/Http/Site/Style/site.css')
+    @vite('resources/css/site.css')
     @stack('styles')
 </head>
 <body class="bg-zinc-900 font-sans leading-normal text-zinc-300/80">
