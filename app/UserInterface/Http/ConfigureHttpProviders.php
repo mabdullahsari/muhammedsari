@@ -13,7 +13,7 @@ final readonly class ConfigureHttpProviders
 {
     public function bootstrap(Application $app): void
     {
-        $path = ltrim($app[Request::class]->getPathInfo(), DIRECTORY_SEPARATOR);
+        $path = $app[Request::class]->path();
 
         $config = $app[Repository::class];
 

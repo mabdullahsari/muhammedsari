@@ -2,6 +2,7 @@
 
 namespace App\UserInterface\Http\Site\View;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\AggregateServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
 
@@ -32,6 +33,7 @@ final class ViewServiceProvider extends AggregateServiceProvider
     {
         $this->app->when(Navigation::class)->needs('$home')->giveConfig('app.url');
         $this->app->when(Navigation::class)->needs('$name')->giveConfig('app.name');
+        $this->app->when(Navigation::class)->needs('$request')->give(fn () => $this->app->make(Request::class)->path());
         $this->app->resolving('blade.compiler', static function (BladeCompiler $blade) {
             $blade->component(Navigation::class, Navigation::NAME);
         });

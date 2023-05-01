@@ -6,7 +6,7 @@
 
         <ul class="inline-flex items-center space-x-5">
             @foreach($items as $item)
-            <x-navigation.item :label="$item->label" :path="$item->path" />
+            <x-navigation.item :active="$item->active" :label="$item->label" :path="$item->path" />
             @endforeach
         </ul>
     </nav>
