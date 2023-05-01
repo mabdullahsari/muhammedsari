@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-use App\UI\Http\Site\Page\Tag\TagController;
+use App\UserInterface\Http\Site\Page\Tag\TagController;
 
 /** @var \Illuminate\Routing\Router $router */
 $router

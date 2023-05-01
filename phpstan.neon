@@ -14,5 +14,5 @@ parameters:
     checkGenericClassInNonGenericObjectType: false
 
     ignoreErrors:
-        - '#Method App\\UI\\Http\\Site\\View\\Components\\Page::description\(\) should return string but returns mixed#'
+        - '#Method App\\UserInterface\\Http\\Site\\View\\Components\\Page::description\(\) should return string but returns mixed#'
         - '#Parameter \#2 \$needle of function str_starts_with expects string, mixed given.#'

@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 
-use App\UI\Http\Site\Page\Blog\GetMyPostsController;
-use App\UI\Http\Site\Page\Blog\GetSinglePostController;
+use App\UserInterface\Http\Site\Page\Blog\GetMyPostsController;
+use App\UserInterface\Http\Site\Page\Blog\GetSinglePostController;
 
 /** @var \Illuminate\Routing\Router $router */
 $router
