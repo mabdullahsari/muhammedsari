@@ -9,6 +9,7 @@ final class AdminServiceProvider extends AggregateServiceProvider
     protected $providers = [
         \App\AppServiceProvider::class,
         \Blogging\BloggingServiceProvider::class,
+        \Contacting\ContactingServiceProvider::class,
         \Monitoring\MonitoringServiceProvider::class,
         \Publishing\PublishingServiceProvider::class,
         \Scheduling\SchedulingServiceProvider::class,

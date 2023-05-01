@@ -31,6 +31,7 @@ final class WebReachabilityTest extends KernelTestCase
         return [
             ['about'],
             ['blog'],
+            ['contact'],
             ['tags/hello-world'],
             ['tags'],
             [''],

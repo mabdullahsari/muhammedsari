@@ -1,5 +1,6 @@
 <?php declare(strict_types=1);
 
+use App\UserInterface\Http\Admin\Contact\ContactForm\ContactForm;
 use App\UserInterface\Http\Admin\Blog\Post\Post;
 use App\UserInterface\Http\Admin\Blog\Tag\Tag;
 use App\UserInterface\Http\Admin\General\ApplicationHealth;
@@ -123,6 +124,7 @@ return [
         'namespace' => 'App\\Filament\\Resources',
         'path' => app_path('Filament/Resources'),
         'register' => [
+            ContactForm::class,
             Post::class,
             Publication::class,
             Tag::class,

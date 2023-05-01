@@ -4,11 +4,15 @@ namespace App\UserInterface\Http\Site\Page\Contact;
 
 use App\UserInterface\Http\Site\View\Navigation;
 use Illuminate\Routing\Router;
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\AggregateServiceProvider;
 
-final class ContactServiceProvider extends ServiceProvider
+final class ContactServiceProvider extends AggregateServiceProvider
 {
     public const NAME = 'Contact';
+
+    protected $providers = [
+        \Contacting\ContactingServiceProvider::class,
+    ];
 
     public function boot(Router $router): void
     {

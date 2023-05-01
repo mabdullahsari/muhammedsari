@@ -43,6 +43,7 @@ final class AdminReachabilityTest extends KernelTestCase
             ['admin/blog/posts/create'],
             ['admin/blog/tags'],
             ['admin/blog/tags/create'],
+            ['admin/contact/form-submissions'],
             ['admin/application-health'],
             ['admin/schedule/publications'],
             ['admin/schedule/publications/create'],
