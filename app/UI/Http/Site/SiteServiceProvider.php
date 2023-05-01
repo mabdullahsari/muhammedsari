@@ -9,7 +9,7 @@ final class SiteServiceProvider extends AggregateServiceProvider
 {
     protected $providers = [
         \Publishing\PublishingServiceProvider::class,
-        \Html\HtmlServiceProvider::class,
+        \HtmlBeautifier\HtmlBeautifierServiceProvider::class,
 
         \App\AppServiceProvider::class,
         \App\UI\Http\RouteServiceProvider::class,

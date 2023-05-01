@@ -3,7 +3,7 @@
 namespace App\UI\Http\Site\Page\Blog;
 
 use App\UI\Http\Site\View\Components\Navigation;
-use Html\Contract\BeautifyHtml;
+use HtmlBeautifier\Contract\BeautifyHtml;
 use Illuminate\Routing\Router;
 use Illuminate\Support\AggregateServiceProvider;
 
@@ -21,7 +21,7 @@ final class BlogServiceProvider extends AggregateServiceProvider
         Navigation::register(self::NAME, GetMyPostsController::ROUTE, 1);
 
         if (! $this->app->routesAreCached()) {
-            $router->middleware(BeautifyHtml::NAME)->group($this->app->basePath('routes/blog.php'));
+            $router->middleware(BeautifyHtml::MIDDLEWARE)->group($this->app->basePath('routes/blog.php'));
         }
     }
 

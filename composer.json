@@ -37,7 +37,7 @@
             "Clock\\": "src/Clock",
             "Database\\": "database/",
             "Database\\Seeders\\": "database/seeders",
-            "Html\\": "src/Html",
+            "HtmlBeautifier\\": "src/HtmlBeautifier",
             "Identity\\": "src/Identity",
             "Monitoring\\": "src/Monitoring",
             "Publishing\\": "src/Publishing",

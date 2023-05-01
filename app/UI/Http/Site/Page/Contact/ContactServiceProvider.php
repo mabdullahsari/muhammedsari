@@ -3,7 +3,7 @@
 namespace App\UI\Http\Site\Page\Contact;
 
 use App\UI\Http\Site\View\Components\Navigation;
-use Html\Contract\BeautifyHtml;
+use HtmlBeautifier\Contract\BeautifyHtml;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 
@@ -16,7 +16,7 @@ final class ContactServiceProvider extends ServiceProvider
         Navigation::register(self::NAME, ContactController::INDEX, 2);
 
         if (! $this->app->routesAreCached()) {
-            $router->middleware(BeautifyHtml::NAME)->group($this->app->basePath('routes/contact.php'));
+            $router->middleware(BeautifyHtml::MIDDLEWARE)->group($this->app->basePath('routes/contact.php'));
         }
     }
 
