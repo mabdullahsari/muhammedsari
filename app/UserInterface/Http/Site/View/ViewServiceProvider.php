@@ -9,8 +9,17 @@ final class ViewServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
+        $this->registerFooter();
         $this->registerNavigation();
         $this->registerPage();
+    }
+
+    private function registerFooter(): void
+    {
+        $this->app->when(Footer::class)->needs('$name')->giveConfig('app.name');
+        $this->app->resolving('blade.compiler', static function (BladeCompiler $blade) {
+            $blade->component(Footer::class, Footer::NAME);
+        });
     }
 
     private function registerNavigation(): void
