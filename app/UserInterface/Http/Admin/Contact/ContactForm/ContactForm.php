@@ -35,6 +35,11 @@ final class ContactForm extends Resource
         ]);
     }
 
+    protected static function getNavigationBadge(): ?string
+    {
+        return (string) \Contacting\ContactForm::query()->count() ?: null;
+    }
+
     public static function getPluralModelLabel(): string
     {
         return 'Form submissions';

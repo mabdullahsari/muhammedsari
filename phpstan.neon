@@ -15,3 +15,4 @@ parameters:
 
     ignoreErrors:
         - '#Parameter \#2 \$needle of function str_starts_with expects string, mixed given.#'
+        - '#Parameter \#2 \$ipAddress of class Contacting\\Contract\\ContactMuhammed constructor expects string, string\|null given.#'

@@ -12,11 +12,12 @@ final class ContactServiceProvider extends AggregateServiceProvider
 
     protected $providers = [
         \Contacting\ContactingServiceProvider::class,
+        \Spatie\Honeypot\HoneypotServiceProvider::class,
     ];
 
     public function boot(Router $router): void
     {
-        Navigation::register(self::NAME, ContactController::INDEX, 2);
+        Navigation::register(self::NAME, ViewContactFormController::ROUTE, 2);
 
         if (! $this->app->routesAreCached()) {
             $router->group([], $this->app->basePath('routes/contact.php'));

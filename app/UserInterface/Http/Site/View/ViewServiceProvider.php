@@ -10,6 +10,7 @@ final class ViewServiceProvider extends AggregateServiceProvider
 {
     protected $providers = [
         \BladeUI\Icons\BladeIconsServiceProvider::class,
+        \Clock\ClockServiceProvider::class,
     ];
 
     public function register(): void
