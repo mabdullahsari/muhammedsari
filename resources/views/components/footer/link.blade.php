@@ -4,7 +4,7 @@
    title="{{ $label }}"
    aria-label="{{ $label }}"
    target="_blank" rel="noopener noreferrer"
-   {{ $attributes->class('ml-4 transition-colors') }}
+   {{ $attributes->class('ml-4 rounded-xl transition-colors outline-offset-8 outline-2 focus:outline') }}
 >
     <x-icon :name="strtolower($label)" />
 </a>
