@@ -2,6 +2,7 @@
 
 namespace Blogging;
 
+use Blogging\Contract\GetAllTags;
 use Blogging\Contract\GetMyPosts;
 use Blogging\Contract\GetSinglePost;
 use Blogging\Contract\PublishPost;
@@ -12,6 +13,7 @@ use Illuminate\Support\AggregateServiceProvider;
 final class BloggingServiceProvider extends AggregateServiceProvider
 {
     public array $singletons = [
+        GetAllTags::class => GetAllTagsUsingEloquent::class,
         GetMyPosts::class => GetMyPostsUsingEloquent::class,
         GetSinglePost::class => GetSinglePostUsingEloquent::class,
     ];

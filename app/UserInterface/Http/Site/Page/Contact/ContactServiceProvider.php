@@ -17,7 +17,7 @@ final class ContactServiceProvider extends AggregateServiceProvider
 
     public function boot(Router $router): void
     {
-        Navigation::register(self::NAME, ViewContactFormController::ROUTE, 2);
+        Navigation::register(self::NAME, ViewContactFormController::ROUTE);
 
         if (! $this->app->routesAreCached()) {
             $router->group([], $this->app->basePath('routes/contact.php'));

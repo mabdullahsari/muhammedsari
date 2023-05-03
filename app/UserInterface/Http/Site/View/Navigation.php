@@ -19,9 +19,9 @@ final class Navigation extends Component
         private readonly string $request,
     ) {}
 
-    public static function register(string $name, string $path, int $priority): void
+    public static function register(string $name, string $path): void
     {
-        self::$items[$priority] = new Fluent(['active' => false, 'label' => $name, 'path' => $path]);
+        self::$items[] = new Fluent(['active' => false, 'label' => $name, 'path' => $path]);
     }
 
     public function items(): array
@@ -31,7 +31,7 @@ final class Navigation extends Component
             $item->path = DIRECTORY_SEPARATOR . $item->path;
         }
 
-        return array_values(self::$items);
+        return self::$items;
     }
 
     public function render(): View

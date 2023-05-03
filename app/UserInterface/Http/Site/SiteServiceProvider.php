@@ -15,8 +15,8 @@ final class SiteServiceProvider extends AggregateServiceProvider
         \App\UserInterface\Http\Site\View\ViewServiceProvider::class,
 
         Page\About\AboutServiceProvider::class,
+        Page\Tags\TagsServiceProvider::class,
         Page\Contact\ContactServiceProvider::class,
-        Page\Tag\TagServiceProvider::class,
         Page\Blog\BlogServiceProvider::class,
     ];
 

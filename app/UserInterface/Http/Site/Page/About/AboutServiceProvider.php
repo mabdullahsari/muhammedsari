@@ -12,7 +12,7 @@ final class AboutServiceProvider extends ServiceProvider
 
     public function boot(Router $router): void
     {
-        Navigation::register(self::NAME, AboutController::INDEX, 0);
+        Navigation::register(self::NAME, AboutController::INDEX);
 
         if (! $this->app->routesAreCached()) {
             $router->group([], $this->app->basePath('routes/about.php'));

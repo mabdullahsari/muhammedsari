@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\UserInterface\Http\Site\Page\Tag;
+namespace App\UserInterface\Http\Site\Page\Tags;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;

@@ -26,7 +26,6 @@ final readonly class GetMyPostsUsingEloquent implements GetMyPosts
                     $p->tags->map(static fn (Tag $t) => new TagViewModel($t->slug, $t->name))->all(),
                     $p->title,
                 );
-            })
-            ->toBase();
+            });
     }
 }
