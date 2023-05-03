@@ -15,6 +15,6 @@ final class PostUrlGeneratorTest extends TestCase
 
         $url = $generator->generate($slug = 'never-gonna-give-you-up');
 
-        $this->assertSame("{$hostAndScheme}/blog/{$slug}", $url);
+        $this->assertSame("{$hostAndScheme}/{$slug}", $url);
     }
 }

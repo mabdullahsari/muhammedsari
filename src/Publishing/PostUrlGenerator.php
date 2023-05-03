@@ -8,6 +8,6 @@ final readonly class PostUrlGenerator implements UrlGenerator
 
     public function generate(string $slug): string
     {
-        return "{$this->hostAndScheme}/blog/{$slug}";
+        return "{$this->hostAndScheme}/{$slug}";
     }
 }

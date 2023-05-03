@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 final readonly class ViewBlogController
 {
-    public const ROUTE = 'blog';
+    public const ROUTE = DIRECTORY_SEPARATOR;
 
     public function __construct(
         private GetMyPosts $query,

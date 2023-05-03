@@ -5,7 +5,7 @@ use App\UserInterface\Http\Site\Page\Blog\ReadBlogPostController;
 
 /** @var \Illuminate\Routing\Router $router */
 $router
-    ->get(ViewBlogController::ROUTE . DIRECTORY_SEPARATOR . '{slug}', ReadBlogPostController::class)
+    ->get('{slug}', ReadBlogPostController::class)
     ->where('slug', '[a-z0-9]+(?:-[a-z0-9]+)*')
     ->name('blog.post');
 

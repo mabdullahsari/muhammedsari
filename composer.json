@@ -89,6 +89,7 @@
                 "spatie/filament-markdown-editor",
                 "spatie/laravel-feed",
                 "spatie/laravel-health",
+                "spatie/laravel-honeypot",
                 "spatie/laravel-markdown",
                 "spatie/laravel-route-attributes"
             ]

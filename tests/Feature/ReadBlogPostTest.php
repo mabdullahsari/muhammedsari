@@ -6,7 +6,7 @@ use Blogging\PostFactory;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
 
-final class GetSinglePostTest extends KernelTestCase
+final class ReadBlogPostTest extends KernelTestCase
 {
     protected function setUp(): void
     {
@@ -21,7 +21,7 @@ final class GetSinglePostTest extends KernelTestCase
         $post = PostFactory::new()->createQuietly();
 
         // Act
-        $response = $this->get("blog/{$post->slug}");
+        $response = $this->get($post->slug);
 
         // Assert
         $response
@@ -36,7 +36,7 @@ final class GetSinglePostTest extends KernelTestCase
         $post = PostFactory::new()->published()->createQuietly();
 
         // Act
-        $response = $this->getJson("blog/{$post->slug}");
+        $response = $this->getJson($post->slug);
 
         // Assert
         $response

@@ -7,7 +7,7 @@ use Illuminate\Testing\Fluent\AssertableJson;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
 
-final class GetMyPostsTest extends KernelTestCase
+final class BlogTest extends KernelTestCase
 {
     protected function setUp(): void
     {
@@ -24,7 +24,7 @@ final class GetMyPostsTest extends KernelTestCase
         [$publishedA, $publishedB] = PostFactory::times(2)->published()->createQuietly();
 
         // Act
-        $response = $this->get('blog');
+        $response = $this->get(DIRECTORY_SEPARATOR);
 
         // Assert
         $response
@@ -43,7 +43,7 @@ final class GetMyPostsTest extends KernelTestCase
         PostFactory::new()->published()->createQuietly();
 
         // Act
-        $response = $this->getJson('blog');
+        $response = $this->getJson(DIRECTORY_SEPARATOR);
 
         // Assert
         $response->assertOk()->assertJson(static function (AssertableJson $json) {

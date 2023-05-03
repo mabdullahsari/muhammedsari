@@ -15,10 +15,9 @@ final class SiteServiceProvider extends AggregateServiceProvider
         \App\UserInterface\Http\Site\View\ViewServiceProvider::class,
 
         Page\About\AboutServiceProvider::class,
-        Page\Blog\BlogServiceProvider::class,
         Page\Contact\ContactServiceProvider::class,
         Page\Tag\TagServiceProvider::class,
-        Page\Home\HomeServiceProvider::class,
+        Page\Blog\BlogServiceProvider::class,
     ];
 
     public function boot(Router $router): void
