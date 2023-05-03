@@ -13,15 +13,14 @@ final readonly class ViewBlogController
 
     public function __construct(
         private GetMyPosts $query,
-        private Request $request,
         private ResponseFactory $response,
     ) {}
 
-    public function __invoke(): Response
+    public function __invoke(Request $request): Response
     {
         $posts = $this->query->get();
 
-        if ($this->request->expectsJson()) {
+        if ($request->expectsJson()) {
             return $this->response->json($posts);
         }
 

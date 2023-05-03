@@ -11,15 +11,12 @@ final readonly class ViewContactFormController
     public const ROUTE = 'contact';
     public const SUCCESS = 'success';
 
-    public function __construct(
-        private Request $request,
-        private Factory $view,
-    ) {}
+    public function __construct(private Factory $view) {}
 
-    public function __invoke(): View
+    public function __invoke(Request $request): View
     {
         return $this->view->make('contact', [
-            'didSubmit' => $this->request->boolean(self::SUCCESS),
+            'didSubmit' => $request->boolean(self::SUCCESS),
         ]);
     }
 }

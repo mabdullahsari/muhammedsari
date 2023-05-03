@@ -13,14 +13,13 @@ final readonly class SubmitContactFormController
 {
     public function __construct(
         private Dispatcher $commands,
-        private Request $request,
         private ResponseFactory $response,
         private Factory $validator,
     ) {}
 
-    public function __invoke(): RedirectResponse
+    public function __invoke(Request $request): RedirectResponse
     {
-        $input = $this->validator->make($this->request->all(), [
+        $input = $this->validator->make($request->all(), [
             'email' => ['required', 'email', 'min:2', 'max:255'],
             'message' => ['required', 'string', 'min:10', 'max:1000'],
             'name' => ['required', 'string', 'min:2', 'max:255'],
@@ -29,7 +28,7 @@ final readonly class SubmitContactFormController
         $this->commands->dispatchSync(
             new ContactMuhammed(
                 $input['email'],
-                $this->request->ip(),
+                $request->ip(),
                 $input['message'],
                 $input['name'],
             )
