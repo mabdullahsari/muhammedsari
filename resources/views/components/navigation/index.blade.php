@@ -4,7 +4,21 @@
             <a href="{{ $home }}" class="block outline-none hover:text-zinc-200 focus:text-zinc-200">{{ $name }}</a>
         </div>
 
-        <ul class="inline-flex items-center space-x-5">
+        <div class="pl-5 relative sm:hidden">
+            <button id="hamburger" aria-label="menu" class="block cursor-pointer p-2 bg-zinc-800 rounded-lg">
+                <x-icon name="o-bars-3" />
+            </button>
+
+            <div class="hidden absolute top-10 right-0 shadow-lg bg-zinc-700 rounded-lg p-1 max-w-[280px] min-w-[120px] sm:static sm:block">
+                <ul>
+                    @foreach($items as $item)
+                    <x-navigation.mobile :label="$item->label" :path="$item->path" />
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+
+        <ul class="hidden space-x-5 sm:inline-flex sm:items-center">
             @foreach($items as $item)
             <x-navigation.item :active="$item->active" :label="$item->label" :path="$item->path" />
             @endforeach

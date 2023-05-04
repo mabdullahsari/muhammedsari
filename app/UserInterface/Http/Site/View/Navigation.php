@@ -24,18 +24,18 @@ final class Navigation extends Component
         self::$items[] = new Fluent(['active' => false, 'label' => $name, 'path' => $path]);
     }
 
-    public function items(): array
+    private function activate(): void
     {
         foreach (self::$items as $item) {
             $item->active = Str::is("{$item->path}*", $this->request);
             $item->path = DIRECTORY_SEPARATOR . $item->path;
         }
-
-        return self::$items;
     }
 
     public function render(): View
     {
-        return $this->view('components.navigation.index');
+        $this->activate();
+
+        return $this->view('components.navigation.index', ['items' => self::$items]);
     }
 }
