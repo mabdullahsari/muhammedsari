@@ -1,6 +1,6 @@
 <x-page name="Contact" class="md:flex">
     <div class="hidden md:items-center md:2-2/5 md:flex">
-        <img alt="Floating head jar" src="{{ asset('/img/head-jar.png') }}" width="250" class="animate-float" />
+        <img alt="Floating head jar" src="{{ asset('/img/head-jar.png') }}" width="300" class="animate-float" />
     </div>
 
     <div class="md:w-3/5">
@@ -8,6 +8,8 @@
 
         @if($didSubmit)
         <x-intro>Thank you! I have received your message.</x-intro>
+
+        <img alt="Floating head jar" src="{{ asset('/img/head-jar.png') }}" width="200" class="mt-10 mx-auto md:hidden" />
         @else
         <x-intro>Say hi! Get in touch using the form below.</x-intro>
 
