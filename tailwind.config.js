@@ -3,7 +3,7 @@ module.exports = {
     theme: {
         extend: {
             animation: {
-                float: 'float 10s ease-in-out infinite',
+                float: 'float 7s ease-in-out infinite',
             },
             keyframes: {
                 float: {

@@ -9,6 +9,7 @@
 /public/vendor
 /storage/*.key
 /vendor
+.DS_Store
 .env
 .env.backup
 /.phpunit.cache

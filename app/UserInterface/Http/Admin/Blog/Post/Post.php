@@ -45,7 +45,7 @@ final class Post extends Resource
             TextInput::make('summary')
                 ->default('')
                 ->columnSpan(2)
-                ->maxLength(100),
+                ->maxLength(255),
             CheckboxList::make('tags')
                 ->relationship('tags', 'name'),
         ]);

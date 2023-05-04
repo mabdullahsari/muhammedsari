@@ -57,7 +57,7 @@ final class Post extends Model
     /** @throws CouldNotFindPost */
     public function find(int $id): self
     {
-        $post = $this->newQuery()->first();
+        $post = $this->newQuery()->find($id);
 
         if (! $post instanceof self) {
             throw CouldNotFindPost::withId($id);
