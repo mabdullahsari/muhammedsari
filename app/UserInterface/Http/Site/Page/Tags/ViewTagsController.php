@@ -14,6 +14,6 @@ final readonly class ViewTagsController
 
     public function __invoke(): View
     {
-        return $this->view->make('tags', ['tags' => $this->tags->get()]);
+        return $this->view->make('view-tags', ['tags' => $this->tags->get()]);
     }
 }

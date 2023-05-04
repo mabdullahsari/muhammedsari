@@ -24,6 +24,6 @@ final readonly class ViewBlogController
             return $this->response->json($posts);
         }
 
-        return $this->response->view('blog', ['posts' => $posts]);
+        return $this->response->view('view-blog', ['posts' => $posts]);
     }
 }

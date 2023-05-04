@@ -4,7 +4,9 @@ namespace Blogging;
 
 use Blogging\Contract\GetAllTags;
 use Blogging\Contract\GetMyPosts;
+use Blogging\Contract\GetMyPostsByTag;
 use Blogging\Contract\GetSinglePost;
+use Blogging\Contract\GetSingleTag;
 use Blogging\Contract\PublishPost;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Bus\Dispatcher;
@@ -15,7 +17,9 @@ final class BloggingServiceProvider extends AggregateServiceProvider
     public array $singletons = [
         GetAllTags::class => GetAllTagsUsingEloquent::class,
         GetMyPosts::class => GetMyPostsUsingEloquent::class,
+        GetMyPostsByTag::class => GetMyPostsByTagUsingEloquent::class,
         GetSinglePost::class => GetSinglePostUsingEloquent::class,
+        GetSingleTag::class => GetSingleTagUsingEloquent::class,
     ];
 
     protected $providers = [
