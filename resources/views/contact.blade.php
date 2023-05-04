@@ -1,39 +1,45 @@
-<x-page name="Contact">
-    <x-heading class="mb-10">Contact</x-heading>
+<x-page name="Contact" class="md:flex">
+    <div class="hidden md:items-center md:2-2/5 md:flex">
+        <img alt="Floating head jar" src="{{ asset('/img/head-jar.png') }}" width="250" class="animate-float" />
+    </div>
 
-    @if($didSubmit)
-    <x-intro>Thank you! I have received your message.</x-intro>
-    @else
-    <x-intro>Say hi! Get in touch using the form below.</x-intro>
+    <div class="md:w-3/5">
+        <x-heading class="mb-10">Contact</x-heading>
 
-    <x-form class="mt-16 space-y-8 max-w-md">
-        <x-form.input
-            autocomplete="given-name"
-            label="Name"
-            name="name"
-            minlength="2"
-            maxlength="255"
-        />
+        @if($didSubmit)
+        <x-intro>Thank you! I have received your message.</x-intro>
+        @else
+        <x-intro>Say hi! Get in touch using the form below.</x-intro>
 
-        <x-form.input
-            autocomplete="email"
-            label="Email address"
-            name="email"
-            type="email"
-            minlength="2"
-            maxlength="255"
-        />
+        <x-form class="mt-16 space-y-8 max-w-md">
+            <x-form.input
+                autocomplete="given-name"
+                label="Name"
+                name="name"
+                minlength="2"
+                maxlength="255"
+            />
 
-        <x-form.text
-            label="Message"
-            name="message"
-            minlength="10"
-            maxlength="1000"
-        />
+            <x-form.input
+                autocomplete="email"
+                label="Email address"
+                name="email"
+                type="email"
+                minlength="2"
+                maxlength="255"
+            />
 
-        <x-honeypot />
+            <x-form.text
+                label="Message"
+                name="message"
+                minlength="10"
+                maxlength="1000"
+            />
 
-        <x-form.submit class="ml-auto" />
-    </x-form>
-    @endif
+            <x-honeypot />
+
+            <x-form.submit class="ml-auto" />
+        </x-form>
+        @endif
+    </div>
 </x-page>
