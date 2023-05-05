@@ -21,21 +21,20 @@ final class Navigation extends Component
 
     public static function register(string $name, string $path): void
     {
-        self::$items[] = new Fluent(['active' => false, 'label' => $name, 'path' => $path]);
+        self::$items[] = ['name' => $name, 'path' => $path];
     }
 
-    private function activate(): void
+    public function items(): array
     {
-        foreach (self::$items as $item) {
-            $item->active = Str::is("{$item->path}*", $this->request);
-            $item->path = DIRECTORY_SEPARATOR . $item->path;
-        }
+        return array_map(fn (array $route) => new Fluent([
+            'active' => Str::is("{$route['path']}*", $this->request),
+            'label' => $route['name'],
+            'url' => $this->home . DIRECTORY_SEPARATOR . $route['path'],
+        ]), self::$items);
     }
 
     public function render(): View
     {
-        $this->activate();
-
-        return $this->view('components.navigation.index', ['items' => self::$items]);
+        return $this->view('components.navigation');
     }
 }

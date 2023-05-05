@@ -1,4 +1,6 @@
 <x-page name="Blog">
+    <x-heading class="sr-only">Blog</x-heading>
+
     @foreach($posts as $post)
     <x-blog.post
         :published-at="$post->publishedAt"

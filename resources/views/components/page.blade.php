@@ -28,6 +28,7 @@
 
         <x-footer />
     </div>
+    @stack('modals')
     <!-- Scripts -->
     @stack('scripts')
 </body>
