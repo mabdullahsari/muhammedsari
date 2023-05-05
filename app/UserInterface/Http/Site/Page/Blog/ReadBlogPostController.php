@@ -10,19 +10,19 @@ use Symfony\Component\HttpFoundation\Response;
 final readonly class ReadBlogPostController
 {
     public function __construct(
-        private GetSinglePost $query,
+        private GetSinglePost $posts,
         private Request $request,
         private ResponseFactory $response,
     ) {}
 
     public function __invoke(string $slug): Response
     {
-        $post = $this->query->get($slug);
+        $post = $this->posts->get($slug);
 
         if ($this->request->expectsJson()) {
             return $this->response->json($post);
         }
 
-        return $this->response->view('read-blog-post', ['post' => $post]);
+        return $this->response->view('read-blog-post', $post->toArray());
     }
 }

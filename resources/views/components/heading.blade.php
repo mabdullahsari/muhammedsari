@@ -1,6 +1,6 @@
-@props(['level' => 1])
+@props(['as' => null, 'level' => 1])
 
-<h{{ $level }} {{ $attributes->class(['text-white font-bold', match ((int) $level) {
+<h{{ $level }} {{ $attributes->class(['text-white font-bold', match ((int) ($as ?? $level)) {
     2 => 'text-3xl',
-    default => 'text-5xl md:text-7xl'
+    default => 'text-3xl md:text-7xl'
 }]) }}>{{ $slot }}</h{{ $level }}>

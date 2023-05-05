@@ -3,9 +3,10 @@
 namespace Blogging\Contract;
 
 use Carbon\CarbonImmutable;
+use Illuminate\Contracts\Support\Arrayable;
 use JsonSerializable;
 
-final readonly class Post implements JsonSerializable
+final readonly class Post implements Arrayable, JsonSerializable
 {
     public function __construct(
         public string $body,
@@ -26,5 +27,10 @@ final readonly class Post implements JsonSerializable
             'tags' => $this->tags,
             'title' => $this->title,
         ];
+    }
+
+    public function toArray(): array
+    {
+        return get_object_vars($this);
     }
 }
