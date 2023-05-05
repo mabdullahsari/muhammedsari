@@ -1,6 +1,6 @@
 <x-page name="Contact" class="md:flex">
-    <div class="hidden md:items-center md:2-2/5 md:flex">
-        <img alt="Floating head jar" src="{{ asset('/img/head-jar.png') }}" width="300" class="animate-float" />
+    <div class="hidden md:items-start md:2-2/5 md:flex">
+        <img alt="Floating head jar" src="{{ asset('/img/head-jar.png') }}" width="300" class="animate-headjar" />
     </div>
 
     <div class="md:w-3/5">
