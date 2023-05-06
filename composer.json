@@ -41,6 +41,7 @@
             "Database\\Seeders\\": "database/seeders",
             "Identity\\": "src/Identity",
             "Monitoring\\": "src/Monitoring",
+            "Notifying\\": "src/Notifying",
             "Publishing\\": "src/Publishing",
             "Scheduling\\": "src/Scheduling",
             "SharedKernel\\": "src/SharedKernel"

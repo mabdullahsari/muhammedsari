@@ -2,8 +2,10 @@
 
 namespace Contacting;
 
+use Contacting\Contract\MuhammedContacted;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use SharedKernel\RecordsEvents;
 
 /**
  * @property string $email
@@ -14,6 +16,7 @@ use Illuminate\Database\Eloquent\Model;
 final class ContactForm extends Model
 {
     use HasFactory;
+    use RecordsEvents;
 
     protected $guarded = [];
 
@@ -21,7 +24,13 @@ final class ContactForm extends Model
 
     public static function submit(string $email, string $ipAddress, string $message, string $name): self
     {
-        return new self(['email' => $email, 'ip_address' => $ipAddress, 'message' => $message, 'name' => $name]);
+        $form = new self(['email' => $email, 'ip_address' => $ipAddress, 'message' => $message, 'name' => $name]);
+
+        $form->recordThat(
+            new MuhammedContacted($email, $message, $name)
+        );;
+
+        return $form;
     }
 
     public function getUpdatedAtColumn(): null
