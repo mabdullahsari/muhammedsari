@@ -4,5 +4,6 @@
 
 /** Reset */
 i {
+    display: block;
     font-style: normal;
 }
