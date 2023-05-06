@@ -2,17 +2,19 @@
 
 namespace Publishing\Twitter;
 
+use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Publishing\Contract\TweetSent;
 use Publishing\UrlGenerator;
 
 final readonly class SendTweetAboutNewPost implements ShouldQueue
 {
     use Dispatchable;
 
-    public function __construct(private string $slug, private array $tags, private string $title) {}
+    public function __construct(private int $id, private string $slug, private array $tags, private string $title) {}
 
-    public function handle(Twitter $twitter, UrlGenerator $url): void
+    public function handle(Dispatcher $events, Twitter $twitter, UrlGenerator $url): void
     {
         $tweet = TweetBuilder::create("I've just published")
             ->useEmoji('✍️')
@@ -21,6 +23,8 @@ final readonly class SendTweetAboutNewPost implements ShouldQueue
             ->useHashtags($this->tags)
             ->get();
 
-        $twitter->send($tweet);
+        $url = $twitter->send($tweet);
+
+        $events->dispatch(new TweetSent($this->id, (string) $url));
     }
 }

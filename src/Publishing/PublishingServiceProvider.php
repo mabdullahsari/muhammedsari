@@ -6,6 +6,8 @@ use Illuminate\Support\AggregateServiceProvider;
 
 final class PublishingServiceProvider extends AggregateServiceProvider
 {
+    public const NAME = 'publishing';
+
     public array $singletons = [UrlGenerator::class => PostUrlGenerator::class];
 
     protected $providers = [
@@ -16,6 +18,8 @@ final class PublishingServiceProvider extends AggregateServiceProvider
 
     public function register(): void
     {
+        $this->mergeConfigFrom(__DIR__ . DIRECTORY_SEPARATOR . self::NAME . '.php', self::NAME);
+
         parent::register();
 
         $this->app->when(PostUrlGenerator::class)->needs('$hostAndScheme')->giveConfig('app.url');

@@ -19,8 +19,10 @@ final readonly class TwitterOAuth2 implements Twitter
         $this->connection->setApiVersion('2');
     }
 
-    public function send(Tweet $tweet): void
+    public function send(Tweet $tweet): TweetUrl
     {
-        $this->connection->post('tweets', ['text' => (string) $tweet], true);
+        $response = $this->connection->post('tweets', ['text' => (string) $tweet], true);
+
+        return TweetUrl::fromId($response->data->id); // @phpstan-ignore-line
     }
 }

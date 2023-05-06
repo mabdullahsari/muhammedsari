@@ -77,6 +77,12 @@ final class Post extends Model
         return $this->state->isPublished();
     }
 
+    public function appendToBody(string $text): void
+    {
+        $this->body = rtrim($this->body);
+        $this->body = $this->body . PHP_EOL . PHP_EOL . $text;
+    }
+
     /** @throws CouldNotPublish */
     public function publish(Clock $clock): void
     {

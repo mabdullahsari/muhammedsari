@@ -11,8 +11,10 @@ final class ArrayTwitter implements Twitter
         return $this->outbox;
     }
 
-    public function send(Tweet $tweet): void
+    public function send(Tweet $tweet): TweetUrl
     {
         $this->outbox[] = $tweet;
+
+        return TweetUrl::oneTwoThree();
     }
 }

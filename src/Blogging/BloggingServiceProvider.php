@@ -28,6 +28,8 @@ final class BloggingServiceProvider extends AggregateServiceProvider
 
     public function boot(): void
     {
+        $this->app['events']->subscribe(PublishingSubscriber::class);
+
         Post::observe(PostObserver::class);
     }
 

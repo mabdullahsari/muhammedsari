@@ -10,7 +10,7 @@ final class TwitterManager extends Manager implements Twitter
 {
     public function getDefaultDriver(): string
     {
-        $driver = $this->config->get('services.twitter.driver', 'array');
+        $driver = $this->config->get('publishing.twitter.driver', 'array');
 
         Assert::string($driver);
 
@@ -32,7 +32,7 @@ final class TwitterManager extends Manager implements Twitter
 
     protected function createOAuth2Driver(): TwitterOAuth2
     {
-        $config = $this->config->get('services.twitter.oauth2');
+        $config = $this->config->get('publishing.twitter.oauth2');
 
         Assert::isArray($config);
 
@@ -44,11 +44,11 @@ final class TwitterManager extends Manager implements Twitter
         );
     }
 
-    public function send(Tweet $tweet): void
+    public function send(Tweet $tweet): TweetUrl
     {
         /** @var Twitter $twitter */
         $twitter = $this->driver();
 
-        $twitter->send($tweet);
+        return $twitter->send($tweet);
     }
 }

@@ -4,5 +4,5 @@ namespace Publishing\Twitter;
 
 interface Twitter
 {
-    public function send(Tweet $tweet): void;
+    public function send(Tweet $tweet): TweetUrl;
 }

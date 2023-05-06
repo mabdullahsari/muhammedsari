@@ -14,6 +14,6 @@ final readonly class BloggingSubscriber
 
     private function whenPostPublished(PostPublished $event): void
     {
-        SendTweetAboutNewPost::dispatch($event->slug, $event->tags, $event->title);
+        SendTweetAboutNewPost::dispatch($event->id, $event->slug, $event->tags, $event->title);
     }
 }
