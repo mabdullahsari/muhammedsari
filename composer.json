@@ -42,7 +42,8 @@
             "Identity\\": "src/Identity",
             "Monitoring\\": "src/Monitoring",
             "Publishing\\": "src/Publishing",
-            "Scheduling\\": "src/Scheduling"
+            "Scheduling\\": "src/Scheduling",
+            "SharedKernel\\": "src/SharedKernel"
         }
     },
     "autoload-dev": {

@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use SharedKernel\RecordsEvents;
 
 /**
  * @property string               $body
@@ -23,6 +24,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 final class Post extends Model
 {
     use HasFactory;
+    use RecordsEvents;
 
     protected $attributes = [
         'author_id' => 1,
@@ -39,8 +41,6 @@ final class Post extends Model
     protected $guarded = [];
 
     protected $table = 'blogging_posts';
-
-    private array $events = [];
 
     public function tags(): BelongsToMany
     {
@@ -93,7 +93,7 @@ final class Post extends Model
         $this->attributes['published_at'] = $clock->now()->toDateTimeString();
         $this->attributes['state'] = PostState::Published->value;
 
-        $this->raise(
+        $this->recordThat(
             new PostPublished(
                 $this->id,
                 $this->slug,
@@ -101,25 +101,6 @@ final class Post extends Model
                 $this->title,
             )
         );
-    }
-
-    public function flushEvents(): array
-    {
-        $events = $this->events;
-
-        $this->events = [];
-
-        return $events;
-    }
-
-    private function raise(object $event): void
-    {
-        $this->events[] = $event;
-    }
-
-    public function getRouteKeyName(): string
-    {
-        return 'slug';
     }
 
     protected static function newFactory(): PostFactory

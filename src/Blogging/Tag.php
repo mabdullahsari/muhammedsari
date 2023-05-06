@@ -28,11 +28,6 @@ final class Tag extends Model
         return $this->belongsToMany(Post::class, 'blogging_post_tag');
     }
 
-    public function getRouteKeyName(): string
-    {
-        return 'slug';
-    }
-
     protected static function newFactory(): TagFactory
     {
         return TagFactory::new();
