@@ -35,7 +35,7 @@ final class ContactForm extends Resource
                 ->tooltip(fn ($record) => $record->message),
             TextColumn::make('created_at')
                 ->label('Submitted At')
-                ->dateTime($user->timezone),
+                ->dateTime(timezone: $user->timezone),
         ])->appendActions([
             Reply::make(),
             DeleteAction::make(),

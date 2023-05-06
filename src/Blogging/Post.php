@@ -8,11 +8,9 @@ use Clock\Contract\Clock;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
- * @property Author               $author
  * @property string               $body
  * @property int                  $id
  * @property CarbonImmutable      $published_at
@@ -27,7 +25,7 @@ final class Post extends Model
     use HasFactory;
 
     protected $attributes = [
-        'author_id' => Author::MUHAMMED,
+        'author_id' => 1,
         'state' => PostState::Draft,
     ];
 
@@ -43,11 +41,6 @@ final class Post extends Model
     protected $table = 'blogging_posts';
 
     private array $events = [];
-
-    public function author(): BelongsTo
-    {
-        return $this->belongsTo(Author::class);
-    }
 
     public function tags(): BelongsToMany
     {

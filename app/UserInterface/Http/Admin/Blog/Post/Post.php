@@ -3,6 +3,7 @@
 namespace App\UserInterface\Http\Admin\Blog\Post;
 
 use Blogging\PostState;
+use Filament\Facades\Filament;
 use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
@@ -12,6 +13,7 @@ use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Columns\BadgeColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
+use Identity\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 use Spatie\FilamentMarkdownEditor\MarkdownEditor;
@@ -57,20 +59,26 @@ final class Post extends Resource
 
     public static function table(Table $table): Table
     {
+        /** @var User $user */
+        $user = Filament::auth()->user();
+
         return $table->columns([
-            TextColumn::make('author.full_name'),
+            TextColumn::make('id')->label('#'),
             TextColumn::make('title')->searchable(),
-            TextColumn::make('slug'),
             BadgeColumn::make('state')->colors([
                 'primary' => static fn ($state) => PostState::Draft->equals($state),
                 'success' => static fn ($state) => PostState::Published->equals($state),
             ]),
+            TextColumn::make('created_at')
+                ->label('Created on')
+                ->sortable()
+                ->dateTime('F jS, Y', $user->timezone),
         ])->prependActions([
             DeleteAction::make(),
             PublishBlogPost::make()->visible(fn ($record) => $record->isPublishable()),
         ])->filters([
             SelectFilter::make('state')->options(array_flip(PostState::toArray())),
-        ]);
+        ])->defaultSort('created_at', 'desc');
     }
 
     public static function getEloquentQuery(): Builder

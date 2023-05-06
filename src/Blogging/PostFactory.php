@@ -15,7 +15,7 @@ final class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            'author_id' => Author::MUHAMMED,
+            'author_id' => 1,
             'slug' => static fn (array $attributes) => Str::slug($attributes['title']),
             'title' => $this->faker->words(5, true),
             'body' => '',
