@@ -12,6 +12,7 @@ use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Columns\BadgeColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 use Spatie\FilamentMarkdownEditor\MarkdownEditor;
 
@@ -40,13 +41,16 @@ final class Post extends Resource
                 ->required()
                 ->unique(ignorable: static fn ($record) => $record),
             MarkdownEditor::make('body')
+                ->required(fn ($record) => $record?->isPublished())
                 ->default('')
                 ->columnSpan(2),
             TextInput::make('summary')
+                ->required(fn ($record) => $record?->isPublished())
                 ->default('')
                 ->columnSpan(2)
                 ->maxLength(255),
             CheckboxList::make('tags')
+                ->required(fn ($record) => $record?->isPublished())
                 ->relationship('tags', 'name'),
         ]);
     }
@@ -63,10 +67,15 @@ final class Post extends Resource
             ]),
         ])->prependActions([
             DeleteAction::make(),
-            PublishBlogPost::make(),
+            PublishBlogPost::make()->visible(fn ($record) => $record->isPublishable()),
         ])->filters([
             SelectFilter::make('state')->options(array_flip(PostState::toArray())),
         ]);
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->withCount('tags');
     }
 
     public static function getPages(): array

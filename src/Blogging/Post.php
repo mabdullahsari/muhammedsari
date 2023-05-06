@@ -71,6 +71,14 @@ final class Post extends Model
         return $this->state->isDraft();
     }
 
+    public function isPublishable(): bool
+    {
+        return $this->isDraft()
+            && $this->summary
+            && $this->body
+            && ($this->attributes['tags_count'] ?? false);
+    }
+
     public function isPublished(): bool
     {
         return $this->state->isPublished();
