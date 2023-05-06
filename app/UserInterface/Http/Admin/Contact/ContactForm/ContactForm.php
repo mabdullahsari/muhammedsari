@@ -2,10 +2,12 @@
 
 namespace App\UserInterface\Http\Admin\Contact\ContactForm;
 
+use Filament\Facades\Filament;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Columns\TextColumn;
+use Identity\User;
 use Illuminate\Support\Str;
 
 final class ContactForm extends Resource
@@ -22,13 +24,18 @@ final class ContactForm extends Resource
 
     public static function table(Table $table): Table
     {
+        /** @var User $user */
+        $user = Filament::auth()->user();
+
         return $table->columns([
             TextColumn::make('name')
                 ->tooltip(fn ($record) => "{$record->email} - {$record->ip_address}"),
             TextColumn::make('message')
                 ->formatStateUsing(fn ($record) => Str::limit($record->message, 50))
                 ->tooltip(fn ($record) => $record->message),
-            TextColumn::make('created_at')->label('Submitted At')->dateTime(),
+            TextColumn::make('created_at')
+                ->label('Submitted At')
+                ->dateTime($user->timezone),
         ])->appendActions([
             Reply::make(),
             DeleteAction::make(),
