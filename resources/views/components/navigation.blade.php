@@ -1,6 +1,6 @@
 <header class="fixed top-0 left-0 w-full border-b border-zinc-800 bg-zinc-900/90 backdrop-blur-[6px]">
     <nav class="flex items-center mx-auto max-w-6xl px-6 py-8">
-        <h2 class="sr-only">Navigation</h2>
+        <h2 class="sr-only">Main navigation</h2>
 
         <i class="flex-1">
             <a href="{{ $home }}" class="block outline-none hover:text-zinc-200 focus:text-zinc-200">{{ $name }}</a>
@@ -34,10 +34,12 @@
                 <x-icon name="o-x-mark" class="text-zinc-400" />
             </button>
 
-            <h2 class="text-sm font-medium text-zinc-400">Navigation</h2>
+            <span class="text-sm font-medium text-zinc-400">Navigation</span>
         </i>
 
         <nav class="mt-6">
+            <h2 class="sr-only">Mobile navigation</h2>
+
             <ul class="-my-2 iide-y iide-zinc-100/5 text-zinc-300">
                 @foreach($items as $item)
                 <li><a href="{{ $item->url }}" @class(['inline-block py-2', 'text-amber-500' => $item->active])>{{ $item->label }}</a></li>
