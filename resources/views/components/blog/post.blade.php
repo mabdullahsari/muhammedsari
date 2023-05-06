@@ -13,9 +13,9 @@
         <a href="{{ $url }}" class="hover:text-zinc-200 transition-colors" tabindex="-1">{{ $summary }}</a>
     </p>
 
-    <div class="mt-5 inline-flex flex-wrap items-center">
+    <i class="mt-5 inline-flex flex-wrap items-center">
         @foreach($tags as $tag)
         <x-tags.pill :name="$tag->name" :slug="$tag->slug" />
         @endforeach
-    </div>
+    </i>
 </article>

@@ -1,10 +1,10 @@
 <footer class="py-8 text-sm text-zinc-500">
-    <div class="flex items-center mx-auto max-w-6xl px-5">
-        <div class="flex-1 pr-5">
+    <i class="flex items-center mx-auto max-w-6xl px-5">
+        <i class="flex-1 pr-5">
             © {{ $year }} {{ $name }}
-        </div>
+        </i>
 
-        <div class="inline-flex items-center">
+        <i class="inline-flex items-center">
             <x-footer.link
                 label="Twitter"
                 url="https://twitter.com/mabdullahsari"
@@ -28,6 +28,6 @@
                 url="/feed.atom"
                 class="hover:text-orange-500 focus:outline-orange-500 focus:text-orange-500"
             />
-        </div>
-    </div>
+        </i>
+    </i>
 </footer>

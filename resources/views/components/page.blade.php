@@ -23,11 +23,11 @@
 </head>
 <body class="bg-zinc-900 font-sans leading-normal text-zinc-300/80">
     <x-navigation />
-    <div class="flex flex-col min-h-screen">
+    <i class="flex flex-col min-h-screen">
         <main {{ $attributes->class('flex-1 w-full mx-auto max-w-3xl px-6 pb-10 pt-40') }}>{{ $slot }}</main>
 
         <x-footer />
-    </div>
+    </i>
     @stack('modals')
     <!-- Scripts -->
     @stack('scripts')

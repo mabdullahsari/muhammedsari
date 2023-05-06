@@ -1,9 +1,9 @@
 <x-page name="Contact" class="md:flex">
-    <div class="hidden md:items-start md:2-2/5 md:flex">
+    <i class="hidden md:items-start md:2-2/5 md:flex">
         <img alt="Floating head jar" src="{{ asset('/img/head-jar.png') }}" width="300" class="animate-headjar" />
-    </div>
+    </i>
 
-    <div class="md:w-3/5">
+    <i class="md:w-3/5">
         <x-heading class="mb-10">Contact</x-heading>
 
         @if($didSubmit)
@@ -43,5 +43,5 @@
             <x-form.submit class="ml-auto" />
         </x-form>
         @endif
-    </div>
+    </i>
 </x-page>
