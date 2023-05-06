@@ -1,47 +1,45 @@
-<x-page name="Contact" class="md:flex">
-    <i class="hidden md:items-start md:2-2/5 md:flex">
-        <img alt="Floating head jar" src="{{ asset('/img/head-jar.png') }}" width="300" class="animate-headjar" />
-    </i>
+<x-page name="Contact">
+    <x-heading class="mb-5 sm:mb-10">Contact</x-heading>
 
-    <i class="md:w-3/5">
-        <x-heading class="mb-10">Contact</x-heading>
+    @if($didSubmit)
+    <img alt="Floating head jar" src="{{ asset('/img/head-jar.png') }}" class="mb-5 w-48 mx-auto sm:w-80 sm:mx-0 sm:-ml-16 sm:mb-10" />
 
-        @if($didSubmit)
-        <x-intro>Thank you! I have received your message.</x-intro>
+    <x-intro class="text-center md:text-left">Thank you! I have received your message.</x-intro>
+    @else
+    <x-intro>Say hi! Get in touch using the form below.</x-intro>
 
-        <img alt="Floating head jar" src="{{ asset('/img/head-jar.png') }}" width="200" class="mt-10 mx-auto md:hidden" />
-        @else
-        <x-intro>Say hi! Get in touch using the form below.</x-intro>
+    <x-form class="mt-8 space-y-8 max-w-md sm:mt-16">
+        <x-form.input
+            autocomplete="given-name"
+            label="Name"
+            name="name"
+            minlength="2"
+            maxlength="255"
+        />
 
-        <x-form class="mt-16 space-y-8 max-w-md">
-            <x-form.input
-                autocomplete="given-name"
-                label="Name"
-                name="name"
-                minlength="2"
-                maxlength="255"
-            />
+        <x-form.input
+            autocomplete="email"
+            label="Email address"
+            name="email"
+            type="email"
+            minlength="2"
+            maxlength="255"
+        />
 
-            <x-form.input
-                autocomplete="email"
-                label="Email address"
-                name="email"
-                type="email"
-                minlength="2"
-                maxlength="255"
-            />
+        <x-form.text
+            label="Message"
+            name="message"
+            minlength="10"
+            maxlength="1000"
+        />
 
-            <x-form.text
-                label="Message"
-                name="message"
-                minlength="10"
-                maxlength="1000"
-            />
+        <x-honeypot />
 
-            <x-honeypot />
+        <x-form.submit class="ml-auto" />
+    </x-form>
+    @endif
 
-            <x-form.submit class="ml-auto" />
-        </x-form>
-        @endif
-    </i>
+    @push('prefetch')
+    <link rel="prefetch" href="{{ asset('/img/head-jar.png') }}" />
+    @endpush
 </x-page>

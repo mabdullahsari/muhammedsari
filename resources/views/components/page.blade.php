@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    @stack('prefetch')
     <!-- SEO -->
     @include('feed::links')
     <link rel="canonical" href="{{ $app['url']->current() }}" />
@@ -24,7 +25,7 @@
 <body class="bg-zinc-900 font-sans leading-normal text-zinc-300/80">
     <x-navigation />
     <i class="flex flex-col min-h-screen">
-        <main {{ $attributes->class('flex-1 w-full mx-auto max-w-3xl px-6 pb-10 pt-40') }}>{{ $slot }}</main>
+        <main {{ $attributes->class('flex-1 w-full mx-auto max-w-3xl px-6 pb-10 pt-24 sm:pt-40') }}>{{ $slot }}</main>
 
         <x-footer />
     </i>
