@@ -2,7 +2,9 @@
 
 namespace Contacting\Contract;
 
-final readonly class ContactMuhammed
+use Illuminate\Contracts\Queue\ShouldQueue;
+
+final readonly class ContactMuhammed implements ShouldQueue
 {
     public function __construct(
         public string $email,

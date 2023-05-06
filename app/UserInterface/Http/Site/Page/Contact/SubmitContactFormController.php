@@ -25,7 +25,7 @@ final readonly class SubmitContactFormController
             'name' => ['required', 'string', 'min:2', 'max:255'],
         ])->validate();
 
-        $this->commands->dispatchSync(
+        $this->commands->dispatch(
             new ContactMuhammed(
                 $input['email'],
                 $request->ip(),
