@@ -1,4 +1,4 @@
-<x-page name="Contact">
+<x-page name="Contact" class="max-w-5xl">
     <x-heading class="mb-5 sm:mb-10">Contact</x-heading>
 
     @if($didSubmit)

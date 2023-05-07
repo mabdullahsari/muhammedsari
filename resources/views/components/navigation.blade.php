@@ -1,4 +1,4 @@
-<header class="fixed top-0 left-0 w-full border-b border-zinc-800 bg-zinc-900/90 backdrop-blur-[6px]">
+<header class="fixed top-0 left-0 w-full border-b border-zinc-800 bg-zinc-900/90 backdrop-blur-[6px] z-10">
     <nav class="flex items-center mx-auto max-w-5xl px-6 py-4">
         <h2 class="sr-only">Main navigation</h2>
 
