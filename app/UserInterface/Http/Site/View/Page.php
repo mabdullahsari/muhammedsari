@@ -12,7 +12,7 @@ final class Page extends Component
 
     public function __construct(
         public readonly string $description,
-        private readonly string $suffix,
+        public readonly string $suffix,
         private readonly ?string $name = null,
     ) {}
 
