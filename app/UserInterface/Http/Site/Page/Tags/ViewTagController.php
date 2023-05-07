@@ -18,8 +18,8 @@ final readonly class ViewTagController
     public function __invoke(string $slug): View
     {
         return $this->view->make('view-tag', [
-            'tag' => ($tag = $this->tags->get($slug)),
-            'posts' => $this->posts->get($tag),
+            'tag' => ($tag = $this->tags->findBySlug($slug)),
+            'posts' => $this->posts->getByTag($tag),
         ]);
     }
 }

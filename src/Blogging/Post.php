@@ -109,6 +109,16 @@ final class Post extends Model
         );
     }
 
+    public function newEloquentBuilder($query): PostQueryBuilder
+    {
+        return new PostQueryBuilder($query);
+    }
+
+    public static function query(): PostQueryBuilder
+    {
+        return parent::query();
+    }
+
     protected static function newFactory(): PostFactory
     {
         return PostFactory::new();

@@ -3,6 +3,7 @@
 namespace App\UserInterface\Http\Site\Page\Blog;
 
 use Blogging\Contract\GetSinglePost;
+use Blogging\CouldNotFindPost;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,9 +16,10 @@ final readonly class ReadBlogPostController
         private ResponseFactory $response,
     ) {}
 
+    /** @throws CouldNotFindPost */
     public function __invoke(string $slug): Response
     {
-        $post = $this->posts->get($slug);
+        $post = $this->posts->findBySlug($slug);
 
         if ($this->request->expectsJson()) {
             return $this->response->json($post);

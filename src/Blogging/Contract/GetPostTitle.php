@@ -4,8 +4,8 @@ namespace Blogging\Contract;
 
 use Blogging\CouldNotFindPost;
 
-interface GetSinglePost
+interface GetPostTitle
 {
     /** @throws CouldNotFindPost */
-    public function findBySlug(string $slug): Post;
+    public function getTitleBySlug(string $slug): string;
 }

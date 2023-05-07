@@ -7,5 +7,5 @@ use Illuminate\Support\Collection;
 interface GetMyPostsByTag
 {
     /** @return Collection<int, PostSummary> */
-    public function get(Tag $tag): Collection;
+    public function getByTag(Tag $tag): Collection;
 }

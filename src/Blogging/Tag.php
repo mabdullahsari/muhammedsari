@@ -28,6 +28,16 @@ final class Tag extends Model
         return $this->belongsToMany(Post::class, 'blogging_post_tag');
     }
 
+    public function newEloquentBuilder($query): TagQueryBuilder
+    {
+        return new TagQueryBuilder($query);
+    }
+
+    public static function query(): TagQueryBuilder
+    {
+        return parent::query();
+    }
+
     protected static function newFactory(): TagFactory
     {
         return TagFactory::new();

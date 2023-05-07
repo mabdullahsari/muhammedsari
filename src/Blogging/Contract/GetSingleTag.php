@@ -7,5 +7,5 @@ use Blogging\CouldNotFindTag;
 interface GetSingleTag
 {
     /** @throws CouldNotFindTag */
-    public function get(string $slug): Tag;
+    public function findBySlug(string $slug): Tag;
 }
