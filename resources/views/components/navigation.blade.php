@@ -2,7 +2,7 @@
     <nav class="flex items-center mx-auto max-w-5xl px-6 py-4">
         <h2 class="sr-only">Main navigation</h2>
 
-        <i class="mr-auto">
+        <i class="flex-1">
             <a href="{{ $home }}" title="{{ $name }}" class="block outline-none text-white transition-colors hover:text-amber-600">
                 <x-icon name="ms" class="h-12 -my-2 sm:m-0 sm:h-16" />
             </a>
