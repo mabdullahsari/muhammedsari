@@ -116,7 +116,7 @@ final class Post extends Model
 
     public static function query(): PostQueryBuilder
     {
-        return parent::query();
+        return parent::query(); // @phpstan-ignore-line
     }
 
     protected static function newFactory(): PostFactory

@@ -4,6 +4,11 @@ namespace Blogging;
 
 use Illuminate\Database\Eloquent\Builder;
 
+/**
+ * @template TModelClass of Post
+ *
+ * @extends Builder<TModelClass>
+ */
 final class PostQueryBuilder extends Builder
 {
     public function hasSlug(string $slug): self

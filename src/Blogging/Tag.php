@@ -35,7 +35,7 @@ final class Tag extends Model
 
     public static function query(): TagQueryBuilder
     {
-        return parent::query();
+        return parent::query(); // @phpstan-ignore-line
     }
 
     protected static function newFactory(): TagFactory

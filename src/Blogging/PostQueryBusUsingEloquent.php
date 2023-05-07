@@ -45,7 +45,7 @@ final readonly class PostQueryBusUsingEloquent implements PostQueryBus
     {
         $title = $this->query->newQuery()->hasSlug($slug)->value('title');
 
-        if (! $title) {
+        if (! is_string($title)) {
             throw CouldNotFindPost::withSlug($slug);
         }
 
@@ -62,7 +62,7 @@ final readonly class PostQueryBusUsingEloquent implements PostQueryBus
         return $this
             ->query
             ->newQuery()
-            ->when($modifier, static fn (PostQueryBuilder $builder) => $builder->tap($modifier))
+            ->when($modifier, static fn (PostQueryBuilder $builder) => $builder->tap($modifier)) // @phpstan-ignore-line
             ->with('tags')
             ->isPublished()
             ->mostRecentFirst()

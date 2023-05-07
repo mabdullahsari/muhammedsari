@@ -4,6 +4,11 @@ namespace Blogging;
 
 use Illuminate\Database\Eloquent\Builder;
 
+/**
+ * @template TModelClass of Tag
+ *
+ * @extends Builder<TModelClass>
+ */
 final class TagQueryBuilder extends Builder
 {
     public function hasPublishedPosts(): self
