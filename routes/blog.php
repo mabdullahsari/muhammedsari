@@ -9,4 +9,4 @@ $router
     ->where('slug', '[a-z0-9]+(?:-[a-z0-9]+)*')
     ->name('blog.post');
 
-$router->get(ViewBlogController::ROUTE, ViewBlogController::class)->name('blog');
+$router->get(DIRECTORY_SEPARATOR, ViewBlogController::class)->name('blog');

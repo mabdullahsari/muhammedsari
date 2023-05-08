@@ -4,5 +4,5 @@ namespace Previewing\Contract;
 
 interface Previewer
 {
-    public function preview(string $text): Image;
+    public function get(string $text): Preview;
 }

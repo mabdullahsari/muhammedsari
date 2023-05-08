@@ -17,6 +17,7 @@ final class SiteServiceProvider extends AggregateServiceProvider
         Page\About\AboutServiceProvider::class,
         Page\Tags\TagsServiceProvider::class,
         Page\Contact\ContactServiceProvider::class,
+        Page\OpenGraph\OpenGraphServiceProvider::class,
         Page\Blog\BlogServiceProvider::class,
     ];
 

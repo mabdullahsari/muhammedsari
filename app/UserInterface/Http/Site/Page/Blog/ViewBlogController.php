@@ -9,8 +9,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 final readonly class ViewBlogController
 {
-    public const ROUTE = DIRECTORY_SEPARATOR;
-
     public function __construct(
         private GetMyPosts $query,
         private ResponseFactory $response,
