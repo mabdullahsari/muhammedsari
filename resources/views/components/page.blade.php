@@ -1,3 +1,5 @@
+@props(['og' => null])
+
 <!DOCTYPE html>
 <!--
 Hi! 👋 Thanks for checking out my blog. 🙏
@@ -27,11 +29,7 @@ The codebase is fully open source, so don't forget to check it out if you're int
     <meta name="msapplication-TileColor" content="#333333" />
     <meta name="theme-color" content="#333333" />
     <!-- Open Graph -->
-    <meta property="og:description" content="{{ $description }}" />
-    <meta property="og:image" content="{{ asset('img/mabdullahsari.jpg') }}" />
-    <meta property="og:title" content="{{ $title }}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ $url }}" />
+    @include('open-graph.tags')
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:creator" content="@mabdullahsari"/>

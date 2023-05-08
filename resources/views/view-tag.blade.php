@@ -1,4 +1,4 @@
-<x-page :name="$tag->name" class="max-w-3xl">
+<x-page :name="$tag->name" :og="route('og.tag', $tag->slug)" class="max-w-3xl">
     <x-heading class="mb-20 text-center">
         <span class="text-zinc-500">#</span>{{ $tag->name }}
     </x-heading>

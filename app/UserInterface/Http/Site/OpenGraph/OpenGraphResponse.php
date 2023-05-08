@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\UserInterface\Http\Site\Page\OpenGraph;
+namespace App\UserInterface\Http\Site\OpenGraph;
 
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\Response;

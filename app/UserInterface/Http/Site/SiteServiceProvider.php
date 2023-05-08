@@ -12,12 +12,13 @@ final class SiteServiceProvider extends AggregateServiceProvider
 
         \App\AppServiceProvider::class,
         \App\UserInterface\Http\RouteServiceProvider::class,
-        \App\UserInterface\Http\Site\View\ViewServiceProvider::class,
+
+        OpenGraph\OpenGraphServiceProvider::class,
+        View\ViewServiceProvider::class,
 
         Page\About\AboutServiceProvider::class,
         Page\Tags\TagsServiceProvider::class,
         Page\Contact\ContactServiceProvider::class,
-        Page\OpenGraph\OpenGraphServiceProvider::class,
         Page\Blog\BlogServiceProvider::class,
     ];
 

@@ -1,4 +1,4 @@
-<x-page :name="$title" class="max-w-3xl">
+<x-page :description="$summary" :name="$title" :og="route('og.post', $slug)" class="max-w-3xl">
     <i class="flex flex-col mb-8 sm:flex-row sm:items-center">
         <i class="flex-1 pr-5 text-sm">
             {{ $publishedAt->format('F jS, Y') }}

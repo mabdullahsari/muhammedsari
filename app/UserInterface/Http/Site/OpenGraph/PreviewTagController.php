@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\UserInterface\Http\Site\Page\OpenGraph;
+namespace App\UserInterface\Http\Site\OpenGraph;
 
 use Blogging\Contract\GetSingleTag;
 use Blogging\CouldNotFindTag;

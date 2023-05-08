@@ -1,4 +1,4 @@
-<x-page name="About" class="max-w-5xl grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
+<x-page name="About" :og="asset('open-graph/about.png')" class="max-w-5xl grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
     <i class="lg:pl-20">
         <i class="max-w-xs px-2.5 lg:max-w-none">
             <img alt="Muhammed"
