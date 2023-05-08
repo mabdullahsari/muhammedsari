@@ -8,6 +8,7 @@ use Illuminate\Support\AggregateServiceProvider;
 final class OpenGraphServiceProvider extends AggregateServiceProvider
 {
     protected $providers = [
+        \Blogging\BloggingServiceProvider::class,
         \Previewing\PreviewingServiceProvider::class,
     ];
 

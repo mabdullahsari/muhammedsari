@@ -21,7 +21,7 @@ final class PreviewingServiceProvider extends ServiceProvider
             ->give(fn () => str_replace('https://', '', $this->app['config']['app.url']));
 
         $this->app->extend(Previewer::class,
-            fn (Previewer $next) => new CachedPreviewer($next, $this->app['cache.store'])
+            fn (Previewer $next) => new CachedPreviewer($next, $this->app['cache.store']->tags(self::NAME))
         );
     }
 }
