@@ -4,8 +4,6 @@ namespace App\UserInterface\Http\Site\Page\Tags;
 
 use Blogging\Contract\GetAllTags;
 use Illuminate\Contracts\Routing\ResponseFactory;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 

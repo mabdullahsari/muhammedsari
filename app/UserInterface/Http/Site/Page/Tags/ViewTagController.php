@@ -6,7 +6,6 @@ use Blogging\Contract\GetMyPostsByTag;
 use Blogging\Contract\GetSingleTag;
 use Blogging\CouldNotFindTag;
 use Illuminate\Contracts\Routing\ResponseFactory;
-use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
