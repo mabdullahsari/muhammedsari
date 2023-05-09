@@ -30,6 +30,8 @@ final class PublishBlogPost extends Action
             }
         });
 
+        $this->color('success');
+
         $this->modalHeading('Publish post');
 
         $this->modalButton('Publish');
@@ -38,7 +40,7 @@ final class PublishBlogPost extends Action
 
         $this->requiresConfirmation();
 
-        $this->icon('heroicon-s-eye');
+        $this->icon('heroicon-s-globe');
 
         $this->authorize('publish');
     }

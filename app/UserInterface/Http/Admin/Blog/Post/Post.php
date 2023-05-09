@@ -76,6 +76,7 @@ final class Post extends Resource
         ])->prependActions([
             DeleteAction::make(),
             PublishBlogPost::make()->visible(fn ($record) => $record->isPublishable()),
+            ViewPost::make(),
         ])->filters([
             SelectFilter::make('state')->options(array_flip(PostState::toArray())),
         ])->defaultSort('created_at', 'desc');
