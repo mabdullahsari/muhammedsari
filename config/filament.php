@@ -3,6 +3,7 @@
 use App\UserInterface\Http\Admin\Contact\ContactForm\ContactForm;
 use App\UserInterface\Http\Admin\Blog\Post\Post;
 use App\UserInterface\Http\Admin\Blog\Tag\Tag;
+use App\UserInterface\Http\Admin\Dashboard\HorizonWidget;
 use App\UserInterface\Http\Admin\General\ApplicationHealth;
 use App\UserInterface\Http\Admin\Schedule\Publication\Publication;
 use Filament\AvatarProviders\UiAvatarsProvider;
@@ -146,6 +147,7 @@ return [
         'path' => app_path('Filament/Widgets'),
         'register' => [
             AccountWidget::class,
+            HorizonWidget::class,
         ],
     ],
 

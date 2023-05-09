@@ -3,7 +3,6 @@
 namespace App\UserInterface\Http\Admin\Blog\Post;
 
 use Blogging\Contract\PublishPost;
-use Blogging\CouldNotPublish;
 use Blogging\Post;
 use Filament\Tables\Actions\Action;
 use Illuminate\Support\Facades\Bus;
@@ -20,14 +19,9 @@ final class PublishBlogPost extends Action
         parent::setUp();
 
         $this->action(function (Post $record) {
-            try {
-                Bus::dispatchSync(new PublishPost($record->id));
+            Bus::dispatch(new PublishPost($record->id));
 
-                $this->success();
-            } catch (CouldNotPublish $ex) {
-                $this->failureNotificationTitle($ex->getMessage());
-                $this->sendFailureNotification();
-            }
+            $this->success();
         });
 
         $this->color('success');
@@ -36,7 +30,7 @@ final class PublishBlogPost extends Action
 
         $this->modalButton('Publish');
 
-        $this->successNotificationTitle('Post published 🚀');
+        $this->successNotificationTitle('Post will be published shortly 🚀');
 
         $this->requiresConfirmation();
 

@@ -20,6 +20,7 @@ final class ConsoleServiceProvider extends AggregateServiceProvider
 
         \App\AppServiceProvider::class,
         \App\UserInterface\Http\Admin\AdminServiceProvider::class,
+        \App\UserInterface\Http\Horizon\HorizonServiceProvider::class,
         \App\UserInterface\Http\Site\SiteServiceProvider::class,
     ];
 }

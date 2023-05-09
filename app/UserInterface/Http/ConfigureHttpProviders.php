@@ -3,6 +3,7 @@
 namespace App\UserInterface\Http;
 
 use App\UserInterface\Http\Admin\AdminServiceProvider;
+use App\UserInterface\Http\Horizon\HorizonServiceProvider;
 use App\UserInterface\Http\Site\SiteServiceProvider;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Foundation\Application;
@@ -19,6 +20,7 @@ final readonly class ConfigureHttpProviders
 
         $providers = (new DefaultProviders())->merge(match (true) {
             $this->wantsAdmin($path, $config) => [AdminServiceProvider::class],
+            $this->wantsHorizon($path, $config) => [HorizonServiceProvider::class],
             default => [SiteServiceProvider::class],
         })->toArray();
 
@@ -30,5 +32,10 @@ final readonly class ConfigureHttpProviders
         return str_starts_with($path, $config->get('filament.path'))
             || str_starts_with($path, $config->get('filament.core_path'))
             || str_starts_with($path, 'livewire');
+    }
+
+    private function wantsHorizon(string $path, Repository $config): bool
+    {
+        return str_starts_with($path, $config->get('horizon.path'));
     }
 }
