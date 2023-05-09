@@ -12,7 +12,7 @@ final readonly class CachedPreviewer implements Previewer
 
     public function get(string $text): Preview
     {
-        $cacheKey = md5($text);
+        $cacheKey = CacheKey::for($text);
 
         /** @var array{image: string, sizeInBytes: int}|null $cachedPreviewArray */
         $cachedPreviewArray = $this->cache->get($cacheKey);
