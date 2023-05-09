@@ -3,14 +3,14 @@
 namespace Scheduling;
 
 use Blogging\Contract\PublishPost;
-use Clock\Contract\Clock;
 use Illuminate\Contracts\Bus\Dispatcher;
+use Psr\Clock\ClockInterface;
 use Scheduling\Contract\Scheduler;
 
 final readonly class CrontabScheduler implements Scheduler
 {
     public function __construct(
-        private Clock $clock,
+        private ClockInterface $clock,
         private Dispatcher $commands,
         private Publication $publications,
     ) {}

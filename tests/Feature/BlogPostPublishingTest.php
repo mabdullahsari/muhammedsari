@@ -5,7 +5,7 @@ namespace Tests\Feature;
 use Blogging\Contract\PublishPost;
 use Blogging\Post;
 use Blogging\PostState;
-use Carbon\CarbonImmutable;
+use DateTimeImmutable;
 use Illuminate\Support\Facades\Bus;
 use PHPUnit\Framework\Attributes\Test;
 use Publishing\Twitter\Twitter;
@@ -28,7 +28,7 @@ final class BlogPostPublishingTest extends KernelTestCase
 
         // Assert
         $this->assertSame(PostState::Published, $post->refresh()->state);
-        $this->assertInstanceOf(CarbonImmutable::class, $post->published_at);
+        $this->assertInstanceOf(DateTimeImmutable::class, $post->published_at);
 
         $this->assertCount(1, $tweets = $twitter->outbox());
 

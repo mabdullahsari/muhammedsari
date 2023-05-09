@@ -2,13 +2,13 @@
 
 namespace Blogging\Contract;
 
-use Carbon\CarbonImmutable;
+use DateTimeImmutable;
 use JsonSerializable;
 
 final readonly class PostSummary implements JsonSerializable
 {
     public function __construct(
-        public CarbonImmutable $publishedAt,
+        public DateTimeImmutable $publishedAt,
         public string $slug,
         public string $summary,
         public array $tags,
@@ -18,7 +18,7 @@ final readonly class PostSummary implements JsonSerializable
     public function jsonSerialize(): array
     {
         return [
-            'published_at' => $this->publishedAt->toIso8601String(),
+            'published_at' => $this->publishedAt->format(DateTimeImmutable::ATOM),
             'slug' => $this->slug,
             'summary' => $this->summary,
             'tags' => $this->tags,

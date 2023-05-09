@@ -3,18 +3,18 @@
 namespace Blogging;
 
 use Blogging\Contract\PostPublished;
-use Carbon\CarbonImmutable;
-use Clock\Contract\Clock;
+use DateTimeImmutable;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Psr\Clock\ClockInterface;
 use SharedKernel\RecordsEvents;
 
 /**
  * @property string               $body
  * @property int                  $id
- * @property CarbonImmutable      $published_at
+ * @property DateTimeImmutable    $published_at
  * @property string               $slug
  * @property PostState            $state
  * @property string               $summary
@@ -84,7 +84,7 @@ final class Post extends Model
     }
 
     /** @throws CouldNotPublish */
-    public function publish(Clock $clock): void
+    public function publish(ClockInterface $clock): void
     {
         if ($this->isPublished()) {
             throw CouldNotPublish::becauseAlreadyPublished();
@@ -96,7 +96,7 @@ final class Post extends Model
             throw CouldNotPublish::becauseTagsAreMissing();
         }
 
-        $this->attributes['published_at'] = $clock->now()->toDateTimeString();
+        $this->attributes['published_at'] = $clock->now();
         $this->attributes['state'] = PostState::Published->value;
 
         $this->recordThat(

@@ -2,8 +2,8 @@
 
 namespace Tests\Integration\Core\Clock;
 
-use Carbon\CarbonImmutable;
 use Clock\NativeClock;
+use DateTimeImmutable;
 use Exception;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
@@ -15,11 +15,11 @@ final class NativeClockTest extends TestCase
     {
         $clock = new NativeClock('Europe/Brussels');
 
-        $before = new CarbonImmutable();
+        $before = new DateTimeImmutable();
         usleep(5);
         $now = $clock->now();
         usleep(5);
-        $after = new CarbonImmutable();
+        $after = new DateTimeImmutable();
 
         $this->assertGreaterThan($before, $now);
         $this->assertLessThan($after, $now);

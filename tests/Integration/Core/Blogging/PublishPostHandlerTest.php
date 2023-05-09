@@ -31,7 +31,7 @@ final class PublishPostHandlerTest extends KernelTestCase
         $events->assertDispatched(PostPublished::class);
         $this->assertDatabaseHas(Post::class, [
             'id' => 1337,
-            'published_at' => $clock->now()->toDateTimeString(),
+            'published_at' => $clock->now()->format('Y-m-d H:i:s'),
             'state' => PostState::Published->value,
         ]);
     }

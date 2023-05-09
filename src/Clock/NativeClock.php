@@ -2,11 +2,11 @@
 
 namespace Clock;
 
-use Carbon\CarbonImmutable;
-use Clock\Contract\Clock;
+use DateTimeImmutable;
 use DateTimeZone;
+use Psr\Clock\ClockInterface;
 
-final readonly class NativeClock implements Clock
+final readonly class NativeClock implements ClockInterface
 {
     private DateTimeZone $timezone;
 
@@ -15,8 +15,8 @@ final readonly class NativeClock implements Clock
         $this->timezone = new DateTimeZone($timezone);
     }
 
-    public function now(): CarbonImmutable
+    public function now(): DateTimeImmutable
     {
-        return new CarbonImmutable('now', $this->timezone);
+        return new DateTimeImmutable('now', $this->timezone);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Blogging\Contract;
 
-use Carbon\CarbonImmutable;
+use DateTimeImmutable;
 use Illuminate\Contracts\Support\Arrayable;
 use JsonSerializable;
 
@@ -10,7 +10,7 @@ final readonly class Post implements Arrayable, JsonSerializable
 {
     public function __construct(
         public string $body,
-        public ?CarbonImmutable $publishedAt,
+        public ?DateTimeImmutable $publishedAt,
         public string $slug,
         public string $summary,
         public array $tags,
@@ -21,7 +21,7 @@ final readonly class Post implements Arrayable, JsonSerializable
     {
         return [
             'body' => $this->body,
-            'published_at' => $this->publishedAt?->toIso8601String(),
+            'published_at' => $this->publishedAt?->format(DateTimeImmutable::ATOM),
             'slug' => $this->slug,
             'summary' => $this->summary,
             'tags' => $this->tags,

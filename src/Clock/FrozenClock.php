@@ -2,29 +2,29 @@
 
 namespace Clock;
 
-use Carbon\CarbonImmutable;
-use Clock\Contract\Clock;
+use DateTimeImmutable;
+use Psr\Clock\ClockInterface;
 use Webmozart\Assert\Assert;
 
-final class FrozenClock implements Clock
+final class FrozenClock implements ClockInterface
 {
-    private CarbonImmutable $time;
+    private DateTimeImmutable $time;
 
     public function __construct(string $datetime)
     {
         $this->travelTo($datetime);
     }
 
-    public function now(): CarbonImmutable
+    public function now(): DateTimeImmutable
     {
         return $this->time;
     }
 
     public function travelTo(string $datetime, string $format = 'Y-m-d H:i:s'): void
     {
-        $time = CarbonImmutable::createFromFormat($format, $datetime);
+        $time = DateTimeImmutable::createFromFormat($format, $datetime);
 
-        Assert::isInstanceOf($time, CarbonImmutable::class);
+        Assert::isInstanceOf($time, DateTimeImmutable::class);
 
         $this->time = $time;
     }

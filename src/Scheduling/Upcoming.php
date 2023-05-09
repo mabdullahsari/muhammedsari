@@ -2,12 +2,12 @@
 
 namespace Scheduling;
 
-use Carbon\CarbonImmutable;
+use DateTimeImmutable;
 use Illuminate\Database\Eloquent\Builder;
 
 final readonly class Upcoming
 {
-    public function __construct(private CarbonImmutable $now) {}
+    public function __construct(private DateTimeImmutable $now) {}
 
     public function __invoke(Builder $builder): void
     {

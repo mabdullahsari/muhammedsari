@@ -2,12 +2,12 @@
 
 namespace Clock;
 
-use Clock\Contract\Clock;
 use Illuminate\Support\ServiceProvider;
+use Psr\Clock\ClockInterface;
 
 final class ClockServiceProvider extends ServiceProvider
 {
-    public array $singletons = [Clock::class => NativeClock::class];
+    public array $singletons = [ClockInterface::class => NativeClock::class];
 
     public function register(): void
     {
