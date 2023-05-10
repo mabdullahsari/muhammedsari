@@ -7,6 +7,8 @@ final readonly class CacheKey
     private const SEPARATOR = '_';
     private const WHITESPACE = ' ';
 
+    private function __construct() {}
+
     public static function for(string $text): string
     {
         return str_replace(self::WHITESPACE, self::SEPARATOR, strtolower($text));
