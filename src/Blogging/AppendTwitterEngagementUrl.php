@@ -10,7 +10,7 @@ final readonly class AppendTwitterEngagementUrl implements ShouldQueue
     use Dispatchable;
 
     private const TEMPLATE = <<<TEXT
-    [Join the discussion on Twitter](%s)! I'd love to know what you thought about this blog post.
+    [Join the discussion on Twitter!](%s) I'd love to know what you thought about this blog post.
 
     Thanks for reading!
     TEXT;

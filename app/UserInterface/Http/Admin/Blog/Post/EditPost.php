@@ -10,6 +10,6 @@ final class EditPost extends EditRecord
 
     protected function getActions(): array
     {
-        return [];
+        return [ReadPost::make()];
     }
 }
