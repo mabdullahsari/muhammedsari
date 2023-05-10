@@ -15,13 +15,15 @@
 
         <i class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>Hello! I'm Muhammed, a passionate software enthusiast dedicated to using code to solve real-world problems. I strive to develop robust applications that meets every expectation.</p>
-            <p>Knowledge sharing, collaboration and teamwork are at the heart of my approach. I find genuine joy in supporting and empowering others in my team, fostering a friendly and supportive environment.</p>
-            <p>Programming languages and technologies are only <em>a means to an end</em>, though. What really matters is the problems that must be solved in order to make others' lives easier.</p>
+            <p>Programming languages and technologies are only <em>a means to an end</em>. What really matters is the problems that must be solved in order to make others' lives easier.</p>
+            <p>Knowledge sharing, collaboration and teamwork are at the heart of my approach. I find genuine joy in supporting and empowering others in my team, thus fostering a supportive and team-oriented environment.</p>
 
             <details>
                 <summary class="outline-none hover:cursor-pointer hover:text-amber-500 focus:text-amber-500">See tech stack</summary>
 
-                My daily drivers are PHP and JavaScript. <br /> Framework? I like using Laravel these days. <br /> Have I created (native) mobile apps? Yes, using React Native.
+                <p class="mt-2">Just use the tools that help you achieve your goals faster; it doesn't really matter that much. ✌️</p>
+                <p class="mt-2">These days though, I prefer either the <a href="https://tallstack.dev" rel="noopener noreferrer" target="_blank" class="font-semibold text-zinc-200 outline-none hover:underline focus:underline">TALL</a> or <a href="https://viltstack.dev" rel="noopener noreferrer" target="_blank" class="font-semibold text-zinc-200 outline-none hover:underline focus:underline">VILT</a> stack for insane productivity on the <em>web</em>.</p>
+                <p class="mt-2"><a href="https://expo.dev" rel="noopener noreferrer" target="_blank" class="font-semibold text-zinc-200 outline-none hover:underline focus:underline">Expo</a> is still unmatched when it comes to <em>native mobile app</em> productivity.</p>
             </details>
 
             <p>I also run a smallish, invite only Discord server for people who have a great appetite for software design and architecture. <em>The</em> way to keep your reality in check and avoid echo chambers, aka being pragmatic instead of dogmatic.</p>
