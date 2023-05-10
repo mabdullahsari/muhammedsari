@@ -1,4 +1,4 @@
-<x-page name="Blog" :og="asset('open-graph/blog.png')" class="max-w-3xl">
+<x-page name="Blog" class="max-w-3xl">
     <x-heading class="sr-only">Blog</x-heading>
 
     @foreach($posts as $post)
