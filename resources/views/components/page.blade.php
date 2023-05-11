@@ -14,12 +14,14 @@ The codebase is fully open source, so don't forget to check it out if you're int
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     @stack('prefetch')
+    
     <!-- SEO -->
     @include('feed::links')
     <link rel="canonical" href="{{ $url = url()->current() }}" />
     <title>{{ $title }}</title>
     <meta name="author" content="{{ $suffix }}" />
     <meta name="description" content="{{ $description }}" />
+
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}" />
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}" />
@@ -28,12 +30,15 @@ The codebase is fully open source, so don't forget to check it out if you're int
     <link rel="mask-icon" href="{{ asset('safari-pinned-tab.svg') }}" color="#333333" />
     <meta name="msapplication-TileColor" content="#333333" />
     <meta name="theme-color" content="#333333" />
+
     <!-- Open Graph -->
     @include('open-graph.tags')
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:creator" content="@mabdullahsari"/>
     <meta name="twitter:site" content="@mabdullahsari"/>
+
     <!-- Schema.org -->
     <script type="application/ld+json">
     {
@@ -53,19 +58,22 @@ The codebase is fully open source, so don't forget to check it out if you're int
         ]
     }
     </script>
+
     <!-- Stylesheets -->
     @vite('resources/css/site.css')
+
+    <!-- Scripts -->
+    @vite('resources/js/site.js')
 </head>
 <body class="bg-zinc-900 font-sans leading-normal text-zinc-300/80">
     <x-navigation />
+
     <i class="flex flex-col min-h-screen">
         <main {{ $attributes->class('flex-1 w-full mx-auto px-6 pb-10 pt-24 sm:pt-40') }}>{{ $slot }}</main>
 
         <x-footer />
     </i>
+
     @stack('modals')
-    <!-- Scripts -->
-    @vite('resources/js/site.js')
-    @stack('scripts')
 </body>
 </html>
