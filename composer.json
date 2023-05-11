@@ -15,6 +15,7 @@
         "laravel/horizon": "^5.15.1",
         "laravel/tinker": "^2.8.1",
         "psr/clock": "^1.0",
+        "sentry/sentry-laravel": "^3.4",
         "shuvroroy/filament-spatie-laravel-health": "^1.6.1",
         "spatie/browsershot": "^3.57.6",
         "spatie/filament-markdown-editor": "^1.2.2",
@@ -103,7 +104,10 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
