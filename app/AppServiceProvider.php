@@ -9,6 +9,7 @@ final class AppServiceProvider extends AggregateServiceProvider
     protected $providers = [
         \App\CommandBus\CommandBusServiceProvider::class,
         \App\Database\DatabaseServiceProvider::class,
+        \App\Health\HealthServiceProvider::class,
         \App\Queue\QueueServiceProvider::class,
     ];
 }
