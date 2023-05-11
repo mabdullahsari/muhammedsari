@@ -91,6 +91,7 @@
                 "nesbot/carbon",
                 "nunomaduro/termwind",
                 "ryangjchandler/blade-capture-directive",
+                "sentry/sentry-laravel",
                 "shuvroroy/filament-spatie-laravel-health",
                 "spatie/filament-markdown-editor",
                 "spatie/laravel-feed",
