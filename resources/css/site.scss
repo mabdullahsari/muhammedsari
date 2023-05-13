@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/** Reset */
+i {
+    @apply block not-italic;
+}
+
+/** Shiki */
+.shiki {
+    @apply -mx-6 rounded-none;
+}
+
+@screen sm {
+    .shiki {
+        @apply mx-0 rounded-md;
+    }
+}

@@ -14,7 +14,7 @@ The codebase is fully open source, so don't forget to check it out if you're int
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
     @stack('prefetch')
-    
+
     <!-- SEO -->
     @include('feed::links')
     <link rel="canonical" href="{{ $url = url()->current() }}" />
@@ -60,7 +60,7 @@ The codebase is fully open source, so don't forget to check it out if you're int
     </script>
 
     <!-- Stylesheets -->
-    @vite('resources/css/site.css')
+    @vite('resources/css/site.scss')
 
     <!-- Scripts -->
     @vite('resources/js/site.js')
