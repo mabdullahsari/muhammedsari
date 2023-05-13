@@ -10,6 +10,7 @@ final class HorizonServiceProvider extends AggregateServiceProvider
     protected $providers = [
         \Laravel\Horizon\HorizonServiceProvider::class,
 
+        \App\AppServiceProvider::class,
         \App\UserInterface\Http\RouteServiceProvider::class,
     ];
 
