@@ -13,7 +13,7 @@
     <i class="lg:order-first lg:row-span-2">
         <x-heading as="2">I’m Muhammed, a proud Ghentian.</x-heading>
 
-        <i class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+        <i class="mt-6 space-y-7 text-base">
             <p>Hello! I'm Muhammed, a passionate software enthusiast dedicated to using code to solve real-world problems. I strive to develop robust applications that meets every expectation.</p>
             <p>Programming languages and technologies are only <em>a means to an end</em>. What really matters is the problems that must be solved in order to make others' lives easier.</p>
             <p>Knowledge sharing, collaboration and teamwork are at the heart of my approach. I find genuine joy in supporting and empowering others in my team, thus fostering a supportive and team-oriented environment.</p>
@@ -49,14 +49,14 @@
             </li>
 
             <li class="mt-4 flex">
-                <a class="outline-none group flex text-sm font-medium transition text-zinc-200 hover:text-blue-500 focus:text-blue-500" href="/about#">
+                <a class="outline-none group flex text-sm font-medium transition text-zinc-200 hover:text-blue-500 focus:text-blue-500" href="https://www.linkedin.com/in/mabdullahsari/">
                     <x-icon name="linkedin" class="w-5 h-5 flex-none fill-zinc-500 transition group-hover:fill-blue-500 group-focus:fill-blue-500" />
 
                     <span class="ml-4 group-focus:underline">Follow on LinkedIn</span>
                 </a>
             </li>
 
-            <li class="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40 flex">
+            <li class="mt-8 border-t pt-8 border-zinc-700/40 flex">
                 <x-contact.get-in-touch />
             </li>
         </ul>
