@@ -20,7 +20,7 @@ final readonly class SubmitContactFormController
     public function __invoke(Request $request): RedirectResponse
     {
         $input = $this->validator->make($request->all(), [
-            'email' => ['required', 'email', 'min:2', 'max:255'],
+            'email' => ['required', 'email:rfc,dns', 'min:2', 'max:255'],
             'message' => ['required', 'string', 'min:10', 'max:1000'],
             'name' => ['required', 'string', 'min:2', 'max:255'],
         ])->validate();
