@@ -10,18 +10,14 @@ use Symfony\Component\HttpFoundation\Response;
 
 final readonly class ReadBlogPostController
 {
-    public function __construct(
-        private GetSinglePost $posts,
-        private Request $request,
-        private ResponseFactory $response,
-    ) {}
+    public function __construct(private GetSinglePost $posts, private ResponseFactory $response) {}
 
     /** @throws CouldNotFindPost */
-    public function __invoke(string $slug): Response
+    public function __invoke(Request $request, string $slug): Response
     {
         $post = $this->posts->findBySlug($slug);
 
-        if ($this->request->expectsJson()) {
+        if ($request->expectsJson()) {
             return $this->response->json($post);
         }
 
