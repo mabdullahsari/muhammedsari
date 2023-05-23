@@ -40,6 +40,8 @@ valet isolate php@8.2
 
 ```shell
 pecl install redis
+brew services restart redis
+brew services restart php
 ```
 
 ### Dependencies
