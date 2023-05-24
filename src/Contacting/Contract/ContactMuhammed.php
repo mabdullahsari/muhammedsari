@@ -3,8 +3,9 @@
 namespace Contacting\Contract;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
+use PreventingSpam\Contract\PotentialSpam;
 
-final readonly class ContactMuhammed implements ShouldQueue
+final readonly class ContactMuhammed implements PotentialSpam, ShouldQueue
 {
     public function __construct(
         public string $email,
