@@ -2,25 +2,30 @@
 
 namespace PreventingSpam;
 
+use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use PreventingSpam\Contract\PotentialSpam;
-use Psr\Log\LoggerInterface;
+use Psr\Clock\ClockInterface;
 
 final readonly class QuarantineDetectedSpam implements ShouldQueue
 {
-    private const WARNING = <<<TEXT
-    Spam was detected:
-
-    [method] %s [message] %s
-    TEXT;
-
     public function __construct(
-        private string $detection,
+        private DetectionMethod $detection,
         private PotentialSpam $spam,
     ) {}
 
-    public function handle(LoggerInterface $logger): void
+    public function handle(ClockInterface $clock, Dispatcher $events, QuarantinedMessageRepository $messages): void
     {
-        $logger->alert(sprintf(self::WARNING, $this->detection, json_encode($this->spam)));
+        $message = QuarantinedMessage::quarantine(
+            $messages->nextIdentity(),
+            $this->detection,
+            Message::fromSpam($this->spam),
+            $clock,
+        );
+
+        $messages->save($message);
+
+        [$event] = $message->flushEvents();
+        $events->dispatch($event);
     }
 }

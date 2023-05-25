@@ -2,22 +2,44 @@
 
 namespace PreventingSpam;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Bus\Dispatcher;
+use Illuminate\Contracts\Config\Repository;
+use Illuminate\Support\AggregateServiceProvider;
+use PreventingSpam\Contract\ExecuteAnyway;
 
-final class PreventingSpamServiceProvider extends ServiceProvider
+final class PreventingSpamServiceProvider extends AggregateServiceProvider
 {
-    public array $singletons = [DetectorResolver::class => DetectorResolverUsingInflection::class];
+    protected $providers = [
+        \Clock\ClockServiceProvider::class,
+    ];
 
     public function register(): void
     {
-        $this->app->singleton(ContactMuhammedDetector::class, static function () {
-            $words = new BlacklistedWordsAnalyzer();
+        parent::register();
 
-            return new ContactMuhammedDetector(
-                email: new BlacklistedEmailsAnalyzer(),
-                message: MultiAnalyzer::chain($words, new KeyHeldDownAnalyzer()),
-                name: $words,
-            );
-        });
+        $this->app->singleton(ContactMuhammedDetector::class, $this->createContactMuhammedDetector(...));
+
+        $this->app->singleton(DetectorResolver::class, DetectorResolverUsingInflection::class);
+        $this->app->singleton(QuarantinedMessageRepository::class, QuarantinedMessageRepositoryUsingSQLite::class);
+
+        $this->app->resolving(Dispatcher::class, $this->configureBus(...));
+    }
+
+    private function createContactMuhammedDetector(): ContactMuhammedDetector
+    {
+        $words = new BlacklistedWordsAnalyzer();
+
+        return new ContactMuhammedDetector(
+            email: new BlacklistedEmailsAnalyzer(),
+            message: MultiAnalyzer::chain($words, new KeyHeldDownAnalyzer()),
+            name: $words,
+        );
+    }
+
+    private function configureBus(Dispatcher $commands): void
+    {
+        $this->app[Repository::class]->push('bus.pipes', InterceptCommandIfPotentialSpam::class);
+
+        $commands->map([ExecuteAnyway::class => ExecuteAnywayHandler::class]);
     }
 }

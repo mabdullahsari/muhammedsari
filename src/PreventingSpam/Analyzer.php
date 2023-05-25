@@ -4,9 +4,9 @@ namespace PreventingSpam;
 
 abstract readonly class Analyzer
 {
-    public const NAME = 'analyzer';
-
     abstract public function analyze(string $subject): Result;
+
+    abstract public function method(): DetectionMethod;
 
     protected function normalize(string $value): string
     {

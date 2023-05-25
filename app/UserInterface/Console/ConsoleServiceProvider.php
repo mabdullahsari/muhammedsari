@@ -18,7 +18,7 @@ final class ConsoleServiceProvider extends AggregateServiceProvider
         \Publishing\PublishingServiceProvider::class,
         \Scheduling\SchedulingServiceProvider::class,
 
-        \App\AppServiceProvider::class,
+        \App\InfrastructureServiceProvider::class,
         \App\UserInterface\Http\Admin\AdminServiceProvider::class,
         \App\UserInterface\Http\Horizon\HorizonServiceProvider::class,
         \App\UserInterface\Http\Site\SiteServiceProvider::class,

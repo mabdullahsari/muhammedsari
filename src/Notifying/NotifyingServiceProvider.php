@@ -12,6 +12,7 @@ final class NotifyingServiceProvider extends ServiceProvider
     public function boot(Dispatcher $events): void
     {
         $events->subscribe(ContactingSubscriber::class);
+        $events->subscribe(PreviewingSpamSubscriber::class);
     }
 
     public function register(): void

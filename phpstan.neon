@@ -19,3 +19,4 @@ parameters:
         - '#Cannot access offset .* on Illuminate\\Contracts\\Foundation\\Application.#'
         - '#Static property Laravel\\Horizon\\Horizon::\$authUsing \(Closure\) does not accept App\\UserInterface\\Http\\Horizon\\AuthorizeAccess.#'
         - '#Access to an undefined property Filament\\Pages\\Page::\$record.#'
+        - '#Cannot call method handle\(\) on mixed.#'

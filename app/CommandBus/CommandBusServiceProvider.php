@@ -3,28 +3,17 @@
 namespace App\CommandBus;
 
 use Illuminate\Contracts\Bus\Dispatcher;
-use Illuminate\Support\AggregateServiceProvider;
+use Illuminate\Support\ServiceProvider;
 
-final class CommandBusServiceProvider extends AggregateServiceProvider
+final class CommandBusServiceProvider extends ServiceProvider
 {
-    protected $providers = [
-        \PreventingSpam\PreventingSpamServiceProvider::class,
-    ];
-
-    private array $pipes = [
-        \PreventingSpam\Contract\CommandBus::MIDDLEWARE,
-        UseDatabaseTransactions::class,
-    ];
-
     public function register(): void
     {
-        parent::register();
-
-        $this->app->resolving(Dispatcher::class, $this->registerPipeline(...));
+        $this->app->afterResolving(Dispatcher::class, $this->registerPipeline(...));
     }
 
     private function registerPipeline(Dispatcher $commands): void
     {
-        $commands->pipeThrough($this->pipes);
+        $commands->pipeThrough($this->app['config']['bus.pipes']);
     }
 }

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Support\AggregateServiceProvider;
 
-final class AppServiceProvider extends AggregateServiceProvider
+final class InfrastructureServiceProvider extends AggregateServiceProvider
 {
     protected $providers = [
         \App\CommandBus\CommandBusServiceProvider::class,

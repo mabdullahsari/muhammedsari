@@ -4,7 +4,6 @@ namespace PreventingSpam;
 
 final readonly class BlacklistedEmailsAnalyzer extends Analyzer
 {
-    public const NAME = 'email_blacklist';
     private const DICTIONARY = ['demo@demo.com', 'demo@dive.be'];
 
     public function analyze(string $subject): Result
@@ -16,5 +15,10 @@ final readonly class BlacklistedEmailsAnalyzer extends Analyzer
         }
 
         return Result::clean($this);
+    }
+
+    public function method(): DetectionMethod
+    {
+        return DetectionMethod::BlacklistedEmails;
     }
 }

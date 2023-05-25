@@ -6,6 +6,7 @@ use App\UserInterface\Http\Admin\Blog\Tag\Tag;
 use App\UserInterface\Http\Admin\Dashboard\HorizonWidget;
 use App\UserInterface\Http\Admin\General\ApplicationHealth;
 use App\UserInterface\Http\Admin\Schedule\Publication\Publication;
+use App\UserInterface\Http\Admin\SpamPrevention\Quarantine\QuarantinedMessage;
 use Filament\AvatarProviders\UiAvatarsProvider;
 use Filament\Http\Livewire\Auth\Login;
 use Filament\Http\Middleware\Authenticate;
@@ -129,6 +130,7 @@ return [
             Post::class,
             Publication::class,
             Tag::class,
+            QuarantinedMessage::class,
         ],
     ],
 

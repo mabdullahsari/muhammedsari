@@ -15,9 +15,9 @@ final readonly class DetectSpam implements ShouldQueue
         $detection = $detectors->resolve($this->command)->detect($this->command);
 
         if ($detection->isSpam) {
-            $commands->dispatch(new QuarantineDetectedSpam($detection->analyzer, $this->command));
+            $commands->dispatch(new QuarantineDetectedSpam($detection->method, $this->command));
         } else {
-            $commands->getCommandHandler($this->command)->handle($this->command); // @phpstan-ignore-line
+            $commands->getCommandHandler($this->command)->handle($this->command);
         }
     }
 }

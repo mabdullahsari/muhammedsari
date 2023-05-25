@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace App\CommandBus;
+namespace App\Database;
 
 use Closure;
 use Illuminate\Database\SQLiteConnection;

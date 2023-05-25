@@ -13,6 +13,7 @@ final class ContactServiceProvider extends AggregateServiceProvider
     protected $providers = [
         \Contacting\ContactingServiceProvider::class,
         \Notifying\NotifyingServiceProvider::class,
+        \PreventingSpam\PreventingSpamServiceProvider::class,
         \Spatie\Honeypot\HoneypotServiceProvider::class,
     ];
 

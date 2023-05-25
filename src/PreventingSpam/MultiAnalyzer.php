@@ -25,4 +25,9 @@ final readonly class MultiAnalyzer extends Analyzer
 
         return Result::clean($this);
     }
+
+    public function method(): DetectionMethod
+    {
+        return DetectionMethod::Multi;
+    }
 }
