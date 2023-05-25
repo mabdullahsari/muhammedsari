@@ -14,9 +14,9 @@ final class PreventingSpamServiceProvider extends ServiceProvider
             $words = new BlacklistedWordsAnalyzer();
 
             return new ContactMuhammedDetector(
-                new BlacklistedEmailsAnalyzer(),
-                MultiAnalyzer::chain($words, new KeyHeldDownAnalyzer()),
-                $words,
+                email: new BlacklistedEmailsAnalyzer(),
+                message: MultiAnalyzer::chain($words, new KeyHeldDownAnalyzer()),
+                name: $words,
             );
         });
     }
