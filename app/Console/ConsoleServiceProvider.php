@@ -14,6 +14,7 @@ final class ConsoleServiceProvider extends AggregateServiceProvider
         \Contacting\ContactingServiceProvider::class,
         \Monitoring\MonitoringServiceProvider::class,
         \Notifying\NotifyingServiceProvider::class,
+        \PreservingData\PreservingDataServiceProvider::class,
         \Previewing\PreviewingServiceProvider::class,
         \Publishing\PublishingServiceProvider::class,
         \Scheduling\SchedulingServiceProvider::class,

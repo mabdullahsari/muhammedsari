@@ -11,6 +11,7 @@ final class AdminServiceProvider extends AggregateServiceProvider
         \Blogging\BloggingServiceProvider::class,
         \Contacting\ContactingServiceProvider::class,
         \Monitoring\MonitoringServiceProvider::class,
+        \PreservingData\PreservingDataServiceProvider::class,
         \Publishing\PublishingServiceProvider::class,
         \Scheduling\SchedulingServiceProvider::class,
 

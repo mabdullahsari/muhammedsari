@@ -46,6 +46,7 @@
             "Identity\\": "src/Identity",
             "Monitoring\\": "src/Monitoring",
             "Notifying\\": "src/Notifying",
+            "PreservingData\\": "src/PreservingData",
             "PreventingSpam\\": "src/PreventingSpam",
             "Previewing\\": "src/Previewing",
             "Publishing\\": "src/Publishing",
