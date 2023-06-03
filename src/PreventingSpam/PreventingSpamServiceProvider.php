@@ -2,8 +2,8 @@
 
 namespace PreventingSpam;
 
+use CommandBus\Contract\Pipeline;
 use Illuminate\Contracts\Bus\Dispatcher;
-use Illuminate\Contracts\Config\Repository;
 use Illuminate\Support\AggregateServiceProvider;
 use PreventingSpam\Contract\ExecuteAnyway;
 
@@ -38,7 +38,7 @@ final class PreventingSpamServiceProvider extends AggregateServiceProvider
 
     private function configureBus(Dispatcher $commands): void
     {
-        $this->app[Repository::class]->push('bus.pipes', InterceptCommandIfPotentialSpam::class);
+        Pipeline::register(InterceptCommandIfPotentialSpam::class);
 
         $commands->map([ExecuteAnyway::class => ExecuteAnywayHandler::class]);
     }

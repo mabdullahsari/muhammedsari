@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\App\Http;
 
-use App\UserInterface\Http\StripTrailingSlash;
+use App\Http\StripTrailingSlash;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use PHPUnit\Framework\Attributes\Test;

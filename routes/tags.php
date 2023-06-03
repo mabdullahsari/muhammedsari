@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 
-use App\UserInterface\Http\Site\Page\Tags\ViewTagController;
-use App\UserInterface\Http\Site\Page\Tags\ViewTagsController;
+use App\Http\Site\Page\Tags\ViewTagController;
+use App\Http\Site\Page\Tags\ViewTagsController;
 
 /** @var \Illuminate\Routing\Router $router */
 $router

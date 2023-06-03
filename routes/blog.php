@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 
-use App\UserInterface\Http\Site\Page\Blog\ViewBlogController;
-use App\UserInterface\Http\Site\Page\Blog\ReadBlogPostController;
+use App\Http\Site\Page\Blog\ReadBlogPostController;
+use App\Http\Site\Page\Blog\ViewBlogController;
 
 /** @var \Illuminate\Routing\Router $router */
 $router

@@ -17,7 +17,7 @@ final class PostFactory extends Factory
         return [
             'author_id' => 1,
             'slug' => static fn (array $attributes) => Str::slug($attributes['title']),
-            'title' => $this->faker->words(5, true),
+            'title' => $this->faker->unique()->words(5, true),
             'body' => '',
             'summary' => '',
             'state' => PostState::Draft,

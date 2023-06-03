@@ -54,7 +54,7 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['single', 'sentry'],
+            'channels' => ['single'],
             'ignore_exceptions' => false,
         ],
 

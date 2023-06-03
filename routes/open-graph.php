@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 
-use App\UserInterface\Http\Site\OpenGraph\PreviewBlogPostController;
-use App\UserInterface\Http\Site\OpenGraph\PreviewTagController;
+use App\Http\Site\OpenGraph\PreviewBlogPostController;
+use App\Http\Site\OpenGraph\PreviewTagController;
 
 /** @var \Illuminate\Routing\Router $router */
 $router
