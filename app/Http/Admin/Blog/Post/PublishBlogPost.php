@@ -19,7 +19,7 @@ final class PublishBlogPost extends Action
         parent::setUp();
 
         $this->action(function (Post $record) {
-            Bus::dispatch(new PublishPost($record->id));
+            Bus::dispatchSync(new PublishPost($record->id));
 
             $this->success();
         });
@@ -30,7 +30,7 @@ final class PublishBlogPost extends Action
 
         $this->modalButton('Publish');
 
-        $this->successNotificationTitle('Post will be published shortly 🚀');
+        $this->successNotificationTitle('Post published 🚀');
 
         $this->requiresConfirmation();
 

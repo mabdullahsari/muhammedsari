@@ -18,14 +18,14 @@ final class DatabaseBackup extends Action
         parent::setUp();
 
         $this->action(function () {
-            Bus::dispatch(new BackUpDatabase());
+            Bus::dispatchSync(new BackUpDatabase());
 
             $this->success();
         });
 
         $this->color('secondary');
 
-        $this->successNotificationTitle('Database will be backed up 💾');
+        $this->successNotificationTitle('Database backed up 💾');
 
         $this->icon('heroicon-s-database');
     }
