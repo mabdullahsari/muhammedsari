@@ -21,7 +21,7 @@ final class PreservingDataServiceProvider extends ServiceProvider
     private function createBackupStore(): BackupStore
     {
         return $this->app->isProduction()
-            ? new VersionControlBackupStore($this->app->storagePath('app'), $this->app['files'])
+            ? new VersionControlBackupStore($this->app->storagePath('app'))
             : new NullBackupStore();
     }
 

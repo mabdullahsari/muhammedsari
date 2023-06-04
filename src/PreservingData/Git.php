@@ -26,6 +26,13 @@ final readonly class Git
         return $this;
     }
 
+    public function pull(bool $rebase = false): self
+    {
+        $this->run('pull', $rebase ? '--rebase' : null);
+
+        return $this;
+    }
+
     public function push(): self
     {
         $this->run('push');
@@ -33,12 +40,12 @@ final readonly class Git
         return $this;
     }
 
-    public function status(string $directory = ''): string
+    public function status(string $directory = ''): ?string
     {
-        return $this->run('status', trim("{$directory} -s"));
+        return $this->run('status', trim("{$directory} -s")) ?: null;
     }
 
-    private function run(string $command, string $arguments = ''): string
+    private function run(string $command, ?string $arguments = null): string
     {
         $command = trim("git {$command} {$arguments}");
 

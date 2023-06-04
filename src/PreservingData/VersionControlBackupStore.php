@@ -11,17 +11,22 @@ final readonly class VersionControlBackupStore implements BackupStore
 
     private Git $git;
 
-    public function __construct(private string $destination, private Filesystem $files)
+    private Filesystem $fs;
+
+    public function __construct(private string $destination)
     {
-        $this->git = new Git($this->destination);
+        $this->fs = new Filesystem();
+        $this->git = new Git($destination);
     }
 
     public function preserve(string $data): void
     {
-        $this->files->put($this->destination . DIRECTORY_SEPARATOR . self::FILENAME, $data);
+        $this->fs->put($this->destination . DIRECTORY_SEPARATOR . self::FILENAME, $data);
 
-        if ($this->git->status($this->destination)) {
-            $this->git->add(self::FILENAME)->commit(self::MESSAGE)->push();
+        if ($this->git->status($this->destination) === null) {
+            return;
         }
+
+        $this->git->add(path: self::FILENAME)->commit(message: self::MESSAGE)->pull(rebase: true)->push();
     }
 }
