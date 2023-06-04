@@ -28,5 +28,7 @@ final class DatabaseBackup extends Action
         $this->successNotificationTitle('Database backed up 💾');
 
         $this->icon('heroicon-s-database');
+
+        $this->visible(app()->isProduction());
     }
 }
