@@ -33,9 +33,9 @@ final readonly class Git
         return $this;
     }
 
-    public function status(): string
+    public function status(string $directory = ''): string
     {
-        return $this->run('status', '-s');
+        return $this->run('status', trim("{$directory} -s"));
     }
 
     private function run(string $command, string $arguments = ''): string

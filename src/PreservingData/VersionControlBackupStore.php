@@ -20,7 +20,7 @@ final readonly class VersionControlBackupStore implements BackupStore
     {
         $this->files->put($this->destination . DIRECTORY_SEPARATOR . self::FILENAME, $data);
 
-        if ($this->git->status()) {
+        if ($this->git->status($this->destination)) {
             $this->git->add(self::FILENAME)->commit(self::MESSAGE)->push();
         }
     }
