@@ -28,7 +28,7 @@ final class ContactForm extends Model
 
         $form->recordThat(
             new MuhammedContacted($email, $message, $name)
-        );;
+        );
 
         return $form;
     }

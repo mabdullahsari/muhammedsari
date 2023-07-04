@@ -12,8 +12,8 @@ final class PreservingDataServiceProvider extends ServiceProvider
 
     public function register(): void
     {
-        $this->app->singleton(BackupStore::class, $this->createBackupStore(...));;
-        $this->app->singleton(DatabaseDumper::class, $this->createDatabaseDumper(...));;
+        $this->app->singleton(BackupStore::class, $this->createBackupStore(...));
+        $this->app->singleton(DatabaseDumper::class, $this->createDatabaseDumper(...));
 
         $this->app->resolving(Dispatcher::class, $this->registerHandlers(...));
     }

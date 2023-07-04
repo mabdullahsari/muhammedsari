@@ -24,7 +24,7 @@ final class Execute extends Action
         $this->color('danger');
 
         $this->action(function ($record) {
-           Bus::dispatch(new ExecuteAnyway($record->id));
+            Bus::dispatch(new ExecuteAnyway($record->id));
         });
     }
 }

@@ -4,6 +4,4 @@ namespace PreservingData\Contract;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-final readonly class BackUpDatabase implements ShouldQueue
-{
-}
+final readonly class BackUpDatabase implements ShouldQueue {}

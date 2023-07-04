@@ -2,7 +2,7 @@
     "preset": "psr12",
     "rules": {
         "blank_line_after_opening_tag": false,
-        "braces": false,
-        "method_argument_space": false
+        "method_argument_space": false,
+        "single_line_empty_body": true
     }
 }
