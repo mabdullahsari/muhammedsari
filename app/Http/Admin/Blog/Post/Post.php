@@ -5,6 +5,7 @@ namespace App\Http\Admin\Blog\Post;
 use Blogging\PostState;
 use Filament\Facades\Filament;
 use Filament\Forms\Components\CheckboxList;
+use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -16,7 +17,6 @@ use Filament\Tables\Filters\SelectFilter;
 use Identity\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
-use Spatie\FilamentMarkdownEditor\MarkdownEditor;
 
 final class Post extends Resource
 {

@@ -16,7 +16,6 @@
         "psr/clock": "^1.0",
         "shuvroroy/filament-spatie-laravel-health": "^1.6.1",
         "spatie/browsershot": "^3.58.2",
-        "spatie/filament-markdown-editor": "^1.2.2",
         "spatie/laravel-feed": "^4.3.0",
         "spatie/laravel-health": "^1.23.0",
         "spatie/laravel-honeypot": "^4.3.4",

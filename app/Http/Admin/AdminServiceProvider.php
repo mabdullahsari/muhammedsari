@@ -26,6 +26,5 @@ final class AdminServiceProvider extends AggregateServiceProvider
         \Livewire\LivewireServiceProvider::class,
         \RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider::class,
         \ShuvroRoy\FilamentSpatieLaravelHealth\FilamentSpatieLaravelHealthServiceProvider::class,
-        \Spatie\FilamentMarkdownEditor\MarkdownEditorServiceProvider::class,
     ];
 }
