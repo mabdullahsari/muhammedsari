@@ -9,6 +9,7 @@ use Blogging\Contract\GetPostTitle;
 use Blogging\Contract\GetSinglePost;
 use Blogging\Contract\GetSingleTag;
 use Blogging\Contract\PublishPost;
+use Blogging\Integration\PublishingSubscriber;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Support\AggregateServiceProvider;

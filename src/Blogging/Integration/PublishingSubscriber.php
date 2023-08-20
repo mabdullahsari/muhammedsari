@@ -1,7 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Blogging;
+namespace Blogging\Integration;
 
+use Blogging\AppendTwitterEngagementUrl;
 use Illuminate\Contracts\Events\Dispatcher;
 use Publishing\Contract\TweetSent;
 

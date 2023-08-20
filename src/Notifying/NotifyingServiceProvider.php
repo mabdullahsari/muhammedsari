@@ -4,6 +4,8 @@ namespace Notifying;
 
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Support\ServiceProvider;
+use Notifying\Integration\ContactingSubscriber;
+use Notifying\Integration\PreviewingSpamSubscriber;
 
 final class NotifyingServiceProvider extends ServiceProvider
 {

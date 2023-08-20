@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Support\ServiceProvider;
 use Scheduling\Contract\Scheduler;
+use Scheduling\Integration\BloggingSubscriber;
 
 final class SchedulingServiceProvider extends ServiceProvider
 {

@@ -1,10 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Scheduling;
+namespace Scheduling\Integration;
 
 use Blogging\Contract\PostDeleted;
 use Blogging\Contract\PostPublished;
 use Illuminate\Contracts\Events\Dispatcher;
+use Scheduling\CancelPublication;
 
 final readonly class BloggingSubscriber
 {

@@ -1,9 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Notifying;
+namespace Notifying\Integration;
 
 use Contacting\Contract\MuhammedContacted;
 use Illuminate\Contracts\Events\Dispatcher;
+use Notifying\SendSomeoneGotInTouchMail;
+use Notifying\SomeoneGotInTouch;
 
 final readonly class ContactingSubscriber
 {

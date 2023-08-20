@@ -1,9 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace Publishing\Twitter;
+namespace Publishing\Twitter\Integration;
 
 use Blogging\Contract\PostPublished;
 use Illuminate\Contracts\Events\Dispatcher;
+use Publishing\Twitter\SendTweetAboutNewPost;
 
 final readonly class BloggingSubscriber
 {

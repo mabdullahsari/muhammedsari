@@ -1,8 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Notifying;
+namespace Notifying\Integration;
 
 use Illuminate\Contracts\Events\Dispatcher;
+use Notifying\LogQuarantinedMessage;
 use PreventingSpam\Contract\MessageQuarantined;
 
 final readonly class PreviewingSpamSubscriber
