@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fbb80e7bb854aa1ab52d7c45c855fd34",
+    "content-hash": "decfd426953b2e1683a9db4715d0d616",
     "packages": [
         {
             "name": "abraham/twitteroauth",
-            "version": "5.0.0",
+            "version": "6.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/abraham/twitteroauth.git",
-                "reference": "6a68a5e53f72fbb31d4d304dc4752d3adefe0d10"
+                "reference": "20efddf17cd5105dfbf19282048432aa28bc414c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/abraham/twitteroauth/zipball/6a68a5e53f72fbb31d4d304dc4752d3adefe0d10",
-                "reference": "6a68a5e53f72fbb31d4d304dc4752d3adefe0d10",
+                "url": "https://api.github.com/repos/abraham/twitteroauth/zipball/20efddf17cd5105dfbf19282048432aa28bc414c",
+                "reference": "20efddf17cd5105dfbf19282048432aa28bc414c",
                 "shasum": ""
             },
             "require": {
@@ -30,7 +30,7 @@
                 "php-vcr/phpunit-testlistener-vcr": "dev-php8",
                 "phpmd/phpmd": "^2",
                 "phpunit/phpunit": "^9",
-                "rector/rector": "^0.14.0",
+                "rector/rector": "^0.15.7",
                 "squizlabs/php_codesniffer": "^3"
             },
             "type": "library",
@@ -66,7 +66,7 @@
                 "issues": "https://github.com/abraham/twitteroauth/issues",
                 "source": "https://github.com/abraham/twitteroauth"
             },
-            "time": "2023-01-17T01:10:54+00:00"
+            "time": "2023-08-08T03:20:20+00:00"
         },
         {
             "name": "akaunting/laravel-money",
