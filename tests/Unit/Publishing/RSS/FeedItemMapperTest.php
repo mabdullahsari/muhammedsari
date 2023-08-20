@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Core\Publishing\RSS;
+namespace Tests\Unit\Publishing\RSS;
 
-use Publishing\PostUrlGenerator;
-use Publishing\RSS\FeedItemMapper;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Publishing\PostUrlGenerator;
+use Publishing\RSS\FeedItemMapper;
 use Spatie\Feed\FeedItem;
 
 final class FeedItemMapperTest extends TestCase

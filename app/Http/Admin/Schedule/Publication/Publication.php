@@ -52,7 +52,7 @@ final class Publication extends Resource
                 ->dateTime(timezone: $user->timezone)
                 ->label('Publish At'),
         ])->prependActions([
-            DeleteAction::make()->modalHeading('Delete scheduled publication')
+            DeleteAction::make()->modalHeading('Delete scheduled publication'),
         ]);
     }
 

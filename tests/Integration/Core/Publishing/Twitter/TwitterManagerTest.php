@@ -2,12 +2,12 @@
 
 namespace Tests\Integration\Core\Publishing\Twitter;
 
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 use Publishing\Twitter\ArrayTwitter;
 use Publishing\Twitter\LogTwitter;
 use Publishing\Twitter\TwitterManager;
 use Publishing\Twitter\TwitterOAuth2;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
 
 final class TwitterManagerTest extends KernelTestCase

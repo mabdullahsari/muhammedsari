@@ -4,8 +4,8 @@ namespace Tests\Integration\Core\Scheduling;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use PHPUnit\Framework\Attributes\Test;
-use Scheduling\Publication;
 use Scheduling\CancelPublication;
+use Scheduling\Publication;
 use Tests\KernelTestCase;
 
 final class CancelPublicationTest extends KernelTestCase

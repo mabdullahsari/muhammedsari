@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Core\Publishing;
+namespace Tests\Unit\Publishing;
 
-use Publishing\PostUrlGenerator;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Publishing\PostUrlGenerator;
 
 final class PostUrlGeneratorTest extends TestCase
 {

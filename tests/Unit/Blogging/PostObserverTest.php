@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Core\Blogging;
+namespace Tests\Unit\Blogging;
 
 use Blogging\Contract\PostDeleted;
 use Blogging\Post;

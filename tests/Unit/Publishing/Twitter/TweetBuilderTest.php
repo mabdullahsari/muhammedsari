@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Core\Publishing\Twitter;
+namespace Tests\Unit\Publishing\Twitter;
 
-use Publishing\Twitter\TweetBuilder;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
+use Publishing\Twitter\TweetBuilder;
 
 final class TweetBuilderTest extends TestCase
 {

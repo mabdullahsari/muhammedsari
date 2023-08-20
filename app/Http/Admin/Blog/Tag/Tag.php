@@ -43,7 +43,7 @@ final class Tag extends Resource
             TextColumn::make('slug'),
             TextColumn::make('posts_count')
                 ->label('# Posts')
-                ->counts('posts')
+                ->counts('posts'),
         ])->prependActions([
             DeleteAction::make(),
         ]);

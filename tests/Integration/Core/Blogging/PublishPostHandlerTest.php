@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Testing\Fakes\EventFake;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
-use Tests\Unit\Core\Blogging\PostFactoryMethods;
+use Tests\Unit\Blogging\PostFactoryMethods;
 
 final class PublishPostHandlerTest extends KernelTestCase
 {

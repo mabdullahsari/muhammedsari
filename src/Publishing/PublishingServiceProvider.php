@@ -13,7 +13,7 @@ final class PublishingServiceProvider extends AggregateServiceProvider
     protected $providers = [
         \Clock\ClockServiceProvider::class,
         \Publishing\RSS\FeedServiceProvider::class,
-        \Publishing\Twitter\TwitterServiceProvider::class
+        \Publishing\Twitter\TwitterServiceProvider::class,
     ];
 
     public function register(): void

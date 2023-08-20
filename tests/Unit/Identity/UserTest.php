@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Core\Identity;
+namespace Tests\Unit\Identity;
 
 use Identity\User;
 use PHPUnit\Framework\Attributes\Test;

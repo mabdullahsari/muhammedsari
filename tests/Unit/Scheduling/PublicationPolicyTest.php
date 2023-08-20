@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Core\Scheduling;
+namespace Tests\Unit\Scheduling;
 
 use Illuminate\Foundation\Auth\User;
 use PHPUnit\Framework\Attributes\Test;

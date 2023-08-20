@@ -7,7 +7,7 @@ use Blogging\CouldNotPublish;
 use Blogging\Post;
 use PHPUnit\Framework\Attributes\Test;
 use Tests\KernelTestCase;
-use Tests\Unit\Core\Blogging\PostFactoryMethods;
+use Tests\Unit\Blogging\PostFactoryMethods;
 
 final class PostTest extends KernelTestCase
 {
@@ -77,7 +77,7 @@ final class PostTest extends KernelTestCase
         );
 
         $this->assertEquals([
-            new PostPublished($post->id, $post->slug, $post->tags->map->slug->all() , $post->title)
+            new PostPublished($post->id, $post->slug, $post->tags->map->slug->all() , $post->title),
         ], $post->flushEvents());
     }
 }

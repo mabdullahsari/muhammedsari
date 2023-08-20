@@ -8,7 +8,7 @@ use Publishing\RSS\FeedItemMapper;
 use Publishing\RSS\SQLiteFeedProvider;
 use Tests\KernelTestCase;
 use Tests\PostSeeder;
-use Tests\Unit\Core\Publishing\RSS\FeedProviderContractTests;
+use Tests\Unit\Publishing\RSS\FeedProviderContractTests;
 
 final class SQLiteFeedProviderTest extends KernelTestCase
 {

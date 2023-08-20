@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Tests\Unit\Core\Clock;
+namespace Tests\Unit\Clock;
 
 use Clock\FrozenClock;
 use PHPUnit\Framework\Attributes\Test;
