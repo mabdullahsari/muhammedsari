@@ -2,7 +2,7 @@
 
 namespace App\Http\Admin\Blog;
 
-use Filament\Pages\Actions\Action;
+use Filament\Actions\Action;
 use Illuminate\Support\Facades\Bus;
 use PreservingData\Contract\BackUpDatabase;
 
@@ -23,11 +23,11 @@ final class DatabaseBackup extends Action
             $this->success();
         });
 
-        $this->color('secondary');
+        $this->color('gray');
 
         $this->successNotificationTitle('Database backed up 💾');
 
-        $this->icon('heroicon-s-database');
+        $this->icon('heroicon-m-circle-stack');
 
         $this->visible(app()->isProduction());
     }

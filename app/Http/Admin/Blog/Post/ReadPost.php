@@ -2,7 +2,7 @@
 
 namespace App\Http\Admin\Blog\Post;
 
-use Filament\Pages\Actions\Action;
+use Filament\Actions\Action;
 use Illuminate\Support\Facades\URL;
 
 final class ReadPost extends Action
@@ -18,7 +18,7 @@ final class ReadPost extends Action
 
         $this->label('Read');
 
-        $this->icon('heroicon-s-external-link');
+        $this->icon('heroicon-m-arrow-top-right-on-square');
 
         $this->url(fn () => URL::to($this->livewire->record->slug), true);
     }

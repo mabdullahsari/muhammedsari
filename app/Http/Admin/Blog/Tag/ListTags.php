@@ -10,7 +10,7 @@ final class ListTags extends ListRecords
 {
     protected static string $resource = Tag::class;
 
-    protected function getActions(): array
+    protected function getHeaderActions(): array
     {
         return [DatabaseBackup::make(), CreateAction::make()->icon('heroicon-s-plus')];
     }

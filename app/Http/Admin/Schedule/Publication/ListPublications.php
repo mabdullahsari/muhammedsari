@@ -9,7 +9,7 @@ final class ListPublications extends ListRecords
 {
     protected static string $resource = Publication::class;
 
-    protected function getActions(): array
+    protected function getHeaderActions(): array
     {
         return [CreateAction::make()->label('Schedule')];
     }

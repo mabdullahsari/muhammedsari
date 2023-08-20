@@ -15,7 +15,7 @@ final class Reply extends Action
     {
         parent::setUp();
 
-        $this->icon('heroicon-s-reply');
+        $this->icon('heroicon-m-arrow-uturn-left');
 
         $this->url(fn ($record) => "mailto:{$record->email}");
     }

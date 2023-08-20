@@ -4,8 +4,8 @@ namespace App\Http\Admin\SpamPrevention\Quarantine;
 
 use Filament\Facades\Filament;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
 use Identity\User;
 use Illuminate\Support\Str;
 use PreventingSpam\QuarantinedMessageReadModel;
@@ -39,7 +39,7 @@ final class QuarantinedMessage extends Resource
             TextColumn::make('quarantined_at')
                 ->label('Quarantined At')
                 ->dateTime(timezone: $user->timezone),
-        ])->appendActions([
+        ])->actions([
             Execute::make(),
         ]);
     }

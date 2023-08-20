@@ -8,13 +8,13 @@
         "abraham/twitteroauth": "^6.1",
         "blade-ui-kit/blade-icons": "^1.5.2",
         "dive-be/php-enum-utils": "^1.2",
-        "filament/filament": "^2.17.52",
+        "filament/filament": "^3.0",
         "guzzlehttp/guzzle": "^7.7.0",
         "laravel/framework": "^10.19.0",
         "laravel/horizon": "^5.19.1",
         "laravel/tinker": "^2.8.1",
         "psr/clock": "^1.0",
-        "shuvroroy/filament-spatie-laravel-health": "^1.6.1",
+        "shuvroroy/filament-spatie-laravel-health": "^2.0",
         "spatie/browsershot": "^3.58.2",
         "spatie/laravel-feed": "^4.3.0",
         "spatie/laravel-health": "^1.23.0",
@@ -64,7 +64,8 @@
         "larastan": "@php ./vendor/bin/phpstan analyse --memory-limit=2G",
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi",
+            "@php artisan filament:upgrade"
         ],
         "post-update-cmd": [
             "@php artisan filament:upgrade"

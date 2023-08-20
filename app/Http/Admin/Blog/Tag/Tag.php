@@ -3,11 +3,12 @@
 namespace App\Http\Admin\Blog\Tag;
 
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables\Actions\DeleteAction;
+use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
 use Illuminate\Support\Str;
 
 final class Tag extends Resource
@@ -44,8 +45,9 @@ final class Tag extends Resource
             TextColumn::make('posts_count')
                 ->label('# Posts')
                 ->counts('posts'),
-        ])->prependActions([
+        ])->actions([
             DeleteAction::make(),
+            EditAction::make(),
         ]);
     }
 

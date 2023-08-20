@@ -3,6 +3,7 @@
 /public/hot
 /public/storage
 /public/**/build/*
+/public/**/js/*
 /public/**/css/*
 /public/**/*.json
 /public/**/mix-manifest.json

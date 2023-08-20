@@ -2,7 +2,7 @@
 
 namespace App\Http\Admin\Schedule\Publication;
 
-use Filament\Pages\Actions\Action;
+use Filament\Actions\Action;
 use Filament\Resources\Pages\CreateRecord;
 
 final class SchedulePublication extends CreateRecord

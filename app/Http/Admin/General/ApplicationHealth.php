@@ -6,7 +6,7 @@ use ShuvroRoy\FilamentSpatieLaravelHealth\Pages\HealthCheckResults;
 
 final class ApplicationHealth extends HealthCheckResults
 {
-    protected static function getNavigationGroup(): null
+    public static function getNavigationGroup(): null
     {
         return null;
     }

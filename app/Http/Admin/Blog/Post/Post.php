@@ -7,13 +7,13 @@ use Filament\Facades\Filament;
 use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\TextInput;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables\Actions\DeleteAction;
-use Filament\Tables\Columns\BadgeColumn;
+use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
+use Filament\Tables\Table;
 use Identity\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
@@ -65,7 +65,7 @@ final class Post extends Resource
         return $table->columns([
             TextColumn::make('id')->label('#'),
             TextColumn::make('title')->searchable(),
-            BadgeColumn::make('state')->colors([
+            TextColumn::make('state')->badge()->colors([
                 'primary' => static fn ($state) => PostState::Draft->equals($state),
                 'success' => static fn ($state) => PostState::Published->equals($state),
             ]),
@@ -73,10 +73,11 @@ final class Post extends Resource
                 ->label('Created on')
                 ->sortable()
                 ->dateTime('F jS, Y', $user->timezone),
-        ])->prependActions([
+        ])->actions([
             DeleteAction::make(),
             PublishBlogPost::make()->visible(fn ($record) => $record->isPublishable()),
             ViewPost::make(),
+            EditAction::make(),
         ])->filters([
             SelectFilter::make('state')->options(array_flip(PostState::toArray())),
         ])->defaultSort('created_at', 'desc');

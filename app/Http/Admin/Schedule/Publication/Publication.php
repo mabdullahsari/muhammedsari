@@ -5,11 +5,11 @@ namespace App\Http\Admin\Schedule\Publication;
 use Filament\Facades\Filament;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
-use Filament\Resources\Form;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
 use Identity\User;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -51,7 +51,7 @@ final class Publication extends Resource
             TextColumn::make('publish_at')
                 ->dateTime(timezone: $user->timezone)
                 ->label('Publish At'),
-        ])->prependActions([
+        ])->actions([
             DeleteAction::make()->modalHeading('Delete scheduled publication'),
         ]);
     }

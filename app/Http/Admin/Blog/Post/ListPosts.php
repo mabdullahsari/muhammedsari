@@ -10,7 +10,7 @@ final class ListPosts extends ListRecords
 {
     protected static string $resource = Post::class;
 
-    protected function getActions(): array
+    protected function getHeaderActions(): array
     {
         return [DatabaseBackup::make(), CreateAction::make()->icon('heroicon-s-plus')];
     }

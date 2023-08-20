@@ -34,7 +34,7 @@ final class PublishBlogPost extends Action
 
         $this->requiresConfirmation();
 
-        $this->icon('heroicon-s-globe');
+        $this->icon('heroicon-m-globe-americas');
 
         $this->authorize('publish');
     }

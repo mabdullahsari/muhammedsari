@@ -4,6 +4,7 @@ namespace Identity;
 
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Models\Contracts\HasAvatar;
+use Filament\Panel;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -34,7 +35,7 @@ final class User extends Authenticatable implements FilamentUser, HasAvatar
         return Attribute::get(fn () => "{$this->first_name} {$this->last_name}");
     }
 
-    public function canAccessFilament(): bool
+    public function canAccessPanel(Panel $panel): bool
     {
         return true;
     }

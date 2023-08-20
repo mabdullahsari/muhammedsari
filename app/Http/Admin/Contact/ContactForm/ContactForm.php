@@ -4,9 +4,9 @@ namespace App\Http\Admin\Contact\ContactForm;
 
 use Filament\Facades\Filament;
 use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Table;
 use Identity\User;
 use Illuminate\Support\Str;
 
@@ -36,13 +36,13 @@ final class ContactForm extends Resource
             TextColumn::make('created_at')
                 ->label('Submitted At')
                 ->dateTime(timezone: $user->timezone),
-        ])->appendActions([
+        ])->actions([
             Reply::make(),
             DeleteAction::make(),
         ]);
     }
 
-    protected static function getNavigationBadge(): ?string
+    public static function getNavigationBadge(): ?string
     {
         return (string) \Contacting\ContactForm::query()->count() ?: null;
     }

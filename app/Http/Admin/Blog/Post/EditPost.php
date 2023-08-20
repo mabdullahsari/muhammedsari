@@ -8,7 +8,7 @@ final class EditPost extends EditRecord
 {
     protected static string $resource = Post::class;
 
-    protected function getActions(): array
+    protected function getHeaderActions(): array
     {
         return [ReadPost::make()];
     }

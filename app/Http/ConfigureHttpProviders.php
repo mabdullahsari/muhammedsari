@@ -32,9 +32,7 @@ final readonly class ConfigureHttpProviders
 
     private function wantsAdmin(string $path, Repository $config): bool
     {
-        return str_starts_with($path, $config->get('filament.path'))
-            || str_starts_with($path, $config->get('filament.core_path'))
-            || str_starts_with($path, 'livewire');
+        return str_starts_with($path, $config->get('filament.path')) || str_starts_with($path, 'livewire');
     }
 
     private function wantsHealth(string $path): bool

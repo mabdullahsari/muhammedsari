@@ -7,6 +7,8 @@ use Illuminate\Support\AggregateServiceProvider;
 final class AdminServiceProvider extends AggregateServiceProvider
 {
     protected $providers = [
+        AdminPanelProvider::class,
+
         \App\AppServiceProvider::class,
         \Blogging\BloggingServiceProvider::class,
         \Contacting\ContactingServiceProvider::class,

@@ -8,7 +8,7 @@ final class EditTag extends EditRecord
 {
     protected static string $resource = Tag::class;
 
-    protected function getActions(): array
+    protected function getHeaderActions(): array
     {
         return [];
     }
