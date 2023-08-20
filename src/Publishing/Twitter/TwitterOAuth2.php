@@ -16,7 +16,6 @@ final readonly class TwitterOAuth2 implements Twitter
         #[SensitiveParameter] string $accessTokenSecret,
     ) {
         $this->connection = new TwitterOAuth($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
-        $this->connection->setApiVersion('2');
     }
 
     public function send(Tweet $tweet): TweetUrl
