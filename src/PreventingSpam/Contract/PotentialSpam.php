@@ -2,6 +2,4 @@
 
 namespace PreventingSpam\Contract;
 
-interface PotentialSpam
-{
-}
+interface PotentialSpam {}

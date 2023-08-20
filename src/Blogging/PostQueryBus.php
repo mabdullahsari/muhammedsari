@@ -7,6 +7,4 @@ use Blogging\Contract\GetMyPostsByTag;
 use Blogging\Contract\GetPostTitle;
 use Blogging\Contract\GetSinglePost;
 
-interface PostQueryBus extends GetMyPosts, GetMyPostsByTag, GetPostTitle, GetSinglePost
-{
-}
+interface PostQueryBus extends GetMyPosts, GetMyPostsByTag, GetPostTitle, GetSinglePost {}

@@ -5,6 +5,4 @@ namespace Blogging;
 use Blogging\Contract\GetAllTags;
 use Blogging\Contract\GetSingleTag;
 
-interface TagQueryBus extends GetAllTags, GetSingleTag
-{
-}
+interface TagQueryBus extends GetAllTags, GetSingleTag {}
