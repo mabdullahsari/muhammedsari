@@ -8,9 +8,9 @@
         "abraham/twitteroauth": "^6.1",
         "blade-ui-kit/blade-icons": "^1.5.2",
         "dive-be/php-enum-utils": "^1.2",
-        "filament/filament": "^3.0",
-        "guzzlehttp/guzzle": "^7.7.0",
-        "laravel/framework": "^10.19.0",
+        "filament/filament": "^3.0.34",
+        "guzzlehttp/guzzle": "^7.8.0",
+        "laravel/framework": "^10.20.0",
         "laravel/horizon": "^5.19.1",
         "laravel/tinker": "^2.8.1",
         "psr/clock": "^1.0",
@@ -20,7 +20,7 @@
         "spatie/laravel-health": "^1.23.0",
         "spatie/laravel-honeypot": "^4.3.4",
         "spatie/laravel-markdown": "^2.4.0",
-        "spatie/security-advisories-health-check": "^1.0.2",
+        "spatie/security-advisories-health-check": "^1.1.0",
         "webmozart/assert": "^1.11"
     },
     "require-dev": {
@@ -30,7 +30,7 @@
         "nunomaduro/collision": "^7.8.1",
         "nunomaduro/larastan": "^2.6.4",
         "phpunit/phpunit": "^10.3.2",
-        "spatie/laravel-ignition": "^2.2.0",
+        "spatie/laravel-ignition": "^2.3.0",
         "spatie/laravel-ray": "^1.32.6"
     },
     "autoload": {
