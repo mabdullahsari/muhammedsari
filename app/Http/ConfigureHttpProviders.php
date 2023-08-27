@@ -10,7 +10,7 @@ use App\Http\Site\SiteServiceProvider;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
-use Illuminate\Support\DefaultProviders;
+use Illuminate\Support\ServiceProvider;
 
 final readonly class ConfigureHttpProviders
 {
@@ -20,7 +20,7 @@ final readonly class ConfigureHttpProviders
 
         $config = $app[Repository::class];
 
-        $providers = (new DefaultProviders())->merge(match (true) {
+        $providers = ServiceProvider::defaultProviders()->merge(match (true) {
             $this->wantsAdmin($path, $config) => [AdminServiceProvider::class],
             $this->wantsHealth($path) => [HealthServiceProvider::class],
             $this->wantsHorizon($path, $config) => [HorizonServiceProvider::class],
