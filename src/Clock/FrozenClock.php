@@ -2,11 +2,11 @@
 
 namespace Clock;
 
+use Clock\Contract\Clock;
 use DateTimeImmutable;
-use Psr\Clock\ClockInterface;
 use Webmozart\Assert\Assert;
 
-final class FrozenClock implements ClockInterface
+final class FrozenClock implements Clock
 {
     private DateTimeImmutable $time;
 

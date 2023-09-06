@@ -2,11 +2,11 @@
 
 namespace Clock;
 
+use Clock\Contract\Clock;
 use DateTimeImmutable;
 use DateTimeZone;
-use Psr\Clock\ClockInterface;
 
-final readonly class NativeClock implements ClockInterface
+final readonly class NativeClock implements Clock
 {
     private DateTimeZone $timezone;
 

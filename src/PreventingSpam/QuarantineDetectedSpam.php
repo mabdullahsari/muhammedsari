@@ -2,10 +2,10 @@
 
 namespace PreventingSpam;
 
+use Clock\Contract\Clock;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use PreventingSpam\Contract\PotentialSpam;
-use Psr\Clock\ClockInterface;
 
 final readonly class QuarantineDetectedSpam implements ShouldQueue
 {
@@ -14,7 +14,7 @@ final readonly class QuarantineDetectedSpam implements ShouldQueue
         private PotentialSpam $spam,
     ) {}
 
-    public function handle(ClockInterface $clock, Dispatcher $events, QuarantinedMessageRepository $messages): void
+    public function handle(Clock $clock, Dispatcher $events, QuarantinedMessageRepository $messages): void
     {
         $message = QuarantinedMessage::quarantine(
             $messages->nextIdentity(),

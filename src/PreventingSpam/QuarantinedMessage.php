@@ -2,9 +2,9 @@
 
 namespace PreventingSpam;
 
+use Clock\Contract\Clock;
 use DateTimeImmutable;
 use PreventingSpam\Contract\MessageQuarantined;
-use Psr\Clock\ClockInterface;
 use SharedKernel\RecordsEvents;
 use Webmozart\Assert\Assert;
 
@@ -40,7 +40,7 @@ final class QuarantinedMessage
         QuarantinedMessageId $id,
         DetectionMethod $method,
         Message $message,
-        ClockInterface $clock,
+        Clock $clock,
     ): self {
         $model = new self();
         $model->id = $id;

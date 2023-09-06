@@ -2,9 +2,9 @@
 
 namespace App\Http\Site\View;
 
+use Clock\Contract\Clock;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
-use Psr\Clock\ClockInterface;
 
 final class Footer extends Component
 {
@@ -12,7 +12,7 @@ final class Footer extends Component
 
     public function __construct(
         public readonly string $name,
-        private readonly ClockInterface $clock,
+        private readonly Clock $clock,
     ) {}
 
     public function year(): string

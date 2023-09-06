@@ -3,12 +3,12 @@
 namespace Blogging;
 
 use Blogging\Contract\PostPublished;
+use Clock\Contract\Clock;
 use DateTimeImmutable;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Psr\Clock\ClockInterface;
 use SharedKernel\RecordsEvents;
 
 /**
@@ -84,7 +84,7 @@ final class Post extends Model
     }
 
     /** @throws CouldNotPublish */
-    public function publish(ClockInterface $clock): void
+    public function publish(Clock $clock): void
     {
         if ($this->isPublished()) {
             throw CouldNotPublish::becauseAlreadyPublished();

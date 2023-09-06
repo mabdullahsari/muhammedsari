@@ -3,13 +3,13 @@
 namespace Blogging;
 
 use Blogging\Contract\PublishPost;
+use Clock\Contract\Clock;
 use Illuminate\Contracts\Events\Dispatcher;
-use Psr\Clock\ClockInterface;
 
 final readonly class PublishPostHandler
 {
     public function __construct(
-        private ClockInterface $clock,
+        private Clock $clock,
         private Dispatcher $events,
         private Post $posts,
     ) {}

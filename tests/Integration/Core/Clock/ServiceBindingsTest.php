@@ -2,6 +2,7 @@
 
 namespace Tests\Integration\Core\Clock;
 
+use Clock\Contract\Clock;
 use Clock\NativeClock;
 use PHPUnit\Framework\Attributes\Test;
 use Psr\Clock\ClockInterface;
@@ -12,7 +13,9 @@ final class ServiceBindingsTest extends KernelTestCase
     #[Test]
     public function it_registers_singleton_bindings(): void
     {
+        $this->assertTrue($this->app->isShared(Clock::class));
         $this->assertTrue($this->app->isShared(ClockInterface::class));
+        $this->assertInstanceOf(NativeClock::class, $this->app->make(Clock::class));
         $this->assertInstanceOf(NativeClock::class, $this->app->make(ClockInterface::class));
     }
 }
