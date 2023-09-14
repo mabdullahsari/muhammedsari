@@ -2,11 +2,7 @@
 
 namespace App\Http\Admin;
 
-use Filament\Actions\ActionsServiceProvider;
-use Filament\Infolists\InfolistsServiceProvider;
-use Filament\Widgets\WidgetsServiceProvider;
 use Illuminate\Support\AggregateServiceProvider;
-use Kirschbaum\PowerJoins\PowerJoinsServiceProvider;
 
 final class AdminServiceProvider extends AggregateServiceProvider
 {
