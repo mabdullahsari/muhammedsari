@@ -7,6 +7,10 @@ i {
     @apply block not-italic;
 }
 
+[id] {
+    scroll-margin-top: 8rem;
+}
+
 /** Shiki */
 .shiki {
     @apply -mx-6 rounded-none;
