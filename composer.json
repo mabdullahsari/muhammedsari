@@ -68,7 +68,8 @@
             "@php artisan filament:upgrade"
         ],
         "post-update-cmd": [
-            "@php artisan filament:upgrade"
+            "@php artisan filament:upgrade",
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ],
         "test": "@php ./vendor/bin/phpunit",
         "verify": [
