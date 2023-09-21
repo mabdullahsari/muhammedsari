@@ -4,7 +4,7 @@ namespace Blogging\Integration;
 
 use Blogging\AppendTwitterEngagementUrl;
 use Illuminate\Contracts\Events\Dispatcher;
-use Publishing\Contract\TweetSent;
+use Publishing\Twitter\Contract\TweetSent;
 
 final readonly class PublishingSubscriber
 {

@@ -6,9 +6,9 @@ use Illuminate\Events\Dispatcher;
 use Illuminate\Support\Testing\Fakes\EventFake;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use Publishing\Contract\TweetSent;
 use Publishing\PostUrlGenerator;
 use Publishing\Twitter\ArrayTwitter;
+use Publishing\Twitter\Contract\TweetSent;
 use Publishing\Twitter\SendTweetAboutNewPost;
 
 final class SendTweetAboutNewPostTest extends TestCase

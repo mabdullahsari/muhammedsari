@@ -5,7 +5,7 @@ namespace Publishing\Twitter;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Publishing\Contract\TweetSent;
+use Publishing\Twitter\Contract\TweetSent;
 use Publishing\UrlGenerator;
 
 final readonly class SendTweetAboutNewPost implements ShouldQueue

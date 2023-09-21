@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Publishing\Contract;
+namespace Publishing\Twitter\Contract;
 
 final readonly class TweetSent
 {

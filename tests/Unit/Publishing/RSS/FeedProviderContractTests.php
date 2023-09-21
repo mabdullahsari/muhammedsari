@@ -4,7 +4,7 @@ namespace Tests\Unit\Publishing\RSS;
 
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use Publishing\Contract\FeedProvider;
+use Publishing\RSS\Contract\FeedProvider;
 use Spatie\Feed\FeedItem;
 
 /** @mixin TestCase */

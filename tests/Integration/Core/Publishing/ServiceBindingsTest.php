@@ -3,8 +3,8 @@
 namespace Tests\Integration\Core\Publishing;
 
 use PHPUnit\Framework\Attributes\Test;
-use Publishing\Contract\FeedProvider;
 use Publishing\PostUrlGenerator;
+use Publishing\RSS\Contract\FeedProvider;
 use Publishing\RSS\SQLiteFeedProvider;
 use Publishing\Twitter\Twitter;
 use Publishing\Twitter\TwitterManager;

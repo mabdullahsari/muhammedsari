@@ -3,7 +3,7 @@
 namespace Publishing\RSS;
 
 use Illuminate\Support\AggregateServiceProvider;
-use Publishing\Contract\FeedProvider;
+use Publishing\RSS\Contract\FeedProvider;
 
 final class FeedServiceProvider extends AggregateServiceProvider
 {
