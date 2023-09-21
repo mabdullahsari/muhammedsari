@@ -42,6 +42,7 @@
             "Contacting\\": "src/Contacting",
             "Database\\": "src/Database",
             "Database\\Seeders\\": "database/seeders",
+            "EstimatingReadingTime\\": "src/EstimatingReadingTime",
             "Identity\\": "src/Identity",
             "Monitoring\\": "src/Monitoring",
             "Notifying\\": "src/Notifying",

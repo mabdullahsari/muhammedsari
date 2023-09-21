@@ -11,6 +11,7 @@ final class BlogServiceProvider extends AggregateServiceProvider
 
     protected $providers = [
         \Blogging\BloggingServiceProvider::class,
+        \EstimatingReadingTime\EstimatingReadingTimeServiceProvider::class,
         \Spatie\LaravelMarkdown\MarkdownServiceProvider::class,
     ];
 
