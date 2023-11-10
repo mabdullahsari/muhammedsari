@@ -14,7 +14,7 @@
         <x-heading as="2">I’m Muhammed, a proud Ghentian.</x-heading>
 
         <i class="mt-6 space-y-7 text-base">
-            <p>Hello! I'm Muhammed, a passionate software enthusiast dedicated to using code to solve real-world problems. I strive to develop robust applications that meets every expectation.</p>
+            <p>Hello! I'm Muhammed, a passionate software enthusiast dedicated to using code to solve real-world problems. I strive to develop robust applications that meet every expectation.</p>
             <p>Programming languages and technologies are only <em>a means to an end</em>. What really matters is the problems that must be solved in order to make others' lives easier.</p>
             <p>Knowledge sharing, collaboration and teamwork are at the heart of my approach. I find genuine joy in supporting and empowering others in my team, thus fostering a supportive and team-oriented environment.</p>
 
