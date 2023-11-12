@@ -4,6 +4,7 @@ namespace App\Http\Admin\SpamPrevention\Quarantine;
 
 use Filament\Facades\Filament;
 use Filament\Resources\Resource;
+use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Identity\User;
@@ -40,6 +41,7 @@ final class QuarantinedMessage extends Resource
                 ->label('Quarantined At')
                 ->dateTime(timezone: $user->timezone),
         ])->actions([
+            DeleteAction::make()->color('success'),
             Execute::make(),
         ]);
     }
