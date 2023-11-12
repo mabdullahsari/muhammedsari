@@ -34,10 +34,13 @@ final class Post extends Resource
     {
         return $form->schema([
             TextInput::make('title')
+                ->columnSpan(['default' => 2, 'lg' => 1])
                 ->reactive()
+                ->debounce()
                 ->required()
                 ->afterStateUpdated(fn ($record, $set, $state) => ! $record?->isPublished() && $set('slug', Str::slug($state))),
             TextInput::make('slug')
+                ->columnSpan(['default' => 2, 'lg' => 1])
                 ->disabled(static fn ($record) => $record?->isPublished())
                 ->regex('/^[a-z0-9]+(?:-[a-z0-9]+)*$/')
                 ->required()
