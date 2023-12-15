@@ -9,7 +9,7 @@ use Illuminate\View\Component;
 
 final class Navigation extends Component
 {
-    public const NAME = 'navigation';
+    public const string NAME = 'navigation';
 
     private static array $items = [];
 

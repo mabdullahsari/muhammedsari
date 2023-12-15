@@ -6,7 +6,7 @@ use Illuminate\Support\AggregateServiceProvider;
 
 final class PublishingServiceProvider extends AggregateServiceProvider
 {
-    public const NAME = 'publishing';
+    public const string NAME = 'publishing';
 
     public array $singletons = [UrlGenerator::class => PostUrlGenerator::class];
 

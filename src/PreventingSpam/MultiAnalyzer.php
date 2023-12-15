@@ -4,7 +4,7 @@ namespace PreventingSpam;
 
 final readonly class MultiAnalyzer extends Analyzer
 {
-    public const NAME = 'chain';
+    public const string NAME = 'chain';
 
     private function __construct(private array $analyzers) {}
 

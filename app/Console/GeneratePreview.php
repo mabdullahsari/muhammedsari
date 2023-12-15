@@ -11,7 +11,7 @@ final class GeneratePreview extends Command
 {
     use WithValidatedInput;
 
-    private const FOLDER = 'open-graph';
+    private const string FOLDER = 'open-graph';
 
     protected $signature = 'preview:generate';
 

@@ -9,7 +9,7 @@ use Notifying\Integration\PreviewingSpamSubscriber;
 
 final class NotifyingServiceProvider extends ServiceProvider
 {
-    public const NAME = 'notifying';
+    public const string NAME = 'notifying';
 
     public function boot(Dispatcher $events): void
     {

@@ -4,7 +4,7 @@ namespace PreventingSpam;
 
 final readonly class BlacklistedWordsAnalyzer extends Analyzer
 {
-    private const DICTIONARY = ['adolf', 'hitler'];
+    private const array DICTIONARY = ['adolf', 'hitler'];
 
     public function analyze(string $subject): Result
     {

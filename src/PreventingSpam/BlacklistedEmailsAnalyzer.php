@@ -4,7 +4,7 @@ namespace PreventingSpam;
 
 final readonly class BlacklistedEmailsAnalyzer extends Analyzer
 {
-    private const DICTIONARY = ['demo@demo.com', 'demo@dive.be'];
+    private const array DICTIONARY = ['demo@demo.com', 'demo@dive.be'];
 
     public function analyze(string $subject): Result
     {

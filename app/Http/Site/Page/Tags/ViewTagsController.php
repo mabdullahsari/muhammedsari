@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 final readonly class ViewTagsController
 {
-    public const ROUTE = 'tags';
+    public const string ROUTE = 'tags';
 
     public function __construct(
         private ResponseFactory $response,

@@ -8,7 +8,7 @@ use Illuminate\Support\AggregateServiceProvider;
 
 final class ContactServiceProvider extends AggregateServiceProvider
 {
-    public const NAME = 'Contact';
+    public const string NAME = 'Contact';
 
     protected $providers = [
         \Contacting\ContactingServiceProvider::class,

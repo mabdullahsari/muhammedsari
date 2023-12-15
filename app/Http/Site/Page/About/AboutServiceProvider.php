@@ -8,7 +8,7 @@ use Illuminate\Support\ServiceProvider;
 
 final class AboutServiceProvider extends ServiceProvider
 {
-    public const NAME = 'About';
+    public const string NAME = 'About';
 
     public function boot(Router $router): void
     {

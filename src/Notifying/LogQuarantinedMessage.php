@@ -11,7 +11,7 @@ final readonly class LogQuarantinedMessage implements ShouldQueue
 {
     use Dispatchable;
 
-    private const TEMPLATE = <<<TEXT
+    private const string TEMPLATE = <<<TEXT
     Spam was detected:
 
     when: %s

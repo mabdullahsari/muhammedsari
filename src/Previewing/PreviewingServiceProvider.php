@@ -7,7 +7,7 @@ use Previewing\Contract\Previewer;
 
 final class PreviewingServiceProvider extends ServiceProvider
 {
-    public const NAME = 'previewing';
+    public const string NAME = 'previewing';
 
     public function register(): void
     {

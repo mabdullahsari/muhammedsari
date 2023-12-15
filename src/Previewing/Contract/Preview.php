@@ -6,7 +6,7 @@ use Illuminate\Contracts\Support\Arrayable;
 
 final readonly class Preview implements Arrayable
 {
-    private const PNG = 'image/png';
+    private const string PNG = 'image/png';
 
     private function __construct(
         public string $image,

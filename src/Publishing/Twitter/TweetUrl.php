@@ -6,8 +6,8 @@ use Stringable;
 
 final readonly class TweetUrl implements Stringable
 {
-    private const BASE_URL = 'https://twitter.com/mabdullahsari/status';
-    private const ONE_TWO_THREE = '123';
+    private const string BASE_URL = 'https://twitter.com/mabdullahsari/status';
+    private const string ONE_TWO_THREE = '123';
 
     private function __construct(private string $value) {}
 

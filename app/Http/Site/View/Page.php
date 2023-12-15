@@ -7,8 +7,8 @@ use Illuminate\View\Component;
 
 final class Page extends Component
 {
-    public const NAME = 'page';
-    private const DELIMITER = ' - ';
+    public const string NAME = 'page';
+    private const string DELIMITER = ' - ';
 
     public function __construct(
         public readonly string $description,

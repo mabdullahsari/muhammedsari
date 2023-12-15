@@ -4,8 +4,8 @@ namespace Previewing;
 
 final readonly class CacheKey
 {
-    private const SEPARATOR = '_';
-    private const WHITESPACE = ' ';
+    private const string SEPARATOR = '_';
+    private const string WHITESPACE = ' ';
 
     private function __construct() {}
 

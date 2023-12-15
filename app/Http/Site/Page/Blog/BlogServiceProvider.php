@@ -7,7 +7,7 @@ use Illuminate\Support\AggregateServiceProvider;
 
 final class BlogServiceProvider extends AggregateServiceProvider
 {
-    public const NAME = 'Blog';
+    public const string NAME = 'Blog';
 
     protected $providers = [
         \Blogging\BloggingServiceProvider::class,

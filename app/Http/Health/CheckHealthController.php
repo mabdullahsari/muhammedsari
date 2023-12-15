@@ -7,7 +7,7 @@ use Illuminate\Http\JsonResponse;
 
 final readonly class CheckHealthController
 {
-    public const ROUTE = 'health';
+    public const string ROUTE = 'health';
 
     public function __construct(private ResponseFactory $response) {}
 

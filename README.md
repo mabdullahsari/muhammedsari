@@ -28,14 +28,14 @@ git clone git@github.com:mabdullahsari/muhammedsari.git
 ```shell
 composer global require laravel/valet
 valet install
-valet use php@8.2
+valet use php@8.3
 ```
 
 ```shell
 cd ~/Sites/muhammedsari
 valet link
 valet secure muhammedsari
-valet isolate php@8.2
+valet isolate php@8.3
 ```
 
 ```shell

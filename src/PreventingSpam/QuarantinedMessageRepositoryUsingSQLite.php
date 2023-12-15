@@ -7,7 +7,7 @@ use Illuminate\Database\SQLiteConnection;
 
 final readonly class QuarantinedMessageRepositoryUsingSQLite implements QuarantinedMessageRepository
 {
-    public const TABLE = 'preventing_spam_quarantined_messages';
+    public const string TABLE = 'preventing_spam_quarantined_messages';
 
     public function __construct(private SQLiteConnection $db) {}
 

@@ -8,7 +8,7 @@ use Previewing\Contract\Previewer;
 
 final readonly class PreviewTagController
 {
-    private const HASHTAG = '#';
+    private const string HASHTAG = '#';
 
     public function __construct(private GetSingleTag $tags, private Previewer $preview) {}
 

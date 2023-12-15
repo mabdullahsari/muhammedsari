@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 
 final readonly class ViewContactFormController
 {
-    public const ROUTE = 'contact';
-    public const SUCCESS = 'success';
+    public const string ROUTE = 'contact';
+    public const string SUCCESS = 'success';
 
     public function __construct(private Factory $view) {}
 

@@ -9,7 +9,7 @@ final readonly class AppendTwitterEngagementUrl implements ShouldQueue
 {
     use Dispatchable;
 
-    private const TEMPLATE = <<<TEXT
+    private const string TEMPLATE = <<<TEXT
     [Join the discussion on X (formerly Twitter)!](%s) I'd love to know what you thought about this blog post.
 
     Thanks for reading!

@@ -6,7 +6,7 @@ use Webmozart\Assert\Assert;
 
 final readonly class QuarantinedMessageId
 {
-    private const MINIMAL_VALUE = 0;
+    private const int MINIMAL_VALUE = 0;
 
     private int $id;
 

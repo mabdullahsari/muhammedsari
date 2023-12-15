@@ -8,7 +8,7 @@ use Previewing\Contract\Preview;
 
 final readonly class OpenGraphResponse implements Responsable
 {
-    private const ONE_WEEK = 604_800;
+    private const int ONE_WEEK = 604_800;
 
     public function __construct(private Preview $preview) {}
 

@@ -6,8 +6,8 @@ use Illuminate\Filesystem\Filesystem;
 
 final readonly class VersionControlBackupStore implements BackupStore
 {
-    private const FILENAME = 'backup.sql';
-    private const MESSAGE = '[Backup] Preserve data';
+    private const string FILENAME = 'backup.sql';
+    private const string MESSAGE = '[Backup] Preserve data';
 
     private Git $git;
 

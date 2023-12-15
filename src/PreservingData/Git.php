@@ -6,7 +6,7 @@ use Symfony\Component\Process\Process;
 
 final readonly class Git
 {
-    private const AUTHOR = 'Muhammed Sari <24608797+mabdullahsari@users.noreply.github.com>';
+    private const string AUTHOR = 'Muhammed Sari <24608797+mabdullahsari@users.noreply.github.com>';
 
     public function __construct(private string $root) {}
 

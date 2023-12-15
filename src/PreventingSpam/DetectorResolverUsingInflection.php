@@ -8,8 +8,8 @@ use RuntimeException;
 
 final readonly class DetectorResolverUsingInflection implements DetectorResolver
 {
-    private const NAMESPACE = 'PreventingSpam\\';
-    private const SUFFIX = 'Detector';
+    private const string NAMESPACE = 'PreventingSpam\\';
+    private const string SUFFIX = 'Detector';
 
     public function __construct(private Container $container) {}
 

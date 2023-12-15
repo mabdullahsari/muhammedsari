@@ -8,7 +8,7 @@ use PreservingData\Contract\BackUpDatabase;
 
 final class PreservingDataServiceProvider extends ServiceProvider
 {
-    private const TABLES = ['blogging_posts', 'blogging_tags', 'blogging_post_tag'];
+    private const array TABLES = ['blogging_posts', 'blogging_tags', 'blogging_post_tag'];
 
     public function register(): void
     {

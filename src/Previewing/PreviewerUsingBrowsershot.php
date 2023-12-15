@@ -9,9 +9,9 @@ use Spatie\Browsershot\Browsershot;
 
 final readonly class PreviewerUsingBrowsershot implements Previewer
 {
-    private const HEIGHT = 630;
-    private const TEMPLATE = 'previewing::template';
-    private const WIDTH = 1200;
+    private const int HEIGHT = 630;
+    private const string TEMPLATE = 'previewing::template';
+    private const int WIDTH = 1200;
 
     public function __construct(private Factory $view, private string $host) {}
 

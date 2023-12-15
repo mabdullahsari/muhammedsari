@@ -7,7 +7,7 @@ use Webmozart\Assert\Assert;
 
 final readonly class Tweet implements Stringable
 {
-    public const MAX_LENGTH = 280;
+    public const int MAX_LENGTH = 280;
 
     private string $message;
 

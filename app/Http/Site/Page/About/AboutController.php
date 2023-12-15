@@ -7,7 +7,7 @@ use Illuminate\Contracts\View\View;
 
 final readonly class AboutController
 {
-    public const INDEX = 'about';
+    public const string INDEX = 'about';
 
     public function __construct(private Factory $view) {}
 

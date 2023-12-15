@@ -8,7 +8,7 @@ use Illuminate\View\Component;
 
 final class Footer extends Component
 {
-    public const NAME = 'footer';
+    public const string NAME = 'footer';
 
     public function __construct(
         public readonly string $name,
