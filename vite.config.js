@@ -6,7 +6,6 @@ export default defineConfig({
         laravel({
             input: ['resources/css/site.scss', 'resources/js/site.js'],
             refresh: true,
-            valetTls: 'muhammedsari.test',
         }),
     ],
 });
