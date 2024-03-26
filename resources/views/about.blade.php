@@ -2,7 +2,7 @@
     <i class="lg:pl-20">
         <i class="max-w-xs px-2.5 lg:max-w-none">
             <img alt="Muhammed"
-                 src="{{ asset('img/cross-armed.jpg') }}"
+                 src="{{ asset('img/mabdullahsari.jpg') }}"
                  width="800"
                  height="800"
                  class="aspect-square rotate-3 rounded-2xl object-cover bg-zinc-800"
