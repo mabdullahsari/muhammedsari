@@ -9,16 +9,20 @@ use Tests\KernelTestCase;
 
 final class AtomFeedTest extends KernelTestCase
 {
-    protected bool $seed = true;
+    protected function setUp(): void
+    {
+        parent::setUp();
 
-    protected string $seeder = UserSeeder::class;
+        $this->seed(UserSeeder::class);
+    }
 
     #[Test]
     public function feed_includes_published_posts(): void
     {
         // Arrange
         $draft = PostFactory::new()->createQuietly();
-        [$publishedA, $publishedB] = PostFactory::times(2)->published()->createQuietly();
+        $publishedA = PostFactory::new()->published()->createQuietly();
+        $publishedB = PostFactory::new()->published()->createQuietly();
 
         // Act
         $response = $this->get('feed.atom');

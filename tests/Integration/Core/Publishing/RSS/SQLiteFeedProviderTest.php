@@ -14,11 +14,14 @@ final class SQLiteFeedProviderTest extends KernelTestCase
 {
     use FeedProviderContractTests;
 
-    protected bool $seed = true;
+    protected function setUp(): void
+    {
+        parent::setUp();
 
-    protected string $seeder = PostSeeder::class;
+        $this->seed(PostSeeder::class);
+    }
 
-    private function getInstance(): FeedProvider
+    private function getInstance(): SQLiteFeedProvider
     {
         return new SQLiteFeedProvider($this->app['db.connection'],
             new FeedItemMapper(new PostUrlGenerator('https://localhost'))
