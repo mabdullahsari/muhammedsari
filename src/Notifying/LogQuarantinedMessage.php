@@ -18,7 +18,6 @@ final readonly class LogQuarantinedMessage implements ShouldQueue
     info: %s
     TEXT;
 
-
     public function __construct(
         public string $message,
         public DateTimeImmutable $quarantinedAt,

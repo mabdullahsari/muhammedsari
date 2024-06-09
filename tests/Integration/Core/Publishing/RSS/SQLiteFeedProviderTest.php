@@ -3,7 +3,6 @@
 namespace Tests\Integration\Core\Publishing\RSS;
 
 use Publishing\PostUrlGenerator;
-use Publishing\RSS\Contract\FeedProvider;
 use Publishing\RSS\FeedItemMapper;
 use Publishing\RSS\SQLiteFeedProvider;
 use Tests\KernelTestCase;
