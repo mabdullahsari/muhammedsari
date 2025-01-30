@@ -20,7 +20,7 @@ final readonly class TwitterOAuth2 implements Twitter
 
     public function send(Tweet $tweet): TweetUrl
     {
-        $response = $this->connection->post('tweets', ['text' => (string) $tweet], true);
+        $response = $this->connection->post('tweets', ['text' => (string) $tweet], ['jsonPayload' => true]);
 
         return TweetUrl::fromId($response->data->id); // @phpstan-ignore-line
     }
